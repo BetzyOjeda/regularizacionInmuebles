@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Convocatoria en l&iacute;nea</title>
+    <title>Regularización de Inmuebles</title>
     <link rel="stylesheet" href="css/bbva.fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/57x57.png"/>
@@ -39,7 +39,7 @@
             <div class="header_container container flex-items">
                 <div class="header_logo">
                     <a href="#" class="header__logo__link">
-                        <img src="images/logo.png" class="header_image" alt="">
+                        <img src="./images/LogoBBVA@2x.png" class="header_image" alt="">
                     </a>
                 </div>
                 <div class="menu">
@@ -50,7 +50,7 @@
                 </div>
             </div>
         </div>
-        <div class="subheader">
+        <div class="subheader" style="display: none;">
             <div class="container">
                 <i class="bbva-icon ui-gradution-cap"></i><span id="scholarshipProgram" ></span>
             </div>
@@ -70,8 +70,8 @@
                     <div id="wf0" class="i-form accordion removeifNC">
                         <div class="step-header" data-target="general-data" data-loaded="false" data-catalog="general">
                             <div class="step-name">
-                                <i class="bbva-icon ui-profile"></i>
-                                1. Datos generales
+                                <i class="bbva-icon ui-gavel"></i>
+                                1. Datos de crédito y deudor
                             </div>
                             <div id="statusgd" class="step-status incomplete">
                                 <i class="bbva-icon ui-warning"></i>
@@ -83,60 +83,15 @@
                         </div>
                         <div id="general-data" class="step-container" style="display: none">
                                 <form name="form" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formgendata" data-status="#statusgd">
-                                <div class="subtitle-sec">Datos del tutor</div>
+                                <!--<div class="subtitle-sec">Datos del tutor</div>-->
                                 <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="grid-container-s">
-                                            <div class="grid-item">
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <input class="form-control uppercase letters" name="tutorname" id="tutorname" type="text" data-placeholder="Nombre" required autocomplete="off" value="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="tutorlastname" id="tutorlastname" type="text" data-placeholder="Apellido paterno" required autocomplete="off" value="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
-                                                <div class="item-fill">
-                                                    <div class="item-corner">
-                                                        <div class="checkbox-area">
-                                                            <span class="checkbox" data-targetdisable="#tutorlastname" data-targettoggle="#checktutolastname" id="checktutofirstname"><i class="bbva-icon ui-checkmark"></i></span>
-                                                            <span class="text">Sin apellido paterno</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_lastname" name="tutorslastname" id="tutorslastname" type="text" data-placeholder="Apellido materno" required autocomplete="off" value="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
-                                                <div class="item-fill">
-                                                    <div class="item-corner">
-                                                        <div class="checkbox-area">
-                                                            <span class="checkbox" data-targetdisable="#tutorslastname" data-targettoggle="#checktutofirstname" id="checktutolastname"><i class="bbva-icon ui-checkmark"></i></span>
-                                                            <span class="text">Sin apellido materno</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item">
+                                    <div class="grid-item"> <!--Lado izquierdo-->
                                         <div class="grid-container-s">
                                             <div class="grid-item">
                                                 <div class="form-group-select required" id="relationship">
                                                     <div class="option-select">
                                                         <div class="select-title sl">
-                                                            <span class="option-text sl center">Parentesco</span>
+                                                            <span class="option-text sl center">Tipo de Alta</span>
                                                             <span class="selected-option sl"></span>
                                                             <i class="bbva-icon ui-simple-down sl"></i>
                                                         </div>
@@ -144,81 +99,149 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="grid-item" id="other_relationship" style="display: none">
+                                            <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control uppercase letters" name="tutorslastname" id="o_relationship" type="text" data-placeholder="Especifica parentesco" autocomplete="off">
+                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="tutorlastname" id="tutorlastname" type="text"  data-placeholder="Nombre del deudor" required autocomplete="off" value="" disabled="disabled">
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="grid-item">
+                                                <div class="form-group-select required" id="relationtype">
+                                                    <div class="option-select">
+                                                        <div class="select-title sl">
+                                                            <span class="option-text sl center">Tipo de Persona</span>
+                                                            <span class="selected-option sl"></span>
+                                                            <i class="bbva-icon ui-simple-down sl"></i>
+                                                        </div>
+                                                        <div class="list-result"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="form-validation-group">
+                                                    <div class="form-group">
+                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_tutorRFC" name="tutorRFC" id="tutorRFC" type="text" data-placeholder="Fecha de otorgamiento del crédito" required autocomplete="off" value="15/10/2019" disabled="disabled">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="form-group-select required" id="relationtype">
+                                                    <div class="option-select">
+                                                        <div class="select-title sl">
+                                                            <span class="option-text sl center">Tipo de crédito hipotecario</span>
+                                                            <span class="selected-option sl"></span>
+                                                            <i class="bbva-icon ui-simple-down sl"></i>
+                                                        </div>
+                                                        <div class="list-result"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="form-group-select required" id="relationtype">
+                                                    <div class="option-select">
+                                                        <div class="select-title sl">
+                                                            <span class="option-text sl center">Cofinavit</span>
+                                                            <span class="selected-option sl"></span>
+                                                            <i class="bbva-icon ui-simple-down sl"></i>
+                                                        </div>
+                                                        <div class="list-result"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="form-validation-group">
+                                                    <div class="form-group">
+                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_tutorRFC" name="tutorRFC" id="tutorRFC" type="text" data-placeholder="Fecha de pago de crédito Infonavit" autocomplete="off" value="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="form-group-select required" id="relationtype">
+                                                    <div class="option-select">
+                                                        <div class="select-title sl">
+                                                            <span class="option-text sl center">Gravamen</span>
+                                                            <span class="selected-option sl"></span>
+                                                            <i class="bbva-icon ui-simple-down sl"></i>
+                                                        </div>
+                                                        <div class="list-result"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
                                         </div>
                                     </div>
-                                </div>
-                                <div class="grid-item title2 sub">
-                                    <span>Bajo protesta de decir verdad manifiesto ser el padre o tutor del aspirante respecto al cual a
-                                    continuaci&oacute;n proporciono los datos personales.</span>
-                                    <div class="grid-item">
-                                        <div class="query_privacy">
-                                            <span title="Consulta nuestro Aviso de Privacidad" aria-label="Consulta nuestro Aviso de Privacidad" class="btn__basic btn__clearbg">
-                                                <span aria-hidden="true">Consulta nuestro Aviso de Privacidad</span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br>
-                            <div class="subtitle-sec">Datos personales del alumno</div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
+                                    <div class="grid-item"> <!--Lado derecho-->
                                         <div class="grid-container-s">
                                             <div class="grid-item">
-                                                <div class="label">
-                                                    <label>&nbsp;</label>
-                                                </div>
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control uppercase letters" name="username" id="username" data-reflecto="#m_username" type="text" data-placeholder="Nombre" required autocomplete="off">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
-                                                <div class="label">
-                                                    <label>&nbsp;</label>
-                                                </div>
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <input class="form-control uppercase letters reflectable lastnameb" name="firstname" id="firstname" type="text" data-placeholder="Apellido paterno" required autocomplete="off" data-reflecto="#m_firstname">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
-                                                <div class="item-fill">
-                                                    <div class="item-corner">
-                                                        <div class="checkbox-area">
-                                                            <span class="checkbox" data-targetdisable="#firstname" data-targettoggle="#checklastname" id="checkfirstname"><i class="bbva-icon ui-checkmark"></i></span>
-                                                            <span class="text">No tengo apellido paterno</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <input class="form-control uppercase letters reflectable" name="lastname" id="lastname" type="text" data-placeholder="Apellido materno" required autocomplete="off" data-reflecto="#m_lastname">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
-                                                <div class="item-fill">
-                                                    <div class="item-corner">
-                                                        <div class="checkbox-area">
-                                                            <span class="checkbox" data-targetdisable="#lastname" data-targettoggle="#checkfirstname" id="checklastname"><i class="bbva-icon ui-checkmark"></i></span>
-                                                            <span class="text">No tengo apellido materno</span>
-                                                        </div>
+                                                        <input class="form-control uppercase letters lastnameb" type="text" data-placeholder="Número de crédito" required autocomplete="off" value="">
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb" data-reflecto="#m_tutorRFC" name="tutorRFC" id="tutorRFC" type="text" disabled="disabled" data-placeholder="RFC" required autocomplete="off" value="OEMB930524MDFJCT09">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb" data-reflecto="#m_tutorRFC" name="tutorRFC" id="tutorRFC" type="text" data-placeholder="CR de Afectación" required autocomplete="off" value="6943" disabled="disabled">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-group-select required" id="relationtype">
+                                                <div class="option-select">
+                                                    <div class="select-title sl">
+                                                        <span class="option-text sl center">Banca generadora</span>
+                                                        <span class="selected-option sl"></span>
+                                                        <i class="bbva-icon ui-simple-down sl"></i>
+                                                    </div>
+                                                    <div class="list-result"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-group-select required" id="relationtype">
+                                                <div class="option-select">
+                                                    <div class="select-title sl">
+                                                        <span class="option-text sl center">Tipo de crédito comercial</span>
+                                                        <span class="selected-option sl"></span>
+                                                        <i class="bbva-icon ui-simple-down sl"></i>
+                                                    </div>
+                                                    <div class="list-result"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb" data-reflecto="#m_tutorRFC" name="tutorRFC" id="tutorRFC" type="text" data-placeholder="Número de crédito infonavit" autocomplete="off" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-group-select required" id="relationtype">
+                                                <div class="option-select">
+                                                    <div class="select-title sl">
+                                                        <span class="option-text sl center">Barzón</span>
+                                                        <span class="selected-option sl"></span>
+                                                        <i class="bbva-icon ui-simple-down sl"></i>
+                                                    </div>
+                                                    <div class="list-result"></div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    
+                                </div>
+                                <div class="grid-container" style="display: none">
                                     <div class="grid-item">
                                         <div class="grid-container-s">
                                             <div class="grid-item">
@@ -260,31 +283,6 @@
                                                 </div>
                                             </div>
                                             <div class="grid-item">
-                                                <div class="label">
-                                                    <label>Sexo</label>
-                                                </div>
-                                                <div class="radio-section binary required fixed-radiosel" id="gender">
-                                                    <div class="form-validation-group">
-                                                        <div class="form-group">
-                                                            <div class="radio-buttons ">
-                                                                <div class="radio-button">
-                                                                    <div class="ckeck-area">
-                                                                        <div class="radio" data-id="Hombre"></div>
-                                                                    </div>
-                                                                    <div class="radio-label">Hombre</div>
-                                                                </div>
-                                                                <div class="radio-button">
-                                                                    <div class="ckeck-area">
-                                                                        <div class="radio" data-id="Mujer"></div>
-                                                                    </div>
-                                                                    <div class="radio-label">Mujer</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
                                                         <input class="form-control uppercase alphanumeric" name="curp" id="curp" type="text" data-placeholder="CURP" required autocomplete="off" maxlength="18" data-regex="CURP" disabled="disabled">
@@ -294,8 +292,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="subtitle-sec">Datos del domicilio</div>
-                                <div class="grid-container">
+                                <div class="grid-container" style="display: none">
                                     <div class="grid-item">
                                         <div class="grid-container-s">
                                             <div class="grid-item">
@@ -371,81 +368,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="subtitle-sec">Datos de contacto</div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="form-validation-group">
-                                            <div class="form-group">
-                                                <input class="form-control phonenumber e-tooltip-f no-repeat" name="phone" id="phone" maxlength="14" type="text" data-placeholder="Tel&eacute;fono de casa" required autocomplete="off" data-reflecto="#m_cellphone" data-tooltitle="Si no tienes tel&eacute;fono de casa, puedes agregar cualquier otro n&uacute;mero telef&oacute;nico ya sea de casa o de celular.">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item">
-                                        <div class="form-validation-group">
-                                            <div class="form-group">
-                                                <input class="form-control phonenumber e-tooltip-f no-repeat" name="cellphone" id="cellphone" maxlength="14" type="text" data-placeholder="Tel&eacute;fono celular" required autocomplete="off" data-tooltitle="Si no tienes tel&eacute;fono de celular, puedes agregar cualquier otro n&uacute;mero telef&oacute;nico ya sea de casa o de celular.">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="form-validation-group">
-                                            <div class="form-group">
-                                                <input class="form-control phonenumber e-tooltip-f no-repeat" name="errandsphone" id="errandsphone" maxlength="14" type="text" data-placeholder="Tel&eacute;fono para recados" required autocomplete="off" data-tooltitle="Si no tienes tel&eacute;fono para recados, puedes agregar cualquier otro n&uacute;mero telef&oacute;nico ya sea de casa o de celular.">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="form-validation-group">
-                                            <div class="form-group">
-                                                <input class="form-control" data-reflecto="#m_email" name="email" id="email" type="text" data-placeholder="Correo electr&oacute;nico principal" required autocomplete="off" data-regex="EMAIL" data-reflecto="#m_email">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item">
-                                        <div class="form-validation-group">
-                                            <div class="form-group">
-                                                <input class="form-control" name="email" id="emailconf" type="text" data-placeholder="Confirma tu correo principal" required autocomplete="off" data-regex="EMAIL" data-confirm="#email"
-                                                oncopy="return false" onpaste="return false" oncut="return false">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="form-validation-group">
-                                            <div class="form-group">
-                                                <input class="form-control" name="email" id="email2" type="text" data-placeholder="Correo electr&oacute;nico adicional 1 (opcional)" autocomplete="off" data-regex="EMAIL">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item" style="display:none">
-                                        <div class="form-validation-group">
-                                            <div class="form-group">
-                                                <input class="form-control" name="email" id="email2conf" type="text" data-placeholder="Confirmar el correo adicional 1" autocomplete="off" data-regex="EMAIL" data-confirm="#email2" oncut="return false" oncopy="return false" onpaste="return false" >
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="form-validation-group">
-                                            <div class="form-group">
-                                                <input class="form-control" name="email" id="email3" type="text" data-placeholder="Correo electr&oacute;nico adicional 2(opcional)" autocomplete="off" data-regex="EMAIL">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item" style="display:none">
-                                        <div class="form-validation-group">
-                                            <div class="form-group">
-                                                <input class="form-control" name="email" id="email3conf" type="text" data-placeholder="Confirma el correo adicional 2" autocomplete="off" data-regex="EMAIL" data-confirm="#email3">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="submtbtn">
                                     <span title="Continuar" aria-label="Continuar" class="btn__basic btn__submit" id="btn_savegd">
                                         <span aria-hidden="true">Guardar</span>
@@ -458,7 +380,7 @@
                         <div class="step-header" data-target="schoolar-data" data-loaded="false" data-catalog="schoolData">
                             <div class="step-name">
                                 <i class="bbva-icon ui-gradution-cap"></i>
-                                2. Datos escolares
+                                2. Datos de abogado, juicio y notario
                             </div>
                             <div id="statussd" class="step-status incomplete">
                                 <i class="bbva-icon ui-warning"></i>
@@ -469,11 +391,11 @@
                             </div>
                         </div>
                         <div id="schoolar-data" class="step-container" style="display: none">
-                            <form name="schoolardata" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formschdata" data-status="#statussd">
+                            <form name="schoolardata" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formschdata" data-status="#statussd" style="display: none">>
                                 <div class="subtitle-sec">Ingresa el promedio de <span id="lastLevel"></span>
                                     <i class="e-tooltip help bbva-icon ui-help" id="levelAverage" data-tooltitle=""></i>
                                 </div>
-                                <div class="grid-container">
+                                <div class="grid-container" style="display: none">
                                     <div class="grid-item">
                                         <div class="grid-container-s">
                                             <div class="grid-item">
@@ -486,8 +408,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="subtitle-sec">Datos de la <span id="nextLevel"></span> donde estudiar&aacute;s</div>
-                                <div class="grid-container">
+                                <div class="grid-container" style="display: none">
                                     <div class="grid-item">
                                         <div class="form-group-select whitwait states reflectable required" id="state_s" data-reflecto="#m_state_s">
                                             <div class="option-select">
@@ -621,7 +542,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="grid-container">
+                                <div class="grid-container" style="display: none">
                                     <div class="grid-item">
                                         <div class="grid-container-s">
                                             <div class="grid-item">
@@ -862,8 +783,8 @@
                     <div id="wf2" class="i-form accordion removeifNC">
                         <div class="step-header" data-target="social-data">
                             <div class="step-name">
-                                <i class="bbva-icon ui-team"></i>
-                                3. Datos sociodemogr&aacute;ficos
+                                <i class="bbva-icon ui-home"></i>
+                                3. Datos de Inmuebles y avalúos
                             </div>
                             <div id="statussoci" class="step-status incomplete">
                                 <i class="bbva-icon ui-warning"></i>
@@ -874,7 +795,7 @@
                             </div>
                         </div>
                         <div id="social-data" class="step-container" style="display: none">
-                            <form name="socialdata" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formsocdata" data-status="#statussoci">
+                            <form name="socialdata" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formsocdata" data-status="#statussoci" style="display: none">
                                 <div class="errorprev" style="display: none"></div>
                                 <div class="grid-container" id="fam_members">
                                     <div class="grid-item">
@@ -954,434 +875,6 @@
                             </form>
                         </div>
                     </div>
-                    <div id="wf3" class="i-form accordion removeifNC">
-                        <div class="step-header" data-target="home-data" data-loaded="false" data-catalog="home">
-                            <div class="step-name">
-                                <i class="bbva-icon ui-home"></i>
-                                4. Caracter&iacute;sticas del hogar
-                            </div>
-                            <div id="statushd" class="step-status incomplete">
-                                <i class="bbva-icon ui-warning"></i>
-                                Incompleto
-                            </div>
-                            <div class="step-arrow">
-                                <i class="bbva-icon ui-"></i>
-                            </div>
-                        </div>
-                        <div id="home-data" class="step-container" style="display: none">
-                            <form name="form" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formhdata" data-status="#statushd">
-                                <div class="subtitle-sec">Vivienda y servicios</div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>&iquest;Cu&aacute;ntas piezas tiene tu vivienda?</label>
-                                            <i class="e-tooltip help bbva-icon ui-help" data-tooltitle="Por favor no incluyas ba&ntilde;os, medios ba&ntilde;os, pasillos, patios y zotehuelas."></i>
-                                        </div>
-                                        <div class="form-group-select whitwait required" id="roomsNumber">
-                                            <div class="option-select">
-                                                <div class="select-title sl">
-                                                    <span class="option-text sl center">Selecciona el n&uacute;mero de piezas</span>
-                                                    <span class="selected-option sl"></span>
-                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                </div>
-                                                <div class="list-result"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>&iquest;Cu&aacute;ntos cuartos se usan para dormir?</label>
-                                        </div>
-                                        <div class="form-group-select whitwait required" id="bedroomsNumber">
-                                            <div class="option-select">
-                                                <div class="select-title sl">
-                                                    <span class="option-text sl center">Selecciona el n&uacute;mero de cuartos</span>
-                                                    <span class="selected-option sl"></span>
-                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                </div>
-                                                <div class="list-result"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>&iquest;Cu&aacute;ntos ba&ntilde;os completos hay?</label>
-                                            <i class="e-tooltip help bbva-icon ui-help" data-tooltitle="Es decir, cuentan con regadera y W.C. (excusado). <br> &Uacute;nicamente considera los de uso exclusivo para los integrantes de tu vivienda"></i>
-                                        </div>
-                                        <div class="form-group-select whitwait required o_two" id="bathroomsNumber">
-                                            <div class="option-select">
-                                                <div class="select-title sl">
-                                                    <span class="option-text sl center">Selecciona el n&uacute;mero de ba&ntilde;os</span>
-                                                    <span class="selected-option sl"></span>
-                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                </div>
-                                                <div class="list-result"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>Tipo de servicio de agua</label>
-                                        </div>
-                                        <div class="form-group-select whitwait required" id="waterServicesType">
-                                            <div class="option-select">
-                                                <div class="select-title sl">
-                                                    <span class="option-text sl center">Selecciona la respuesta</span>
-                                                    <span class="selected-option sl"></span>
-                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                </div>
-                                                <div class="list-result"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>&iquest;El drenaje esta conectado a &hellip;?</label>
-                                        </div>
-                                        <div class="form-group-select whitwait required" id="drainageType">
-                                            <div class="option-select">
-                                                <div class="select-title sl">
-                                                    <span class="option-text sl center">Selecciona la respuesta</span>
-                                                    <span class="selected-option sl"></span>
-                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                </div>
-                                                <div class="list-result"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>&iquest;La luz el&eacute;ctrica la obtienen &hellip;?</label>
-                                        </div>
-                                        <div class="form-group-select whitwait required" id="lightServicesType">
-                                            <div class="option-select">
-                                                <div class="select-title sl">
-                                                    <span class="option-text sl center">Selecciona la respuesta</span>
-                                                    <span class="selected-option sl"></span>
-                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                </div>
-                                                <div class="list-result"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>&iquest;Cu&aacute;l combustible usan para cocinar?</label>
-                                        </div>
-                                        <div class="form-group-select whitwait required" id="cookingFuelType">
-                                            <div class="option-select">
-                                                <div class="select-title sl">
-                                                    <span class="option-text sl center">Selecciona la respuesta</span>
-                                                    <span class="selected-option sl"></span>
-                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                </div>
-                                                <div class="list-result"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>Material de las paredes de tu vivienda</label>
-                                        </div>
-                                        <div class="form-group-select whitwait required" id="wallMaterialsType">
-                                            <div class="option-select">
-                                                <div class="select-title sl">
-                                                    <span class="option-text sl center">Selecciona la respuesta</span>
-                                                    <span class="selected-option sl"></span>
-                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                </div>
-                                                <div class="list-result"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>Material del techo de tu vivienda</label>
-                                        </div>
-                                        <div class="form-group-select whitwait required" id="ceilingMaterialsType">
-                                            <div class="option-select">
-                                                <div class="select-title sl">
-                                                    <span class="option-text sl center">Selecciona la respuesta</span>
-                                                    <span class="selected-option sl"></span>
-                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                </div>
-                                                <div class="list-result"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>Material del piso de tu vivienda</label>
-                                        </div>
-                                        <div class="form-group-select whitwait required" id="floorMaterialsType">
-                                            <div class="option-select">
-                                                <div class="select-title sl">
-                                                    <span class="option-text sl center">Selecciona la respuesta</span>
-                                                    <span class="selected-option sl"></span>
-                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                </div>
-                                                <div class="list-result"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="subtitle-sec">Pertenencias</div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>&iquest;Cu&aacute;ntos autom&oacute;viles tienen?</label>
-                                            <i class="e-tooltip help bbva-icon ui-help" data-tooltitle="Incluye camionetas cerradas o con
-                                            cabina o caja. Excluye taxis"></i>
-                                        </div>
-                                        <div class="form-group-select whitwait required o_two" id="carsNumber">
-                                            <div class="option-select">
-                                                <div class="select-title sl">
-                                                    <span class="option-text sl center">Selecciona la respuesta</span>
-                                                    <span class="selected-option sl"></span>
-                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                </div>
-                                                <div class="list-result"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>&iquest;Este hogar cuenta con internet?</label>
-                                            <i class="e-tooltip help bbva-icon ui-help" data-tooltitle="Sin tomar en cuenta la conexi&oacute;n m&oacute;vil que pudiera tener desde alg&uacute;n celular"></i>
-                                        </div>
-                                        <div class="radio-section binary required" id="hasInternet">
-                                            <div class="form-validation-group">
-                                                <div class="form-group">
-                                                    <div class="radio-buttons fixed-radio">
-                                                        <div class="radio-button">
-                                                            <div class="ckeck-area">
-                                                                <div class="radio" data-id="SI"></div>
-                                                            </div>
-                                                            <div class="radio-label">Si</div>
-                                                        </div>
-                                                        <div class="radio-button">
-                                                            <div class="ckeck-area">
-                                                                <div class="radio" data-id="NO"></div>
-                                                            </div>
-                                                            <div class="radio-label">No</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>&iquest;Tienen computadora o laptop?</label>
-                                        </div>
-                                        <div class="radio-section binary required" id="hasComputer">
-                                            <div class="form-validation-group">
-                                                <div class="form-group">
-                                                    <div class="radio-buttons ">
-                                                        <div class="radio-button">
-                                                            <div class="ckeck-area">
-                                                                <div class="radio" data-id="SI"></div>
-                                                            </div>
-                                                            <div class="radio-label">Si</div>
-                                                        </div>
-                                                        <div class="radio-button">
-                                                            <div class="ckeck-area">
-                                                                <div class="radio" data-id="NO"></div>
-                                                            </div>
-                                                            <div class="radio-label">No</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>&iquest;Tienen lavadora?</label>
-                                        </div>
-                                        <div class="radio-section binary required" id="hasWashingMachine">
-                                            <div class="form-validation-group">
-                                                <div class="form-group">
-                                                    <div class="radio-buttons ">
-                                                        <div class="radio-button">
-                                                            <div class="ckeck-area">
-                                                                <div class="radio" data-id="SI"></div>
-                                                            </div>
-                                                            <div class="radio-label">Si</div>
-                                                        </div>
-                                                        <div class="radio-button">
-                                                            <div class="ckeck-area">
-                                                                <div class="radio" data-id="NO"></div>
-                                                            </div>
-                                                            <div class="radio-label">No</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>&iquest;Tienen horno de microondas?</label>
-                                        </div>
-                                        <div class="radio-section binary required" id="hasMicrowave">
-                                            <div class="form-validation-group">
-                                                <div class="form-group">
-                                                    <div class="radio-buttons ">
-                                                        <div class="radio-button">
-                                                            <div class="ckeck-area">
-                                                                <div class="radio" data-id="SI"></div>
-                                                            </div>
-                                                            <div class="radio-label">Si</div>
-                                                        </div>
-                                                        <div class="radio-button">
-                                                            <div class="ckeck-area">
-                                                                <div class="radio" data-id="NO"></div>
-                                                            </div>
-                                                            <div class="radio-label">No</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>&iquest;Tienen televisi&oacute;n de paga?</label>
-                                        </div>
-                                        <div class="radio-section binary required" id="hasPayTV">
-                                            <div class="form-validation-group">
-                                                <div class="form-group">
-                                                    <div class="radio-buttons ">
-                                                        <div class="radio-button">
-                                                            <div class="ckeck-area">
-                                                                <div class="radio" data-id="SI"></div>
-                                                            </div>
-                                                            <div class="radio-label">Si</div>
-                                                        </div>
-                                                        <div class="radio-button">
-                                                            <div class="ckeck-area">
-                                                                <div class="radio" data-id="NO"></div>
-                                                            </div>
-                                                            <div class="radio-label">No</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-container">
-                                    <div class="grid-item">
-                                        <div class="label">
-                                            <label>&iquest;Tienen motocicleta?</label>
-                                        </div>
-                                        <div class="radio-section binary required" id="hasMotorcycle">
-                                            <div class="form-validation-group">
-                                                <div class="form-group">
-                                                    <div class="radio-buttons ">
-                                                        <div class="radio-button">
-                                                            <div class="ckeck-area">
-                                                                <div class="radio" data-id="SI"></div>
-                                                            </div>
-                                                            <div class="radio-label">Si</div>
-                                                        </div>
-                                                        <div class="radio-button">
-                                                            <div class="ckeck-area">
-                                                                <div class="radio" data-id="NO"></div>
-                                                            </div>
-                                                            <div class="radio-label">No</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="submtbtn">
-                                    <span title="Continuar" aria-label="Continuar" class="btn__basic btn__submit" id="btn_savehd">
-                                        <span aria-hidden="true">Guardar</span>
-                                    </span>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div id="wf4" class="i-form accordion removeifNC">
-                        <div class="step-header" data-target="legal-data">
-                            <div class="step-name">
-                                <i class="bbva-icon ui-gavel"></i>
-                                5. Avisos legales
-                            </div>
-                            <div id="statushd" class="step-status incomplete">
-                                <i class="bbva-icon ui-warning"></i>
-                                Incompleto
-                            </div>
-                            <div class="step-arrow">
-                                <i class="bbva-icon ui-"></i>
-                            </div>
-                        </div>
-                        <div id="legal-data" class="step-container" style="display: none">
-                            <form name="form" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formldata" data-status="#statushd" style="display:none">
-                                <div class="grid-item">
-                                    <div class="item-fill">
-                                        <div class="item-corner">
-                                            <div class="checkbox-area">
-                                                <span class="checkbox required" id="legal1" data-legal-id="">
-                                                    <i class="bbva-icon ui-checkmark"></i>
-                                                </span>
-                                                <span id="legaltext1" class="text legal_link">
-                                                </span>
-                                                <a class="btn__basic btn__clearbg" id="legallink1" href="" target="_blank"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-item">
-                                    <div class="item-fill">
-                                        <div class="item-corner">
-                                            <div class="checkbox-area">
-                                            <span class="checkbox required" id="legal2" data-legal-id="">
-                                                <i class="bbva-icon ui-checkmark"></i>
-                                                </span>
-                                            <span id="legaltext2" class="text legal_link"></span>
-                                            <a class="btn__basic btn__clearbg" id="legallink2" href="" target="_blank"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="grid-item">
-                                    <div class="item-fill">
-                                        <div class="item-corner">
-                                            <div class="checkbox-area">
-                                                <span class="checkbox required" id="legal3" data-legal-id="">
-                                                    <i class="bbva-icon ui-checkmark"></i>
-                                                </span>
-                                                <span id="legaltext3" class="text legal_link"></span>
-                                                <a class="btn__basic btn__clearbg" id="legallink3" href="" target="_blank"></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="submtbtn">
-                                    <span title="Continuar" aria-label="Continuar" class="btn__basic btn__submit" id="btn_saveld">
-                                        <span aria-hidden="true">Guardar</span>
-                                    </span>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
                     <div class="submtbtn actionsection send removeifNC" style="display: none">
                         <span title="Continuar" aria-label="Continuar" class="btn__basic" id="btn_save_all">
                             <span aria-hidden="true">Finalizar registro</span>
@@ -1395,7 +888,7 @@
                 <div class="footer-logo">
                     <img src="images/LogoBBVAOportunidades@2x.png">
                 </div>
-				<div class="footer__links">
+				<div class="footer__links" style="display: none;">
                     <div class="footer__list">
                         <div class="link">
                             <a target="_blank" href="https://derechosarco.fundacionbbvabancomer.org/" class="link__content ">
@@ -1409,7 +902,7 @@
                         </div>
                     </div>   
                 </div>
-                <p class="footer-copyright">
+                <p class="footer-copyright" style="display: none;">
                     &copy; <span id="currentYear"></span> BBVA Bancomer, S. A., Instituci&oacute;n de Banca M&uacute;ltiple, Grupo Financiero BBVA Bancomer, Avenida Paseo de la Reforma 510, colonia Ju&aacute;rez, c&oacute;digo postal 06600, alcald&iacute;a Cuauht&eacute;moc, Ciudad de M&eacute;xico.
                 </p>
             </div>
@@ -1529,7 +1022,7 @@
         </div>
         <div class="md-overlay" aria-hidden="true"></div>
     </div>
-    <div class="help-menu removeifNC">
+    <div class="help-menu removeifNC" style="display: none;">
         <div class="btn_help" id="call_h">
             <i class="bbva-icon ui-telephone helpicon"></i>
             <div class="helpname">Llamar</div>

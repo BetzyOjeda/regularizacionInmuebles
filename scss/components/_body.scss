@@ -50,8 +50,10 @@ input:invalid {
 
 .content {
   background-color: $bbva-100;
-  padding-top: 10px;
-  padding-bottom: 267px; //for footer
+  /*padding-top: 10px;
+  padding-bottom: 267px; //for footer*/
+  padding-top: 119px;
+  padding-bottom: 119px;
   background-size: cover;
   @include to(m){
     padding-bottom: 355px;
