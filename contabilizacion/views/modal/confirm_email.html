@@ -1,0 +1,36 @@
+<form name="confemail" action="#" class="form-gray notify-on-error" data-notify="#dialog" method="post" target="_top" id="formemail">
+    <div class="notification info">
+        <div class="wrapper">
+            <div class="icon"><i class="bbva-icon"></i></div>
+            <div class="message">
+                <div class="message__heading">Confirma tu correo electr&oacute;nico.</div>
+                <span class="message__body">A este correo te enviaremos toda la informaci&oacute;n sobre la convocatoria</span>
+            </div>
+        </div>
+    </div>
+    <div class="step-container">
+        <div class="grid-container">
+            <div class="grid-item" >
+                <div class="form-validation-group">
+                    <div class="form-group">
+                        <input class="form-control" name="c_email" id="c_email" type="text" data-regex="EMAIL" data-placeholder="Correo electr&oacute;nico principal" required autocomplete="off" value="{{c_email}}">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item" >
+                <div class="form-validation-group">
+                    <div class="form-group">
+                        <input class="form-control" name="c_email2" id="c_email2" type="text" data-regex="EMAIL" data-placeholder="Confirmar correo electr&oacute;nico" required autocomplete="off" oncopy="return false" onpaste="return false" oncut="return false">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actionsection">
+        <div class="submtbtn">
+            <span title="Continuar" aria-label="Continuar" class="btn__basic btn__submit" id="econt">
+                <span aria-hidden="true">Continuar</span>
+            </span>
+        </div>
+    </div>
+</form>

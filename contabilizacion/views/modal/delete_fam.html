@@ -1,0 +1,41 @@
+<div class="title-gray">
+    {{title}}
+</div>
+<form name="form" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formdeletefam">
+    <div class="step-container">
+        <div class="notification warning">
+            <div class="wrapper">
+                <div class="icon"><i class="bbva-icon"></i></div>
+                <div class="message">
+                    <div class="message__heading">Selecciona el familiar que deseas eliminar</div><span class="message__body">Al eliminarlo ya no se podrá recuperar</span>
+                </div>
+            </div>
+        </div>
+        <div class="list-member" id="list-member">
+            {{#members}}
+                <div class="grid-container-s">
+                    <div class="grid-item">
+                        <div class="item-fill">
+                            <div class="item-corner">
+                                <div class="checkbox-area">
+                                    <span class="checkbox" data-index="{{memberid}}"><i class="bbva-icon ui-checkmark"></i></span>
+                                    {{fam_name}} {{fam_appat}} {{fam_apmat}} / {{fam_relationship_des}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/members}}
+            <div class="actionsection">
+                <div class="submtbtn">
+                    <span title="Enviar" aria-label="Enviar" class="btn__basic" id="btn_delete">
+                        <span aria-hidden="true">Eliminar</span>
+                    </span>
+                    <span title="Enviar" aria-label="Enviar" class="btn__basic" id="btn_decline">
+                        <span aria-hidden="true">Cancelar</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

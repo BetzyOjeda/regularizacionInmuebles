@@ -1,0 +1,385 @@
+<div class="title-gray">
+    Integrante {{index}} de {{total}}
+</div>
+<form name="addfamily" action="#" class="form-gray notify-on-error i-form" data-notify="#dialog" method="post" target="_top" id="formfamily">
+    <div class="flagarea" hidden style="display: none">
+        <input type="hidden" class="form-control" value="{{familyBoss}}" name="familyBoss" id="familyBoss">
+        <input type="hidden" class="form-control" value="{{flags.type}}" name="flag" id="flag">
+        <input type="hidden" class="form-control" value="{{memberid}}" name="memberid" id="memberid">
+        <input type="hidden" class="form-control" value="{{relatedid}}" name="relatedid" id="relatedid">
+        <input type="hidden" class="form-control" value="{{alreadyExists}}" name="alreadyExists" id="alreadyExists">
+    </div>
+    <div class="step-container">
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="grid-container-s">
+                    <div class="grid-item">
+                        <div class="form-validation-group">
+                            <div class="form-group">
+                                <input class="form-control uppercase letters" name="fam_name" id="fam_name" type="text" data-placeholder="Nombre" required autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="form-validation-group">
+                            <div class="form-group">
+                                <input class="form-control uppercase letters lastnameb" name="fam_appat" id="fam_appat" type="text" data-placeholder="Apellido paterno" required autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="form-group">
+                            <div class="item-fill">
+                                <div class="item-corner">
+                                    <div class="checkbox-area">
+                                        <span class="checkbox" data-targetdisable="#fam_appat" data-targettoggle="#m_checklastname" id="m_checkfirstname"><i class="bbva-icon ui-checkmark"></i></span>
+                                        <span class="text">No tiene apellido paterno</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="form-validation-group">
+                            <div class="form-group">
+                                <input class="form-control uppercase letters lastnameb" name="fam_apmat" id="fam_apmat" type="text" data-placeholder="Apellido materno" required autocomplete="off">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="form-group">
+                            <div class="item-fill">
+                                <div class="item-corner">
+                                    <div class="checkbox-area">
+                                        <span class="checkbox" data-targetdisable="#fam_apmat" data-targettoggle="#m_checkfirstname" id="m_checklastname"><i class="bbva-icon ui-checkmark"></i></span>
+                                        <span class="text">No tiene apellido materno</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-container-s">
+                    <div class="grid-item">
+                        <div class="form-group-select required" id="fam_relationship">
+                            <div class="option-select">
+                                <div class="select-title sl">
+                                    <span class="option-text sl center">Parentesco</span>
+                                    <span class="selected-option sl"></span>
+                                    <i class="bbva-icon ui-simple-down sl"></i>
+                                </div>
+                                <div class="list-result"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-item" id="fam_other_relationship" style="display: none">
+                        <div class="form-validation-group">
+                            <div class="form-group">
+                                <input class="form-control uppercase letters" name="tutorslastname" id="fam_o_relationship" type="text" data-placeholder="Especifica parentesco" autocomplete="off" maxlength="100">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="label">
+                    <label>Sexo</label>
+                </div>
+                <div class="radio-section binary required" id="fam_gender">
+                    <div class="form-validation-group">
+                        <div class="form-group">
+                            <div class="radio-buttons">
+                                <div class="radio-button">
+                                    <div class="ckeck-area">
+                                        <div class="radio" data-id="Hombre"></div>
+                                    </div>
+                                    <div class="radio-label">Hombre</div>
+                                </div>
+                                <div class="radio-button">
+                                    <div class="ckeck-area">
+                                        <div class="radio" data-id="Mujer"></div>
+                                    </div>
+                                    <div class="radio-label">Mujer</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="label">
+                    <label>&nbsp;</label>
+                </div>
+                <div class="form-validation-group">
+                    <div class="form-group">
+                        <input class="form-control numbers" name="fam_age" id="fam_age" type="text" data-placeholder="A&ntilde;os cumplidos" required autocomplete="off" maxlength="3">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="form-group-select required" id="fam_civil">
+                    <div class="option-select">
+                        <div class="select-title sl">
+                            <span class="option-text sl center">Estado civil</span>
+                            <span class="selected-option sl"></span>
+                            <i class="bbva-icon ui-simple-down sl"></i>
+                        </div>
+                        <div class="list-result"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="form-group-select required" id="fam_schoollevel">
+                    <div class="option-select">
+                        <div class="select-title sl">
+                            <span class="option-text sl center">M&aacute;ximo grado de estudios</span>
+                            <span class="selected-option sl"></span>
+                            <i class="bbva-icon ui-simple-down sl"></i>
+                        </div>
+                        <div class="list-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="label">
+                    <label>&iquest;Asiste actualmente a la escuela?</label>
+                </div>
+                <div class="radio-section binary required" id="fam_studing">
+                    <div class="form-validation-group">
+                        <div class="form-group">
+                            <div class="radio-buttons">
+                                <div class="radio-button">
+                                    <div class="ckeck-area">
+                                        <div class="radio" data-id="true"></div>
+                                    </div>
+                                    <div class="radio-label">S&iacute;</div>
+                                </div>
+                                <div class="radio-button">
+                                    <div class="ckeck-area">
+                                        <div class="radio" data-id="false"></div>
+                                    </div>
+                                    <div class="radio-label">No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="form-group-select required" id="fam_medic">
+                    <div class="option-select">
+                        <div class="select-title sl">
+                            <span class="option-text sl center">&iquest;De qu&eacute; instituci&oacute;n recibe atenci&oacute;n m&eacute;dica?</span>
+                            <span class="selected-option sl"></span>
+                            <i class="bbva-icon ui-simple-down sl"></i>
+                        </div>
+                        <div class="list-result"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item" id="other_medic" style="display: none;">
+                <div class="form-validation-group">
+                    <div class="form-group">
+                        <input class="form-control" name="fam_omedic" id="fam_omedic" type="text" data-placeholder="Especifica la instituci&oacute;n de atenci&oacute;n m&eacute;dica" autocomplete="off" maxlength="100">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="form-group-select required" id="fam_ocupation">
+                    <div class="option-select">
+                        <div class="select-title sl">
+                            <span class="option-text sl center">&iquest;Cu&aacute;l es su ocupaci&oacute;n principal?</span>
+                            <span class="selected-option sl"></span>
+                            <i class="bbva-icon ui-simple-down sl"></i>
+                        </div>
+                        <div class="list-result"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="form-validation-group">
+                    <div class="form-group">
+                        <input class="form-control mxnamount e-tooltip-f" name="totalf" id="total_f" type="text" data-placeholder="&iquest;Cu&aacute;nto dinero gana o recibe mensualmente?" autocomplete="off" required data-tooltitle="Considere los ingresos por diversas actividades, sin considerar becas ni apoyo de gobierno">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-container" id="age14" style="display: none">
+            <div class="grid-item">
+                <div class="label">
+                    <label>&iquest;Trabaj&oacute; el &uacute;ltimo mes?</label>
+                </div>
+                <div class="radio-section binary" id="fam_worked">
+                    <div class="form-validation-group">
+                        <div class="form-group">
+                            <div class="radio-buttons">
+                                <div class="radio-button">
+                                    <div class="ckeck-area">
+                                        <div class="radio" data-id="true"></div>
+                                    </div>
+                                    <div class="radio-label">Si</div>
+                                </div>
+                                <div class="radio-button">
+                                    <div class="ckeck-area">
+                                        <div class="radio" data-id="false"></div>
+                                    </div>
+                                    <div class="radio-label">No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="label">
+                    <label>&iquest;Recibe ingresos de becas educativas o apoyos gubernamentales?</label>
+                </div>
+                <div class="radio-section binary required" id="fam_otherschoolarship">
+                    <div class="form-validation-group">
+                        <div class="form-group">
+                            <div class="radio-buttons">
+                                <div class="radio-button">
+                                    <div class="ckeck-area">
+                                        <div class="radio" data-id="0"></div>
+                                    </div>
+                                    <div class="radio-label">Si</div>
+                                </div>
+                                <div class="radio-button">
+                                    <div class="ckeck-area">
+                                        <div class="radio" data-id="1"></div>
+                                    </div>
+                                    <div class="radio-label">No</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item schoolarshiparea" style="display: none">
+                <div class="label">
+                    <label>&nbsp;</label>
+                </div>
+                <div class="form-group-select" id="fam_kindschoolarship">
+                    <div class="option-select">
+                        <div class="select-title sl">
+                            <span class="option-text sl center">Tipo de apoyo</span>
+                            <span class="selected-option sl"></span>
+                            <i class="bbva-icon ui-simple-down sl"></i>
+                        </div>
+                        <div class="list-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="other_schoolarship" class="schoolarshiparea" style="display: none;">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <div class="form-group-select" id="fam_programschoolarship">
+                        <div class="option-select">
+                            <div class="select-title sl">
+                                <span class="option-text sl center">Programa o instituci&oacute;n que otorga el apoyo</span>
+                                <span class="selected-option sl"></span>
+                                <i class="bbva-icon ui-simple-down sl"></i>
+                            </div>
+                            <div class="list-result"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item" id="oschoolarship" style="display: none">
+                    <div class="form-validation-group">
+                        <div class="form-group">
+                            <input class="form-control" name="sprogramname" id="sprogramname" type="text" data-placeholder="Especifica programa de apoyo" autocomplete="off" maxlength="100">
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="form-validation-group">
+                        <div class="form-group">
+                            <input class="form-control mxnamount" name="total_sf" id="total_sf" type="text" data-placeholder="Monto promedio mensual" autocomplete="off">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="help_section">
+        <div class="h_h1">&iquest;Necesitas ayuda acerca de la “Ocupaci&oacute;n”? <i class="bbva-icon ui-simple-down"></i></div>
+        <div class="h_h1_section" style="display: none;">
+            <div class="h_description">Las ocupaciones las podemos diferenciar en dos grupos: Personas con posibilidades de trabajar y Personas sin posibilidades de trabajar. Dentro de estos grupos podemos se encuentran las diferentes ocupaciones:</div>
+            <div class="h_h2">1. Personas CON posibilidades de trabajar (son personas que S&Iacute; tienen el tiempo y capacidades de trabajar)</div>
+            <div class="h_ls">
+                <div class="h_sl_title"><i class="bbva-icon bbva-icon ui-minus"></i> Desempleado</div>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> En busca de empleo</p>
+            </div>
+            <div class="h_ls">
+                <div class="h_sl_title"><i class="bbva-icon bbva-icon ui-minus"></i> Empleador</div>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Negocio propio con empleados</p>
+            </div>
+            <div class="h_ls">
+                <div class="h_sl_title"><i class="bbva-icon bbva-icon ui-minus"></i> Trabajador por cuenta propia</div>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Negocio propio sin empleados</p>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Limpieza de casas</p>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Venta por cat&aacute;logo</p>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Costurera</p>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Agricultor</p>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Etc.</p>
+            </div>
+            <div class="h_ls">
+                <div class="h_sl_title"><i class="bbva-icon bbva-icon ui-minus"></i> Trabajador asalariado</div>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Empleado de oficina</p>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Jornalero</p>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Obrero</p>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Etc.</p>
+            </div>
+            <div class="h_ls">
+                <div class="h_sl_title"><i class="bbva-icon bbva-icon ui-minus"></i> Trabajador con percepciones no salariales</div>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> No recibe salario fijo</p>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Mesero que solo recibe propinas</p>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Empleo por comisiones</p>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Etc.</p>
+            </div>
+            <div class="h_ls">
+                <div class="h_sl_title"><i class="bbva-icon bbva-icon ui-minus"></i> Trabajadores no remunerados</div>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Negocio familiar sin recibir dinero</p>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Etc.</p>
+            </div>
+            <div class="h_h2">2. Personas SIN posibilidades de trabajar (son personas que NO tiene el tiempo y NI capacidades de trabajar)</div>
+            <div class="h_ls">
+                <div class="h_sl_title"><i class="bbva-icon bbva-icon ui-minus"></i> Estudiante</div>
+            </div>
+            <div class="h_ls">
+                <div class="h_sl_title"><i class="bbva-icon bbva-icon ui-minus"></i> Quehaceres dom&eacute;sticos</div>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Sin recibir salario por su labor</p>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> Limpieza de casa propia o de alg&uacute;n familiar</p>
+            </div>
+            <div class="h_ls">
+                <div class="h_sl_title"><i class="bbva-icon bbva-icon ui-minus"></i> Pensionados o jubilados</div>
+            </div>
+            <div class="h_ls">
+                <div class="h_sl_title"><i class="bbva-icon bbva-icon ui-minus"></i> Otros no activos</div>
+                <p class="h_ls_option"><i class="bbva-icon ui-pin-pad"></i> No trabajan y adem&aacute;s no est&aacute;n en b&uacute;squeda de trabajo</p>
+            </div>
+        </div>
+    </div>
+    <div class="actionsection">
+        <div class="submtbtn">
+            <span title="{{flags.text}}" aria-label="{{flags.text}}" class="btn__basic btn__submit" id="familyformbtn">
+                <span aria-hidden="true">{{flags.text}}</span>
+            </span>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,393 @@
+<div class="notification info">
+    <div class="wrapper">
+        <div class="icon"><i class="bbva-icon"></i></div>
+        <div class="message">
+            <div class="message__heading">&iexcl;Has finalizado la primera parte del registro! Para continuar, da clic en "Enviar".</div>
+            <span class="message__body">Tus datos quedar&aacute;n guardados y no los podr&aacute;s modificar.</span>
+        </div>
+    </div>
+</div>
+<div class="step-container">
+    <div class="title-section"><i class="bbva-icon ui-profile"></i> 1. Datos Generales</div>
+    <div class="subtitle-section">Datos del tutor</div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="grid-container-s">
+                <div class="grid-item">
+                    <div class="read-only">
+                        Nombre: <span>{{tutorName}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        Apellido paterno: <span>{{tutorLastName}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-container-s">
+                <div class="grid-item">
+                    <div class="read-only">
+                        Apellido materno: <span>{{tutorSecondLastName}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        Parentesco: <span>{{tutorRelationship}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subtitle-section">Datos del alumno</div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="grid-container-s">
+                <div class="grid-item">
+                    <div class="read-only">
+                        Nombre: <span>{{name}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        Apellido paterno: <span>{{lastName}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        Apellido materno: <span>{{secondLastName}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-container-s">
+                <div class="grid-item">
+                    <div class="read-only">
+                        Fecha de nacimiento: <span>{{birthdate}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        Sexo: <span>{{gender}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        CURP: <span>{{curp}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subtitle-section">Datos del domicilio</div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="grid-container-s">
+                <div class="grid-item">
+                    <div class="read-only">
+                        Calle: <span>{{street}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        N&uacute;mero exterior: <span>{{outdoorNumber}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        N&uacute;mero interior: <span>{{interiorNumber}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        C&oacute;digo postal: <span>{{zipcode}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-container-s">
+                <div class="grid-item">
+                    <div class="read-only">
+                        Colonia: <span>{{colony}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        Municipio: <span>{{municipality}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        Estado: <span>{{state}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        Referencias: <span>{{references}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="subtitle-section">Datos de contacto</div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="grid-container-s">
+                <div class="grid-item">
+                    <div class="read-only">
+                        Tel&eacute;fono de casa: <span>{{homePhone}}</span></div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        Tel&eacute;fono celular: <span>{{cellPhone}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        Tel&eacute;fono para recados: <span>{{errandsphone}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-container-s">
+                <div class="grid-item">
+                    <div class="read-only">
+                        Correo elect&oacute;nico principal: <span>{{email}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        Correo eletr&oacute;nico adicional 1: <span>{{email2}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        Correo eletr&oacute;nico adicional 2: <span>{{email3}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="title-section"><i class="bbva-icon ui-gradution-cap"></i> 2. Datos escolares</div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="read-only">
+                Promedio general de {{levelDescription}}: <span>{{average}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="subtitle-section">Datos de la escuela</div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="grid-container-s">
+                <div class="grid-item">
+                    <div class="read-only">
+                        Nombre de la escuela: <span>{{schoolName}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        Turno: <span>{{turn}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="grid-container-s">
+                <div class="grid-item">
+                    <div class="read-only">
+                        Municipio: <span>{{municipalitySchool}}</span>
+                    </div>
+                </div>
+                <div class="grid-item">
+                    <div class="read-only">
+                        Estado: <span>{{stateSchool}}</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="display: {{flagCareer}}">
+        <div class="subtitle-section">Informaci&oacute;n de tu carrera</div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="grid-container-s">
+                    <div class="grid-item">
+                        <div class="read-only">
+                            &Aacute;rea: <span>{{area}}</span></div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="read-only">
+                            Sub-&aacute;rea: <span>{{subarea}}</span>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="read-only">
+                            Carrera: <span>{{career}}</span>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="read-only">
+                            Modalidad: <span>{{modality}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-container-s">
+                    <div class="grid-item">
+                        <div class="read-only">
+                            Tipo de carrera: <span>{{careerType}}</span>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="read-only">
+                            Duraci&oacute;n de la carrera: <span>{{duration}}</span>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="read-only">
+                            &#191;Cu&aacute;nto gastas MENSUALMENTE en traslados&#63;: <span>{{spendingOnTransportation}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid-container inidatam">
+        <div class="grid-item">
+            <div class="read-only">
+                Fecha de inicio de clases: <span>{{startClassDate}}</span>
+            </div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">Para estudiar, &#191;te tuviste que cambiar de domicilio&#63;: <span>{{changeHome}}</span>
+            </div>
+        </div>
+    </div>
+    <div style="display: {{flagChangeHome}}">
+        <div class="subtitle-section">Datos del domicilio donde te cambiaste</div>
+        <div class="grid-container">
+            <div class="grid-item">
+                <div class="grid-container-s">
+                    <div class="grid-item">
+                        <div class="read-only">
+                            Municipio: <span>{{municipalityChange}}</span>
+                        </div>
+                    </div>
+                    <div class="grid-item">
+                        <div class="read-only">
+                            Estado: <span>{{stateChange}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <div class="grid-container-s">
+                    <div class="grid-item">
+                        <div class="read-only">
+                            &#191;Pagas renta&#63;: <span>{{rent}}</span></div>
+                    </div>
+                    <div class="grid-item" style="display: {{flagIsRent}}">
+                        <div class="read-only">
+                            &#191;Cu&aacute;nto pagas de renta&#63;: <span>{{paymentRent}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="title-section"><i class="bbva-icon ui-team"></i> 3. Datos sociodemogr&aacute;ficos</div>
+    <div class="read-only">
+        N&uacute;mero de personas que viven en tu hogar(incluy&eacute;ndote): <span id="n_fromhome"></span>
+    </div>
+    <br>
+    <div class="grid-container" id="membersfromhome"></div>
+    <br>
+    <div class="read-only">
+        N&uacute;mero de personas que apoyan con dinero al hogar pero NO viven contigo: <span id="n_awayhome"></span>
+    </div>
+    <br>
+    <div class="grid-container" id="membersawayhome"></div>
+    <br>
+    <div class="read-only">
+        &#191;Tienes familiares que trabajan en BBVA Bancomer&#63; : <span id="n_bbva"></span>
+    </div>
+    <div class="grid-container" id="bbvamember"></div>
+    <div class="title-section"><i class="bbva-icon ui-home"></i> 4. Caracter&iacute;sticas del hogar</div>
+    <div class="subtitle-section">Vivienda y servicios</div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="read-only">&#191;Cu&aacute;ntas piezas tiene tu vivienda&#63;: <span>{{numRooms}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">&#191;Cu&aacute;ntos cuartos se usan para dormir&#63;: <span>{{numRoomsSleep}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">&#191;Cu&aacute;ntos ba&ntilde;os completos hay&#63;: <span>{{numBath}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">Tipo de servicio de agua: <span>{{water}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">&#191;El drenaje esta conectado a &hellip;&#63;: <span>{{drain}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">&#191;La luz el&eacute;ctrica la obtienen &hellip; &#63;: <span>{{light}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">&#191;Cu&aacute;l combustible usan para cocinar&#63;: <span>{{fuel}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">Material de las paredes de tu vivienda: <span>{{wall}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">Material del techo de tu vivienda: <span>{{roof}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">Material del piso de tu vivienda: <span>{{floor}}</span></div>
+        </div>
+    </div>
+    <div class="subtitle-section">Pertenencias</div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="read-only">&iquest;Cu&aacute;ntos autom&oacute;viles tienen?: <span>{{cars}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">&iquest;Este hogar cuenta con internet?: <span>{{internet}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">&iquest;Tienen computadora o laptop?: <span>{{laptop}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">&iquest;Tienen lavadora?: <span>{{washingMachine}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">&iquest;Tienen horno de microondas?: <span>{{microwave}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">&iquest;Tienen televisi&oacute;n de paga?: <span>{{tvService}}</span></div>
+        </div>
+        <div class="grid-item">
+            <div class="read-only">&iquest;Tienen motocicleta?: <span>{{motorcyle}}</span></div>
+        </div>
+    </div>
+    <div class="title-section"><i class="bbva-icon ui-gavel"></i> 5. Avisos legales</div>
+    <div class="read-only"><span><i class="bbva-icon ui-checkmark"></i></span>{{legal1}} <a class="btn__basic btn__clearbg" href="{{urlLegal}}" target="_blank">{{textLegal}}</a></div>
+    <div class="read-only"><span><i class="bbva-icon ui-checkmark"></i></span>{{legal2}} <a class="btn__basic btn__clearbg" href="{{urlLegal2}}" target="_blank">{{textLegal2}}</a></div>
+    <div class="read-only"><span><i class="bbva-icon ui-checkmark"></i></span>{{legal3}} <a class="btn__basic btn__clearbg" href="{{urlLegal3}}" target="_blank">{{textLegal3}}</a></div>
+    <div class="actionsection">
+        <div class="submtbtn right">
+            <span title="Regresar" aria-label="Regresar" class="btn__basic btn__clearbg btn_decline" style="float: left;padding: 12px 0px;">
+                <i class="bbva-icon ui-arrow-left"></i>
+                <span aria-hidden="true">Regresar</span>
+            </span>
+            <span title="Enviar" aria-label="Enviar" class="btn__basic btn_acept" id="btn_send_info">
+                <span aria-hidden="true">Enviar</span>
+            </span>
+        </div>
+    </div>
+</div>
