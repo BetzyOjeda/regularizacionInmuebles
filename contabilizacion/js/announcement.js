@@ -1645,6 +1645,9 @@ var loadModule = {
                 fnFillCatalogs("typepropertie", __.get(catalogs,"CAT_TYPEPROPERTY",[]));
                 fnFillCatalogs("subtypeproperty", __.get(catalogs,"CAT_SUBTYPEPROPERTY",[]));
                 fnFillCatalogs("propertystate", __.get(catalogs,"CAT_STATE",[]));
+                fnFillCatalogs("municipalities_d", __.get(catalogs,"CAT_STATE",[]));
+
+                
                 $('[data-target="inmueble-data"]').attr("data-loaded","true");
                 if (typeof moduleInitData.home != "undefined"){
                     rest_fnGetHomeServices(moduleInitData.home);

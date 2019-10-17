@@ -45,7 +45,11 @@ var templates = {
     "confirmemail": {
         path: "./views/modal/confirm_email.html",
         onload: fn_confirmemail
-    }
+    },
+    "ufile": {
+        path: "./views/modal/uploadfile.html",
+        onload: fn_uploadfilemodal
+    },
 };
 
 /**
@@ -305,5 +309,30 @@ var miniTemplates = {
                     '<p>&Aacute;rea de trabajo: <span>{{personDetail.managementUnit}}</span></p>'+
                 '</div>'+
             '</div>'
-    }
+    },
+    filepreview: {
+        html: '<div class="uploadfile animated fadeInLeft">' +
+            '<div class="wrapper">' +
+            '<div class="message">' +
+            '<div class="message__heading dz-filename"><span data-dz-name></span></div>' +
+            '<span class="message__body">' +
+            '<span class="remove btn-delete-file"><i class="ui-trash"></i> Eliminar</span>' +
+            '</span>' +
+            '</div>' +
+            '</div>' +
+            '</div>'
+    },
+    visorProfile: {
+        onload: function(){},
+        html: '<div id="profile-view">'+
+                '<figure>'+
+                    '<img src="{{photo}}" alt="">'+
+                '</figure>'+
+               '</div>'+
+               '<div class="submtbtn">'+
+                  '<span title="Continuar" aria-label="Continuar" class="help_section" id="btn_change_profile">' +
+                     '<span aria-hidden="true" class="h_h1">Cambiar foto <i class="bbva-icon ui-camera"></i></span>' +
+                  '</span>'+
+                '</div>'
+    },
 };

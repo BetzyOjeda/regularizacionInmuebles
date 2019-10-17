@@ -2734,6 +2734,119 @@ var fn_modify_bbva = function () {
         });
     });
 };
+
+var uploadFile = {
+    index: 0,
+    onFinish: function () {  }
+};
+var fn_uploadfilemodal = function () {
+    var fileIdCont = 0;
+    var allFiles = {};
+    var myDropzone = new Dropzone("#dragndrop", {
+        acceptedFiles: 'application/pdf,image/jpeg,image/png',
+        dictFileTooBig: "El archivo supera el tama\u00F1o permitido de {{maxFilesize}} MB",
+        dictMaxFilesExceeded: "N\u00FAmero m\u00E1ximo de archivos alcanzado",
+        dictInvalidFileType: "S\u00F3lo se permiten archivos JPG, PNG y PDF",
+        autoProcessQueue: false,
+        dictDefaultMessage: '',
+        maxFiles: 2,
+        maxFilesize: 12,
+        previewTemplate: miniTemplates.filepreview.html,
+        previewsContainer: "#file-preview-wrapper",
+        url: "/",
+        init: function () {
+            this.on("addedfile", function (file) {});
+            this.on("drop", function () {});
+        },
+        accept: function (file, done) {
+            document.getElementById("filecontainer").classList.remove('empty');
+            $("#sbtmfiles").show();
+            var _tthis = this;
+            file.idFile = fileIdCont;
+            var button = file.previewTemplate.querySelector('.btn-delete-file');
+            var myFile = file;
+            button.addEventListener('click', function () {
+                _tthis.removeFile(myFile);
+            });
+            allFiles[fileIdCont] = {
+                "active": true,
+                "base64": ""
+            };
+            fileIdCont++;
+            done();
+        },
+        removedfile: function (file) {
+            file.previewTemplate.remove();
+            if (this.getAcceptedFiles().length == 0) {
+                document.getElementById("filecontainer").classList.add('empty');
+                $("#sbtmfiles").hide();
+            }
+        },
+        error: function (file, errorMEssage) {
+            if (!file.accepted) {
+                this.removeFile(file);
+                _$form = $(".fileform");
+                notifyElem = _$form.prev();
+                if (notifyElem.length != 0 && notifyElem.hasClass("notification")) notifyElem.remove();
+                loadTemplate(_$form, miniTemplates.notification, {
+                    type: 'error',
+                    title: errorMEssage
+                }, 'before');
+            }
+        }
+    });
+    $("#btn_sbtmfiles").data("complete", function(formdata) {
+        console.log(formdata);
+        fn_hideModal();
+        uploadFile.onFinish = function() {};
+        uploadFile.index = 0;
+        _fileDetails = myDropzone.getAcceptedFiles();
+        function readIndexFile(iFile) {
+            if (iFile == _fileDetails.length) {
+                return;
+            }
+            currentFile = _fileDetails[iFile];
+            var reader = new FileReader();
+            reader.readAsDataURL(currentFile);
+            reader.onload = function(e){
+                if (iFile == _fileDetails.length) {
+                    return;
+                }
+                var base64URL = e.target.result;
+                fext = currentFile.name.split(".");
+                fext = fext[fext.length - 1];
+                uploadFile.onFinish = function(resp) {
+                    console.log("resp", resp);
+                };
+                if (iFile == _fileDetails.length - 1) {
+                    uploadFile.onFinish = function(data) {
+                        console.log("_end_fn", data);
+                        fn_sendDocument({
+                            moduleIndicator: formdata.module,
+                            typeDocument: formdata.document,
+                            schoolGrade: formdata.grade,
+                            schoolPeriod: formdata.period,
+                            folio: data.referenceNumber,
+                        });
+                    };
+                }
+                /*fn_sendMultiDocumentArchiving({
+                    ext: fext.toLowerCase(),
+                    filename: currentFile.name,
+                    typeDocument: formdata.document,
+                    first: (iFile == 0) + "",
+                    last: (iFile == _fileDetails.length - 1) + "",
+                    base64: (base64URL.split(";base64,"))[1],
+                    success: uploadFile.onFinish
+                });*/
+                uploadFile.index++;
+                readIndexFile(uploadFile.index);
+            };
+        }
+        readIndexFile(0);
+    });
+    fn_showModal();
+};
 /**
  * @file Contains the main function to load and inset templates, also contains the template configurations.
  */
@@ -2781,7 +2894,11 @@ var templates = {
     "confirmemail": {
         path: "./views/modal/confirm_email.html",
         onload: fn_confirmemail
-    }
+    },
+    "ufile": {
+        path: "./views/modal/uploadfile.html",
+        onload: fn_uploadfilemodal
+    },
 };
 
 /**
@@ -3041,7 +3158,32 @@ var miniTemplates = {
                     '<p>&Aacute;rea de trabajo: <span>{{personDetail.managementUnit}}</span></p>'+
                 '</div>'+
             '</div>'
-    }
+    },
+    filepreview: {
+        html: '<div class="uploadfile animated fadeInLeft">' +
+            '<div class="wrapper">' +
+            '<div class="message">' +
+            '<div class="message__heading dz-filename"><span data-dz-name></span></div>' +
+            '<span class="message__body">' +
+            '<span class="remove btn-delete-file"><i class="ui-trash"></i> Eliminar</span>' +
+            '</span>' +
+            '</div>' +
+            '</div>' +
+            '</div>'
+    },
+    visorProfile: {
+        onload: function(){},
+        html: '<div id="profile-view">'+
+                '<figure>'+
+                    '<img src="{{photo}}" alt="">'+
+                '</figure>'+
+               '</div>'+
+               '<div class="submtbtn">'+
+                  '<span title="Continuar" aria-label="Continuar" class="help_section" id="btn_change_profile">' +
+                     '<span aria-hidden="true" class="h_h1">Cambiar foto <i class="bbva-icon ui-camera"></i></span>' +
+                  '</span>'+
+                '</div>'
+    },
 };
 (function($) {
     $.fn.inputable = function() {
@@ -4021,6 +4163,10 @@ function hasAttr(element, attrib) {
      * @param {Object} $el the DOM element
      */
     win.validateControl = function($el) {
+        $el.find(".openuploadfile").click(function() {
+            loadTemplate($("#modal_generic .body"), templates.ufile, {
+            });
+        });
         $el.find("input[type='text']").inputable();
         $el.find("textarea").inputable();
         $el.find(".radio-section").radiobutton();
@@ -6081,6 +6227,9 @@ var loadModule = {
                 fnFillCatalogs("typepropertie", __.get(catalogs,"CAT_TYPEPROPERTY",[]));
                 fnFillCatalogs("subtypeproperty", __.get(catalogs,"CAT_SUBTYPEPROPERTY",[]));
                 fnFillCatalogs("propertystate", __.get(catalogs,"CAT_STATE",[]));
+                fnFillCatalogs("municipalities_d", __.get(catalogs,"CAT_STATE",[]));
+
+                
                 $('[data-target="inmueble-data"]').attr("data-loaded","true");
                 if (typeof moduleInitData.home != "undefined"){
                     rest_fnGetHomeServices(moduleInitData.home);

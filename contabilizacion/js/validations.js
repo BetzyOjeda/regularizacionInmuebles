@@ -206,6 +206,10 @@ function hasAttr(element, attrib) {
      * @param {Object} $el the DOM element
      */
     win.validateControl = function($el) {
+        $el.find(".openuploadfile").click(function() {
+            loadTemplate($("#modal_generic .body"), templates.ufile, {
+            });
+        });
         $el.find("input[type='text']").inputable();
         $el.find("textarea").inputable();
         $el.find(".radio-section").radiobutton();
