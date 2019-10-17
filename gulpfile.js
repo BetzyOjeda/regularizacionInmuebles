@@ -30,7 +30,7 @@ gulp.task('concat-con', function () {
     gulp.src(scripts.con)
         .pipe(concat('bundle.js'))
         .pipe(gulp.dest('./contabilizacion/js/dist/'))
-        .pipe(inject.wrap('(function () {', '})();'))
+        //.pipe(inject.wrap('(function () {', '})();'))
         .pipe(rename('bundle.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('./contabilizacion/js/dist/'));

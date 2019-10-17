@@ -4957,7 +4957,7 @@ $("#btn_savehd").data("complete", function(data) {
         showWait: true,
         success: function() {
             loadModule.home(function () {
-                changeStatusSel($("#home-data"));
+                changeStatusSel($("#inmueble-data"));
             });
         }
     });
@@ -6026,10 +6026,10 @@ var loadModule = {
     moduleCatalog: {
         general:{
             list: function () {
-                return ["CAT_PARENTESCO-Tutor"];
+                return ["CAT_Tipo_Alta", "CAT_BANK", "CAT_CREDITMORTGAGE", "CAT_CREDITCOMMERCIAL", "CAT_COFINAVIT", "CAT_GRAVAMEN"];
             },
             callback: function () {
-                fnFillCatalogs("relationship", __.get(catalogs,"CAT_PARENTESCO-Tutor",[]), function(el) {
+                fnFillCatalogs("relationship", __.get(catalogs,"CAT_Tipo_Alta",[]), function(el) {
                     if (el.id == "25") {
                         $("#o_relationship").clearInput();
                         $("#o_relationship").attr("required", "required");
@@ -6040,6 +6040,18 @@ var loadModule = {
                         $("#o_relationship").clearInput();
                     }
                 });
+                fnFillCatalogs("generatingbank", __.get(catalogs,"CAT_BANK",[]), function(el) {
+                });
+                fnFillCatalogs("mortgagecredittype", __.get(catalogs,"CAT_CREDITMORTGAGE",[]), function(el) {
+                });
+                fnFillCatalogs("commercialcredit", __.get(catalogs,"CAT_CREDITCOMMERCIAL",[]), function(el) {
+                });
+                fnFillCatalogs("cofinavit", __.get(catalogs,"CAT_COFINAVIT",[]), function(el) {
+                });
+                fnFillCatalogs("barzon", __.get(catalogs,"CAT_COFINAVIT",[]), function(el) {
+                });
+                fnFillCatalogs("gravamen", __.get(catalogs,"CAT_GRAVAMEN",[]), function(el) {
+                });
                 $('[data-target="general-data"]').attr("data-loaded","true");
                 if (typeof moduleInitData.general != "undefined") {
                     rest_fnGetGeneralData(moduleInitData.general);
@@ -6049,52 +6061,11 @@ var loadModule = {
         },
         schoolData: {
             list: function () {
-                _arrSc = ["CAT_TURNO"];
-                switch (moduleInitData.announcement.scholarshipProgram.id) {
-                    case "2":
-                        _arrSc.push("CAT_MODALIDAD");
-                        break;
-                    case "7":
-                        _arrSc.push("CAT_MODALIDAD");
-                        _arrSc.push("CAT_TIPO_CARRERA");
-                        _arrSc.push("CAT_DURACION");
-                        _arrSc.push("CAT_AREA");
-                        if (typeof moduleInitData.schoolData != "undefined" && __.get(moduleInitData.schoolData,"schooling.profession.area.id","X")!="X") {
-                            _arrSc.push("CAT_SUBAREA-"+__.get(moduleInitData.schoolData,"schooling.profession.area.id",0));
-                        }
-                        break;
-                    default:
-                        break;
-                }
-                return _arrSc;
+                return ["CAT_TYPEPROPERTY"];
             },
             callback: function () {
-                fnFillCatalogs("turn", __.get(catalogs,"CAT_TURNO",[]));
-                switch (moduleInitData.announcement.scholarshipProgram.id) {
-                    case "2":
-                        fnFillCatalogs("modality", __.get(catalogs,"CAT_MODALIDAD",[]));
-                        break;
-                    case "7":
-                        fnFillCatalogs("modality", __.get(catalogs,"CAT_MODALIDAD",[]));
-                        fnFillCatalogs("career_area", __.get(catalogs,"CAT_AREA",[]));
-                        $("#career_area").onSelect(function (el) {
-                            $("#career_subarea").reset();
-                            $("#career_subarea").find(".option-select").addClass("disabled");
-                            fn_verifyCatalogs(["CAT_SUBAREA-"+el.id], function () {
-                                fnFillCatalogs("career_subarea", catalogs["CAT_SUBAREA-"+el.id]);
-                                $("#career_subarea").find(".option-select").removeClass("disabled");
-                            });
-                        });
-                        fnFillCatalogs("type_s", __.get(catalogs,"CAT_TIPO_CARRERA",[]));
-                        fnFillCatalogs("duration", __.get(catalogs,"CAT_DURACION",[]));
-                        if (typeof moduleInitData.schoolData != "undefined" && __.get(moduleInitData.schoolData,"schooling.profession.area.id","X")!="X") {
-                            _arrSc.push("CAT_SUBAREA-"+__.get(moduleInitData.schoolData,"schooling.profession.area.id",0));
-                            fnFillCatalogs("career_subarea", __.get(catalogs,"CAT_SUBAREA-"+__.get(moduleInitData.schoolData,"schooling.profession.area.id",0),[]));
-                        }
-                        break;
-                    default:
-                        break;
-                }
+                fnFillCatalogs("typepropertie", __.get(catalogs,"CAT_TYPEPROPERTY",[]));
+                
                 $('[data-target="schoolar-data"]').attr("data-loaded","true");
                 if (typeof moduleInitData.schoolData != "undefined"){
                     rest_fnGetScholarInf(moduleInitData.schoolData);
@@ -6102,23 +6073,19 @@ var loadModule = {
                 toggleModule($('[data-target="schoolar-data"]'));
             }
         },
-        home: {
+        dataInmueble: {
             list: function () {
-                return ["CAT_AGUA","CAT_DRENAJE","CAT_LUZ","CAT_COMBUSTIBLE","CAT_PAREDES","CAT_TECHO","CAT_PISO"];
+                return ["CAT_TYPEPROPERTY","CAT_SUBTYPEPROPERTY","CAT_STATE"];
             },
             callback: function () {
-                fnFillCatalogs("waterServicesType", __.get(catalogs,"CAT_AGUA",[]));
-                fnFillCatalogs("drainageType", __.get(catalogs,"CAT_DRENAJE",[]));
-                fnFillCatalogs("lightServicesType", __.get(catalogs,"CAT_LUZ",[]));
-                fnFillCatalogs("cookingFuelType", __.get(catalogs,"CAT_COMBUSTIBLE",[]));
-                fnFillCatalogs("wallMaterialsType", __.get(catalogs,"CAT_PAREDES",[]));
-                fnFillCatalogs("ceilingMaterialsType", __.get(catalogs,"CAT_TECHO",[]));
-                fnFillCatalogs("floorMaterialsType", __.get(catalogs,"CAT_PISO",[]));
-                $('[data-target="home-data"]').attr("data-loaded","true");
+                fnFillCatalogs("typepropertie", __.get(catalogs,"CAT_TYPEPROPERTY",[]));
+                fnFillCatalogs("subtypeproperty", __.get(catalogs,"CAT_SUBTYPEPROPERTY",[]));
+                fnFillCatalogs("propertystate", __.get(catalogs,"CAT_STATE",[]));
+                $('[data-target="inmueble-data"]').attr("data-loaded","true");
                 if (typeof moduleInitData.home != "undefined"){
                     rest_fnGetHomeServices(moduleInitData.home);
                 }
-                toggleModule($('[data-target="home-data"]'));
+                toggleModule($('[data-target="inmueble-data"]'));
             }
         }
     },
