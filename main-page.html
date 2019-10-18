@@ -22,9 +22,223 @@
     <link rel="stylesheet" href="./css/bundleRecover.css">
     
     <style>
-        span.is-optional {
-            display: none;
+       
+.help-menu {
+   display: block;
+   position: fixed;
+   bottom: 60%;
+   width: 70px;
+   height: 140px;
+   border: none;
+}
+
+.help-menu .btn_help {
+   width: 122px;
+   height: 70px;
+   background-color: #a1f1f1;
+   border: solid 1px white;
+   text-align: center;
+   color: #237ABA;
+   padding: 5px;
+}
+
+      .striped tbody tr:nth-of-type(2n) {
+        background: rgba(212, 237, 252, 0.40);
+      }
+
+      .table thead tr:first-child th {
+        /*padding-top: 22px;*/
+        border-bottom: solid 1px #E9E9E9;
+        border-top: solid 1px #E9E9E9;
+      }
+      .table thead tr:nth-of-type(2n) th {
+        /*padding-top: 22px;*/
+        border-bottom: solid 1px #E9E9E9;
+        border-top: solid 1px #E9E9E9;
+      }
+
+      .table td {
+        padding: 16px;
+        height: 25px;
+        vertical-align: middle;
+        line-height: 16px;
+      }
+
+      .table th {
+        padding: 16px;
+        vertical-align: middle;
+        font-family: BentonSansBBVA-Medium;
+        font-size: 13px;
+        letter-spacing: 0;
+        line-height: 16px;
+      }
+      .tableCredit td {
+        padding: 16px;
+        height: 25px;
+        vertical-align: middle;
+        line-height: 16px;
+      }
+
+      .tableCredit th {
+        padding: 16px;
+        vertical-align: middle;
+        font-family: BentonSansBBVA-Medium;
+        font-size: 13px;
+        letter-spacing: 0;
+        line-height: 16px;
+      }
+
+      .modal-striped tbody tr:nth-of-type(2n+1) {
+        background: rgba(212, 237, 252, 0.40);
+      }
+
+      thead {
+        font-family: BentonSansBBVA-Medium;
+        font-size: 13px;
+        color: #121212;
+        letter-spacing: 0;
+        text-align: right;
+        line-height: 16px;
+      }
+
+      tr th:nth-child(1) {
+        text-align: left;
+      }
+
+      tr th:nth-child(2) {
+        text-align: left;
+      }
+
+      tr th:nth-child(3) {
+        text-align: left;
+      }
+
+      tr th:nth-child(4) {
+        text-align: left;
+      }
+
+      tr th:nth-child(5) {
+        text-align: left;
+      }
+
+      tr th:nth-child(6) {
+        text-align: left;
+      }
+
+      tr th:nth-child(7) {
+        text-align: left;
+      }
+
+      tr th:nth-child(8) {
+        text-align: left;
+      }
+
+      .container {
+        margin-left: 12rem;
+        margin-right: 8rem;
+      }
+
+      @media (max-width: 992px) and (min-width: 600px) {
+        .wrapper .container {
+          max-width: 100%;
+          margin-left: auto;
+          margin-right: auto;
         }
+      }
+
+      div {
+        box-sizing: border-box;
+      }
+
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        max-width: 100%;
+        /*margin-bottom: 1rem;*/
+        background-color: transparent;
+        display: table;
+        font-size: 15px;
+        font-family: "BentonSansBBVA-Book", Helvetica, Arial, sans-serif;
+        white-space: nowrap;
+      }
+
+      .link {
+        color: #1973B8;
+        font-family: BentonSansBBVA-Medium;
+        font-size: 15px;
+      }
+
+      .cursor {
+        cursor: pointer;
+      }
+
+      .bbva-icon,
+      [class^='bbva-icon'] {
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .bbva-icon:before {
+        font-size: 20px;
+        margin: 0 8px;
+        content: "\ea43";
+        color: #1973B8;
+      }
+
+      .bbva-icon__2_003_visualize:before {
+        content: "\ea43";
+        color: #1973B8;
+      }
+
+      .bbva-icon:before {
+        font-family: 'bbvaiconfont' !important;
+        font-style: normal;
+        font-weight: normal !important;
+        vertical-align: middle;
+      }
+
+      a {
+        color: #1d73b2;
+        text-decoration: none;
+      }
+
+      .arrow {
+        cursor: pointer;
+        width: 13px;
+      }
+
+      .arrow-up {
+        transform: rotate(90deg);
+      }
+
+      .arrow-down {
+        transform: rotate(-90deg);
+      }
+
+      .bold {
+        font-family: BentonSansBBVA-Medium;
+      }
+
+      span {
+        font-size: 15px;
+        letter-spacing: 0;
+        line-height: 16px;
+      }
+
+      .content-row:hover {
+        box-shadow: 0 0 12px 4px rgba(33, 33, 33, .2);
+        cursor: pointer;
+      }
+
+      @media (min-width: 1200px){
+        .wrapper .container {
+        width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "BentonSansBBVA-Book", Helvetica, Arial, sans-serif;
+        }
+      }
     </style>
 
     <script src="./js/jquery3.3.1.min.js"></script>
@@ -121,60 +335,99 @@
                 </div>
             </nav>
         </header>
-        <main class="bbva--main wrapper" id="main">
-            <section class="section-login">
-                <div class="loginsec">
-                    <div class="containerLogin">
-                        <h4>¡Bienvenido!</h4>
-                        <div class="">
-                            <form action="/main-page.html" class="form-gray" method="get" target="_top" id="formarea">
-                                <input type="hidden" name="username" value=""/>
-                                <input type="hidden" name="acceso" value=""/>
+        
+        <div class="container">
+            <table id="table_main" class="table striped ">
+                        <thead>
+                          <tr class="">
+                            <th style="text-align: center; width: 200px" title="Número de crédito">
+                                NÚMERO DE CRÉDITO
+                            </th>
+                            <th style="text-align: center; width: 200px" title="Título">
+                               TÍTULO
+                            </th>
+                            <th style="text-align: left; width: 200px" title="Fecha de notificación">
+                                FECHA DE NOTIFICACIÓN
+                            </th>
+                            <th style="text-align: center; width: 200px" title="Ir al expediente">
+                                IR AL EXPEDIENTE
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="" id="7">
+                                <td style="text-align: center; width: 118px; display: ;">
+                                    <span>8928934637898121982</span>
+                                </td>
+                                <td style="text-align: center; width: 133px; display: ;">
+                                    <span>8</span>
+                                </td>
+                                <td style="text-align: center; width: 133px; display: ;">
+                                    <span>17/10/2019</span>
+                                </td>
+                                <td style="text-align: right; width: 252px; display: ;">
+                                    <span class="bold link cursor" id="7">EXPEDIENTE 1</span>
+                                </td>
+                            </tr>
+                            <tr class="" id="7">
+                                <td style="text-align: center; width: 118px; display: ;">
+                                    <span>8928934637898121982</span>
+                                </td>
+                                <td style="text-align: center; width: 133px; display: ;">
+                                    <span>8</span>
+                                </td>
+                                <td style="text-align: center; width: 133px; display: ;">
+                                    <span>17/10/2019</span>
+                                </td>
+                                <td style="text-align: right; width: 252px; display: ;">
+                                    <span class="bold link cursor" id="7">EXPEDIENTE 2</span>
+                                </td>
+                            </tr>
+                            <tr class="" id="7">
+                                <td style="text-align: center; width: 118px; display: ;">
+                                    <span>8928934637898121982</span>
+                                </td>
+                                <td style="text-align: center; width: 133px; display: ;">
+                                    <span>8</span>
+                                </td>
+                                <td style="text-align: center; width: 133px; display: ;">
+                                    <span>17/10/2019</span>
+                                </td>
+                                <td style="text-align: right; width: 252px; display: ;">
+                                    <span class="bold link cursor" id="7">EXPEDIENTE 3</span>
+                                </td>
+                            </tr>
 
-                                <div class="form-validation-group">
-                                    <div class="form-group">
-                                        <input value="" id="TXaccess" class="form-control reference" name="TXaccess" size="13" maxlength="13" type="hidden">                        
-
-                                        <input class="form-control fixW95" name="TXaccess2" id="TXaccess2" maxlength="13" type="text" data-placeholder="Número de referencia" onkeyup="this.value=this.value.toUpperCase()" onkeydown="setTimeout('EnmascaraV2(\'TXaccess2\',\'TXaccess\',false);',10);" autocomplete="off" oninvalid="valitationInput()">
-                                    </div>
-                                </div>
-                                <div class="form-validation-group">
-                                    <div class="form-group">
-                                        <input value="" id="TXusername" class="form-control userName" name="TXusername" size="8" maxlength="8" type="hidden">
-
-                                        <input class="form-control fixW95" name="TXusername2" id="TXusername2" maxlength="8" type="text" onkeydown="setTimeout('EnmascaraV2(\'TXusername2\',\'TXusername\',false);',10);" data-placeholder="Usuario" onkeyup="this.value=this.value.toUpperCase()" autocomplete="off" oninvalid="valitationInput()">
-                                    </div>
-                                </div>
-                                <div class="form-validation-group">
-                                    <div class="form-group">
-                                        <input value="" id="password" class="form-control password" name="password" size="10" maxlength="10" type="hidden">
-
-                                        <input class="form-control fixW95" name="TXpassword2" type="text" id="TXpassword2" maxlength="10" data-placeholder="Contraseña" onkeydown="setTimeout('EnmascaraV2(\'TXpassword2\',\'password\',false);',10);" autocomplete="off" oninvalid="valitationInput()">
-                                    </div>
-                                    <div id="isec-alert" class="form-group-info" style="display:none;">
-                                        <div class="isec">
-                                            <img class="bbva-icon" src="" alt="alert-icon" style="display: none; margin: auto;">
-                                        </div>
-                                        <div class="itextsec"></div>
-                                    </div>
-                                </div>
-                                <div class="actionsection">
-                                    <div class="fpass">
-                                        <a id="forgotpass" href="#">¿Olvidaste tu contrase&ntilde;a?</a>
-                                    </div>
-                                    <div class="submtbtn">
-                                        <button type="submit" id="btnLogin" title="Continuar" aria-label="Continuar" class="btn__basic btn__disabled" disabled>
-                                        	Continuar
-                                        </button>
-                                    </div>
-                                </div>
-                                <input type="hidden" name="login-form-type" value="pwd"/>
-                            </form>
-                        </div>
-                    </div>
+                        </tbody>
+                      </table>
+        </div>
+        <div class="help-menu removeifNC" style="    width: 10%;    "> 
+                <div class="btn_help" id="call_h">
+                    <div class="helpname">Contabilización</div>
+                    <i class="bbva-icon ui-telephone helpicon"></i>
                 </div>
-            </section>
-        </main>
+                <div class="btn_help" id="email_h">
+                    <div class="helpname">Cartera</div>
+                    <i class="bbva-icon ui-email helpicon"></i>
+                </div>
+                <div class="btn_help" id="email_h">
+                    <div class="helpname">Procedimientos</div>                    
+                    <i class="bbva-icon ui-email helpicon"></i>
+                </div>
+                <div class="btn_help" id="email_h">
+                    <div class="helpname">Ventas</div>
+                    <i class="bbva-icon ui-email helpicon"></i>
+                </div>
+                <div class="btn_help" id="email_h">
+                    <div class="helpname">Administración</div>                                        
+                    <i class="bbva-icon ui-email helpicon"></i>
+                </div>
+                <div class="btn_help" id="email_h">
+                    <div class="helpname">Reporte</div>                    
+                    <i class="bbva-icon ui-email helpicon"></i>
+                </div>
+            </div>
+
         <div class="bbva--footer wrapper">
             <footer role="contentinfo" aria-label="Pie de página" class="footer-bbva-corredores">
                 <div>
@@ -195,6 +448,7 @@
             </footer>
         </div>
     </div>
+
     <script src="./js/bbva.publish.js"></script>
     <script src="./js/bundle.js"></script>
     <script>

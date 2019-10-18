@@ -88,28 +88,21 @@
                                     <div class="grid-item"> <!--Lado izquierdo-->
                                         <div class="grid-container-s">
                                             <div class="grid-item">
-                                                <div class="form-group-select required" id="relationship">
-                                                    <div class="option-select">
-                                                        <div class="select-title sl">
-                                                            <span class="option-text sl center">Tipo de Alta</span>
-                                                            <span class="selected-option sl"></span>
-                                                            <i class="bbva-icon ui-simple-down sl"></i>
+                                                <div class="grid-item">
+                                                    <div class="form-validation-group">
+                                                        <div class="form-group">
+                                                            <input class="form-control uppercase letters lastnameb" name="sec1numbercredit" id="sec1numbercredit" type="text" data-placeholder="Número de crédito" required autocomplete="off" value="">
                                                         </div>
-                                                        <div class="list-result"></div>
                                                     </div>
                                                 </div>
                                             </div>
+                                           
+
+
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="tutorlastname" id="tutorlastname" type="text"  data-placeholder="Nombre del deudor" required autocomplete="off" value="" disabled="disabled">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_typeperson" name="sec1typeperson" id="" type="text"  data-placeholder="Tipo de Persona" required autocomplete="off" value="Moral" disabled="disabled">
+                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec1rfc" name="sec1rfc" id="sec1rfc" type="text" disabled="disabled" data-placeholder="RFC" required autocomplete="off" value="OEMB930524MDFJCT09">
                                                     </div>
                                                 </div>
                                             </div>
@@ -167,10 +160,10 @@
                                     </div>
                                     <div class="grid-item"> <!--Lado derecho-->
                                         <div class="grid-container-s">
-                                            <div class="grid-item">
+                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" name="sec1numbercredit" id="sec1numbercredit" type="text" data-placeholder="Número de crédito" required autocomplete="off" value="">
+                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="tutorlastname" id="tutorlastname" type="text" data-placeholder="Nombre del deudor" required autocomplete="off" value="Luis Daniel Regules Jorge" disabled="disabled">
                                                     </div>
                                                 </div>
                                             </div>
@@ -178,7 +171,7 @@
                                         <div class="grid-item">
                                             <div class="form-validation-group">
                                                 <div class="form-group">
-                                                    <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec1rfc" name="sec1rfc" id="sec1rfc" type="text" disabled="disabled" data-placeholder="RFC" required autocomplete="off" value="OEMB930524MDFJCT09">
+                                                    <input class="form-control uppercase letters lastnameb" data-reflecto="#m_typeperson" name="sec1typeperson" id="" type="text"  data-placeholder="Tipo de Persona" required autocomplete="off" value="Moral" disabled="disabled">
                                                 </div>
                                             </div>
                                         </div>
@@ -201,6 +194,16 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="form-group-select required" id="relationship">
+                                            <div class="option-select">
+                                                <div class="select-title sl">
+                                                    <span class="option-text sl center">Tipo de Alta</span>
+                                                    <span class="selected-option sl"></span>
+                                                    <i class="bbva-icon ui-simple-down sl"></i>
+                                                </div>
+                                                <div class="list-result"></div>
+                                            </div>
+                                        </div>
                                         <div class="grid-item">
                                             <div class="form-group-select required" id="commercialcredit">
                                                 <div class="option-select">
@@ -210,13 +213,6 @@
                                                         <i class="bbva-icon ui-simple-down sl"></i>
                                                     </div>
                                                     <div class="list-result"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="grid-item">
-                                            <div class="form-validation-group">
-                                                <div class="form-group">
-                                                    <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec1numberinfo" name="sec1numberinfo" id="sec1numberinfo" type="text" data-placeholder="Número de crédito infonavit" autocomplete="off" value="">
                                                 </div>
                                             </div>
                                         </div>
@@ -805,7 +801,19 @@
                                                                 <input class="form-control e-tooltip-f mxnamount" name="sec3sumvalues" id="sec3sumvalues" type="text" data-placeholder="Suma de valores" autocomplete="off" required > 
                                                             </div>
                                                         </div>
-                                                    </div>                                  
+                                                    </div>  
+                                                    <div class="grid-item">
+                                                            <div class="uploadfile empty">
+                                                                <div class="wrapper">
+                                                                    <div class="message message_cards const">
+                                                                        <span class="cntr">
+                                                                            <span class="openuploadfile">
+                                                                                <i class="bbva-icon ui-filled-up"></i>Cargar archivo</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>                                        
                                                 </div>
                                             </div>
                                             <div class="grid-item"> <!--Lado derecho-->
