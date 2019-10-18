@@ -23,6 +23,10 @@
     
     <style>
        
+       span.is-optional {
+            display: none;
+        }
+
 .help-menu {
    display: block;
    position: fixed;
@@ -335,7 +339,21 @@
                 </div>
             </nav>
         </header>
-        
+        <div class="container" style=" margin-top: 2rem;">
+            <div class="grid-item">
+                <div class="form-validation-group">
+                    <div class="form-group">
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item" style="width: 40%;">
+                    <div class="form-validation-group">
+                    <div class="form-group">
+                        <input class="form-control uppercase alphanumeric" name="curp" id="curp" type="text" data-placeholder="No de crédito - No del Asunto - Folio REGUS - Folio GUIA">
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
             <table id="table_main" class="table striped ">
                         <thead>
@@ -404,23 +422,23 @@
         <div class="help-menu removeifNC" style="    width: 10%;    "> 
                 <div class="btn_help" id="call_h">
                     <div class="helpname">Contabilización</div>
-                    <i class="bbva-icon ui-telephone helpicon"></i>
+                    <i class="bbva-icon ui-look-up"></i>
                 </div>
                 <div class="btn_help" id="email_h">
                     <div class="helpname">Cartera</div>
-                    <i class="bbva-icon ui-email helpicon"></i>
+                    <i class="bbva-icon ui-deposit"></i>
                 </div>
                 <div class="btn_help" id="email_h">
                     <div class="helpname">Procedimientos</div>                    
-                    <i class="bbva-icon ui-email helpicon"></i>
+                    <i class="bbva-icon ui-email"></i>
                 </div>
                 <div class="btn_help" id="email_h">
                     <div class="helpname">Ventas</div>
-                    <i class="bbva-icon ui-email helpicon"></i>
+                    <i class="bbva-icon ui-home"></i>
                 </div>
                 <div class="btn_help" id="email_h">
                     <div class="helpname">Administración</div>                                        
-                    <i class="bbva-icon ui-email helpicon"></i>
+                    <i class="bbva-icon ui-email"></i>
                 </div>
                 <div class="btn_help" id="email_h">
                     <div class="helpname">Reporte</div>                    
