@@ -32,6 +32,11 @@
     <script src="scripts/mustache.js"></script>
     <script src="scripts/popper.min.js"></script>
     <script src="scripts/tooltip.min.js"></script>
+    <style>
+    .date{
+        top: 6px;
+    }
+    </style>
 </head>
 <body>
     <div class="page-container">
@@ -499,115 +504,34 @@
                                 </div>
                                 <div class="grid-container typeuni">
                                     <div class="grid-item">
-                                        <div class="label">
-                                            <label>Audiencia de remate o adjudicación directa</label>
-                                        </div>
-                                        <div class="grid-item-t">
-                                            <div class="grid-item">
-                                                <div class="form-group-select whitwait required mini" id="dsclass">
-                                                    <div class="option-select">
-                                                        <div class="select-title sl">
-                                                            <span class="option-text sl center">D&iacute;a</span>
-                                                            <span class="selected-option sl"></span>
-                                                            <i class="bbva-icon ui-simple-down sl"></i>
-                                                        </div>
-                                                        <div class="list-result"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
-                                                <div class="form-group-select whitwait required mini" id="msclass">
-                                                    <div class="option-select">
-                                                        <div class="select-title sl">
-                                                            <span class="option-text sl center">Mes</span>
-                                                            <span class="selected-option sl"></span>
-                                                            <i class="bbva-icon ui-simple-down sl"></i>
-                                                        </div>
-                                                        <div class="list-result"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <input class="form-control numbers e-tooltip-f" name="ysclass" id="ysclass" type="text" data-placeholder="A&ntilde;o" required autocomplete="off" maxlength="4" data-regex="YEAR_MIN_80" data-tooltitle="Por ejemplo 2019">
-                                                    </div>
-                                                </div>
+                                        <div class="form-validation-group">
+                                            <div class="form-group">
+                                                <input class="form-control uppercase letters lastnameb date" data-reflecto="#m_sec3birthdate" name="sec3birthdate" id="sec3birthdate" type="text" data-placeholder="Audiencia de remate o adjudicación directa" required autocomplete="off" value="18/10/2019">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="grid-item">
-                                        <div class="label">
-                                            <label>Sentencia interlocutoria</label>
-                                        </div>
-                                        <div class="grid-item-t">
                                             <div class="grid-item">
-                                                <div class="form-group-select whitwait required mini" id="dsclass">
-                                                    <div class="option-select">
-                                                        <div class="select-title sl">
-                                                            <span class="option-text sl center">D&iacute;a</span>
-                                                            <span class="selected-option sl"></span>
-                                                            <i class="bbva-icon ui-simple-down sl"></i>
-                                                        </div>
-                                                        <div class="list-result"></div>
+                                                <div class="form-validation-group">
+                                                    <div class="form-group">
+                                                        <input class="form-control uppercase letters lastnameb date" data-reflecto="#m_sec3datesentence" name="sec3datesentence" id="sec3datesentence" type="text" data-placeholder="Sentencia interlocutoria" required autocomplete="off" value="18/10/2019">
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="grid-item">
-                                                <div class="form-group-select whitwait required mini" id="msclass">
-                                                    <div class="option-select">
-                                                        <div class="select-title sl">
-                                                            <span class="option-text sl center">Mes</span>
-                                                            <span class="selected-option sl"></span>
-                                                            <i class="bbva-icon ui-simple-down sl"></i>
-                                                        </div>
-                                                        <div class="list-result"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
+                                            
+                                            <div class="grid-item" style="display: none">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
                                                         <input class="form-control numbers e-tooltip-f" name="ysclass" id="ysclass" type="text" data-placeholder="A&ntilde;o" required autocomplete="off" maxlength="4" data-regex="YEAR_MIN_80" data-tooltitle="Por ejemplo 2019">
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                     </div>
                                     <div class="grid-item">
-                                        <div class="label">
-                                            <label>Designa notario</label>
-                                        </div>
-                                        <div class="grid-item-t">
-                                            <div class="grid-item">
-                                                <div class="form-group-select whitwait required mini" id="dsclass">
-                                                    <div class="option-select">
-                                                        <div class="select-title sl">
-                                                            <span class="option-text sl center">D&iacute;a</span>
-                                                            <span class="selected-option sl"></span>
-                                                            <i class="bbva-icon ui-simple-down sl"></i>
-                                                        </div>
-                                                        <div class="list-result"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
-                                                <div class="form-group-select whitwait required mini" id="msclass">
-                                                    <div class="option-select">
-                                                        <div class="select-title sl">
-                                                            <span class="option-text sl center">Mes</span>
-                                                            <span class="selected-option sl"></span>
-                                                            <i class="bbva-icon ui-simple-down sl"></i>
-                                                        </div>
-                                                        <div class="list-result"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="grid-item">
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <input class="form-control numbers e-tooltip-f" name="ysclass" id="ysclass" type="text" data-placeholder="A&ntilde;o" required autocomplete="off" maxlength="4" data-regex="YEAR_MIN_80" data-tooltitle="Por ejemplo 2019">
-                                                    </div>
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb date" data-reflecto="#m_sec3datesentence" name="sec3datenotary" id="sec3datenotary" type="text" data-placeholder="Sentencia interlocutoria" required autocomplete="off" value="18/10/2019">
                                                 </div>
                                             </div>
                                         </div>
@@ -1078,5 +1002,63 @@
     <script src="scripts/mask.js"></script>
     <script src="scripts/dropzone.js"></script>
     <script src="js/dist/bundle.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+    $(function() {
+        $("#sec1creditgranting").datepicker({
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            changeMonth: true,
+            changeYear: true,
+            minDate: "+0M +0D", 
+            maxDate: "+2M +0D"
+        });
+
+        $("#sec1creditgranting").datepicker("option", "dateFormat", "dd/mm/yy" );
+        $("#sec1creditgranting").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
+
+
+
+        $("#sec3birthdate").datepicker({
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            changeMonth: true,
+            changeYear: true,
+            minDate: "+0M +0D", 
+            maxDate: "+2M +0D"
+        });
+
+        $("#sec3birthdate").datepicker("option", "dateFormat", "dd/mm/yy" );
+        $("#sec3birthdate").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
+
+        
+        $("#sec3datesentence").datepicker({
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            changeMonth: true,
+            changeYear: true,
+            minDate: "+0M +0D", 
+            maxDate: "+2M +0D"
+        });
+
+        $("#sec3datesentence").datepicker("option", "dateFormat", "dd/mm/yy" );
+        $("#sec3datesentence").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
+
+        $("#sec3datenotary").datepicker({
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            changeMonth: true,
+            changeYear: true,
+            minDate: "+0M +0D", 
+            maxDate: "+2M +0D"
+        });
+
+        $("#sec3datenotary").datepicker("option", "dateFormat", "dd/mm/yy" );
+        $("#sec3datenotary").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
+        sec3datenotary
+    });
+    </script>
 </body>
 </html>
