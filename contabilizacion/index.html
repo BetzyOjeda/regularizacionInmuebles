@@ -1078,5 +1078,23 @@
     <script src="scripts/mask.js"></script>
     <script src="scripts/dropzone.js"></script>
     <script src="js/dist/bundle.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+    $(function() {
+        $("#sec1creditgranting").datepicker({
+            showOtherMonths: true,
+            selectOtherMonths: true,
+            changeMonth: true,
+            changeYear: true,
+            minDate: "+0M +0D", 
+            maxDate: "+2M +0D"
+        });
+
+        $("#sec1creditgranting").datepicker("option", "dateFormat", "dd/mm/yy" );
+        $("#sec1creditgranting").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
+    });
+    </script>
 </body>
 </html>
