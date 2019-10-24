@@ -36,6 +36,12 @@
     .date{
         top: 6px;
     }
+    .avatar {
+        vertical-align: middle;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;  
+    }
     </style>
 </head>
 <body>
@@ -47,10 +53,29 @@
                         <img src="./images/LogoBBVA@2x.png" class="header_image" alt="">
                     </a>
                 </div>
-                <div class="menu">
-                    <div>&nbsp;</div>
-                    <div class="btn-menu flex-items" id="btn-exit">
-                        <img src="./images/icons/get-out-icon.svg" alt=""> &nbsp; Cerrar sesi&oacute;n
+                <div class="menu flex-items">
+                    <div class="btn-menu" id="user-notify">
+                        <i class="bbva-icon ui-alarm"></i>
+                        <span class="notify">4</span>
+                    </div>
+                    <div class="btn-menu" id="user-tasks">
+                        <i class="bbva-icon ui-add-notes"></i>
+                    </div>
+                    <div class="btn-menu" id="user-name">
+                        <figure class="fig-username">
+                            <img src="./images/icons/user-image.png" alt="" class="avatar">
+                            <figcaption class="username">
+                                Margarita Flores
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="btn-menu" id="btn-exit">
+                        <figure>
+                            <img src="./images/icons/get-out-icon.svg" alt="" class="bbva-icon-rotate-180">
+                            <figcaption>
+                                Salir
+                            </figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
@@ -114,6 +139,13 @@
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
+                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec1CR" name="sec1CR" id="sec1CR" type="text" data-placeholder="CR de Afectación" required autocomplete="off" value="6943" disabled="disabled">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="form-validation-group">
+                                                    <div class="form-group">
                                                         <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec1creditgranting" name="sec1creditgranting" id="sec1creditgranting" type="text" data-placeholder="Fecha de otorgamiento del crédito" required autocomplete="off" value="15/10/2019" disabled="disabled">
                                                     </div>
                                                 </div>
@@ -130,18 +162,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="grid-item">
-                                                <div class="form-group-select required" id="cofinavit">
-                                                    <div class="option-select">
-                                                        <div class="select-title sl">
-                                                            <span class="option-text sl center">Cofinavit</span>
-                                                            <span class="selected-option sl"></span>
-                                                            <i class="bbva-icon ui-simple-down sl"></i>
-                                                        </div>
-                                                        <div class="list-result"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
@@ -181,9 +202,14 @@
                                             </div>
                                         </div>
                                         <div class="grid-item">
-                                            <div class="form-validation-group">
-                                                <div class="form-group">
-                                                    <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec1CR" name="sec1CR" id="sec1CR" type="text" data-placeholder="CR de Afectación" required autocomplete="off" value="6943" disabled="disabled">
+                                            <div class="form-group-select required" id="cofinavit">
+                                                <div class="option-select">
+                                                    <div class="select-title sl">
+                                                        <span class="option-text sl center">Cofinavit</span>
+                                                        <span class="selected-option sl"></span>
+                                                        <i class="bbva-icon ui-simple-down sl"></i>
+                                                    </div>
+                                                    <div class="list-result"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1019,8 +1045,6 @@
         $("#sec1creditgranting").datepicker("option", "dateFormat", "dd/mm/yy" );
         $("#sec1creditgranting").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
 
-
-
         $("#sec3birthdate").datepicker({
             showOtherMonths: true,
             selectOtherMonths: true,
@@ -1057,7 +1081,6 @@
 
         $("#sec3datenotary").datepicker("option", "dateFormat", "dd/mm/yy" );
         $("#sec3datenotary").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
-        sec3datenotary
     });
     </script>
 </body>

@@ -266,6 +266,7 @@ function fillHelpSticky() {
     };
     if (isMobile.any()) {
         $("body").addClass("mobile");
+        $(".fig-username").find(".username").remove();
         helpStickyConfig.placement = 'top';
         helpStickyConfig.tooltiptitle.contactPhone = '<a href="tel:+52'+contact.phone+'">'+contact.phonetext+'</a>';
         helpStickyConfig.tooltiptitle.contactEmail = '<a href="mailto:'+contact.email+'">'+contact.email+'</a>';

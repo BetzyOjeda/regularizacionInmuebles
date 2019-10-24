@@ -580,11 +580,6 @@ var rest_fnGetScholarshipAnnouncement= function(data){
             break;
         default: break;
     }
-    new Tooltip($("#levelAverage"), {
-        placement: 'bottom',
-        html: true,
-        title: tltText
-    });
     loadMainModules();
 };
 
