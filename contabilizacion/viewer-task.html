@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Regularización de Inmuebles</title>
+    <link rel="stylesheet" href="css/bbva.fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/72x72.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/76x76.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/114x114.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/120x120.png"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/144x144.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/152x152.png"/>
+    <link rel="apple-touch-icon" sizes="167x167" href="images/favicons/167x167.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/180x180.png"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/16x16.png"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/32x32.png"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/96x96.png"/>
+    <link rel="icon" type="image/png" sizes="128x128" href="images/favicons/128x128.png"/>
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicons/192x192.png"/>
+    <link rel="icon" type="image/png" sizes="195x195" href="images/favicons/195x195.png"/>
+    <link rel="icon" type="image/png" sizes="196x196" href="images/favicons/196x196.png"/>
+    <link rel="icon" type="image/png" sizes="228x228" href="images/favicons/228x228.png"/>
+    <script>
+		var ivUser="19700000101";
+	</script>
+    <script src="scripts/jquery-2.1.1.min.js"></script>
+    <script src="scripts/mustache.js"></script>
+    <script src="scripts/popper.min.js"></script>
+    <script src="scripts/tooltip.min.js"></script>
+
+    <style>
+       
+            span.is-optional {
+                 display: none;
+             }
+     
+     .help-menu {
+        display: block;
+        position: fixed;
+        bottom: 63%;
+        width: 70px;
+        height: 140px;
+        border: none;
+        left: 0;
+     }
+     
+     .help-menu .btn_help {
+        width: 140px;
+        height: 70px;
+        background-color: #a1f1f1;
+        border: solid 1px white;
+        text-align: center;
+        color: #237ABA;
+        padding: 5px;
+     }
+     
+           .striped tbody tr:nth-of-type(2n) {
+             background: rgba(212, 237, 252, 0.40);
+           }
+     
+           .table thead tr:first-child th {
+             /*padding-top: 22px;*/
+             border-bottom: solid 1px #E9E9E9;
+             border-top: solid 1px #E9E9E9;
+           }
+           .table thead tr:nth-of-type(2n) th {
+             /*padding-top: 22px;*/
+             border-bottom: solid 1px #E9E9E9;
+             border-top: solid 1px #E9E9E9;
+           }
+     
+           .table td {
+             padding: 16px;
+             height: 25px;
+             vertical-align: middle;
+             line-height: 16px;
+           }
+     
+           .table th {
+             padding: 16px;
+             vertical-align: middle;
+             font-family: BentonSansBBVA-Medium;
+             font-size: 13px;
+             letter-spacing: 0;
+             line-height: 16px;
+           }
+           .tableCredit td {
+             padding: 16px;
+             height: 25px;
+             vertical-align: middle;
+             line-height: 16px;
+           }
+     
+           .tableCredit th {
+             padding: 16px;
+             vertical-align: middle;
+             font-family: BentonSansBBVA-Medium;
+             font-size: 13px;
+             letter-spacing: 0;
+             line-height: 16px;
+           }
+     
+           .modal-striped tbody tr:nth-of-type(2n+1) {
+             background: rgba(212, 237, 252, 0.40);
+           }
+     
+           thead {
+             font-family: BentonSansBBVA-Medium;
+             font-size: 13px;
+             color: #121212;
+             letter-spacing: 0;
+             text-align: right;
+             line-height: 16px;
+           }
+     
+           tr th:nth-child(1) {
+             text-align: left;
+           }
+     
+           tr th:nth-child(2) {
+             text-align: left;
+           }
+     
+           tr th:nth-child(3) {
+             text-align: left;
+           }
+     
+           tr th:nth-child(4) {
+             text-align: left;
+           }
+     
+           tr th:nth-child(5) {
+             text-align: left;
+           }
+     
+           tr th:nth-child(6) {
+             text-align: left;
+           }
+     
+           tr th:nth-child(7) {
+             text-align: left;
+           }
+     
+           tr th:nth-child(8) {
+             text-align: left;
+           }
+     
+           @media (max-width: 992px) and (min-width: 600px) {
+             .wrapper .container {
+               max-width: 100%;
+               margin-left: auto;
+               margin-right: auto;
+             }
+           }
+     
+           div {
+             box-sizing: border-box;
+           }
+     
+           table {
+             border-collapse: collapse;
+             border-spacing: 0;
+             width: 100%;
+             max-width: 100%;
+             /*margin-bottom: 1rem;*/
+             background-color: transparent;
+             display: table;
+             font-size: 15px;
+             font-family: "BentonSansBBVA-Book", Helvetica, Arial, sans-serif;
+             white-space: nowrap;
+           }
+     
+           .link {
+             color: #1973B8;
+             font-family: BentonSansBBVA-Medium;
+             font-size: 15px;
+           }
+     
+           .cursor {
+             cursor: pointer;
+           }
+     
+           
+           a {
+             color: #1d73b2;
+             text-decoration: none;
+           }
+     
+           .arrow {
+             cursor: pointer;
+             width: 13px;
+           }
+     
+           .arrow-up {
+             transform: rotate(90deg);
+           }
+     
+           .arrow-down {
+             transform: rotate(-90deg);
+           }
+     
+           .bold {
+             font-family: BentonSansBBVA-Medium;
+           }
+     
+           span {
+             font-size: 15px;
+             letter-spacing: 0;
+             line-height: 16px;
+           }
+     
+           .content-row:hover {
+             box-shadow: 0 0 12px 4px rgba(33, 33, 33, .2);
+             cursor: pointer;
+           }
+     
+           @media (min-width: 1200px){
+             .wrapper .container {
+             width: 960px;
+             margin-left: auto;
+             margin-right: auto;
+             font-family: "BentonSansBBVA-Book", Helvetica, Arial, sans-serif;
+             }
+           }
+           #search {
+            background-color: transparent;
+            border: transparent;
+            color: blue;
+           }
+           .avatar {
+                vertical-align: middle;
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;  
+            }
+         </style>
+</head>
+<body>
+    <div class="page-container">
+        <div class="header">
+            <div class="header_container container flex-items">
+                <div class="header_logo">
+                    <a href="#" class="header__logo__link">
+                        <img src="./images/LogoBBVA@2x.png" class="header_image" alt="">
+                    </a>
+                </div>
+                <div class="menu flex-items">
+                    <div class="btn-menu" id="user-notify">
+                        <i class="bbva-icon ui-alarm"></i>
+                        <span class="notify">4</span>
+                    </div>
+                    <div class="btn-menu" id="user-tasks">
+                        <i class="bbva-icon ui-address-book"></i>
+                    </div>
+                    <div class="btn-menu" id="user-name">
+                        <figure class="fig-username">
+                            <img src="./images/icons/user-image.png" alt="" class="avatar">
+                            <figcaption class="username">
+                                Margarita Flores
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="btn-menu" id="btn-exit">
+                        <figure>
+                            <img src="./images/icons/get-out-icon.svg" alt="" class="bbva-icon-rotate-180">
+                            <figcaption class="action-exit">
+                                Salir
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="subheader" style="display: none;">
+            <div class="container">
+                <i class="bbva-icon ui-gradution-cap"></i><span id="scholarshipProgram" ></span>
+            </div>
+        </div>
+        <div class="">
+                    <div class="container">
+                        <div style="overflow: auto; width: 100%; margin-top: 8rem;">
+                            <table id="table_main" class="table striped ">
+                                        <thead>
+                                          <tr class="">
+                                            <th style="text-align: center; width: 200px" title="Número de crédito">
+                                                NÚMERO DE CRÉDITO PU
+                                            </th>
+                                            <th style="text-align: center; width: 200px" title="Título">
+                                               NOMBRE DEL ASUNTO
+                                            </th>
+                                            <th style="text-align: left; width: 200px" title="Fecha de notificación">
+                                                ABOGADO INTERNO
+                                            </th>
+                                            <th style="text-align: center; width: 200px" title="Ir al expediente">
+                                                DIVISIÓN JURÍDICA
+                                            </th>
+                                            <th style="text-align: center; width: 200px" title="Ir al expediente">
+                                                IMPORTE DEL SALDO CONTABLE
+                                            </th>
+                                            <th style="text-align: center; width: 200px" title="Ir al expediente">
+                                                COFINAVIT
+                                            </th>
+                                            <th style="text-align: center; width: 200px" title="Ir al expediente">
+                                                FECHA DE LA TAREA
+                                            </th>
+                                            <th style="text-align: center; width: 200px" title="Ir al expediente">
+                                                DÍAS TRANSCURRIDOS DE LA TAREA
+                                            </th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="" id="7">
+                                                <td style="text-align: center; width: 118px; display: ;">
+                                                    <span>8928934637898121982</span>
+                                                </td>
+                                                <td style="text-align: center; width: 133px; display: ;">
+                                                    <span>8</span>
+                                                </td>
+                                                <td style="text-align: center; width: 133px; display: ;">
+                                                    <span>17/10/2019</span>
+                                                </td>
+                                                <td style="text-align: right; width: 252px; display: ;">
+                                                    <span class="bold link cursor" id="7">EXPEDIENTE 1</span>
+                                                </td>
+                                            </tr>
+                                            <tr class="" id="7">
+                                                <td style="text-align: center; width: 118px; display: ;">
+                                                    <span>8928934637898121982</span>
+                                                </td>
+                                                <td style="text-align: center; width: 133px; display: ;">
+                                                    <span>8</span>
+                                                </td>
+                                                <td style="text-align: center; width: 133px; display: ;">
+                                                    <span>17/10/2019</span>
+                                                </td>
+                                                <td style="text-align: right; width: 252px; display: ;">
+                                                    <span class="bold link cursor" id="7">EXPEDIENTE 2</span>
+                                                </td>
+                                            </tr>
+                                            <tr class="" id="7">
+                                                <td style="text-align: center; width: 118px; display: ;">
+                                                    <span>8928934637898121982</span>
+                                                </td>
+                                                <td style="text-align: center; width: 133px; display: ;">
+                                                    <span>8</span>
+                                                </td>
+                                                <td style="text-align: center; width: 133px; display: ;">
+                                                    <span>17/10/2019</span>
+                                                </td>
+                                                <td style="text-align: right; width: 252px; display: ;">
+                                                    <span class="bold link cursor" id="7">EXPEDIENTE 3</span>
+                                                </td>
+                                            </tr>
+                
+                                        </tbody>
+                                      </table>
+                                    </div>
+                        </div>
+                       
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="footer-logo">
+                    <img src="images/LogoBBVAOportunidades@2x.png">
+                </div>
+				<div class="footer__links" style="display: none;">
+                    <div class="footer__list">
+                        <div class="link">
+                            <a target="_blank" href="https://derechosarco.fundacionbbvabancomer.org/" class="link__content ">
+                                ARCOx
+                            </a>
+                        </div>
+                        <div class="link">
+                            <a target="_blank" href="https://www.fundacionbbva.mx/aviso-de-privacidad/" class="link__content ">
+                                Avisos de privacidad
+                            </a>
+                        </div>
+                    </div>   
+                </div>
+                <p class="footer-copyright" style="display: none;">
+                    &copy; <span id="currentYear"></span> BBVA Bancomer, S. A., Instituci&oacute;n de Banca M&uacute;ltiple, Grupo Financiero BBVA Bancomer, Avenida Paseo de la Reforma 510, colonia Ju&aacute;rez, c&oacute;digo postal 06600, alcald&iacute;a Cuauht&eacute;moc, Ciudad de M&eacute;xico.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="waitmodal"  id="waitmodal">
+        <figure style="width:136px;padding:0;margin: 0;">
+            <svg xmlns="http://www.w3.org/2000/svg" id="Blue" viewBox="0 0 400 400" style="display:block">
+                <defs>
+                    <filter id="Filter-0" color-interpolation-filters="sRGB">
+                        <feComponentTransfer>
+                            <feFuncR type="linear" slope="1.2"></feFuncR>
+                            <feFuncG type="linear" slope="1.2"></feFuncG>
+                            <feFuncB type="linear" slope="1.2"></feFuncB>
+                        </feComponentTransfer>
+                    </filter>
+                    <filter id="Filter-1" color-interpolation-filters="sRGB">
+                        <feComponentTransfer>
+                            <feFuncR type="linear" slope="2"></feFuncR>
+                            <feFuncG type="linear" slope="2"></feFuncG>
+                            <feFuncB type="linear" slope="2"></feFuncB>
+                        </feComponentTransfer>
+                    </filter>
+                    <filter id="Filter-2" color-interpolation-filters="sRGB">
+                        <feGaussianBlur stdDeviation="20"></feGaussianBlur>
+                        <feComponentTransfer>
+                            <feFuncR type="linear" slope="2"></feFuncR>
+                            <feFuncG type="linear" slope="2"></feFuncG>
+                            <feFuncB type="linear" slope="2"></feFuncB>
+                        </feComponentTransfer>
+                    </filter>
+                    <radialGradient id="Gradient-0" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.143991" stop-color="#2dcccd"></stop>
+                        <stop offset="1" stop-color="#004481" stop-opacity="0"></stop>
+                    </radialGradient>
+                    <radialGradient id="Gradient-1" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.133991" stop-color="#2dcccd"></stop>
+                        <stop offset="1" stop-color="#004481" stop-opacity="0"></stop>
+                    </radialGradient>
+                    <radialGradient id="Gradient-2" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043" gradientUnits="userSpaceOnUse">
+                        <stop offset="0.153991" stop-color="#2dcccd"></stop>
+                        <stop offset="1" stop-color="#004481" stop-opacity="0"></stop>
+                    </radialGradient>
+                    <radialGradient id="Gradient-3" cx="196.5" cy="0" r="100" fx="196.5" fy="0" gradientUnits="userSpaceOnUse">
+                        <stop offset="0" stop-color="#2dcccd"></stop>
+                        <stop offset="1" stop-color="#2dcccd" stop-opacity="0"></stop>
+                    </radialGradient>
+                    <clipPath id="clip-path">
+                        <ellipse id="Mask" class="cls-1" rx="197.5" ry="197.5" fill="none" transform="translate(0,0) translate(200,200)"></ellipse>
+                    </clipPath>
+                    <mask id="Mask-1" style="mask-type: luminance;">
+                        <path d="M-0.66667,0C-0.66667,0,50.5,85,167,85C281.5,85,334,0,334,0C334,0,281.5,93,167,93C50.5,93,-0.66667,0,-0.66667,0Z" fill="#4afcfd" stroke-linecap="square" stroke="none" filter="url(#Filter-2)" transform="translate(-166.5,104.5)" style="mix-blend-mode: normal; animation: 1.6s linear infinite both a1_d;"></path>
+                    </mask>
+                    <pattern id="imageload" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
+                        <image x="0" y="0" xlink:href="images/loading_filter.png"></image>
+                    </pattern>
+                    <clipPath id="ClipPath-1">
+                        <path id="Mask_circle" class="st0" d="M400,0L0,0L0,400L400,400ZM45.9596,200C45.9596,115.061,115.061,45.9596,200,45.9596C284.939,45.9596,354.04,115.061,354.04,200C354.04,284.939,284.939,354.04,200,354.04C115.061,354.04,45.9596,284.939,45.9596,200Z" fill="#00ff16" fill-rule="evenodd"></path>
+                    </clipPath>
+                </defs>
+                <g id="All_Grouped" clip-path="url(#ClipPath-1)" transform="translate(200,200) translate(-200,-200)" style="animation: 1.6s linear infinite both All_Grouped_t;">
+                    <ellipse id="Fill" class="cls-2" rx="197.5" ry="197.5" fill="#004481" transform="translate(0,0) translate(200,200)"></ellipse>
+                    <path id="Outline" class="cls-1" d="M196.5,0C87.9723,0,0,87.9723,0,196.5C0,305.028,87.9723,393,196.5,393C305.028,393,393,305.028,393,196.5C393,87.9723,305.028,0,196.5,0Z" fill="none" opacity="0.16" stroke="#f2f2f2" stroke-width="2" transform="translate(3.5,3.5)"></path>
+                    <g class="cls-5" clip-path="url(#clip-path)">
+                        <g id="Gradient" style="animation: 1.6s linear infinite both a0_t;">
+                            <path class="cls-6" d="M400,0L400,400L0,400L0,0Z" fill="url(#Gradient-0)" opacity="1" filter="url(#Filter-0)" fill-opacity="0.6" fill-rule="nonzero" stroke-opacity="1" transform="translate(0,0) scale(1,0.7)" style="animation: 1.6s linear infinite both Gradient_t, 1.6s linear infinite both Gradient_fo, 1.6s linear infinite both Gradient_f;"></path>
+                        </g>
+                    </g>
+                    <ellipse rx="197.5" ry="197.5" fill="url(#imageload)" stroke="none" fill-rule="evenodd" filter="url(#Filter-1)" mask="url(#Mask-1)" transform="translate(199.5,199.5) rotate(180) translate(-0.5,-0.5)" style="mix-blend-mode: normal;"></ellipse>
+                    <path id="Shine" class="cls-1" d="M196.5,0C87.9723,0,0,87.9723,0,196.5C0,305.028,87.9723,393,196.5,393C305.028,393,393,305.028,393,196.5C393,87.9723,305.028,0,196.5,0Z" fill="none" opacity="0.8" stroke="url(#Gradient-3)" stroke-width="2" transform="translate(3.5,3.5)"></path>
+                </g>
+            </svg>
+        </figure>
+    </div>
+    <div class="modal" id="modal_generic" close-icon>
+        <div id="dialog" class="md-modal md-effect" tabindex="-1">
+            <div class="md-wrapper ">
+                <span id="btn-close" class="md-content__btn-close" aria-label="Cancel">
+                    <i class="bbva-icon ui-x icon-close"></i>
+                </span>
+                <div id="content" class="md-content">
+                    <div class="body" id="ariaText1b">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="md-overlay" aria-hidden="true"></div>
+    </div>
+    <div class="modal" id="modal_timeout">
+        <div id="dialog" class="md-modal md-effect" tabindex="-1">
+            <div class="md-wrapper ">
+                <div id="content" class="md-content">
+                    <div class="body" id="ariaText1b">
+                        <div class="title-gray">
+                            &iexcl;Tu sesi&oacute;n est&aacute; a punto de cerrar!
+                        </div>
+                        <div class="step-container">
+                            <div class="grid-c">
+                                <div class="grid-item">
+                                    <div class="message-modal">
+                                        <div id="cdSession"></div>
+                                        <div>Da clic en el bot&oacute;n de abajo para evitar que cierre tu sesi&oacute;n.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="actionsection">
+                                <div class="submtbtn">
+                                    <span title="Enviar" aria-label="Enviar" class="btn__basic btn_acept">
+                                        <span aria-hidden="true">Continuar con sesi&oacute;n</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="md-overlay" aria-hidden="true"></div>
+    </div>
+    <div class="help-menu removeifNC" style="display: none;">
+        <div class="btn_help" id="call_h">
+            <i class="bbva-icon ui-telephone helpicon"></i>
+            <div class="helpname">Llamar</div>
+        </div>
+        <div class="btn_help" id="email_h">
+            <i class="bbva-icon ui-email helpicon"></i>
+            <div class="helpname">Correo</div>
+        </div>
+        <div class="btn_help" id="help_sh" style="display: none">
+            <i class="bbva-icon ui-contigo helpicon"></i>
+            <div class="helpname">Ayuda</div>
+        </div>
+    </div>
+    <script src="scripts/browser_detect.js"></script>
+    <script src="scripts/mask.js"></script>
+    <script src="scripts/dropzone.js"></script>
+    <script src="js/dist/bundle.js"></script>
+</body>
+</html>

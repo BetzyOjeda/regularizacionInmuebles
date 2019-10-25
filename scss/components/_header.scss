@@ -13,8 +13,8 @@
   z-index: 8;
 
   .container {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 16px;
+    padding-bottom: 16px;
   }
 
   .header__image {
@@ -47,7 +47,7 @@
   }
 
   .header_logo {
-    width: 64%;
+    width: 70%;
 
     @include to(1201px) {
         width: 65%;
@@ -58,7 +58,7 @@
     }
 
     @include to(715px) {
-        width: 55%;
+        width: 40%;
     }
 
     @include to(630px) {
@@ -91,6 +91,9 @@
     width: 35%;
     font-family: "BentonSansBBVA-Medium", sans-serif !important;
 
+    right: 0;
+    position: absolute;
+    
     @include to(1201px) {
         width: 35%;
     }
@@ -107,6 +110,7 @@
 
         .btn-menu {
             font-size: 14px;
+            font-family: "BentonSansBBVA-Medium", sans-serif !important;
 
             &#btn-principal-menu {
                 img {
@@ -156,11 +160,13 @@
           align-items: center;
           figcaption{
             margin: 0 .8rem;
+            font-family: "BentonSansBBVA-Medium", sans-serif !important;
             &.username{
               white-space: nowrap;
             }
           }
         }
+
         .notify{
           height: 20px;
           width: 20px;

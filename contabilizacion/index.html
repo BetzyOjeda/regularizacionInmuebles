@@ -59,7 +59,7 @@
                         <span class="notify">4</span>
                     </div>
                     <div class="btn-menu" id="user-tasks">
-                        <i class="bbva-icon ui-add-notes"></i>
+                        <i class="bbva-icon ui-address-book"></i>
                     </div>
                     <div class="btn-menu" id="user-name">
                         <figure class="fig-username">
@@ -72,7 +72,7 @@
                     <div class="btn-menu" id="btn-exit">
                         <figure>
                             <img src="./images/icons/get-out-icon.svg" alt="" class="bbva-icon-rotate-180">
-                            <figcaption>
+                            <figcaption class="action-exit">
                                 Salir
                             </figcaption>
                         </figure>
@@ -121,14 +121,11 @@
                                                 <div class="grid-item">
                                                     <div class="form-validation-group">
                                                         <div class="form-group">
-                                                            <input class="form-control uppercase letters lastnameb" name="sec1numbercredit" id="sec1numbercredit" type="text" data-placeholder="Número de crédito" required autocomplete="off" value="">
+                                                            <input class="form-control uppercase letters lastnameb" name="sec1numbercredit" id="sec1numbercredit" type="text" data-placeholder="Número de crédito Banco" required autocomplete="off" value="">
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                           
-
-
+                                            </div>                                    
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
@@ -164,24 +161,28 @@
                                             </div>
                                             
                                             <div class="grid-item">
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec1infonavitdate" name="sec1infonavitdate" id="sec1infonavitdate" type="text" data-placeholder="Fecha de pago de crédito Infonavit" autocomplete="off" value="">
+                                                <div class="grid-item">
+                                                    <div class="form-validation-group">
+                                                        <div class="form-group">
+                                                            <input class="form-control uppercase letters lastnameb" name="sec1numbercredit" id="sec1numbercredit" type="text" data-placeholder="Número de crédito Infonavit" required autocomplete="off" value="">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            
                                             <div class="grid-item">
-                                                <div class="form-group-select required" id="gravamen">
+                                                <div class="form-group-select required" id="barzon">
                                                     <div class="option-select">
                                                         <div class="select-title sl">
-                                                            <span class="option-text sl center">Gravamen</span>
+                                                            <span class="option-text sl center">Barzón</span>
                                                             <span class="selected-option sl"></span>
                                                             <i class="bbva-icon ui-simple-down sl"></i>
                                                         </div>
                                                         <div class="list-result"></div>
                                                     </div>
                                                 </div>
-                                            </div>                                            
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="grid-item"> <!--Lado derecho-->
@@ -225,16 +226,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group-select required" id="relationship">
-                                            <div class="option-select">
-                                                <div class="select-title sl">
-                                                    <span class="option-text sl center">Tipo de Alta</span>
-                                                    <span class="selected-option sl"></span>
-                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                </div>
-                                                <div class="list-result"></div>
-                                            </div>
-                                        </div>
+
                                         <div class="grid-item">
                                             <div class="form-group-select required" id="commercialcredit">
                                                 <div class="option-select">
@@ -247,18 +239,27 @@
                                                 </div>
                                             </div>
                                         </div>
+                                       
                                         <div class="grid-item">
-                                            <div class="form-group-select required" id="barzon">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec1infonavitdate" name="sec1infonavitdate" id="sec1infonavitdate" type="text" data-placeholder="Fecha de pago de crédito Infonavit" autocomplete="off" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-group-select required" id="gravamen">
                                                 <div class="option-select">
                                                     <div class="select-title sl">
-                                                        <span class="option-text sl center">Barzón</span>
+                                                        <span class="option-text sl center">Gravamen</span>
                                                         <span class="selected-option sl"></span>
                                                         <i class="bbva-icon ui-simple-down sl"></i>
                                                     </div>
                                                     <div class="list-result"></div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>                                            
+                                        
                                     </div>
                                     
                                 </div>
