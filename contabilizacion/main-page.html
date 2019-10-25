@@ -232,11 +232,15 @@
              font-family: "BentonSansBBVA-Book", Helvetica, Arial, sans-serif;
              }
            }
-           #search {
-            background-color: transparent;
-            border: transparent;
-            color: blue;
-           }
+           
+           i{font-style:italic;}
+           input[type='submit']{background-color:transparent;}
+           .bbva-icon{line-height:inherit;margin:0 8px;}
+          
+
+
+
+
          </style>
 </head>
 <body>
@@ -261,119 +265,55 @@
                 <i class="bbva-icon ui-gradution-cap"></i><span id="scholarshipProgram" ></span>
             </div>
         </div>
-        <div class="">
-                <div class="container" style=" margin-top: 2rem;">
-                        <div class="grid-item">
-                            <div class="form-validation-group">
-                                    <div class="form-group" style="float: right;">
-                                                <i class="bbva-icon ui-flag"></i>
-                                                <i class="bbva-icon ui-alarm" style="color: red;"></i>
-                                            
-                                    </div>
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="form-validation-group">
-                            <div class="form-group">
+        <div>
+        <div class="container" style=" margin-top: 2rem;">
+            <div class="search__base search--open" itemscope="" data-component="search" data-component-params="{&quot;open&quot;: false}" data-search-url="https://bbva-proxy-cloudsearch-sp.appspot.com/v1/cloudsearch/suggest?max=15&amp;site=bancomer&amp;access=p&amp;format=os&amp;client=bancomer&amp;q=<query>" data-search-query="<query>" aria-hidden="true" data-component-id="d4f457f3-0026-4d77-8bbb-5f4bdf285cc6" style="visibility: visible;">
+                <div class="container">
+                    <div class="container search__bar">
+                            <form action="" class="search__form" itemprop="potentialAction" itemscope="" itemtype="http://schema.org/SearchAction">
                                 <button id="search" type="submit" tabindex="2" class="search__icon-btn" aria-label="Hacer busqueda">
-                                    <i class="bbva-icon ui-search" style="display: none;"></i>
+                                    <i class="bbva-icon ui-search" ></i>
                                 </button>
-                                <input class="form-control uppercase alphanumeric" name="curp" id="curp" type="text" data-placeholder="No de crédito - No del Asunto - Folio REGUS - Folio GUIA">
-                            </div>
-                        </div>
-                        </div>
+                        
+                                <div class="search__label" role="combobox" aria-expanded="false" aria-haspopup="listbox" for="searchQuery_e203abcf-4476-4c87-9209-516066550403" aria-owns="listboxsearchQuery_e203abcf-4476-4c87-9209-516066550403">
+                                    <input tabindex="1" aria-autocomplete="list" type="text" name="search" placeholder="Buscar aquí" class="search__input search__input--empty" aria-label="Hacer busqueda, Pulsa enter" aria-activedescendant="" itemprop="query-input" id="searchQuery_e203abcf-4476-4c87-9209-516066550403" aria-controls="listboxsearchQuery_e203abcf-4476-4c87-9209-516066550403">
+                                </div>
+                                <button class="search__close-btn" tabindex="3" aria-label="Close search form">
+                                    <i class="bbva-icon bbva-icon__2_022_close"></i>
+                                </button>
+                            </form>
                     </div>
-                    <div class="container">
-                            <table id="table_main" class="table striped ">
-                                        <thead>
-                                          <tr class="">
-                                            <th style="text-align: center; width: 200px" title="Número de crédito">
-                                                NÚMERO DE CRÉDITO
-                                            </th>
-                                            <th style="text-align: center; width: 200px" title="Título">
-                                               TÍTULO
-                                            </th>
-                                            <th style="text-align: left; width: 200px" title="Fecha de notificación">
-                                                FECHA DE NOTIFICACIÓN
-                                            </th>
-                                            <th style="text-align: center; width: 200px" title="Ir al expediente">
-                                                IR AL EXPEDIENTE
-                                            </th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="" id="7">
-                                                <td style="text-align: center; width: 118px; display: ;">
-                                                    <span>8928934637898121982</span>
-                                                </td>
-                                                <td style="text-align: center; width: 133px; display: ;">
-                                                    <span>8</span>
-                                                </td>
-                                                <td style="text-align: center; width: 133px; display: ;">
-                                                    <span>17/10/2019</span>
-                                                </td>
-                                                <td style="text-align: right; width: 252px; display: ;">
-                                                    <span class="bold link cursor" id="7">EXPEDIENTE 1</span>
-                                                </td>
-                                            </tr>
-                                            <tr class="" id="7">
-                                                <td style="text-align: center; width: 118px; display: ;">
-                                                    <span>8928934637898121982</span>
-                                                </td>
-                                                <td style="text-align: center; width: 133px; display: ;">
-                                                    <span>8</span>
-                                                </td>
-                                                <td style="text-align: center; width: 133px; display: ;">
-                                                    <span>17/10/2019</span>
-                                                </td>
-                                                <td style="text-align: right; width: 252px; display: ;">
-                                                    <span class="bold link cursor" id="7">EXPEDIENTE 2</span>
-                                                </td>
-                                            </tr>
-                                            <tr class="" id="7">
-                                                <td style="text-align: center; width: 118px; display: ;">
-                                                    <span>8928934637898121982</span>
-                                                </td>
-                                                <td style="text-align: center; width: 133px; display: ;">
-                                                    <span>8</span>
-                                                </td>
-                                                <td style="text-align: center; width: 133px; display: ;">
-                                                    <span>17/10/2019</span>
-                                                </td>
-                                                <td style="text-align: right; width: 252px; display: ;">
-                                                    <span class="bold link cursor" id="7">EXPEDIENTE 3</span>
-                                                </td>
-                                            </tr>
-                
-                                        </tbody>
-                                      </table>
-                        </div>
-                        <div class="help-menu removeifNC" style="    width: 10%;    "> 
-                                <div class="btn_help" id="call_h">
-                                    <div class="helpname">Contabilización</div>
-                                    <i class="bbva-icon ui-look-up"></i>
-                                </div>
-                                <div class="btn_help" id="email_h">
-                                    <div class="helpname">Cartera</div>
-                                    <i class="bbva-icon ui-deposit"></i>
-                                </div>
-                                <div class="btn_help" id="email_h">
-                                    <div class="helpname">Procedimientos</div>                    
-                                    <i class="bbva-icon ui-edit"></i>
-                                </div>
-                                <div class="btn_help" id="email_h">
-                                    <div class="helpname">Ventas</div>
-                                    <i class="bbva-icon ui-home"></i>
-                                </div>
-                                <div class="btn_help" id="email_h">
-                                    <div class="helpname">Administración</div>                                        
-                                    <i class="bbva-icon ui-settings"></i>
-                                </div>
-                                <div class="btn_help" id="email_h">
-                                    <div class="helpname">Reporte</div>                    
-                                    <i class="bbva-icon ui-email helpicon"></i>
-                                </div>
-                            </div>
+                </div>
+            </div>     
+        </div>
+                    
+                    
+        <div class="help-menu removeifNC" style="width: 10%;"> 
+                <div class="btn_help" id="call_h">
+                    <div class="helpname">Contabilización</div>
+                    <i class="bbva-icon ui-look-up"></i>
+                </div>
+                <div class="btn_help" id="email_h">
+                    <div class="helpname">Cartera</div>
+                    <i class="bbva-icon ui-deposit"></i>
+                </div>
+                <div class="btn_help" id="email_h">
+                    <div class="helpname">Procedimientos</div>                    
+                    <i class="bbva-icon ui-edit"></i>
+                </div>
+                <div class="btn_help" id="email_h">
+                    <div class="helpname">Ventas</div>
+                    <i class="bbva-icon ui-home"></i>
+                </div>
+                <div class="btn_help" id="email_h">
+                    <div class="helpname">Administración</div>                                        
+                    <i class="bbva-icon ui-settings"></i>
+                </div>
+                <div class="btn_help" id="email_h">
+                    <div class="helpname">Reporte</div>                    
+                    <i class="bbva-icon ui-email helpicon"></i>
+                </div>
+            </div>
         </div>
         <div class="footer">
             <div class="container">
