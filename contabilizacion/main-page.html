@@ -8,237 +8,274 @@
     <title>Regularización de Inmuebles</title>
     <link rel="stylesheet" href="css/bbva.fonts.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/57x57.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/72x72.png"/>
-    <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/76x76.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/114x114.png"/>
-    <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/120x120.png"/>
-    <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/144x144.png"/>
-    <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/152x152.png"/>
-    <link rel="apple-touch-icon" sizes="167x167" href="images/favicons/167x167.png"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/180x180.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/16x16.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/32x32.png"/>
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/96x96.png"/>
-    <link rel="icon" type="image/png" sizes="128x128" href="images/favicons/128x128.png"/>
-    <link rel="icon" type="image/png" sizes="192x192" href="images/favicons/192x192.png"/>
-    <link rel="icon" type="image/png" sizes="195x195" href="images/favicons/195x195.png"/>
-    <link rel="icon" type="image/png" sizes="196x196" href="images/favicons/196x196.png"/>
-    <link rel="icon" type="image/png" sizes="228x228" href="images/favicons/228x228.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="images/favicons/167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/180x180.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/96x96.png" />
+    <link rel="icon" type="image/png" sizes="128x128" href="images/favicons/128x128.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicons/192x192.png" />
+    <link rel="icon" type="image/png" sizes="195x195" href="images/favicons/195x195.png" />
+    <link rel="icon" type="image/png" sizes="196x196" href="images/favicons/196x196.png" />
+    <link rel="icon" type="image/png" sizes="228x228" href="images/favicons/228x228.png" />
     <script>
-		var ivUser="19700000101";
-	</script>
+        var ivUser = "19700000101";
+    </script>
     <script src="scripts/jquery-2.1.1.min.js"></script>
     <script src="scripts/mustache.js"></script>
     <script src="scripts/popper.min.js"></script>
     <script src="scripts/tooltip.min.js"></script>
 
     <style>
-       
-            span.is-optional {
-                 display: none;
-             }
-     
-     .help-menu {
-        display: block;
-        position: fixed;
-        bottom: 63%;
-        width: 70px;
-        height: 140px;
-        border: none;
-        left: 0;
-     }
-     
-     .help-menu .btn_help {
-        width: 140px;
-        height: 70px;
-        background-color: #a1f1f1;
-        border: solid 1px white;
-        text-align: center;
-        color: #237ABA;
-        padding: 5px;
-     }
-     
-           .striped tbody tr:nth-of-type(2n) {
-             background: rgba(212, 237, 252, 0.40);
-           }
-     
-           .table thead tr:first-child th {
-             /*padding-top: 22px;*/
-             border-bottom: solid 1px #E9E9E9;
-             border-top: solid 1px #E9E9E9;
-           }
-           .table thead tr:nth-of-type(2n) th {
-             /*padding-top: 22px;*/
-             border-bottom: solid 1px #E9E9E9;
-             border-top: solid 1px #E9E9E9;
-           }
-     
-           .table td {
-             padding: 16px;
-             height: 25px;
-             vertical-align: middle;
-             line-height: 16px;
-           }
-     
-           .table th {
-             padding: 16px;
-             vertical-align: middle;
-             font-family: BentonSansBBVA-Medium;
-             font-size: 13px;
-             letter-spacing: 0;
-             line-height: 16px;
-           }
-           .tableCredit td {
-             padding: 16px;
-             height: 25px;
-             vertical-align: middle;
-             line-height: 16px;
-           }
-     
-           .tableCredit th {
-             padding: 16px;
-             vertical-align: middle;
-             font-family: BentonSansBBVA-Medium;
-             font-size: 13px;
-             letter-spacing: 0;
-             line-height: 16px;
-           }
-     
-           .modal-striped tbody tr:nth-of-type(2n+1) {
-             background: rgba(212, 237, 252, 0.40);
-           }
-     
-           thead {
-             font-family: BentonSansBBVA-Medium;
-             font-size: 13px;
-             color: #121212;
-             letter-spacing: 0;
-             text-align: right;
-             line-height: 16px;
-           }
-     
-           tr th:nth-child(1) {
-             text-align: left;
-           }
-     
-           tr th:nth-child(2) {
-             text-align: left;
-           }
-     
-           tr th:nth-child(3) {
-             text-align: left;
-           }
-     
-           tr th:nth-child(4) {
-             text-align: left;
-           }
-     
-           tr th:nth-child(5) {
-             text-align: left;
-           }
-     
-           tr th:nth-child(6) {
-             text-align: left;
-           }
-     
-           tr th:nth-child(7) {
-             text-align: left;
-           }
-     
-           tr th:nth-child(8) {
-             text-align: left;
-           }
-     
-           .container {
-             margin-left: 12rem;
-             margin-right: 8rem;
-           }
-     
-           @media (max-width: 992px) and (min-width: 600px) {
-             .wrapper .container {
-               max-width: 100%;
-               margin-left: auto;
-               margin-right: auto;
-             }
-           }
-     
-           div {
-             box-sizing: border-box;
-           }
-     
-           table {
-             border-collapse: collapse;
-             border-spacing: 0;
-             width: 100%;
-             max-width: 100%;
-             /*margin-bottom: 1rem;*/
-             background-color: transparent;
-             display: table;
-             font-size: 15px;
-             font-family: "BentonSansBBVA-Book", Helvetica, Arial, sans-serif;
-             white-space: nowrap;
-           }
-     
-           .link {
-             color: #1973B8;
-             font-family: BentonSansBBVA-Medium;
-             font-size: 15px;
-           }
-     
-           .cursor {
-             cursor: pointer;
-           }
-     
-           
-           a {
-             color: #1d73b2;
-             text-decoration: none;
-           }
-     
-           .arrow {
-             cursor: pointer;
-             width: 13px;
-           }
-     
-           .arrow-up {
-             transform: rotate(90deg);
-           }
-     
-           .arrow-down {
-             transform: rotate(-90deg);
-           }
-     
-           .bold {
-             font-family: BentonSansBBVA-Medium;
-           }
-     
-           span {
-             font-size: 15px;
-             letter-spacing: 0;
-             line-height: 16px;
-           }
-     
-           .content-row:hover {
-             box-shadow: 0 0 12px 4px rgba(33, 33, 33, .2);
-             cursor: pointer;
-           }
-     
-           @media (min-width: 1200px){
-             .wrapper .container {
-             width: 960px;
-             margin-left: auto;
-             margin-right: auto;
-             font-family: "BentonSansBBVA-Book", Helvetica, Arial, sans-serif;
-             }
-           }
-           #search {
-            background-color: transparent;
-            border: transparent;
-            color: blue;
-           }
-         </style>
+        span.is-optional {
+            display: none;
+        }
+
+        .menu-responsive {
+            position: relative;
+            width: 100%;
+            background-color: #072146;
+            font-family: BentonSansBBVA-Book !important;
+            font-size: 15px !important;
+        }
+
+        .user-menu {
+            max-width: 1144px;
+            margin: 0 auto;
+            height: 56px;
+        }
+
+        .user-menu .user {
+            display: table;
+            float: right;
+            margin-right: 30px;
+        }
+
+        .user-menu .user .user-name {
+            float: right;
+            font-weight: 700;
+            color: #666;
+        }
+
+        .menu-responsive .menu-desk {
+            clear: both;
+        }
+
+        .menu-responsive .main-menu-desk-nav li.misCuentas {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        .menu-responsive .main-menu li {
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+        .menu-responsive li.menu-item {
+            display: flex;
+            background-repeat: no-repeat;
+            height: 54px;
+            background-size: 25px 25px;
+            background-position: 7px center;
+            font-family: BentonSansBBVA-Medium !important;
+        }
+
+        .menu-responsive .main-menu-desk-nav li.option-selected a.menu-item-option {
+            border-bottom: 4px solid #FFF;
+            font-family: BentonSansBBVA-Bold !important;
+        }
+
+        .menu-responsive li.menu-item.option-selected a.menu-item-option {
+            color: #fff !important;
+        }
+
+        .menu-responsive .menu-desk a {
+            color: #FFF;
+            text-decoration: none;
+            display: block;
+            line-height: 50px;
+            min-width: 70px;
+            text-align: center;
+            opacity: 1;
+        }
+
+        a {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent;
+        }
+
+        .menu-responsive .main-menu-desk-nav li.menu-item span.menu-item-option-icon {
+            display: none;
+        }
+
+        .menu-responsive .main-menu-desk-nav li.option-selected a.menu-item-option {
+            border-bottom: 4px solid #FFF;
+            font-family: BentonSansBBVA-Bold !important;
+        }
+
+        .menu-responsive li.menu-item.option-selected a.menu-item-option {
+            color: #fff !important;
+        }
+
+        .menu-responsive li.menu-item a.menu-item-option {
+            color: #b2b2b2;
+        }
+
+        .menu-responsive li.menu-item .menu-item-option {
+            text-transform: uppercase;
+        }
+
+        .menu-responsive .main-menu li a {
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+        .menu-responsive .menu-desk .menu-item .submenu-container {
+            position: absolute;
+            height: auto;
+            z-index: 5000;
+            margin-top: 45px;
+        }
+
+        .menu-responsive .menu-desk .menu-item .submenu-container-positioner {
+            padding-top: 8px;
+        }
+
+        .menu-responsive .menu-desk .transferir ul {
+            width: 100% !important;
+            list-style: none;
+            display: inline-table;
+        }
+
+        .menu-responsive .menu-desk .menu-item ul {
+            width: 250px;
+            list-style: none;
+            display: inline-table;
+        }
+
+        .menu-responsive .menu-desk ul {
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+        }
+
+        .menu-responsive .ul-option-back {
+            display: none !important;
+        }
+
+        a:link {
+            -webkit-tap-highlight-color: #e7f7ff;
+        }
+
+        a:link,
+        a:active,
+        a:visited {
+            color: #333;
+        }
+
+        .menu-responsive .main-menu li {
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -o-user-select: none;
+            user-select: none;
+        }
+
+        .menu-responsive li.menu-item {
+            display: flex;
+            background-repeat: no-repeat;
+            height: 54px;
+            background-size: 25px 25px;
+            background-position: 7px center;
+            font-family: BentonSansBBVA-Medium !important;
+        }
+
+        .user-name {
+            position: relative;
+        }
+
+        .user-name {
+            float: right;
+            font-size: 14px;
+            margin-right: 20px;
+        }
+
+        .help-menu {
+            display: inline-flex;
+            position: fixed;
+            bottom: 63%;
+            width: 70px;
+            border: none;
+            left: 0;
+        }
+
+        .help-menu .btn_help {
+            width: 140px;
+            height: 70px;
+            background-color: #a1f1f1;
+            border: solid 1px white;
+            text-align: center;
+            color: #237ABA;
+            padding: 5px;
+        }
+
+        .container {
+            margin-left: 8rem;
+            margin-right: 8rem;
+        }
+
+        @media (max-width: 992px) and (min-width: 600px) {
+            .wrapper .container {
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .avatar {
+            vertical-align: middle;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+        }
+
+        .title {
+            margin: 2rem 0px;
+            font-family: "BentonSansBBVA-Medium", Helvetica, Arial, sans-serif;
+            font-size: 24px;
+        }
+
+        #filter_body{
+            height: 120px;
+            background: #9fd6fd;;
+        }
+
+        #filter_body div .placeholder-wrapper{
+            margin-left: 7px;
+            margin-right: 7px;
+        }
+    </style>
 </head>
+
 <body>
     <div class="page-container">
         <div class="header">
@@ -248,159 +285,1138 @@
                         <img src="./images/LogoBBVA@2x.png" class="header_image" alt="">
                     </a>
                 </div>
-                <div class="menu">
-                    <div>&nbsp;</div>
-                    <div class="btn-menu flex-items" id="btn-exit">
-                        <img src="./images/icons/get-out-icon.svg" alt=""> &nbsp; Cerrar sesi&oacute;n
+                <div class="menu flex-items">
+                    <div class="btn-menu" id="user-notify">
+                        <i class="bbva-icon ui-alarm"></i>
+                        <span class="notify">4</span>
+                    </div>
+                    <div class="btn-menu" id="user-tasks">
+                        <i class="bbva-icon ui-address-book"></i>
+                    </div>
+                    <div class="btn-menu" id="user-name">
+                        <figure class="fig-username">
+                            <img src="./images/icons/user-image.png" alt="" class="avatar">
+                            <figcaption class="username">
+                                Margarita Flores
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="btn-menu" id="btn-exit">
+                        <figure>
+                            <img src="./images/icons/get-out-icon.svg" alt="" class="bbva-icon-rotate-180">
+                            <figcaption class="action-exit">
+                                Salir
+                            </figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="subheader" style="display: none;">
-            <div class="container">
-                <i class="bbva-icon ui-gradution-cap"></i><span id="scholarshipProgram" ></span>
+
+        <div class="container" style=" margin-top: 2rem; display: none;">
+            <div class="grid-item">
+                <div class="form-validation-group">
+                    <div class="form-group">
+                        <button id="search" type="submit" tabindex="2" class="search__icon-btn"
+                            aria-label="Hacer busqueda">
+                            <i class="bbva-icon ui-search" style="display: none;"></i>
+                        </button>
+                        <input class="form-control uppercase alphanumeric" name="curp" id="curp" type="text"
+                            data-placeholder="No de crédito - No del Asunto - Folio REGUS - Folio GUIA">
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="">
-                <div class="container" style=" margin-top: 2rem;">
-                        <div class="grid-item">
-                            <div class="form-validation-group">
-                                    <div class="form-group" style="float: right;">
-                                                <i class="bbva-icon ui-flag"></i>
-                                                <i class="bbva-icon ui-alarm" style="color: red;"></i>
-                                            
+        <div class="menu-responsive" id="menu-Saldos" style="width: 100%;">
+
+
+
+
+
+            <div class="user-menu">
+                <div class="menu-desk">
+                    <nav class="main-menu main-menu-desk-nav">
+                        <ul class="list-menu">
+                            <!---------------------- MIS CUENTAS ---------------------->
+                            <li class="menu-item misCuentas option-selected" style="">
+                                <input type="hidden" value="" id="flagOpinatorInvestment">
+                                <input type="hidden" value="" id="idOpinatorInvestment">
+
+                                <a class="menu-item-option" onclick="redirectMenu('globalPosition');"
+                                    id="globalPosition" data-go="globalPosition"
+                                    data-idopi="BBVA_WEB_Inversiones_2019_Abandono"
+                                    data-idopiflow="/posicionGlobal?execution=e2s1"
+                                    data-href="posicionGlobalNgob?entrada=otro&amp;cellsNavigation=globalPosition&amp;optionMenu=misCuentas"
+                                    href="#"> <img src="img/iconos/menu.png" alt="" class="icon-misCuentas">
+                                    Contabilización <span class="menu-item-option-icon"><span
+                                            class="arrow right-arrow"></span></span>
+                                </a>
+
+
+
+
+                                <span class="line-menu high-blue"></span>
+                                <span class="line-menu low-blue"></span>
+                            </li>
+
+
+                            <!---------------------- TRANSFERIR ---------------------->
+                            <li class="menu-item transferir" style="">
+                                <a href="#" class="menu-item-option">
+                                    <img src="img/iconos/menu.png" alt="" class="icon-trasferir">
+                                    Cartera
+                                    <span class="menu-item-option-icon"><span class="arrow right-arrow"></span></span>
+                                </a>
+                                <span class="line-menu high-blue"></span>
+                                <span class="line-menu low-blue"></span>
+
+                                <div class="submenu-container" style="z-index: 100000000; display: none;">
+                                    <div class="submenu-container-positioner" style="z-index: 100000000;">
+                                        <ul class="ul-option-back">
+                                            <li class="option-back">
+                                                <a href="#">
+                                                    <span class="arrow left-arrow"></span>
+                                                    <img src="img/iconos/menu.png" alt="" class="icon-trasferir">
+                                                    Cartera
+                                                </a>
+                                                <span class="line-menu high-blue"></span>
+                                                <span class="line-menu low-blue"></span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="sub-menu-title">
+                                                <br>
+                                                Realizar una transferencia
+                                                <span class="menu-item-option-icon"><span
+                                                        class="arrow bottom-arrow"></span></span><span
+                                                    class="line-menu high-blue"></span><span
+                                                    class="line-menu low-blue"></span>
+                                            </li>
+
+
+
+                                            <li class="option-mob">
+
+
+
+                                                <a id="idMenuCuentas" class=" campania  " href="traspasos"><em>A cuentas
+                                                        BBVA y otros bancos</em></a>
+
+
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+
+                                            <li class="option-mob">
+
+
+                                                <a id="idMenuEfectivoMovilOcra"
+                                                    href="efectivoMovilOCRA?opcion=transferir"><em>De retiro sin
+                                                        tarjeta</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+                                            <li class="option-mob">
+                                                <a id="idMenuOtrosBancosOrdenesPago"
+                                                    href="otrosBancosOrdenesPago?opcion=transferir"><em>Transferencia
+                                                        internacional</em></a>
+                                                <!-- 			                                				 -->
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+                                        </ul>
                                     </div>
-                            </div>
-                        </div>
-                        <div class="grid-item">
-                            <div class="form-validation-group">
-                            <div class="form-group">
-                                <button id="search" type="submit" tabindex="2" class="search__icon-btn" aria-label="Hacer busqueda">
-                                    <i class="bbva-icon ui-search" style="display: none;"></i>
-                                </button>
-                                <input class="form-control uppercase alphanumeric" name="curp" id="curp" type="text" data-placeholder="No de crédito - No del Asunto - Folio REGUS - Folio GUIA">
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                            <table id="table_main" class="table striped ">
-                                        <thead>
-                                          <tr class="">
-                                            <th style="text-align: center; width: 200px" title="Número de crédito">
-                                                NÚMERO DE CRÉDITO
-                                            </th>
-                                            <th style="text-align: center; width: 200px" title="Título">
-                                               TÍTULO
-                                            </th>
-                                            <th style="text-align: left; width: 200px" title="Fecha de notificación">
-                                                FECHA DE NOTIFICACIÓN
-                                            </th>
-                                            <th style="text-align: center; width: 200px" title="Ir al expediente">
-                                                IR AL EXPEDIENTE
-                                            </th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="" id="7">
-                                                <td style="text-align: center; width: 118px; display: ;">
-                                                    <span>8928934637898121982</span>
-                                                </td>
-                                                <td style="text-align: center; width: 133px; display: ;">
-                                                    <span>8</span>
-                                                </td>
-                                                <td style="text-align: center; width: 133px; display: ;">
-                                                    <span>17/10/2019</span>
-                                                </td>
-                                                <td style="text-align: right; width: 252px; display: ;">
-                                                    <span class="bold link cursor" id="7">EXPEDIENTE 1</span>
-                                                </td>
-                                            </tr>
-                                            <tr class="" id="7">
-                                                <td style="text-align: center; width: 118px; display: ;">
-                                                    <span>8928934637898121982</span>
-                                                </td>
-                                                <td style="text-align: center; width: 133px; display: ;">
-                                                    <span>8</span>
-                                                </td>
-                                                <td style="text-align: center; width: 133px; display: ;">
-                                                    <span>17/10/2019</span>
-                                                </td>
-                                                <td style="text-align: right; width: 252px; display: ;">
-                                                    <span class="bold link cursor" id="7">EXPEDIENTE 2</span>
-                                                </td>
-                                            </tr>
-                                            <tr class="" id="7">
-                                                <td style="text-align: center; width: 118px; display: ;">
-                                                    <span>8928934637898121982</span>
-                                                </td>
-                                                <td style="text-align: center; width: 133px; display: ;">
-                                                    <span>8</span>
-                                                </td>
-                                                <td style="text-align: center; width: 133px; display: ;">
-                                                    <span>17/10/2019</span>
-                                                </td>
-                                                <td style="text-align: right; width: 252px; display: ;">
-                                                    <span class="bold link cursor" id="7">EXPEDIENTE 3</span>
-                                                </td>
-                                            </tr>
-                
-                                        </tbody>
-                                      </table>
-                        </div>
-                        <div class="help-menu removeifNC" style="    width: 10%;    "> 
-                                <div class="btn_help" id="call_h">
-                                    <div class="helpname">Contabilización</div>
-                                    <i class="bbva-icon ui-look-up"></i>
                                 </div>
-                                <div class="btn_help" id="email_h">
-                                    <div class="helpname">Cartera</div>
-                                    <i class="bbva-icon ui-deposit"></i>
+                            </li>
+
+
+                            <!---------------------- PAGAR ---------------------->
+                            <li class="menu-item pagar" style="">
+                                <a href="#" class="menu-item-option">
+                                    <img src="img/iconos/menu.png" alt="" class="icon-pagar">
+                                    Venta
+                                    <span class="menu-item-option-icon"><span class="arrow right-arrow"></span></span>
+                                </a>
+                                <span class="line-menu high-blue"></span>
+                                <span class="line-menu low-blue"></span>
+
+                                <div class="submenu-container" style="display:none;">
+                                    <div class="submenu-container-positioner">
+                                        <ul class="ul-option-back">
+                                            <li class="option-back">
+                                                <a href="#">
+                                                    <span class="arrow left-arrow"></span>
+                                                    <img src="img/iconos/menu.png" alt="" class="icon-pagar">
+                                                    Pagar
+                                                </a>
+                                                <span class="line-menu high-blue"></span>
+                                                <span class="line-menu low-blue"></span>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="sub-menu-title">
+                                                <br>
+                                                Realizar un pago
+                                                <span class="menu-item-option-icon"><span
+                                                        class="arrow bottom-arrow"></span></span><span
+                                                    class="line-menu high-blue"></span><span
+                                                    class="line-menu low-blue"></span>
+                                            </li>
+
+                                            <li class="option-mob">
+
+
+
+                                                <a class=" campania  " id="enlaceMiscuentas"
+                                                    href="traspasos?opcion=pagar"><em>A cuentas BBVA y otros
+                                                        bancos</em></a>
+
+
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+
+                                            <li class="option-mob">
+
+
+                                                <a href="efectivoMovilOCRA?opcion=pagar"><em>De retiro sin
+                                                        tarjeta</em></a>
+
+
+
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+
+
+
+
+
+
+                                            <li class="option-mob">
+                                                <a href="tdcPagoAnticipadoAPromocion?entrada=creditos"
+                                                    class="campania"><em>Anticipo a promoción</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            <li class="option-mob">
+                                                <a href="pagoServiciosSemilla?tipo=todos" class="campania">
+                                                    <em>De servicios</em>
+                                                </a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+
+
+
+
+
+                                            <li class="option-mob">
+                                                <a href="creditonPagoCredito"><em>A préstamos</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+
+
+
+                                            <li class="option-mob">
+                                                <a href="prestamoHipotecarioPago?opcion=pagar"><em>A hipoteca</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+
+
+                                            <li class="option-mob">
+                                                <a href="fideicomisosPagoHonorarios?opcion=pagar"><em>Honorarios
+                                                        fideicomisos</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+                                            <li class="option-mob">
+                                                <a href="impuestos"><em>Impuestos</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="btn_help" id="email_h">
-                                    <div class="helpname">Procedimientos</div>                    
-                                    <i class="bbva-icon ui-edit"></i>
+                            </li>
+
+
+                            <!---------------------- INVERTIR ---------------------->
+                            <li class="menu-item invertir" style="">
+                                <a href="#" class="menu-item-option">
+                                    <img src="img/iconos/menu.png" alt="" class="icon-invertir">
+                                    Procedimientos
+                                    <span class="menu-item-option-icon"><span class="arrow right-arrow"></span></span>
+                                </a>
+                                <span class="line-menu high-blue"></span>
+                                <span class="line-menu low-blue"></span>
+
+
+
+
+
+
+                                <!-- c:if test="true"-->
+
+                                <div class="submenu-container" style="display:none;">
+                                    <div class="submenu-container-positioner">
+                                        <ul class="ul-option-back">
+                                            <li class="option-back">
+                                                <a href="#">
+                                                    <span class="arrow left-arrow"></span>
+                                                    <img src="img/iconos/menu.png" alt="" class="icon-invertir">
+                                                    Invertir
+                                                </a>
+                                            </li>
+                                        </ul>
+
+
+
+                                        <!-- Se mueve para este menu la opcion contratar inversion a plazos y se quita del menu contratar -->
+                                        <ul class="col_1">
+                                            <li class="sub-menu-title">
+                                                <br>
+                                                Comienza tu Inversión
+                                                <span class="menu-item-option-icon"><span
+                                                        class="arrow bottom-arrow"></span></span><span
+                                                    class="line-menu high-blue"></span><span
+                                                    class="line-menu low-blue"></span>
+                                            </li>
+
+                                            <li class="option-mob">
+                                                <a href="contratarInversionPlazo?opcion=invertir"
+                                                    data-fulfillmentmodel="online" id="contratarFlow"
+                                                    data-migadata="inversion a plazos" data-type="contratacion"
+                                                    data-step="app on click start:menu inversion a plazos one click"
+                                                    data-primarycategory="inversiones" data-productsubtype=""
+                                                    data-productname="plazos">
+                                                    <em>Pagaré Bancomer</em>
+                                                </a>
+                                                <span class="arrow left-arrow"></span>
+
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+                                            <li class="option-mob">
+
+                                                <a href="contratarInversionFondos?opcion=contrata"
+                                                    data-fulfillmentmodel="online" id="contratarFlow"
+                                                    data-migadata="fondos flujo unificado" data-type="contratacion"
+                                                    data-step="app on click start:menu invertir"
+                                                    data-primarycategory="inversiones" data-productsubtype=""
+                                                    data-productname="fondos de inversion">
+                                                    <em>Fondos de Inversión</em>
+                                                </a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+                                        </ul>
+                                        <!--  -->
+
+                                        <ul class="col_1">
+
+                                            <li class="sub-menu-title">
+                                                <br>
+                                                Administra tu Inversión
+                                                <span class="menu-item-option-icon"><span
+                                                        class="arrow bottom-arrow"></span></span><span
+                                                    class="line-menu high-blue"></span><span
+                                                    class="line-menu low-blue"></span>
+                                            </li>
+
+
+
+
+
+                                            <li class="option-mob">
+                                                <a id="compraventaFlow" data-fulfillmentmodel="online"
+                                                    data-migadata="compraventa plazos" data-type="operativa"
+                                                    data-step="app on click start:compraventa a plazos menu invertir"
+                                                    data-primarycategory="inversiones" data-productsubtype=""
+                                                    data-productname="plazos" class=" campania  "
+                                                    href="inversionesPlazo"><em>Pagaré Bancomer</em></a>
+                                                <span class="arrow left-arrow"></span>
+
+                                            </li>
+
+
+
+
+
+                                        </ul>
+
+                                        <ul class="col_1">
+                                            <li class="sub-menu-title">
+                                                <br>
+
+
+
+                                                Inversiones Patrimoniales
+
+
+                                                <span class="menu-item-option-icon"><span
+                                                        class="arrow bottom-arrow"></span></span><span
+                                                    class="line-menu high-blue"></span><span
+                                                    class="line-menu low-blue"></span>
+                                            </li>
+
+
+
+
+
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="btn_help" id="email_h">
-                                    <div class="helpname">Ventas</div>
-                                    <i class="bbva-icon ui-home"></i>
+                                <!-- /c:if-->
+
+                            </li>
+
+
+                            <!---------------------- CONTRATAR/COMPRAR ---------------------->
+                            <li class="menu-item contratar-comprar optionImportant" style="">
+
+
+                                <a href="#" class="menu-item-option">
+                                    <img src="img/iconos/menu.png" alt="" class="icon-contratar-comprar">
+                                    Administración
+                                    <span class="menu-item-option-icon"><span class="arrow right-arrow"></span></span>
+                                </a>
+
+
+
+                                <span class="line-menu high-blue"></span>
+                                <span class="line-menu low-blue"></span>
+
+
+                                <div class="submenu-container" style="display:none;">
+                                    <div class="submenu-container-positioner">
+                                        <ul class="ul-option-back">
+                                            <li class="option-back">
+                                                <a href="#">
+                                                    <span class="arrow left-arrow"></span>
+                                                    <img src="img/iconos/menu.png" alt=""
+                                                        class="icon-contratar-comprar">
+                                                    Contratar/Comprar
+                                                </a>
+                                            </li>
+                                        </ul>
+
+
+
+
+
+
+
+
+                                        <ul class="col_1">
+                                            <li class="sub-menu-title">
+                                                <br>
+                                                Créditos
+                                                <span class="menu-item-option-icon"><span
+                                                        class="arrow bottom-arrow"></span></span><span
+                                                    class="line-menu high-blue"></span><span
+                                                    class="line-menu low-blue"></span>
+                                            </li>
+
+
+                                            <!--c:forEach var="listaPromociones" items="{0=com.bbvabancomer.andrea.adapter.promocionesPosicionGlobal.PromocionPosicionGlobal@d1768064, 1=com.bbvabancomer.andrea.adapter.promocionesPosicionGlobal.PromocionPosicionGlobal@fd855139, 2=com.bbvabancomer.andrea.adapter.promocionesPosicionGlobal.PromocionPosicionGlobal@fc08966b}"-->
+
+                                            <li class="option-mob">
+
+
+                                                <a href="simuladorDeCreditos?idPromocion=0060CAM3708820001&amp;opcion=simularOfertaPrestamo"
+                                                    onclick="setVarOneClicSimula();"><em>Préstamos</em></a>
+
+
+
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+                                            <!--/c:forEach-->
+
+
+                                            <!--c:forEach var="listaPromociones" items="{0=com.bbvabancomer.andrea.adapter.promocionesPosicionGlobal.PromocionPosicionGlobal@d1768064, 1=com.bbvabancomer.andrea.adapter.promocionesPosicionGlobal.PromocionPosicionGlobal@fd855139, 2=com.bbvabancomer.andrea.adapter.promocionesPosicionGlobal.PromocionPosicionGlobal@fc08966b}"-->
+
+                                            <!--/c:forEach-->
+                                            <!--c:forEach var="listaPromociones" items="{0=com.bbvabancomer.andrea.adapter.promocionesPosicionGlobal.PromocionPosicionGlobal@d1768064, 1=com.bbvabancomer.andrea.adapter.promocionesPosicionGlobal.PromocionPosicionGlobal@fd855139, 2=com.bbvabancomer.andrea.adapter.promocionesPosicionGlobal.PromocionPosicionGlobal@fc08966b}"-->
+
+                                            <!--/c:forEach-->
+
+                                            <!--c:forEach var="listaOneClic" items="{0=com.bbvabancomer.andrea.adapter.promocionesPosicionGlobal.PromocionPosicionGlobal@d1768064, 1=com.bbvabancomer.andrea.adapter.promocionesPosicionGlobal.PromocionPosicionGlobal@fd855139, 2=com.bbvabancomer.andrea.adapter.promocionesPosicionGlobal.PromocionPosicionGlobal@fc08966b}"-->
+
+
+                                            <li class="option-mob">
+                                                <a href="simuladorDeCreditos?opcion=contratar"
+                                                    id="simuladorDeCreditos"><em
+                                                        class="simuladorCreditos">Simulador</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+                                            <!--/c:forEach-->
+                                        </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                                        <!-- Opcion contratar winner card "Mi Familia" -->
+                                        <ul class="col_1">
+                                            <li class="sub-menu-title">
+                                                <br>
+                                                Cuentas
+                                                <span class="arrow bottom-arrow"></span><span
+                                                    class="line-menu high-blue"></span><span
+                                                    class="line-menu low-blue"></span>
+                                            </li>
+
+                                            <li class="option-mob">
+                                                <a class="winnerCard_appStart" id="menu_oportunidades"
+                                                    href="winnerCardContratacion?clickStart=menu oportunidades">
+                                                    <em>
+                                                        Abrir una cuenta para menores de edad
+                                                    </em>
+                                                </a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+                                        </ul>
+                                        <!-- FIN Opcion contratar winner card "Mi Familia" -->
+
+
+                                        <ul class="col_1">
+                                            <li class="sub-menu-title">
+                                                <br>
+                                                Servicios
+                                                <span class="menu-item-option-icon"><span
+                                                        class="arrow bottom-arrow"></span></span><span
+                                                    class="line-menu high-blue"></span><span
+                                                    class="line-menu low-blue"></span>
+                                            </li>
+
+
+
+                                            <li class="option-mob">
+                                                <a href="domiciliaciones?opcion=contratar"><em>Domiciliación</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                            <li class="option-mob">
+                                                <a href="portabilidadNominaAlta?opcion=contratar"><em>Portabilidad
+                                                        Nómina</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+                                            <!-- 															<li class="option-mob">	 -->
+
+                                            <!-- 																<span class="arrow left-arrow"></span> -->
+                                            <!-- 															</li> -->
+
+
+
+                                            <li class="option-mob">
+                                                <a href="planFlow?origen=crearPlan"><em>Crear Meta BBVA Plan</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+
+                                        </ul>
+
+
+                                        <ul class="col_1">
+                                            <li class="sub-menu-title">
+                                                <br>
+                                                Seguros
+                                                <span class="menu-item-option-icon"><span
+                                                        class="arrow bottom-arrow"></span></span><span
+                                                    class="line-menu high-blue"></span><span
+                                                    class="line-menu low-blue"></span>
+                                            </li>
+
+                                            <li class="option-mob">
+                                                <a href="autoSeguro" id="autoSeguroDinamico"
+                                                    data-fulfillmentmodel="online"
+                                                    data-migadata="autoseguro dinamico clientes"
+                                                    data-type="contratacion"
+                                                    data-step="app on click start: Seguro de auto"
+                                                    data-primarycategory="seguros" data-productsubtype=""
+                                                    data-productname="seguro de auto">
+                                                    <em>Auto</em>
+                                                </a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+                                            <li class="option-mob">
+                                                <a href="metaEducacion?opcion=contratar" id="seguroMetaEducacion"
+                                                    data-fulfillmentmodel="online" data-migadata="meta educativa"
+                                                    data-type="contratacion"
+                                                    data-step="app on click start: Meta Educacion"
+                                                    data-primarycategory="seguros" data-productsubtype=""
+                                                    data-productname="seguro educativo">
+                                                    <em>Meta Educación</em>
+                                                </a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+                                        </ul>
+                                        <ul class="col_1">
+                                            <li class="sub-menu-title">
+                                                <br>
+                                                Créditos
+                                                <span class="arrow bottom-arrow"></span><span
+                                                    class="line-menu high-blue"></span><span
+                                                    class="line-menu low-blue"></span>
+                                            </li>
+                                            <li class="option-mob">
+                                                <a href="solicitudDigitalFlow?getContactsInformation=true"><em>Crédito
+                                                        Auto</em></a> <span class="arrow left-arrow"></span>
+                                            </li>
+                                        </ul>
+
+                                        <!--29.09.2017 -->
+                                    </div>
                                 </div>
-                                <div class="btn_help" id="email_h">
-                                    <div class="helpname">Administración</div>                                        
-                                    <i class="bbva-icon ui-settings"></i>
+
+                            </li>
+
+
+                            <!---------------------- CONSULTAR ---------------------->
+                            <li class="menu-item consultar" style="">
+                                <a href="#" class="menu-item-option" data-menu="consultar">
+                                    <img src="img/iconos/menu.png" alt="" class="icon-consultar">
+                                    Reportes
+                                    <span class="menu-item-option-icon"><span class="arrow right-arrow"></span></span>
+                                </a>
+                                <span class="line-menu high-blue"></span>
+                                <span class="line-menu low-blue"></span>
+
+
+                                <div class="submenu-container" style="display:none;">
+                                    <div class="submenu-container-positioner">
+                                        <ul class="ul-option-back">
+                                            <li class="option-back">
+                                                <a href="#">
+                                                    <span class="arrow left-arrow"></span>
+                                                    <img src="img/iconos/menu.png" alt="" class="icon-consultar">
+                                                    Consultar
+                                                </a>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li class="sub-menu-title">
+                                                <br>
+                                                Transferir
+                                                <span class="menu-item-option-icon"><span
+                                                        class="arrow bottom-arrow"></span></span><span
+                                                    class="line-menu high-blue"></span><span
+                                                    class="line-menu low-blue"></span>
+                                            </li>
+
+
+
+                                            <li class="option-mob">
+                                                <a
+                                                    href="consultaProgramadas?opcion=consultar&amp;submenu=transferir"><em>Programadas</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+                                            <li class="option-mob">
+                                                <a href="consultaEfectivoMovil?opcion=consultar"><em>De retiro sin
+                                                        tarjeta</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+
+                                            <!-- Submenu Operaciones -->
+
+
+
+                                            <!-- Menu Consultar- >Otras Operaciones Programadas -->
+                                            <li class="li-down">
+                                                <ul class="col_down">
+                                                    <li class="sub-menu-title">
+                                                        <br>
+                                                        Hipotecario
+                                                        <span class="menu-item-option-icon"><span
+                                                                class="arrow bottom-arrow"></span></span><span
+                                                            class="line-menu high-blue"></span><span
+                                                            class="line-menu low-blue"></span>
+                                                    </li>
+
+
+
+                                                    <li class="option-mob">
+                                                        <a href="cartaDeducibilidad?opcion=consultar"><em>Carta de
+                                                                deducibilidad</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+
+
+
+
+                                                    <li class="option-mob">
+                                                        <a href="movimientosPeriodo"><em>Estado de cuenta</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+
+
+
+                                                    <li class="option-mob">
+                                                        <a
+                                                            href="o3ConsultaCreditoHipotecario?opcion=consultar&amp;bandera=prestamos"><em>Saldo</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+
+                                                    <!------------------------------- consultar certificado hipotecario---------------------------------->
+
+                                                    <li class="option-mob">
+                                                        <a href="certificadoCredito?opcion=descripcion"><em>Certificado
+                                                                pre-aprobado</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+
+                                                    <!-------------------------------Fin consultar certificado hipotecario---------------------------------->
+
+                                                </ul>
+                                            </li>
+
+                                            <li class="li-down">
+                                                <ul class="col_down">
+                                                    <li class="sub-menu-title">
+                                                        <br>
+
+
+
+                                                        Inversiones Patrimoniales
+
+
+                                                        <span class="menu-item-option-icon"><span
+                                                                class="arrow bottom-arrow"></span></span><span
+                                                            class="line-menu high-blue"></span><span
+                                                            class="line-menu low-blue"></span>
+                                                    </li>
+
+                                                </ul>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li class="sub-menu-title">
+                                                <br>
+                                                Pagos
+                                                <span class="menu-item-option-icon"><span
+                                                        class="arrow bottom-arrow"></span></span><span
+                                                    class="line-menu high-blue"></span><span
+                                                    class="line-menu low-blue"></span>
+                                            </li>
+
+
+
+
+                                            <li class="option-mob">
+                                                <a
+                                                    href="consultaProgramadas?opcion=consultar&amp;submenu=pagar"><em>Programados</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+
+
+
+
+                                            <li class="option-mob">
+                                                <a
+                                                    href="fideicomisoConsultaflow?opcion=consultar"><em>Fideicomisos</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+                                            <li class="option-mob">
+                                                <a href="impuestosConsultaflow"><em>Impuestos</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+                                            <li class="li-down">
+                                                <ul class="col_down">
+
+                                                    <li class="sub-menu-title">
+                                                        <br>
+                                                        Contratos
+                                                        <span class="menu-item-option-icon"><span
+                                                                class="arrow bottom-arrow"></span></span><span
+                                                            class="line-menu high-blue"></span><span
+                                                            class="line-menu low-blue"></span>
+                                                    </li>
+                                                    <li class="option-mob">
+                                                        <a href="consultaContratoBCOM?opcion=consultar"><em>Banca en
+                                                                Línea</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+
+                                                    <li class="option-mob">
+                                                        <a href="consultaContratoAlertas?opcion=consultar"><em>Alertas
+                                                                Bancomer</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+                                                    <li class="option-mob">
+                                                        <a
+                                                            href="consultaContradoBCOMDigitalizado?opcion=consultar&amp;bandera=contDigitalizado"><em>Digitales</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+                                                    <li class="option-mob">
+                                                        <a href="consultarInversionPlazo?opcion=consultar"><em>Pagaré
+                                                                Bancomer</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+                                                    <li class="option-mob">
+                                                        <a
+                                                            href="domiciliaciones?opcion=contratar"><em>Domiciliación</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+                                                    <li class="option-mob">
+                                                        <a href="anexoBeneficiarios"><em>Anexo de Beneficiarios</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+
+                                                    <li class="option-mob">
+                                                        <a
+                                                            href="consultaMultiCreditos?opcion=consultar&amp;entrada=multiCreditos"><em>Consolidación
+                                                                de Créditos</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="sub-menu-title">
+                                                <br>
+                                                Inversiones
+                                                <span class="menu-item-option-icon"><span
+                                                        class="arrow bottom-arrow"></span></span><span
+                                                    class="line-menu high-blue"></span><span
+                                                    class="line-menu low-blue"></span>
+                                            </li>
+                                            <li class="option-mob">
+                                                <a href="inversionLibrePatrimonial?opcion=consultar"><em>Inversión Libre
+                                                        Patrimonial</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+                                            <li class="option-mob">
+                                                <a href="inversionesPerfilContrato?opcion=consultar"><em>Perfil del
+                                                        contrato</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+                                            <li class="option-mob">
+                                                <a href="inversionesProgramadas?opcion=consultar"><em>Operaciones
+                                                        programadas</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+                                            <li class="li-down">
+                                                <ul class="col_down">
+                                                    <li class="sub-menu-title">
+                                                        <br>
+                                                        Préstamos
+                                                        <span class="menu-item-option-icon"><span
+                                                                class="arrow bottom-arrow"></span></span><span
+                                                            class="line-menu high-blue"></span><span
+                                                            class="line-menu low-blue"></span>
+                                                    </li>
+                                                    <li class="option-mob">
+                                                        <a
+                                                            href="consultaSaldoCrediton?opcion=consultar&amp;bandera=prestamos"><em>Saldo</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+                                                    <li class="option-mob">
+                                                        <a
+                                                            href="tablaAmortizacion?opcion=consultar&amp;entrada=amortizacion&amp;banderaDom=TA"><em>Tabla
+                                                                de amortización</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+                                                    <li class="option-mob">
+                                                        <a
+                                                            href="consultaContratoCrediton?opcion=consultar&amp;bandera=contrato"><em>Contrato</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+
+                                                    <li class="option-mob">
+                                                        <a href="edoCuentaCredito?opcion=consultar&amp;cuenta=0"><em>Estado
+                                                                de cuenta</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+
+                                                    <li class="option-mob">
+                                                        <a
+                                                            href="menuCuponeraDescuentos?opcion=consultar&amp;bandera=prestamos"><em>Cuponera
+                                                                de descuentos</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="li-down">
+                                                <ul class="col_down">
+                                                    <li class="sub-menu-title">
+                                                        <br>
+                                                        Fideicomisos
+                                                    </li>
+                                                    <li class="option-mob">
+                                                        <a href="fiduciariosConsultaMovimientos"><em>Consulta
+                                                                Movimientos</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+                                                    <li class="option-mob">
+                                                        <a href="fiduciariosConsultaResumen"><em>Consulta
+                                                                Resumen</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+                                                    <li class="option-mob">
+                                                        <a href="fiduciariosCartera"><em>Consulta Cartera</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li class="sub-menu-title">
+                                                <br>
+                                                Otros
+                                                <span class="menu-item-option-icon"><span
+                                                        class="arrow bottom-arrow"></span></span><span
+                                                    class="line-menu high-blue"></span><span
+                                                    class="line-menu low-blue"></span>
+                                            </li>
+                                            <li class="option-mob">
+                                                <a href="speiOtrosBancos"><em>Movimientos otros bancos</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+                                            <li class="option-mob">
+                                                <a href="movimientosRecibidos"><em>Movimientos Recibidos</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+                                            <li class="option-mob">
+                                                <a href="actividadInternet?opcion=consultar"><em>Actividad en
+                                                        internet</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+                                            <li class="option-mob">
+                                                <a href="consultaCuentaClabeNew"><em>CLABE</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+                                            <li class="option-mob">
+                                                <a href="proteccionChequesConsulta?opcion=consultar&amp;menu=c"><em>Cheques
+                                                        protegidos</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+                                            <li class="option-mob">
+                                                <a
+                                                    href="aclaracionesConsultas?opcion=consultar"><em>Aclaraciones</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+                                            <li class="option-mob">
+                                                <a href="consultaPortabilidadNomina?opcion=consultar"><em>Solicitud
+                                                        Portabilidad Nómina</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+
+                                            <li class="option-mob"><a href="constanciasCFDI"><em>Constancias
+                                                        CFDI</em></a>
+                                                <span class="arrow left-arrow"></span>
+                                            </li>
+                                            <li class="option-mob">
+                                                <a
+                                                    href="posicionGlobalNgob?cellsNavigation=cancelInsurance&amp;pathApplication=insurances-product-type/withoutInsurances">
+                                                    <em>Seguros</em></a>
+                                            </li>
+
+                                            <li class="li-down">
+                                                <ul class="col_down">
+                                                    <li class="sub-menu-title">
+                                                        <br>
+                                                        Tarjeta de crédito
+                                                        <span class="menu-item-option-icon"><span
+                                                                class="arrow bottom-arrow"></span></span><span
+                                                            class="line-menu high-blue"></span><span
+                                                            class="line-menu low-blue"></span>
+                                                    </li>
+                                                    <li class="option-mob">
+                                                        <a href="tdcConsultaPuntos?opcion=consultar"><em>Puntos
+                                                                BBVA</em></a>
+                                                        <span class="arrow left-arrow"></span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div class="btn_help" id="email_h">
-                                    <div class="helpname">Reporte</div>                    
-                                    <i class="bbva-icon ui-email helpicon"></i>
-                                </div>
-                            </div>
+
+                            </li>
+                        </ul>
+
+                    </nav>
+
+                    <nav class="main-menu main-menu-mob-nav" style="display: none;">
+                        <!-- NAV PARA MENU MOVIL -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="border: #072146 solid 1px; width: 80%; display: inline-flex;">
+            <div class="select-title sl" style="padding-top: 1.5%;">
+                <i id="filter_bar" class="bbva-icon ui-filter sl"></i>
+                <span class="option-text sl center">Búsqueda avanzada:&nbsp;&nbsp;</span>
+            </div>
+            <div class="form-validation-group">
+                <div class="form-group"  style=" display: inline-flex;">
+                    <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname"
+                        name="internallawyer" id="internallawyer" type="text" data-placeholder="Abogado interno"
+                        required autocomplete="off" value=""/>
+                </div>
+            </div>
+            <i class="bbva-icon ui-search sl" style="padding-top: 1.5%;"></i>
+        </div>
+
+        <div id="filter_body" class="container" style="display: none;width: 80%;padding-top: 1%;">
+            <div style="width: 100%; display: inline-flex;">
+                <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname"
+                    name="internallawyer" id="internallawyer" type="text" data-placeholder="Países"
+                    required autocomplete="off" value=""/>
+                <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname"
+                    name="internallawyer" id="internallawyer" type="text" data-placeholder="Divisas"
+                    required autocomplete="off" value=""/>
+                <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname"
+                    name="internallawyer" id="internallawyer" type="text" data-placeholder="Bancos"
+                    required autocomplete="off" value=""/>
+                <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname"
+                    name="internallawyer" id="internallawyer" type="text" data-placeholder="Grupos"
+                    required autocomplete="off" value=""/>
+            </div>
+            <div style="display: inline-flex;margin-top: 1%;float: right;">
+                <button style="margin-left: 7px;margin-right: 7px;"><i id="filter_bar" class="bbva-icon ui-trash sl"></i>Limpiar filtros</button>
+                <button style="margin-left: 7px;margin-right: 7px;">Aplicar</button>
+            </div>
+        </div>
+
+
+        <div class="help-menu removeifNC container" style="display: none;">
+            <div class="btn_help" id="call_h">
+                <div class="helpname">Contabilización</div>
+                <i class="bbva-icon ui-look-up"></i>
+            </div>
+            <div class="btn_help" id="email_h">
+                <div class="helpname">Cartera</div>
+                <i class="bbva-icon ui-deposit"></i>
+            </div>
+            <div class="btn_help" id="email_h">
+                <div class="helpname">Procedimientos</div>
+                <i class="bbva-icon ui-edit"></i>
+            </div>
+            <div class="btn_help" id="email_h">
+                <div class="helpname">Ventas</div>
+                <i class="bbva-icon ui-home"></i>
+            </div>
+            <div class="btn_help" id="email_h">
+                <div class="helpname">Administración</div>
+                <i class="bbva-icon ui-settings"></i>
+            </div>
+            <div class="btn_help" id="email_h">
+                <div class="helpname">Reporte</div>
+                <i class="bbva-icon ui-email helpicon"></i>
+            </div>
         </div>
         <div class="footer">
             <div class="container">
                 <div class="footer-logo">
                     <img src="images/LogoBBVAOportunidades@2x.png">
                 </div>
-				<div class="footer__links" style="display: none;">
+                <div class="footer__links" style="display: none;">
                     <div class="footer__list">
                         <div class="link">
-                            <a target="_blank" href="https://derechosarco.fundacionbbvabancomer.org/" class="link__content ">
+                            <a target="_blank" href="https://derechosarco.fundacionbbvabancomer.org/"
+                                class="link__content ">
                                 ARCO
                             </a>
                         </div>
                         <div class="link">
-                            <a target="_blank" href="https://www.fundacionbbva.mx/aviso-de-privacidad/" class="link__content ">
+                            <a target="_blank" href="https://www.fundacionbbva.mx/aviso-de-privacidad/"
+                                class="link__content ">
                                 Avisos de privacidad
                             </a>
                         </div>
-                    </div>   
+                    </div>
                 </div>
                 <p class="footer-copyright" style="display: none;">
-                    &copy; <span id="currentYear"></span> BBVA Bancomer, S. A., Instituci&oacute;n de Banca M&uacute;ltiple, Grupo Financiero BBVA Bancomer, Avenida Paseo de la Reforma 510, colonia Ju&aacute;rez, c&oacute;digo postal 06600, alcald&iacute;a Cuauht&eacute;moc, Ciudad de M&eacute;xico.
+                    &copy; <span id="currentYear"></span> BBVA Bancomer, S. A., Instituci&oacute;n de Banca
+                    M&uacute;ltiple, Grupo Financiero BBVA Bancomer, Avenida Paseo de la Reforma 510, colonia
+                    Ju&aacute;rez, c&oacute;digo postal 06600, alcald&iacute;a Cuauht&eacute;moc, Ciudad de
+                    M&eacute;xico.
                 </p>
             </div>
         </div>
     </div>
-    <div class="waitmodal"  id="waitmodal">
+    <div class="waitmodal" id="waitmodal">
         <figure style="width:136px;padding:0;margin: 0;">
             <svg xmlns="http://www.w3.org/2000/svg" id="Blue" viewBox="0 0 400 400" style="display:block">
                 <defs>
@@ -426,49 +1442,76 @@
                             <feFuncB type="linear" slope="2"></feFuncB>
                         </feComponentTransfer>
                     </filter>
-                    <radialGradient id="Gradient-0" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043" gradientUnits="userSpaceOnUse">
+                    <radialGradient id="Gradient-0" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043"
+                        gradientUnits="userSpaceOnUse">
                         <stop offset="0.143991" stop-color="#2dcccd"></stop>
                         <stop offset="1" stop-color="#004481" stop-opacity="0"></stop>
                     </radialGradient>
-                    <radialGradient id="Gradient-1" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043" gradientUnits="userSpaceOnUse">
+                    <radialGradient id="Gradient-1" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043"
+                        gradientUnits="userSpaceOnUse">
                         <stop offset="0.133991" stop-color="#2dcccd"></stop>
                         <stop offset="1" stop-color="#004481" stop-opacity="0"></stop>
                     </radialGradient>
-                    <radialGradient id="Gradient-2" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043" gradientUnits="userSpaceOnUse">
+                    <radialGradient id="Gradient-2" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043"
+                        gradientUnits="userSpaceOnUse">
                         <stop offset="0.153991" stop-color="#2dcccd"></stop>
                         <stop offset="1" stop-color="#004481" stop-opacity="0"></stop>
                     </radialGradient>
-                    <radialGradient id="Gradient-3" cx="196.5" cy="0" r="100" fx="196.5" fy="0" gradientUnits="userSpaceOnUse">
+                    <radialGradient id="Gradient-3" cx="196.5" cy="0" r="100" fx="196.5" fy="0"
+                        gradientUnits="userSpaceOnUse">
                         <stop offset="0" stop-color="#2dcccd"></stop>
                         <stop offset="1" stop-color="#2dcccd" stop-opacity="0"></stop>
                     </radialGradient>
                     <clipPath id="clip-path">
-                        <ellipse id="Mask" class="cls-1" rx="197.5" ry="197.5" fill="none" transform="translate(0,0) translate(200,200)"></ellipse>
+                        <ellipse id="Mask" class="cls-1" rx="197.5" ry="197.5" fill="none"
+                            transform="translate(0,0) translate(200,200)"></ellipse>
                     </clipPath>
                     <mask id="Mask-1" style="mask-type: luminance;">
-                        <path d="M-0.66667,0C-0.66667,0,50.5,85,167,85C281.5,85,334,0,334,0C334,0,281.5,93,167,93C50.5,93,-0.66667,0,-0.66667,0Z" fill="#4afcfd" stroke-linecap="square" stroke="none" filter="url(#Filter-2)" transform="translate(-166.5,104.5)" style="mix-blend-mode: normal; animation: 1.6s linear infinite both a1_d;"></path>
+                        <path
+                            d="M-0.66667,0C-0.66667,0,50.5,85,167,85C281.5,85,334,0,334,0C334,0,281.5,93,167,93C50.5,93,-0.66667,0,-0.66667,0Z"
+                            fill="#4afcfd" stroke-linecap="square" stroke="none" filter="url(#Filter-2)"
+                            transform="translate(-166.5,104.5)"
+                            style="mix-blend-mode: normal; animation: 1.6s linear infinite both a1_d;"></path>
                     </mask>
                     <pattern id="imageload" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
                         <image x="0" y="0" xlink:href="images/loading_filter.png"></image>
                     </pattern>
                     <clipPath id="ClipPath-1">
-                        <path id="Mask_circle" class="st0" d="M400,0L0,0L0,400L400,400ZM45.9596,200C45.9596,115.061,115.061,45.9596,200,45.9596C284.939,45.9596,354.04,115.061,354.04,200C354.04,284.939,284.939,354.04,200,354.04C115.061,354.04,45.9596,284.939,45.9596,200Z" fill="#00ff16" fill-rule="evenodd"></path>
+                        <path id="Mask_circle" class="st0"
+                            d="M400,0L0,0L0,400L400,400ZM45.9596,200C45.9596,115.061,115.061,45.9596,200,45.9596C284.939,45.9596,354.04,115.061,354.04,200C354.04,284.939,284.939,354.04,200,354.04C115.061,354.04,45.9596,284.939,45.9596,200Z"
+                            fill="#00ff16" fill-rule="evenodd"></path>
                     </clipPath>
                 </defs>
-                <g id="All_Grouped" clip-path="url(#ClipPath-1)" transform="translate(200,200) translate(-200,-200)" style="animation: 1.6s linear infinite both All_Grouped_t;">
-                    <ellipse id="Fill" class="cls-2" rx="197.5" ry="197.5" fill="#004481" transform="translate(0,0) translate(200,200)"></ellipse>
-                    <path id="Outline" class="cls-1" d="M196.5,0C87.9723,0,0,87.9723,0,196.5C0,305.028,87.9723,393,196.5,393C305.028,393,393,305.028,393,196.5C393,87.9723,305.028,0,196.5,0Z" fill="none" opacity="0.16" stroke="#f2f2f2" stroke-width="2" transform="translate(3.5,3.5)"></path>
+                <g id="All_Grouped" clip-path="url(#ClipPath-1)" transform="translate(200,200) translate(-200,-200)"
+                    style="animation: 1.6s linear infinite both All_Grouped_t;">
+                    <ellipse id="Fill" class="cls-2" rx="197.5" ry="197.5" fill="#004481"
+                        transform="translate(0,0) translate(200,200)"></ellipse>
+                    <path id="Outline" class="cls-1"
+                        d="M196.5,0C87.9723,0,0,87.9723,0,196.5C0,305.028,87.9723,393,196.5,393C305.028,393,393,305.028,393,196.5C393,87.9723,305.028,0,196.5,0Z"
+                        fill="none" opacity="0.16" stroke="#f2f2f2" stroke-width="2" transform="translate(3.5,3.5)">
+                    </path>
                     <g class="cls-5" clip-path="url(#clip-path)">
                         <g id="Gradient" style="animation: 1.6s linear infinite both a0_t;">
-                            <path class="cls-6" d="M400,0L400,400L0,400L0,0Z" fill="url(#Gradient-0)" opacity="1" filter="url(#Filter-0)" fill-opacity="0.6" fill-rule="nonzero" stroke-opacity="1" transform="translate(0,0) scale(1,0.7)" style="animation: 1.6s linear infinite both Gradient_t, 1.6s linear infinite both Gradient_fo, 1.6s linear infinite both Gradient_f;"></path>
+                            <path class="cls-6" d="M400,0L400,400L0,400L0,0Z" fill="url(#Gradient-0)" opacity="1"
+                                filter="url(#Filter-0)" fill-opacity="0.6" fill-rule="nonzero" stroke-opacity="1"
+                                transform="translate(0,0) scale(1,0.7)"
+                                style="animation: 1.6s linear infinite both Gradient_t, 1.6s linear infinite both Gradient_fo, 1.6s linear infinite both Gradient_f;">
+                            </path>
                         </g>
                     </g>
-                    <ellipse rx="197.5" ry="197.5" fill="url(#imageload)" stroke="none" fill-rule="evenodd" filter="url(#Filter-1)" mask="url(#Mask-1)" transform="translate(199.5,199.5) rotate(180) translate(-0.5,-0.5)" style="mix-blend-mode: normal;"></ellipse>
-                    <path id="Shine" class="cls-1" d="M196.5,0C87.9723,0,0,87.9723,0,196.5C0,305.028,87.9723,393,196.5,393C305.028,393,393,305.028,393,196.5C393,87.9723,305.028,0,196.5,0Z" fill="none" opacity="0.8" stroke="url(#Gradient-3)" stroke-width="2" transform="translate(3.5,3.5)"></path>
+                    <ellipse rx="197.5" ry="197.5" fill="url(#imageload)" stroke="none" fill-rule="evenodd"
+                        filter="url(#Filter-1)" mask="url(#Mask-1)"
+                        transform="translate(199.5,199.5) rotate(180) translate(-0.5,-0.5)"
+                        style="mix-blend-mode: normal;"></ellipse>
+                    <path id="Shine" class="cls-1"
+                        d="M196.5,0C87.9723,0,0,87.9723,0,196.5C0,305.028,87.9723,393,196.5,393C305.028,393,393,305.028,393,196.5C393,87.9723,305.028,0,196.5,0Z"
+                        fill="none" opacity="0.8" stroke="url(#Gradient-3)" stroke-width="2"
+                        transform="translate(3.5,3.5)"></path>
                 </g>
             </svg>
         </figure>
     </div>
+
     <div class="modal" id="modal_generic" close-icon>
         <div id="dialog" class="md-modal md-effect" tabindex="-1">
             <div class="md-wrapper ">
@@ -483,7 +1526,7 @@
         </div>
         <div class="md-overlay" aria-hidden="true"></div>
     </div>
-    <div class="modal" id="modal_timeout">
+    <div class="modal" id="modal_timeout" style="display: none;">
         <div id="dialog" class="md-modal md-effect" tabindex="-1">
             <div class="md-wrapper ">
                 <div id="content" class="md-content">
@@ -496,7 +1539,8 @@
                                 <div class="grid-item">
                                     <div class="message-modal">
                                         <div id="cdSession"></div>
-                                        <div>Da clic en el bot&oacute;n de abajo para evitar que cierre tu sesi&oacute;n.</div>
+                                        <div>Da clic en el bot&oacute;n de abajo para evitar que cierre tu
+                                            sesi&oacute;n.</div>
                                     </div>
                                 </div>
                             </div>
@@ -514,23 +1558,19 @@
         </div>
         <div class="md-overlay" aria-hidden="true"></div>
     </div>
-    <div class="help-menu removeifNC" style="display: none;">
-        <div class="btn_help" id="call_h">
-            <i class="bbva-icon ui-telephone helpicon"></i>
-            <div class="helpname">Llamar</div>
-        </div>
-        <div class="btn_help" id="email_h">
-            <i class="bbva-icon ui-email helpicon"></i>
-            <div class="helpname">Correo</div>
-        </div>
-        <div class="btn_help" id="help_sh" style="display: none">
-            <i class="bbva-icon ui-contigo helpicon"></i>
-            <div class="helpname">Ayuda</div>
-        </div>
-    </div>
+
     <script src="scripts/browser_detect.js"></script>
     <script src="scripts/mask.js"></script>
     <script src="scripts/dropzone.js"></script>
     <script src="js/dist/bundle.js"></script>
+
+    <script>
+    $(document).ready(function(){
+  $("#filter_bar").click(function(){
+    $("#filter_body").slideToggle();
+  });
+});
+    </script>
 </body>
+
 </html>
