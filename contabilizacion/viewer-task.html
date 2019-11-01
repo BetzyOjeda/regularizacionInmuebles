@@ -151,6 +151,7 @@
             letter-spacing: 0;
             text-align: right;
             line-height: 16px;
+            font-weight: 900;
         }
 
         tr th:nth-child(1) {
@@ -275,6 +276,12 @@
             height: 48px;
             border-radius: 50%;
         }
+
+        .name-app {
+            COLOR: WHITE; 
+            FONT-SIZE: 17PX;
+            font-family: 'BentonSansBBVA-Medium', 'Helvetica', 'Arial', 'sans-serif';
+        }
     </style>
 </head>
 
@@ -282,11 +289,18 @@
     <div class="page-container">
         <div class="header">
             <div class="header_container container flex-items">
-                <div class="header_logo">
+                <div class="header_logo" style="    width: 29%">
                     <a href="#" class="header__logo__link">
                         <img src="./images/LogoBBVA@2x.png" class="header_image" alt="">
                     </a>
                 </div>
+                <div class="header__wrapper">
+                        <div class="header__logo" style="line-height: 3.2;">
+                            <div class="header__logo__link">
+                                <span class="name-app">SISTEMA REGULARIZACIÓN DE INMUEBLES</span>
+                            </div>
+                        </div>
+                    </div>
                 <div class="menu flex-items">
                     <div class="btn-menu" id="user-notify">
                         <i class="bbva-icon ui-alarm"></i>
