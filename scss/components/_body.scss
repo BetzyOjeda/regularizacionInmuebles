@@ -284,6 +284,12 @@ a:visited {
   border-radius: 50%;
 }
 
+.sticky .avatar {
+  width: 35px;
+  height: 35px;
+  transition: all .44444s;
+}
+
 .title {
   margin: 2rem 0px;
   font-family: "BentonSansBBVA-Medium", Helvetica, Arial, sans-serif;
