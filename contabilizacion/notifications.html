@@ -68,7 +68,7 @@
             height: 56px;
             align-items: center;
             display: inline-flex;
-            font-size: 24px;
+            font-size: 30px;
             padding-top: 1rem;
         }
 
@@ -270,11 +270,12 @@
             color: blue;
         }
 
-        .name-app {
-            COLOR: WHITE; 
-            FONT-SIZE: 17PX;
-            font-family: 'BentonSansBBVA-Medium', 'Helvetica', 'Arial', 'sans-serif';
+        
+        .unreadNotification{
+            font-weight: bold;
         }
+
+
     </style>
 </head>
 
@@ -288,7 +289,7 @@
                     </a>
                 </div>
                 <div class="header__wrapper">
-                        <div class="header__logo" style="line-height: 3.2;">
+                        <div class="header__logo titleCenter">
                             <div class="header__logo__link">
                                 <span class="name-app">SISTEMA REGULARIZACIÓN DE INMUEBLES</span>
                             </div>
@@ -333,104 +334,87 @@
                     <table id="table_main" class="table striped ">
                         <thead>
                             <tr class="">
-                                <th style="text-align: center; width: 80%" title="Número de crédito PU">
-                                    <!-- NÚMERO DE CRÉDITO PU -->
+                                <th>
+                                    <i class="bbva-icon ui-trash" style="color: #1d73b2; cursor: pointer;" title="Eliminar"></i>	
+                                    <i class="bbva-icon ui-checkmark" style="color: #1d73b2; cursor: pointer;" title="Marcar como leído"></i>
                                 </th>
-                                <th style="text-align: center; width: 20%" title="Ir al expediente">
+                                <th style="text-align: center; width: 20%" title="">
                                     <!-- EXPEDIENTE -->
                                 </th>
+                                
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="" id="7">
-                                <td style="text-align: center; width:80%; display: ;">
-                                    <span>Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
+                                
+                                <td >
+                                    <span class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="unreadNotification" style="padding-left: 5%;">Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
                                 </td>
-                                <td style="text-align: right; width: 20%; display: ;">
+                                <td >
                                     <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
                                 </td>
                             </tr>
-
                             <tr class="" id="7">
-                                <td style="text-align: center; width: 80%; display: ;">
-                                    <span>Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
-                                </td>
-                                <td style="text-align: right; width: 20%; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
+                                
+                                    <td >
+                                        <span class="checkbox checked" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                        <span style="padding-left: 5%;">Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
+                                    </td>
+                                    <td >
+                                        <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                    </td>
+                                </tr>
+                                <tr class="" id="7">
+                                
+                                        <td >
+                                            <span class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                            <span class="unreadNotification" style="padding-left: 5%;">Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
+                                        </td>
+                                        <td >
+                                            <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                        </td>
+                                    </tr>
+                                    <tr class="" id="7">
+                                
+                                            <td >
+                                                <span class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                                <span class="unreadNotification" style="padding-left: 5%;">Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
+                                            </td>
+                                            <td >
+                                                <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="" id="7">
+                                            <td >
+                                                <span class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                                <span class="unreadNotification" style="padding-left: 5%;">Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
+                                            </td>
+                                            <td >
+                                                <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="" id="7">
+                                            <td >
+                                                <span class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                                <span class="unreadNotification" style="padding-left: 5%;">Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
+                                            </td>
+                                            <td >
+                                                <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="" id="7">
+                                            <td >
+                                                <span class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                                <span class="unreadNotification" style="padding-left: 5%;">Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
+                                            </td>
+                                            <td >
+                                                <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                            </td>
+                                        </tr>
+                        
 
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 80%; display: ;">
-                                    <span>Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
-                                </td>
-                                <td style="text-align: right; width: 20%; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 80%; display: ;">
-                                    <span>Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
-                                </td>
-                                <td style="text-align: right; width: 20%; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 80%; display: ;">
-                                    <span>Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
-                                </td>
-                                <td style="text-align: right; width: 20%; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 80%; display: ;">
-                                    <span>Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
-                                </td>
-                                <td style="text-align: right; width: 20%; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 80%; display: ;">
-                                    <span>Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
-                                </td>
-                                <td style="text-align: right; width: 20; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 80%; display: ;">
-                                    <span>Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
-                                </td>
-                                <td style="text-align: right; width: 20%; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 80%; display: ;">
-                                    <span>Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
-                                </td>
-                                <td style="text-align: right; width: 20%; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 80%; display: ;">
-                                    <span>Abogado Interno autorizó contabilización de Juan Cruz López 01-01-0001</span>
-                                </td>
-                                <td style="text-align: right; width: 20%; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
+                           
 
                         </tbody>
                     </table>

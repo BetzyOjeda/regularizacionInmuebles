@@ -38,6 +38,20 @@ input:invalid {
   font-family: 'BentonSansBBVA-Medium', 'Helvetica', 'Arial', 'sans-serif';
 }
 
+.sticky .name-app {
+  font-size: 12PX;
+  transition: all .44444s;
+}
+
+.titleCenter{
+  line-height: 3.2;
+}
+
+.sticky .titleCenter{
+  line-height: 2;
+  transition: all .44444s;
+}
+
 .title2 {
   font-size: 18px;
   text-align: center;
