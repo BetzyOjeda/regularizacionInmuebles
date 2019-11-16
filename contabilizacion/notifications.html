@@ -68,7 +68,7 @@
             height: 56px;
             align-items: center;
             display: inline-flex;
-            font-size: 24px;
+            font-size: 30px;
             padding-top: 1rem;
         }
 
@@ -118,23 +118,23 @@
         .table th {
             padding: 16px;
             vertical-align: middle;
-            font-family: BentonSansBBVA-Bold;
+            font-family: BentonSansBBVA-Medium;
             font-size: 13px;
             letter-spacing: 0;
             line-height: 16px;
         }
 
-        td {
+        .tableCredit td {
             padding: 16px;
             height: 25px;
             vertical-align: middle;
             line-height: 16px;
         }
 
-        th {
+        .tableCredit th {
             padding: 16px;
             vertical-align: middle;
-            font-family: BentonSansBBVA-Bold;
+            font-family: BentonSansBBVA-Medium;
             font-size: 13px;
             letter-spacing: 0;
             line-height: 16px;
@@ -145,7 +145,7 @@
         }
 
         thead {
-            font-family: BentonSansBBVA-Bold;
+            font-family: BentonSansBBVA-Medium;
             font-size: 13px;
             color: #121212;
             letter-spacing: 0;
@@ -270,6 +270,17 @@
             color: blue;
         }
 
+        
+        .unreadNotification{
+            font-weight: bold;
+        }
+
+        .readNotification{
+            font-weight: bold;
+            color:#6666;
+        }
+
+
     </style>
 </head>
 
@@ -323,241 +334,81 @@
         </div>
         <div class="">
             <div class="container">
-                <h1 class="title">Tareas pendientes</h1>
+                <h1 class="title">Notificaciones</h1>
                 <div style="overflow: auto; width: 100%; margin-top: 1rem;">
                     <table id="table_main" class="table striped ">
                         <thead>
                             <tr class="">
-                                <th style="text-align: center; width: 200px" title="Número de crédito PU">
-                                    NÚMERO DE CRÉDITO PU
+                                <th style="width: 10%" title="">
+                                    <i class="bbva-icon ui-trash" style="color: #1d73b2; cursor: pointer;" title="Eliminar"></i>	
+                                    <i class="bbva-icon ui-email-open" style="color: #1d73b2; cursor: pointer;" title="Marcar como leído"></i>
                                 </th>
-                                <th style="text-align: center; width: 200px" title="Título">
-                                    NOMBRE DEL ASUNTO
+                                <th style="width: 70%" title="">
+                                   
                                 </th>
-                                <th style="text-align: left; width: 200px" title="Fecha de notificación">
-                                    ABOGADO INTERNO
+                                <th style="text-align: center; width: 20%; color: #1d73b2;" title="">
+                                    IR AL EXPEDIENTE
                                 </th>
-                                <th style="text-align: center; width: 200px" title="Ir al expediente">
-                                    IMPORTE SALDO CONTABLE
-                                </th>
-                                <th style="text-align: center; width: 200px" title="Ir al expediente">
-                                    DÍAS TRANSCURRIDOS
-                                </th>
-                                <th style="text-align: center; width: 200px" title="Ir al expediente">
-                                    EXPEDIENTE
-                                </th>
+                                
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
+                                <td >
+                                     <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td >                                   
+                                    <span class="readNotification">Abogado Interno autorizó contabilización de Juan Cruz López 22-05-2019</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente" style="color: #1d73b2; cursor: pointer;"></i>
                                 </td>
                             </tr>
-
                             <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
+                                <td >
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td >
+                                    <span class="readNotification">Director Regional aprobó contabilización de Juan Cruz López 17-08-2019</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente" style="color: #1d73b2; cursor: pointer;"></i>
                                 </td>
                             </tr>
-
                             <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
+                                <td >
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td >
+                                    <span class="unreadNotification">Mesa de Control generó baja contable de Juan Cruz López 13-07-2019</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente" style="color: #1d73b2; cursor: pointer;"></i>
                                 </td>
                             </tr>
-
                             <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
+                                <td >
+                                        <span style="margin: 0 8px;" class="checkbox checked" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td >                                   
+                                    <span class="unreadNotification">Abogado Interno autorizó contabilización de Juan Carlos Chavez 21-05-2019</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente" style="color: #1d73b2; cursor: pointer;"></i>
                                 </td>
                             </tr>
-
                             <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
+                                <td >
+                                        <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td >                                   
+                                    <span class="unreadNotification">Abogado Interno autorizó contabilización de Betzabe Moraima Lopez 01-10-2019</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente" style="color: #1d73b2; cursor: pointer;"></i>
                                 </td>
                             </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
+                                
 
                         </tbody>
                     </table>
