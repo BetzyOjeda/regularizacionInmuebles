@@ -501,7 +501,7 @@ function fillHelpSticky() {
         $("body").addClass("mobile");
         $(".fig-username").find(".username").remove();
         $(".btn-menu").find(".action-exit").remove();
-        $(".header_container").find(".header__wrapper").remove();
+        btn-exit
         helpStickyConfig.placement = 'top';
         helpStickyConfig.tooltiptitle.contactPhone = '<a href="tel:+52'+contact.phone+'">'+contact.phonetext+'</a>';
         helpStickyConfig.tooltiptitle.contactEmail = '<a href="mailto:'+contact.email+'">'+contact.email+'</a>';
@@ -2845,6 +2845,9 @@ var fn_uploadfilemodal = function () {
     });
     fn_showModal();
 };
+var fn_opennotification = function () {
+    fn_showModal();
+};
 /**
  * @file Contains the main function to load and inset templates, also contains the template configurations.
  */
@@ -2897,6 +2900,10 @@ var templates = {
         path: "./views/modal/uploadfile.html",
         onload: fn_uploadfilemodal
     },
+    "notify": {
+        path: "./views/modal/notifications.html",
+        onload: fn_opennotification
+    }
 };
 
 /**

@@ -53,7 +53,7 @@ var templates = {
     "notify": {
         path: "./views/modal/notifications.html",
         onload: fn_opennotification
-    },
+    }
 };
 
 /**
@@ -339,4 +339,5 @@ var miniTemplates = {
                   '</span>'+
                 '</div>'
     },
+    
 };
