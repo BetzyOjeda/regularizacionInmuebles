@@ -32,6 +32,8 @@
     <script src="scripts/mustache.js"></script>
     <script src="scripts/popper.min.js"></script>
     <script src="scripts/tooltip.min.js"></script>
+    <script src="./js/templates.js"></script>
+    
     <style>
     .date{
         top: 6px;
@@ -59,6 +61,13 @@
     .header .header_logo {
         width: 25%;
     }
+    .name-app {
+        line-height: 3;
+        color: white; 
+        line-height: 21%; 
+        font-size: 17PX; 
+        font-family: BentonSansBBVA-Medium, Helvetica, Arial, sans-serif;
+    }
     </style>
 </head>
 <body>
@@ -70,13 +79,9 @@
                         <img src="./images/LogoBBVA@2x.png" class="header_image" alt="">
                     </a>
                 </div>
-                <div class="header__wrapper" style=" WIDTH: 68%; line-height: 4;">
-                        <div class="header__logo" style="WIDTH: 73%;">
-                            <div class="header__logo__link">
-                                <span style="COLOR: WHITE; LINE-HEIGHT: 21%; FONT-SIZE: 17PX; font-family: 'BentonSansBBVA-Medium', 'Helvetica', 'Arial', 'sans-serif';">SISTEMA REGULARIZACIÓN DE INMUEBLES</span>
-                            </div>
-                        </div>
-                    </div>
+                <div class="name-app">
+                    <span>SISTEMA REGULARIZACIÓN DE INMUEBLES</span>        
+                </div>
                 <div class="menu flex-items">
                     <div class="btn-menu" id="user-notify">
                         <i class="bbva-icon ui-alarm"></i>
@@ -1854,7 +1859,7 @@
                 <span id="btn-close" class="md-content__btn-close" aria-label="Cancel">
                     <i class="bbva-icon ui-x icon-close"></i>
                 </span>
-                <div id="content" class="md-content">
+                <div id="content" class="md-content" style="padding: 3em 0 3em;">
                     <div class="body" id="ariaText1b">
                     </div>
                 </div>
@@ -1976,6 +1981,18 @@
 
         $(".calendar").datepicker("option", "dateFormat", "dd/mm/yy" );
         $(".calendar").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "22/10/2019"));
+
+        $("#user-notify").click(function() {
+            templates.notify = {
+                path: "./views/modal/notifications.html",
+                onload: function () {
+                    fn_showModal();
+                }
+            };
+            loadTemplate($("#modal_generic .body"), templates.notify, {
+            });
+        });
+
     });
     </script>
 </body>

@@ -7,6 +7,32 @@
   transform: rotate(180deg);
 }
 
+.notify-date {
+  font-family: BentonSansBBVA-Bold;
+  font-size: 13px;
+  color: rgb(45, 204, 205);
+}
+
+.notify-content{
+  padding: 0 1rem;
+}
+
+.notify-li{
+  align-items: center;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.notify-footer{
+  font-family: BentonSansBBVA-Bold; 
+  color: #1973B8;
+}
+
+.notify-action{
+  font-family: BentonSansBBVA-Bold;
+  font-size: 15px;
+}
+
 .header {
   background-color: $bbva-navy;
   position: relative;
@@ -16,7 +42,6 @@
     padding-top: 16px;
     padding-bottom: 16px;
   }
-
   .header__image {
     display: inline;
     max-height: 20px;

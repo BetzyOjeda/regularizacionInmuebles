@@ -151,7 +151,6 @@
             letter-spacing: 0;
             text-align: right;
             line-height: 16px;
-            font-weight: 900;
         }
 
         tr th:nth-child(1) {
@@ -213,7 +212,7 @@
 
         .link {
             color: #1973B8;
-            font-family: BentonSansBBVA-Medium;
+            font-family: BentonSansBBVA-Bold;
             font-size: 15px;
         }
 
@@ -270,6 +269,17 @@
             color: blue;
         }
 
+        .avatar {
+            vertical-align: middle;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+        }
+        .link{
+            cursor: pointer; 
+            color: #1973B8
+            font-family: BentonSansBBVA-Bold;
+        }
     </style>
 </head>
 
@@ -277,18 +287,11 @@
     <div class="page-container">
         <div class="header">
             <div class="header_container container flex-items">
-                <div class="header_logo" style="    width: 29%">
+                <div class="header_logo">
                     <a href="#" class="header__logo__link">
                         <img src="./images/LogoBBVA@2x.png" class="header_image" alt="">
                     </a>
                 </div>
-                <div class="header__wrapper">
-                        <div class="header__logo titleCenter">
-                            <div class="header__logo__link">
-                                <span class="name-app">SISTEMA REGULARIZACIÓN DE INMUEBLES</span>
-                            </div>
-                        </div>
-                    </div>
                 <div class="menu flex-items">
                     <div class="btn-menu" id="user-notify">
                         <i class="bbva-icon ui-alarm"></i>
@@ -323,242 +326,141 @@
         </div>
         <div class="">
             <div class="container">
-                <h1 class="title">Tareas pendientes</h1>
+                <h1 class="title">Contabilización</h1>
                 <div style="overflow: auto; width: 100%; margin-top: 1rem;">
                     <table id="table_main" class="table striped ">
                         <thead>
                             <tr class="">
-                                <th style="text-align: center; width: 200px" title="Número de crédito PU">
-                                    NÚMERO DE CRÉDITO PU
+                                <th style="text-align: left;" title="Número de crédito PU">
+                                    NO. DE CRÉDITO
                                 </th>
-                                <th style="text-align: center; width: 200px" title="Título">
-                                    NOMBRE DEL ASUNTO
+                                <th style="text-align: left;" title="Asunto">
+                                    ASUNTO
                                 </th>
-                                <th style="text-align: left; width: 200px" title="Fecha de notificación">
-                                    ABOGADO INTERNO
+                                <th style="text-align: left;" title="Estatus">
+                                    ESTATUS
+                                    <i class="bbva-icon ui-simple-up
+                                        sl link"></i>
+                                        <i class="bbva-icon ui-filter
+                                        sl link"></i>
                                 </th>
-                                <th style="text-align: center; width: 200px" title="Ir al expediente">
-                                    IMPORTE SALDO CONTABLE
+                                <th style="text-align: left;" title="Importe saldo contable">
+                                    RESPONSABLE
+                                    <i class="bbva-icon ui-simple-up
+                                        sl link"></i>
+                                    <i class="bbva-icon ui-filter
+                                        sl link"></i>
                                 </th>
-                                <th style="text-align: center; width: 200px" title="Ir al expediente">
-                                    DÍAS TRANSCURRIDOS
+                                <th style="text-align: center;" title="Importe saldo contable">
+                                    COFINAVIT
                                 </th>
-                                <th style="text-align: center; width: 200px" title="Ir al expediente">
+                                <th style="text-align: center;" title="Días transcurridos">
+                                    DÍAS
+                                </th>
+                                <th style="text-align: center; width: 5%;" title="Ir al expediente">
                                     EXPEDIENTE
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
+                                <td style="text-align: left;">
+                                    <span>81291289123276121982</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style="text-align: left;">
+                                    <span>Juan Cruz López</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style="text-align: left;">
+                                    <span>Incompleto</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style="text-align: left;">
+                                    <span>Felipe Contreras Sánchez</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style="text-align: center;">
+                                    <span>Si</span>
                                 </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                <td style="text-align: center;">
+                                    <span style="font-family: BentonSansBBVA-Bold; color: red">21</span>
                                 </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal
+                                        sl" style="cursor: pointer;color: #1973B8;"></i>
                                 </td>
                             </tr>
 
                             <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
+                                <td style="text-align: left;">
+                                    <span>76982937337236651112</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style="text-align: left;">
+                                    <span>Karla Fonseca Gutiérrez</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style="text-align: left;">
+                                    <span>En proceso</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style="text-align: left;">
+                                    <span>Oscar Martínez Ojeda</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style="text-align: center;">
+                                    <span>No</span>
                                 </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                <td style="text-align: center;">
+                                    <span style="font-family: BentonSansBBVA-Bold; color: #f8cd51">10</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal
+                                     sl" style="cursor: pointer;color: #1973B8;"></i>
+                                </td>
+                            </tr>
+                            <tr class="" id="7">
+                                <td style="text-align: left;">
+                                    <span>10887761223128763212</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Nayeli Rojas Juárez</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Suspendido</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>José Rodea Nambo</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <span>Si</span>
+                                </td>
+                                <td style="text-align: center;">
+                                        <span style="font-family: BentonSansBBVA-Bold; color: green">2</span>
+                                    </td>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal
+                                        sl" style="cursor: pointer;color: #1973B8;"></i>
                                 </td>
                             </tr>
 
                             <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
+                                <td style="text-align: left;">
+                                    <span>64312929189821228787</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style="text-align: left;">
+                                    <span>Enrique Jimenez Barrera</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style="text-align: left;">
+                                    <span>Contabilizado</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style="text-align: left;">
+                                    <span>Mariana Dominguez</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style="text-align: center;">
+                                    <span>Si</span>
                                 </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                <td style="text-align: center;">
+                                    <span style="font-family: BentonSansBBVA-Bold; color: green">1</span>
                                 </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal
+                                        sl" style="cursor: pointer;color: #1973B8;"></i>
                                 </td>
                             </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
                         </tbody>
                     </table>
                 </div>

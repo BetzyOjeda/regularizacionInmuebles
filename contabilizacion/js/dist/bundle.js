@@ -2897,6 +2897,10 @@ var templates = {
         path: "./views/modal/uploadfile.html",
         onload: fn_uploadfilemodal
     },
+    "notify": {
+        path: "./views/modal/notifications.html",
+        onload: fn_opennotification
+    }
 };
 
 /**
@@ -3182,6 +3186,7 @@ var miniTemplates = {
                   '</span>'+
                 '</div>'
     },
+    
 };
 (function($) {
     $.fn.inputable = function() {
