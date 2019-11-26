@@ -1710,6 +1710,10 @@ var fn_selectboss = function (_temp) {
     fn_showModal();
 };
 
+var fn_opennotification = function () {
+    fn_showModal();
+};
+
 /**
  *Confirm modal template function
  *
