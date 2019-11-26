@@ -266,6 +266,7 @@
                 </div>
             </div>
         </div>
+		<div class="menuContainer"></div>            
         
         <div class="content">
             <div class="container">
@@ -1009,6 +1010,7 @@
     <script src="js/dist/bundle.js"></script>
 
     <script>
+            $('.menuContainer').load('./menu.html');
         $(document).ready(function () {
             let flag = false;
             $("#filter_bar").click(function () {

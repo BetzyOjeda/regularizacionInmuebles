@@ -43,21 +43,6 @@
             display: inline-block;
         }
 
-        .pagination>li>a,
-        .pagination>li>span {
-            position: relative;
-            float: left;
-            padding: 0.1rem 4px;
-            margin-left: -1px;
-            text-decoration: none;
-            background-color: #fff;
-            font-family: BentonSansBBVA-Medium;
-            font-size: 15px;
-            color: #1973B8;
-            letter-spacing: 0;
-            line-height: 24px;
-        }
-
         span.is-optional {
             display: none;
         }
@@ -68,7 +53,7 @@
             height: 56px;
             align-items: center;
             display: inline-flex;
-            font-size: 30px;
+            font-size: 24px;
             padding-top: 1rem;
         }
 
@@ -92,9 +77,10 @@
             padding: 5px;
         }
 
-        .striped tbody tr:nth-of-type(2n) {
-            background: rgba(212, 237, 252, 0.40);
-        }
+        /* .striped tbody tr:nth-of-type(2n) {
+            /* background: rgba(212, 237, 252, 0.40); */
+
+        /* }  */
 
         .table thead tr:first-child th {
             /*padding-top: 22px;*/
@@ -270,17 +256,6 @@
             color: blue;
         }
 
-        
-        .unreadNotification{
-            font-weight: bold;
-        }
-
-        .readNotification{
-            font-weight: bold;
-            color:#6666;
-        }
-
-
     </style>
 </head>
 
@@ -335,144 +310,136 @@
         <div class="menuContainer"></div>
         <div class="">
             <div class="container">
-                <h1 class="title">Notificaciones</h1>
+                <h1 class="title">Configura tu vista</h1>
                 <div style="overflow: auto; width: 100%; margin-top: 1rem;">
                     <table id="table_main" class="table striped ">
-                        <thead>
+                        <!-- <thead>
                             <tr class="">
-                                <th style="width: 10%" title="">
-                                    <i class="bbva-icon ui-trash" style="color: #1d73b2; cursor: pointer;" title="Eliminar"></i>	
-                                    <i class="bbva-icon ui-email-open" style="color: #1d73b2; cursor: pointer;" title="Marcar como leído"></i>
+                                <th style="text-align: center; width: 200px" title="Número de crédito PU">
+                                    NÚMERO DE CRÉDITO PU
                                 </th>
-                                <th style="width: 70%" title="">
-                                   
+                                <th style="text-align: center; width: 200px" title="Título">
+                                    NOMBRE DEL ASUNTO
                                 </th>
-                                <th style="text-align: center; width: 20%; color: #1d73b2;" title="">
-                                    IR AL EXPEDIENTE
+                                <th style="text-align: left; width: 200px" title="Fecha de notificación">
+                                    ABOGADO INTERNO
                                 </th>
-                                
+                                <th style="text-align: center; width: 200px" title="Ir al expediente">
+                                    IMPORTE SALDO CONTABLE
+                                </th>
+                                <th style="text-align: center; width: 200px" title="Ir al expediente">
+                                    DÍAS TRANSCURRIDOS
+                                </th>
+                                <th style="text-align: center; width: 200px" title="Ir al expediente">
+                                    EXPEDIENTE
+                                </th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody> -->
                             <tr class="" id="7">
-                                <td >
-                                     <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
-                                </td>
-                                <td >                                   
-                                    <span class="readNotification">Abogado Interno autorizó contabilización de Juan Cruz López 22-05-2019</span>
-                                </td>
-                                <td style="text-align: center;">
-                                    <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente" style="color: #1d73b2; cursor: pointer;"></i>
-                                </td>
-                            </tr>
-                            <tr class="" id="7">
-                                <td >
+                                <td style=" width: 118px;">
                                     <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Número de crédito</span>
                                 </td>
-                                <td >
-                                    <span class="readNotification">Director Regional aprobó contabilización de Juan Cruz López 17-08-2019</span>
-                                </td>
-                                <td style="text-align: center;">
-                                    <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente" style="color: #1d73b2; cursor: pointer;"></i>
-                                </td>
-                            </tr>
-                            <tr class="" id="7">
-                                <td >
+                                <td style=" width: 133px;">
                                     <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Asunto</span>
                                 </td>
-                                <td >
-                                    <span class="unreadNotification">Mesa de Control generó baja contable de Juan Cruz López 13-07-2019</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Expediente</span>
                                 </td>
-                                <td style="text-align: center;">
-                                    <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente" style="color: #1d73b2; cursor: pointer;"></i>
-                                </td>
-                            </tr>
-                            <tr class="" id="7">
-                                <td >
-                                        <span style="margin: 0 8px;" class="checkbox checked" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
-                                </td>
-                                <td >                                   
-                                    <span class="unreadNotification">Abogado Interno autorizó contabilización de Juan Carlos Chavez 21-05-2019</span>
-                                </td>
-                                <td style="text-align: center;">
-                                    <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente" style="color: #1d73b2; cursor: pointer;"></i>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">División Jurídica </span>
                                 </td>
                             </tr>
-                            <tr class="" id="7">
-                                <td >
-                                        <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
-                                </td>
-                                <td >                                   
-                                    <span class="unreadNotification">Abogado Interno autorizó contabilización de Betzabe Moraima Lopez 01-10-2019</span>
-                                </td>
-                                <td style="text-align: center;">
-                                    <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente" style="color: #1d73b2; cursor: pointer;"></i>
-                                </td>
-                            </tr>
-                                
 
+                            <tr class="" id="7">
+                                <td style=" width: 118px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Folio GUIA</span>
+                                </td>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Calificación R</span>
+                                </td>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Juzgado</span>
+                                </td>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Estado</span>
+                                </td>
+                            </tr>
+
+                            <tr class="" id="7">
+                                <td style=" width: 118px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Folio REGUS</span>
+                                </td>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Casuística</span>
+                                </td>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Notario</span>
+                                </td>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Municipio</span>
+                                </td>                               
+                            </tr>
+
+                            <tr class="" id="7">
+                                <td style=" width: 118px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Abogado Interno</span>
+                                </td>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Valor del Crédito</span>
+                                </td>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Número de Notaría</span>
+                                </td>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Cofinavit</span>
+                                </td>
+                            </tr>
+
+                            <tr class="" id="7">
+                                <td style=" width: 118px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Abogado Externo</span>
+                                </td>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Tipo de Cartera</span>
+                                </td>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Plaza del Notario</span>
+                                </td>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Semáforo</span>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                </div>
+                    <p class="i-message"><span class="text-message">&nbsp;</span></p></div>
+                    <div class="submtbtn">
+                        <span title="Crear" aria-label="Crear" class="btn__basic btn__submit" id="btn_create">
+                            <span aria-hidden="true">Crear</span>
+                        </span>
+                    </div>
+                </div>              
             </div>
-
-        </div>
-        <div class="casos-paginacion" style="text-align: center; margin: 3rem;">
-            <ul class="pagination" id="pagination">
-                <li id="page_first" class="page-item first disabled" style="display: none;">
-                    <a class="page-link" onmouseover="this.style.cursor='pointer';">
-                        <img id="icon-icon" src="./images/table/Last-Page.svg">
-                    </a>
-                </li>
-                <li id="page_prev" class="page-item prev disabled" style="display: none;">
-                    <a class="page-link" onmouseover="this.style.cursor='pointer';">
-                        <img id="icon-icon" src="./images/table/Unfilled.svg">
-                    </a>
-                </li>
-
-
-
-                <li class="page-item page-active">
-                    <a class="page-link" style="font-weight: bold;">
-                        1
-                    </a>
-                </li>
-                <dom-if style="display: none;"><template is="dom-if"></template></dom-if>
-                <dom-if style="display: none;"><template is="dom-if"></template></dom-if>
-
-                <dom-if style="display: none;"><template is="dom-if"></template></dom-if>
-
-                <li class="page-item">
-                    <span class="page-link" onmouseover="this.style.cursor='pointer';" style="font-weight: bold;"
-                        indexed="2">
-                        2
-                    </span>
-                </li>
-                <dom-if style="display: none;"><template is="dom-if"></template></dom-if>
-
-                <dom-if style="display: none;"><template is="dom-if"></template></dom-if>
-
-                <li class="page-item">
-                    <span class="page-link" onmouseover="this.style.cursor='pointer';" style="font-weight: bold;"
-                        indexed="3">
-                        3
-                    </span>
-                </li>
-                <dom-if style="display: none;"><template is="dom-if"></template></dom-if>
-                <dom-repeat as="item" style="display: none;"><template is="dom-repeat"></template></dom-repeat>
-
-                <li id="page_next" class="page-item next" style="display: block;">
-                    <a class="page-link" onmouseover="this.style.cursor='pointer';">
-                        <img src="./images/table/next_icon.png">
-                    </a>
-                </li>
-
-                <li id="page_last" class="page-item last" style="display: none; padding-left: 3%;">
-                    <a class="page-link" onmouseover="this.style.cursor='pointer';">
-                        <img src="./images/table/next_last_icon.png">
-                    </a>
-                </li>
-            </ul>
         </div>
         <div class="footer" style="position: relative;">
             <div class="container">
@@ -668,6 +635,14 @@
     <script>
         $(document).ready(function(){
             $('.menuContainer').load('./menu.html');
+        });
+        $('.checkbox').on('click', function(){
+            var check=$(this).hasClass("checked");
+            if(check){
+                $(this).removeClass('checked');
+            }else{
+                $(this).addClass('checked');
+            }            
         });
     </script>
 </body>

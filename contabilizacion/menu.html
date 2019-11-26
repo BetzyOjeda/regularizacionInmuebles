@@ -1,0 +1,64 @@
+<div class="menu-responsive" id="menu-Saldos" style="width: 100%;">
+	<div class="user-menu">
+        <div class="menu-desk">
+            <nav class="main-menu main-menu-desk-nav">
+                <ul class="list-menu">
+                    <li class="menu-item misCuentas option-selected" style="">
+                        <input type="hidden" value="" id="flagOpinatorInvestment">
+                        <input type="hidden" value="" id="idOpinatorInvestment">
+
+                        <a class="menu-item-option" onclick="redirectMenu('globalPosition');"
+                            id="globalPosition" data-go="globalPosition"
+                            data-idopi="BBVA_WEB_Inversiones_2019_Abandono"
+                            data-idopiflow="/posicionGlobal?execution=e2s1"
+                            data-href="posicionGlobalNgob?entrada=otro&amp;cellsNavigation=globalPosition&amp;optionMenu=misCuentas"
+                            href="/contabilizacion/notifications.html"> <img src="" alt="" class="icon-misCuentas">
+                            Contabilización <span class="menu-item-option-icon"><span
+                                    class="arrow right-arrow"></span></span>
+                        </a>
+
+                        <span class="line-menu high-blue"></span>
+                        <span class="line-menu low-blue"></span>
+                    </li>
+                    <li class="menu-item transferir" style="">
+                        <a href="#" class="menu-item-option">
+                            <img src="" alt="" class="icon-trasferir">
+                            Cartera
+                            <span class="menu-item-option-icon"><span class="arrow right-arrow"></span></span>
+                        </a>
+                        <span class="line-menu high-blue"></span>
+                        <span class="line-menu low-blue"></span>                        
+                    </li>
+                    <li class="menu-item invertir" style="">
+                        <a href="#" class="menu-item-option">
+                            <img src="" alt="" class="icon-invertir">
+                            Procedimientos
+                            <span class="menu-item-option-icon"><span class="arrow right-arrow"></span></span>
+                        </a>
+                        <span class="line-menu high-blue"></span>
+                        <span class="line-menu low-blue"></span>
+                    </li>
+                    <li class="menu-item consultar" style="">
+                        <a href="#" class="menu-item-option" data-menu="consultar">
+                            <img src="" alt="" class="icon-consultar">
+                            Reportes
+                            <span class="menu-item-option-icon"><span class="arrow right-arrow"></span></span>
+                        </a>
+                        <span class="line-menu high-blue"></span>
+                        <span class="line-menu low-blue"></span>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="main-menu main-menu-mob-nav" style="display: none;">
+                <!-- NAV PARA MENU MOVIL -->
+            </nav>
+        </div>
+    </div>
+</div>
+
+<script>
+$('.list-menu li').on('click', function(){
+    $(this).addClass('option-selected').siblings().removeClass('option-selected');
+});
+
+</script>
