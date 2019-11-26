@@ -43,21 +43,6 @@
             display: inline-block;
         }
 
-        .pagination>li>a,
-        .pagination>li>span {
-            position: relative;
-            float: left;
-            padding: 0.1rem 4px;
-            margin-left: -1px;
-            text-decoration: none;
-            background-color: #fff;
-            font-family: BentonSansBBVA-Medium;
-            font-size: 15px;
-            color: #1973B8;
-            letter-spacing: 0;
-            line-height: 24px;
-        }
-
         span.is-optional {
             display: none;
         }
@@ -92,9 +77,10 @@
             padding: 5px;
         }
 
-        .striped tbody tr:nth-of-type(2n) {
-            background: rgba(212, 237, 252, 0.40);
-        }
+        /* .striped tbody tr:nth-of-type(2n) {
+            /* background: rgba(212, 237, 252, 0.40); */
+
+        /* }  */
 
         .table thead tr:first-child th {
             /*padding-top: 22px;*/
@@ -324,10 +310,10 @@
         <div class="menuContainer"></div>
         <div class="">
             <div class="container">
-                <h1 class="title">Tareas pendientes</h1>
+                <h1 class="title">Configura tu vista</h1>
                 <div style="overflow: auto; width: 100%; margin-top: 1rem;">
                     <table id="table_main" class="table striped ">
-                        <thead>
+                        <!-- <thead>
                             <tr class="">
                                 <th style="text-align: center; width: 200px" title="Número de crédito PU">
                                     NÚMERO DE CRÉDITO PU
@@ -349,279 +335,111 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody> -->
                             <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
+                                <td style=" width: 118px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Número de crédito</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Asunto</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Expediente</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">División Jurídica </span>
                                 </td>
                             </tr>
 
                             <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
+                                <td style=" width: 118px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Folio GUIA</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Calificación R</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Juzgado</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Estado</span>
                                 </td>
                             </tr>
 
                             <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
+                                <td style=" width: 118px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Folio REGUS</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Casuística</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Notario</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Municipio</span>
+                                </td>                               
+                            </tr>
+
+                            <tr class="" id="7">
+                                <td style=" width: 118px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Abogado Interno</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Valor del Crédito</span>
                                 </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Número de Notaría</span>
+                                </td>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Cofinavit</span>
                                 </td>
                             </tr>
 
                             <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
+                                <td style=" width: 118px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Abogado Externo</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Tipo de Cartera</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Plaza del Notario</span>
                                 </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
+                                <td style=" width: 133px;">
+                                    <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span>
+                                    <span class="readNotification">Semáforo</span>
                                 </td>
                             </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
-                            <tr class="" id="7">
-                                <td style="text-align: center; width: 118px; display: ;">
-                                    <span>8928934637898121982</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: center; width: 133px; display: ;">
-                                    <span>XXXXXX</span>
-                                </td>
-                                <td style="text-align: right; width: 252px; display: ;">
-                                    <span class="bold link cursor" id="7">IR AL EXPEDIENTE</span>
-                                </td>
-                            </tr>
-
                         </tbody>
                     </table>
-                </div>
+                    <p class="i-message"><span class="text-message">&nbsp;</span></p></div>
+                    <div class="submtbtn">
+                        <span title="Crear" aria-label="Crear" class="btn__basic btn__submit" id="btn_create">
+                            <span aria-hidden="true">Crear</span>
+                        </span>
+                    </div>
+                </div>              
             </div>
-
-        </div>
-        <div class="casos-paginacion" style="text-align: center; margin: 3rem;">
-            <ul class="pagination" id="pagination">
-                <li id="page_first" class="page-item first disabled" style="display: none;">
-                    <a class="page-link" onmouseover="this.style.cursor='pointer';">
-                        <img id="icon-icon" src="./images/table/Last-Page.svg">
-                    </a>
-                </li>
-                <li id="page_prev" class="page-item prev disabled" style="display: none;">
-                    <a class="page-link" onmouseover="this.style.cursor='pointer';">
-                        <img id="icon-icon" src="./images/table/Unfilled.svg">
-                    </a>
-                </li>
-
-
-
-                <li class="page-item page-active">
-                    <a class="page-link" style="font-weight: bold;">
-                        1
-                    </a>
-                </li>
-                <dom-if style="display: none;"><template is="dom-if"></template></dom-if>
-                <dom-if style="display: none;"><template is="dom-if"></template></dom-if>
-
-                <dom-if style="display: none;"><template is="dom-if"></template></dom-if>
-
-                <li class="page-item">
-                    <span class="page-link" onmouseover="this.style.cursor='pointer';" style="font-weight: bold;"
-                        indexed="2">
-                        2
-                    </span>
-                </li>
-                <dom-if style="display: none;"><template is="dom-if"></template></dom-if>
-
-                <dom-if style="display: none;"><template is="dom-if"></template></dom-if>
-
-                <li class="page-item">
-                    <span class="page-link" onmouseover="this.style.cursor='pointer';" style="font-weight: bold;"
-                        indexed="3">
-                        3
-                    </span>
-                </li>
-                <dom-if style="display: none;"><template is="dom-if"></template></dom-if>
-                <dom-repeat as="item" style="display: none;"><template is="dom-repeat"></template></dom-repeat>
-
-                <li id="page_next" class="page-item next" style="display: block;">
-                    <a class="page-link" onmouseover="this.style.cursor='pointer';">
-                        <img src="./images/table/next_icon.png">
-                    </a>
-                </li>
-
-                <li id="page_last" class="page-item last" style="display: none; padding-left: 3%;">
-                    <a class="page-link" onmouseover="this.style.cursor='pointer';">
-                        <img src="./images/table/next_last_icon.png">
-                    </a>
-                </li>
-            </ul>
         </div>
         <div class="footer" style="position: relative;">
             <div class="container">
@@ -817,6 +635,14 @@
     <script>
         $(document).ready(function(){
             $('.menuContainer').load('./menu.html');
+        });
+        $('.checkbox').on('click', function(){
+            var check=$(this).hasClass("checked");
+            if(check){
+                $(this).removeClass('checked');
+            }else{
+                $(this).addClass('checked');
+            }            
         });
     </script>
 </body>

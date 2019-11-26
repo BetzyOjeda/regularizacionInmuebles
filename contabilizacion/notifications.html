@@ -332,6 +332,7 @@
                 <i class="bbva-icon ui-gradution-cap"></i><span id="scholarshipProgram"></span>
             </div>
         </div>
+        <div class="menuContainer"></div>
         <div class="">
             <div class="container">
                 <h1 class="title">Notificaciones</h1>
@@ -664,6 +665,11 @@
     <script src="scripts/mask.js"></script>
     <script src="scripts/dropzone.js"></script>
     <script src="js/dist/bundle.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.menuContainer').load('./menu.html');
+        });
+    </script>
 </body>
 
 </html>
