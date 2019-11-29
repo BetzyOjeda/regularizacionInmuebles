@@ -1,0 +1,84 @@
+{
+    "data": [
+        {
+            "id": "checkNumeroCredito",
+            "description": "12345678901234567890"
+        },
+        {
+            "id": "checkAsunto",
+            "description": "Betzabe Moraima"
+        },
+        {
+            "id": "checkExpediente",
+            "description": "12345"
+        },
+        {
+            "id": "checkDivisionJuridica",
+            "description": "Metropolitana"
+        },
+        {
+            "id": "checkGuia",
+            "description": "1234567890"
+        },
+        {
+            "id": "checkCalificacion",
+            "description": "R2"
+        },
+        {
+            "id": "checkJuzgado",
+            "description": "Juzgado 1"
+        },
+		{
+            "id": "checkEstado",
+            "description": "Oaxaca"
+        },
+        {
+            "id": "checkRegus",
+            "description": "XXXXX"
+        },
+        {
+            "id": "checkCasuistica",
+            "description": "XXXXX"
+        },
+        {
+            "id": "checkNotario",
+            "description": "Amando Gutierrez"
+        },
+        {
+            "id": "checkMunicipio",
+            "description": "Abejones"
+        },
+        {
+            "id": "checkAbogadoInterno",
+            "description": "Alfredo Larrea Salazar"
+        },
+        {
+            "id": "checkValorCredito",
+            "description": "$10000.00"
+        },
+		{
+            "id": "checkNumeroNotaria",
+            "description": "101"
+        },
+        {
+            "id": "checkCofinavit",
+            "description": "Cofi"
+        },
+        {
+            "id": "checkAbogadoExterno",
+            "description": "Luis Ricardo Martinez Hernandez"
+        },
+        {
+            "id": "checkTipoCartera",
+            "description": "Piel jajaja"
+        },
+        {
+            "id": "checkPlazaNotario",
+            "description": "XXX"
+        },
+        {
+            "id": "checkSemaforo",
+            "description": "XXXXXX"
+        }
+    ]
+}
