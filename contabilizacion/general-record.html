@@ -8,68 +8,91 @@
     <title>Regularización de Inmuebles</title>
     <link rel="stylesheet" href="css/bbva.fonts.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/57x57.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/72x72.png"/>
-    <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/76x76.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/114x114.png"/>
-    <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/120x120.png"/>
-    <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/144x144.png"/>
-    <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/152x152.png"/>
-    <link rel="apple-touch-icon" sizes="167x167" href="images/favicons/167x167.png"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/180x180.png"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/16x16.png"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/32x32.png"/>
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/96x96.png"/>
-    <link rel="icon" type="image/png" sizes="128x128" href="images/favicons/128x128.png"/>
-    <link rel="icon" type="image/png" sizes="192x192" href="images/favicons/192x192.png"/>
-    <link rel="icon" type="image/png" sizes="195x195" href="images/favicons/195x195.png"/>
-    <link rel="icon" type="image/png" sizes="196x196" href="images/favicons/196x196.png"/>
-    <link rel="icon" type="image/png" sizes="228x228" href="images/favicons/228x228.png"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicons/57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicons/72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicons/76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicons/114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicons/120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicons/144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicons/152x152.png" />
+    <link rel="apple-touch-icon" sizes="167x167" href="images/favicons/167x167.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/180x180.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/32x32.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/96x96.png" />
+    <link rel="icon" type="image/png" sizes="128x128" href="images/favicons/128x128.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicons/192x192.png" />
+    <link rel="icon" type="image/png" sizes="195x195" href="images/favicons/195x195.png" />
+    <link rel="icon" type="image/png" sizes="196x196" href="images/favicons/196x196.png" />
+    <link rel="icon" type="image/png" sizes="228x228" href="images/favicons/228x228.png" />
     <script>
-		var ivUser="19700000101";
-	</script>
+        var ivUser = "19700000101";
+    </script>
     <script src="scripts/jquery-2.1.1.min.js"></script>
     <script src="scripts/mustache.js"></script>
     <script src="scripts/popper.min.js"></script>
     <script src="scripts/tooltip.min.js"></script>
     <script src="./js/templates.js"></script>
-    
+
     <style>
-    .date{
-        top: 6px;
-    }
-    .avatar {
-        vertical-align: middle;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;  
-    }
-    
-	.requiereAdunto{
-		float: left;
-		width: 83%;
-	}
-	.adjunto{
-		float: left;
-    }
-    .title {
-        font-family: 'BentonSansBBVA-Medium', 'Helvetica', 'Arial', 'sans-serif';
-        align-items: center;
-        display: inline-flex;
-        font-size: 24px;
-    }
-    .header .header_logo {
-        width: 25%;
-    }
-    .name-app {
-        line-height: 3;
-        color: white; 
-        line-height: 21%; 
-        font-size: 17PX; 
-        font-family: BentonSansBBVA-Medium, Helvetica, Arial, sans-serif;
-    }
+        .action{
+            font-family: "BentonSansBBVA-Medium", Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            float: right;
+            margin: 5px 0;
+        }
+        
+        .container-title{
+            margin: 16px 0;
+        }
+        
+        .ui-print{
+            float: right;
+        }
+        
+        .date {
+            top: 6px;
+        }
+
+        .avatar {
+            vertical-align: middle;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .requiereAdunto {
+            float: left;
+            width: 83%;
+        }
+
+        .adjunto {
+            float: left;
+        }
+
+        .title-page {
+            font-family: 'BentonSansBBVA-Medium', 'Helvetica', 'Arial', 'sans-serif';
+            align-items: center;
+            display: inline-flex;
+            font-size: 32px;
+            letter-spacing: -0.83px;
+            color: #121212;
+        }
+
+        .header .header_logo {
+            width: 25%;
+        }
+
+        .name-app {
+            line-height: 3;
+            color: white;
+            line-height: 21%;
+            font-size: 17PX;
+            font-family: BentonSansBBVA-Medium, Helvetica, Arial, sans-serif;
+        }
     </style>
 </head>
+
 <body>
     <div class="page-container">
         <div class="header">
@@ -113,24 +136,37 @@
                 </div>
             </div>
         </div>
-		<div class="menuContainer"></div>    
+
+        <div class="menuContainer"></div>
         <div class="content">
             <div class="container">
-                <h1 class="title ">Ficha General</h1>
+                <div class="container-title">
+                    <h1 class="title-page">Ficha General</h1>
+                    <a>
+                        <span class="action"> 
+                            Imprimir ficha
+                        </span><i class="bbva-icon ui-print sl search-control"></i>
+                    </a>
+                </div>
                 <div class="card accordeon">
                     <div class="notification error" style="display: none" id="browserNotCompatibleError">
                         <div class="wrapper">
                             <div class="icon"><i class="bbva-icon"></i></div>
                             <div class="message">
                                 <div class="message__heading">Navegador no compatible</div>
-                                <span class="message__body">Puede que la p&aacute;gina no funcione de forma correcta, te recomendamos utilizar Chrome o Firefox en su &uacute;ltima versi&oacute;n<br/> <a href="https://www.google.com/chrome/"><b>Click aqu&iacute; para descargar Chrome</b></a> o <a href="https://www.mozilla.org/es-MX/firefox/"><b>aqu&iacute; para descargar Firefox</b></a> </span>
+                                <span class="message__body">Puede que la p&aacute;gina no funcione de forma correcta, te
+                                    recomendamos utilizar Chrome o Firefox en su &uacute;ltima versi&oacute;n<br /> <a
+                                        href="https://www.google.com/chrome/"><b>Click aqu&iacute; para descargar
+                                            Chrome</b></a> o <a
+                                        href="https://www.mozilla.org/es-MX/firefox/"><b>aqu&iacute; para descargar
+                                            Firefox</b></a> </span>
                             </div>
                         </div>
                     </div>
                     <div id="wf0" class="i-form accordion removeifNC">
                         <div class="step-header" data-target="general-data" data-loaded="false" data-catalog="general">
                             <div class="step-name">
-                                <i class="bbva-icon ui-gavel"></i>
+                                <i class="bbva-icon ui-book"></i>
                                 1. Datos del asunto
                             </div>
                             <!--<div id="statusgd" class="step-status incomplete">
@@ -142,34 +178,44 @@
                             </div>-->
                         </div>
                         <div id="general-data" class="step-container" style="display: none">
-                                <form name="form" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formgendata" data-status="#statusgd">
+                            <form name="form" action="#" class="form-gray notify-on-error" method="post" target="_top"
+                                id="formgendata" data-status="#statusgd">
                                 <!--<div class="subtitle-sec">Datos del tutor</div>-->
                                 <div class="grid-container">
-                                    <div class="grid-item"> <!--Lado izquierdo-->
+                                    <div class="grid-item">
+                                        <!--Lado izquierdo-->
                                         <div class="grid-container-s">
                                             <div class="grid-item">
                                                 <div class="grid-item">
                                                     <div class="form-validation-group">
                                                         <div class="form-group">
-                                                            <input class="form-control uppercase letters lastnameb" name="sec1numbercredit" id="sec1numbercredit" type="text" disabled="disabled" data-placeholder="Folio REGUS" required autocomplete="off" value="XXXXXXXXXXXXXXXXXXXX">
+                                                            <input class="form-control uppercase letters lastnameb"
+                                                                name="sec1numbercredit" id="sec1numbercredit"
+                                                                type="text" disabled="disabled"
+                                                                data-placeholder="Folio REGUS" required
+                                                                autocomplete="off" value="XXXXXXXXXXXXXXXXXXXX">
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>                                    
-                                            <div class="grid-item"> 
+                                            </div>
+                                            <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
                                                     </div>
                                                 </div>
                                             </div>
 
-                                            
-                                                                                                                            
+
+
                                             <div class="grid-item">
                                                 <div class="grid-item">
                                                     <div class="form-validation-group">
                                                         <div class="form-group">
-                                                            <input class="form-control uppercase letters lastnameb" name="sec1numbercredit" id="sec1numbercredit" type="text" data-placeholder="Número de crédito" required autocomplete="off" value="XXXXXXXXXXXXXXXXXXXX" disabled="disabled">
+                                                            <input class="form-control uppercase letters lastnameb"
+                                                                name="sec1numbercredit" id="sec1numbercredit"
+                                                                type="text" data-placeholder="Número de crédito"
+                                                                required autocomplete="off" value="XXXXXXXXXXXXXXXXXXXX"
+                                                                disabled="disabled">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -178,117 +224,156 @@
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_typeperson" name="sec1typeperson" id="" type="text"  data-placeholder="Tipo de Cartera" required autocomplete="off" value="Minorista" disabled="disabled">
+                                                        <input class="form-control uppercase letters lastnameb"
+                                                            data-reflecto="#m_typeperson" name="sec1typeperson" id=""
+                                                            type="text" data-placeholder="Tipo de Cartera" required
+                                                            autocomplete="off" value="Minorista" disabled="disabled">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="grid-item" style="width: 204%;">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec1CR" name="sec1CR" id="sec1CR" type="text" data-placeholder="Domicilio del asunto" required autocomplete="off" value="Av. Jardín No. 519 departamento 3 Col. Acueducto C.P. 03350 Ciudad de Mexico" disabled="disabled">
+                                                        <input class="form-control uppercase letters lastnameb"
+                                                            data-reflecto="#m_sec1CR" name="sec1CR" id="sec1CR"
+                                                            type="text" data-placeholder="Domicilio del inmueble"
+                                                            required autocomplete="off"
+                                                            value="Av. Jardín No. 519 departamento 3 Col. Acueducto C.P. 03350 Ciudad de Mexico"
+                                                            disabled="disabled">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_typeperson" name="sec1typeperson" id="" type="text"  data-placeholder="Calificación" required autocomplete="off" value="R6" disabled="disabled">
+                                                        <input class="form-control uppercase letters lastnameb"
+                                                            data-reflecto="#m_typeperson" name="sec1typeperson" id=""
+                                                            type="text" data-placeholder="Calificación" required
+                                                            autocomplete="off" value="R6" disabled="disabled">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control e-tooltip-f mxnamount" name="valueappraisal" id="valueappraisal" type="text" data-placeholder="Cofinavit" autocomplete="off" value="No" required disabled="disabled">
+                                                        <input class="form-control e-tooltip-f mxnamount"
+                                                            name="valueappraisal" id="valueappraisal" type="text"
+                                                            data-placeholder="Cofinavit" autocomplete="off" value="No"
+                                                            required disabled="disabled">
                                                     </div>
                                                 </div>
-                                            </div>  
+                                            </div>
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control e-tooltip-f mxnamount" name="valueappraisal" id="valueappraisal" type="text" data-placeholder="Logro disponible" autocomplete="off" value="Si Mayo-20" required disabled="disabled">
+                                                        <input class="form-control e-tooltip-f mxnamount"
+                                                            name="valueappraisal" id="valueappraisal" type="text"
+                                                            data-placeholder="Logro disponible" autocomplete="off"
+                                                            value="Si Mayo-20" required disabled="disabled">
                                                     </div>
                                                 </div>
-                                            </div>    
+                                            </div>
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control e-tooltip-f mxnamount" name="valueappraisal" id="valueappraisal" type="text" data-placeholder="División" autocomplete="off" value="Metropolitana" required disabled="disabled">
+                                                        <input class="form-control e-tooltip-f mxnamount"
+                                                            name="valueappraisal" id="valueappraisal" type="text"
+                                                            data-placeholder="Estado" autocomplete="off"
+                                                            value="Ciudad de Mexico" required disabled="disabled">
                                                     </div>
                                                 </div>
-                                            </div> 
-                                            <div class="grid-item">
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <input class="form-control e-tooltip-f mxnamount" name="valueappraisal" id="valueappraisal" type="text" data-placeholder="Municipio" autocomplete="off" value="Tlalpan" required disabled="disabled">
-                                                    </div>
-                                                </div>
-                                            </div>                                                                                                 
-                                            
+                                            </div>
+
                                         </div>
                                     </div>
-                                    <div class="grid-item"> <!--Lado derecho-->
+                                    <div class="grid-item">
+                                        <!--Lado derecho-->
                                         <div class="grid-container-s">
-                                             <div class="grid-item">
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="tutorlastname" id="tutorlastname" type="text" data-placeholder="Folio GUIA" required autocomplete="off" value="XXXXXXXXXXXXXXXXXXXX" disabled="disabled">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_typeperson" name="sec1typeperson" id="" type="text"  data-placeholder="Asunto" required autocomplete="off" value="Iván Roa Sánchez" disabled="disabled">
+                                                        <input class="form-control uppercase letters lastnameb"
+                                                            data-reflecto="#m_firstname" name="tutorlastname"
+                                                            id="tutorlastname" type="text" data-placeholder="Folio GUIA"
+                                                            required autocomplete="off" value="XXXXXXXXXXXXXXXXXXXX"
+                                                            disabled="disabled">
                                                     </div>
                                                 </div>
                                             </div>
-                                        
+                                        </div>
                                         <div class="grid-item">
                                             <div class="form-validation-group">
                                                 <div class="form-group">
-                                                    <input class="form-control uppercase letters lastnameb" data-reflecto="#m_typeperson" name="sec1typeperson" id="" type="text"  data-placeholder="Valor comercial" required autocomplete="off" value="$ 120,989.00" disabled="disabled">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_typeperson" name="sec1typeperson" id=""
+                                                        type="text" data-placeholder="Asunto" required
+                                                        autocomplete="off" value="Iván Roa Sánchez" disabled="disabled">
                                                 </div>
                                             </div>
-                                        </div>        
-                                        <div class="grid-item" style="visibility: collapse;"> 
-                                            <div class="form-validation-group">
-                                                <div class="form-group">
-                                                    <input class="form-control uppercase letters lastnameb" data-reflecto="#m_typeperson" name="sec1typeperson" id="" type="text"  data-placeholder="Valor comercial" required autocomplete="off" value="$ 120,989.00" disabled="disabled">
-                                                </div>
-                                            </div>
-                                        </div>                                 
+                                        </div>
+
                                         <div class="grid-item">
                                             <div class="form-validation-group">
                                                 <div class="form-group">
-                                                    <input class="form-control uppercase letters lastnameb" data-reflecto="#m_typeperson" name="sec1typeperson" id="" type="text"  data-placeholder="Causística" required autocomplete="off" value="Amparo" disabled="disabled">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_typeperson" name="sec1typeperson" id=""
+                                                        type="text" data-placeholder="Valor comercial" required
+                                                        autocomplete="off" value="$ 120,989.00" disabled="disabled">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item" style="visibility: collapse;">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_typeperson" name="sec1typeperson" id=""
+                                                        type="text" data-placeholder="Valor comercial" required
+                                                        autocomplete="off" value="$ 120,989.00" disabled="disabled">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="grid-item">
                                             <div class="form-validation-group">
                                                 <div class="form-group">
-                                                    <input class="form-control e-tooltip-f mxnamount" name="valueappraisal" id="valueappraisal" type="text" data-placeholder="Cofinavit" autocomplete="off" value="No" required disabled="disabled">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_typeperson" name="sec1typeperson" id=""
+                                                        type="text" data-placeholder="Causística" required
+                                                        autocomplete="off" value="Amparo" disabled="disabled">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="grid-item">
                                             <div class="form-validation-group">
                                                 <div class="form-group">
-                                                    <input class="form-control e-tooltip-f mxnamount" name="valueappraisal" id="valueappraisal" type="text" data-placeholder="Logro escritura" autocomplete="off" value="Si Mayo-20" required disabled="disabled">
+                                                    <input class="form-control e-tooltip-f mxnamount"
+                                                        name="valueappraisal" id="valueappraisal" type="text"
+                                                        data-placeholder="Logro escritura" autocomplete="off"
+                                                        value="Si Mayo-20" required disabled="disabled">
                                                 </div>
                                             </div>
-                                        </div>  
+                                        </div>
                                         <div class="grid-item">
                                             <div class="form-validation-group">
                                                 <div class="form-group">
-                                                    <input class="form-control e-tooltip-f mxnamount" name="valueappraisal" id="valueappraisal" type="text" data-placeholder="Estado" autocomplete="off" value="Ciudad de Mexico" required disabled="disabled">
+                                                    <input class="form-control e-tooltip-f mxnamount"
+                                                        name="valueappraisal" id="valueappraisal" type="text"
+                                                        data-placeholder="División" autocomplete="off"
+                                                        value="Metropolitana" required disabled="disabled">
                                                 </div>
                                             </div>
-                                        </div>                                        
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control e-tooltip-f mxnamount"
+                                                        name="valueappraisal" id="valueappraisal" type="text"
+                                                        data-placeholder="Municipio" autocomplete="off" value="Tlalpan"
+                                                        required disabled="disabled">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    
+
                                 </div>
                                 <div class="grid-container" style="display: none">
                                     <div class="grid-item">
@@ -299,10 +384,12 @@
                                                 </div>
                                                 <div class="grid-item-t">
                                                     <div class="grid-item">
-                                                        <div class="form-group-select whitwait required mini" id="dbirthdate">
+                                                        <div class="form-group-select whitwait required mini"
+                                                            id="dbirthdate">
                                                             <div class="option-select">
                                                                 <div class="select-title sl">
-                                                                    <span class="option-text sl center">D&iacute;a</span>
+                                                                    <span
+                                                                        class="option-text sl center">D&iacute;a</span>
                                                                     <span class="selected-option sl"></span>
                                                                     <i class="bbva-icon ui-simple-down sl"></i>
                                                                 </div>
@@ -311,7 +398,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="grid-item">
-                                                        <div class="form-group-select whitwait required mini" id="mbirthdate">
+                                                        <div class="form-group-select whitwait required mini"
+                                                            id="mbirthdate">
                                                             <div class="option-select">
                                                                 <div class="select-title sl">
                                                                     <span class="option-text sl center">Mes</span>
@@ -325,7 +413,12 @@
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
-                                                                <input class="form-control numbers e-tooltip-f" name="ybirthdate" id="ybirthdate" type="text" data-placeholder="A&ntilde;o" required autocomplete="off" maxlength="4" data-regex="YEAR_80_ACT" data-tooltitle="Por ejemplo 2000">
+                                                                <input class="form-control numbers e-tooltip-f"
+                                                                    name="ybirthdate" id="ybirthdate" type="text"
+                                                                    data-placeholder="A&ntilde;o" required
+                                                                    autocomplete="off" maxlength="4"
+                                                                    data-regex="YEAR_80_ACT"
+                                                                    data-tooltitle="Por ejemplo 2000">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -334,7 +427,10 @@
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control uppercase alphanumeric" name="curp" id="curp" type="text" data-placeholder="CURP" required autocomplete="off" maxlength="18" data-regex="CURP" disabled="disabled">
+                                                        <input class="form-control uppercase alphanumeric" name="curp"
+                                                            id="curp" type="text" data-placeholder="CURP" required
+                                                            autocomplete="off" maxlength="18" data-regex="CURP"
+                                                            disabled="disabled">
                                                     </div>
                                                 </div>
                                             </div>
@@ -347,25 +443,33 @@
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control letnum uppercase" name="street" id="street" type="text" data-placeholder="Calle" required autocomplete="off">
+                                                        <input class="form-control letnum uppercase" name="street"
+                                                            id="street" type="text" data-placeholder="Calle" required
+                                                            autocomplete="off">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control letnum uppercase" name="outdoornum" id="outdoornum" type="text" data-placeholder="N&uacute;mero exterior" required autocomplete="off">
+                                                        <input class="form-control letnum uppercase" name="outdoornum"
+                                                            id="outdoornum" type="text"
+                                                            data-placeholder="N&uacute;mero exterior" required
+                                                            autocomplete="off">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control letnum uppercase" name="interiornum" id="interiornum" type="text" data-placeholder="N&uacute;mero interior" autocomplete="off">
+                                                        <input class="form-control letnum uppercase" name="interiornum"
+                                                            id="interiornum" type="text"
+                                                            data-placeholder="N&uacute;mero interior"
+                                                            autocomplete="off">
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                         </div>
                                     </div>
                                     <div class="grid-item">
@@ -373,12 +477,15 @@
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control letnum uppercase" name="neighborhood" id="neighborhood" type="text" data-placeholder="Colonia" required autocomplete="off">
+                                                        <input class="form-control letnum uppercase" name="neighborhood"
+                                                            id="neighborhood" type="text" data-placeholder="Colonia"
+                                                            required autocomplete="off">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="grid-item">
-                                                <div class="form-group-select whitwait states required" id="state" data-reflecto="#m_state">
+                                                <div class="form-group-select whitwait states required" id="state"
+                                                    data-reflecto="#m_state">
                                                     <div class="option-select">
                                                         <div class="select-title sl">
                                                             <span class="option-text sl center">Estado</span>
@@ -390,7 +497,8 @@
                                                 </div>
                                             </div>
                                             <div class="grid-item">
-                                                <div class="form-group-select required" id="municipalities" data-reflecto="#m_municipalities">
+                                                <div class="form-group-select required" id="municipalities"
+                                                    data-reflecto="#m_municipalities">
                                                     <div class="option-select disabled">
                                                         <div class="select-title sl">
                                                             <span class="option-text sl center">Municipio</span>
@@ -404,7 +512,10 @@
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <textarea class="form-control letnum uppercase e-tooltip-f" name="references" id="references" type="text" data-placeholder="Referencias" required autocomplete="off" data-tooltitle="Por ejemplo: Casa color verde, frente al parque"></textarea>
+                                                        <textarea class="form-control letnum uppercase e-tooltip-f"
+                                                            name="references" id="references" type="text"
+                                                            data-placeholder="Referencias" required autocomplete="off"
+                                                            data-tooltitle="Por ejemplo: Casa color verde, frente al parque"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -415,12 +526,13 @@
                         </div>
                     </div>
                     <div id="wf1" class="i-form accordion removeifNC">
-                        <div class="step-header" data-target="schoolar-data" data-loaded="false" data-catalog="schoolData">
+                        <div class="step-header" data-target="schoolar-data" data-loaded="false"
+                            data-catalog="schoolData">
                             <div class="step-name">
-                                <i class="bbva-icon ui-gradution-cap"></i>
+                                <i class="bbva-icon ui-team"></i>
                                 2. Datos de intervinientes
                             </div>
-                           <!-- <div id="statussd" class="step-status incomplete">
+                            <!-- <div id="statussd" class="step-status incomplete">
                                 <i class="bbva-icon ui-warning"></i>
                                 Incompleto
                             </div>
@@ -429,85 +541,126 @@
                             </div>-->
                         </div>
                         <div id="schoolar-data" class="step-container" style="display: none;">
-                            <form name="schoolardata" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formschdata" data-status="#statussd">
-								<div class="grid-container">
-									<div class="grid-item"> <!--Lado izquierdo-->
-										
-											<div class="grid-item">
-												<div class="form-validation-group">
-													<div class="form-group">
-														<input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="externallawyer" id="externallawyer" type="text"  data-placeholder="Director regional" required autocomplete="off" value="" disabled="disabled">
-													</div>
-												</div>
-                                            </div>
-                                            <div class="grid-item">
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="externallawyer" id="externallawyer" type="text"  data-placeholder="Abogado de ventas" required autocomplete="off" value="XXXXXXXXXXXXXXXXXXXXX" disabled="disabled">
-                                                    </div>
-                                                </div>
-                                            </div>
-											<div class="grid-item">
-												<div class="form-validation-group">
-													<div class="form-group">
-														<input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="directorname" id="directorname" type="text"  data-placeholder="Gestor" required autocomplete="off" value="Iván Roa Chávez" disabled="disabled">
-													</div>
-												</div>
-											</div>
-											 <div class="grid-item">
-												<div class="form-validation-group">
-													<div class="form-group">
-														<input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="typeofcourt" id="typeofcourt" type="text"  data-placeholder="Squad juridico" required autocomplete="off" value="XXXXXXXXXXXXXXXXXXXXXX" disabled="disabled">
-													</div>
-												</div>
-											</div>
-                                            <div class="grid-item">
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="typeofcourt" id="typeofcourt" type="text"  data-placeholder="Notario" required autocomplete="off" value="XXXXXXXXXXXXXXXXXXXXXX" disabled="disabled">
-                                                    </div>
-                                                </div>
-                                            </div>
-										
-									</div>		<!--Termina lado izquierdo-->
-									<div class="grid-item"><!--Lado derecho-->	
-										<div class="grid-item">
-											<div class="form-validation-group">
-												<div class="form-group">
-													<input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="internallawyer" id="internallawyer" type="text"  data-placeholder="Abogado interno" required autocomplete="off" value="Carlos Alberto Larrea Salazar" disabled="disabled">
-												</div>
-											</div>
-                                        </div>
-                                        
-										<div class="grid-item">
-											<div class="form-validation-group">
-												<div class="form-group">
-													<input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="kindofjudgment" id="kindofjudgment" type="text"  data-placeholder="Abogado externo" required autocomplete="off" value="Ricargo Gonzalez Perez" disabled="disabled">
-												</div>
-											</div>
-										</div>
-										 <div class="grid-item">
-											<div class="form-validation-group">
-												<div class="form-group">
-													<input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="filenumber" id="filenumber" type="text"  data-placeholder="Responsable DAI" required autocomplete="off" value="XXXXXXXXXXXXXXXXXXX" disabled="disabled">
-												</div>
-											</div>
-										</div>
+                            <form name="schoolardata" action="#" class="form-gray notify-on-error" method="post"
+                                target="_top" id="formschdata" data-status="#statussd">
+                                <div class="grid-container">
+                                    <div class="grid-item">
+                                        <!--Lado izquierdo-->
+
                                         <div class="grid-item">
                                             <div class="form-validation-group">
                                                 <div class="form-group">
-                                                    <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="filenumber" id="filenumber" type="text"  data-placeholder="Ejecutivo de ventas" required autocomplete="off" value="XXXXXXXXXXXXXXXXXXX" disabled="disabled">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_firstname" name="externallawyer"
+                                                        id="externallawyer" type="text"
+                                                        data-placeholder="Director regional" required autocomplete="off"
+                                                        value="" disabled="disabled">
                                                 </div>
                                             </div>
                                         </div>
-										
-										
-									</div><!--Termina Lado derecho-->
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_firstname" name="externallawyer"
+                                                        id="externallawyer" type="text"
+                                                        data-placeholder="Abogado de ventas" required autocomplete="off"
+                                                        value="XXXXXXXXXXXXXXXXXXXXX" disabled="disabled">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_firstname" name="directorname"
+                                                        id="directorname" type="text" data-placeholder="Gestor" required
+                                                        autocomplete="off" value="Iván Roa Chávez" disabled="disabled">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_firstname" name="typeofcourt" id="typeofcourt"
+                                                        type="text" data-placeholder="Squad juridico" required
+                                                        autocomplete="off" value="XXXXXXXXXXXXXXXXXXXXXX"
+                                                        disabled="disabled">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_firstname" name="typeofcourt" id="typeofcourt"
+                                                        type="text" data-placeholder="Notario" required
+                                                        autocomplete="off" value="XXXXXXXXXXXXXXXXXXXXXX"
+                                                        disabled="disabled">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <!--Termina lado izquierdo-->
+                                    <div class="grid-item">
+                                        <!--Lado derecho-->
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_firstname" name="internallawyer"
+                                                        id="internallawyer" type="text"
+                                                        data-placeholder="Abogado interno" required autocomplete="off"
+                                                        value="Carlos Alberto Larrea Salazar" disabled="disabled">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_firstname" name="kindofjudgment"
+                                                        id="kindofjudgment" type="text"
+                                                        data-placeholder="Abogado externo" required autocomplete="off"
+                                                        value="Ricargo Gonzalez Perez" disabled="disabled">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_firstname" name="filenumber" id="filenumber"
+                                                        type="text" data-placeholder="Responsable DAI" required
+                                                        autocomplete="off" value="XXXXXXXXXXXXXXXXXXX"
+                                                        disabled="disabled">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_firstname" name="filenumber" id="filenumber"
+                                                        type="text" data-placeholder="Ejecutivo de ventas" required
+                                                        autocomplete="off" value="XXXXXXXXXXXXXXXXXXX"
+                                                        disabled="disabled">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <!--Termina Lado derecho-->
                             </form>
                         </div>
                     </div>
                     <div id="wf2" class="i-form accordion removeifNC" style="display: none;">
-                        <div class="step-header" data-target="inmueble-data" data-loaded="false" data-catalog="dataInmueble" style="display: none;">
+                        <div class="step-header" data-target="inmueble-data" data-loaded="false"
+                            data-catalog="dataInmueble" style="display: none;">
                             <div class="step-name">
                                 <i class="bbva-icon ui-home"></i>
                                 3. Datos de Inmuebles y avalúos
@@ -521,187 +674,249 @@
                             </div>
                         </div>
                         <div id="inmueble-data" class="step-container" style="display: none">
-                                <form name="form" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formgendata" data-status="#statusgd">
-                                        <!--<div class="subtitle-sec">Datos del tutor</div>-->
-                                        <div class="grid-container">
-                                            <div class="grid-item"> <!--Lado izquierdo-->
-                                                <div class="grid-container-s">
-                                                    <div class="grid-item">
-                                                        <div class="form-group-select whitwait required" id="typepropertie">
-                                                            <div class="option-select">
-                                                                <div class="select-title sl">
-                                                                    <span class="option-text sl center">Regimen de propiedad</span>
-                                                                    <span class="selected-option sl"></span>
-                                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                                </div>
-                                                                <div class="list-result"></div>
-                                                            </div>
+                            <form name="form" action="#" class="form-gray notify-on-error" method="post" target="_top"
+                                id="formgendata" data-status="#statusgd">
+                                <!--<div class="subtitle-sec">Datos del tutor</div>-->
+                                <div class="grid-container">
+                                    <div class="grid-item">
+                                        <!--Lado izquierdo-->
+                                        <div class="grid-container-s">
+                                            <div class="grid-item">
+                                                <div class="form-group-select whitwait required" id="typepropertie">
+                                                    <div class="option-select">
+                                                        <div class="select-title sl">
+                                                            <span class="option-text sl center">Regimen de
+                                                                propiedad</span>
+                                                            <span class="selected-option sl"></span>
+                                                            <i class="bbva-icon ui-simple-down sl"></i>
                                                         </div>
+                                                        <div class="list-result"></div>
                                                     </div>
-                                                    <div class="grid-item">
-                                                        <div class="form-validation-group">
-                                                            <div class="form-group">
-                                                                <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec3streetnumber" name="sec3streetnumber" id="sec3streetnumber" type="text"  data-placeholder="Calle y número" required autocomplete="off" value="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                   
-
-                                                    <div class="grid-item">
-                                                        <div class="form-group-select whitwait states required" id="propertystate" data-reflecto="#m_state">
-                                                            <div class="option-select">
-                                                                <div class="select-title sl">
-                                                                    <span class="option-text sl center">Estado</span>
-                                                                    <span class="selected-option sl"></span>
-                                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                                </div>
-                                                                <div class="list-result"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-item">
-                                                        <div class="form-validation-group">
-                                                            <div class="form-group">
-                                                                <input class="form-control numbers" name="zipcode" id="zipcode" type="text" data-placeholder="C&oacute;digo postal" required autocomplete="off" maxlength="5" data-regex="ZIPCODE">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-item">
-                                                        <div class="form-group-select whitwait states required" id="state" data-reflecto="#m_state">
-                                                            <div class="option-select">
-                                                                <div class="select-title sl">
-                                                                    <span class="option-text sl center">Posicion Física</span>
-                                                                    <span class="selected-option sl"></span>
-                                                                    <i class="bbva-icon ui-simple-down sl"></i>
-                                                                </div>
-                                                                <div class="list-result"></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-item">
-                                                        <div class="grid-container-s">
-                                                            <div class="grid-item">
-                                                                <div class="form-validation-group">
-                                                                    <div class="form-group">
-                                                                        
-                                                                    <div class="placeholder-wrapper">
-                                                                        <input class="form-control decimals e-tooltip-f" name="sec3landsurface" id="sec3landsurface" type="text" data-placeholder="Superficie de terreno" required="" autocomplete="off" data-regex="PROM" data-required="true"><span class="placeholder-simulator" style="top: 5px; font-size: 12px;">Superficie de terreno</span></div><p class="i-message"><span class="text-message"><i class="bbva-icon ui-empty"></i>&nbsp;</span></p></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-item">
-                                                        <div class="form-validation-group">
-                                                            <div class="form-group">
-                                                                <input class="form-control e-tooltip-f mxnamount" name="valueland" id="valueland" type="text" data-placeholder="Valor del terreno" autocomplete="off" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-item">
-                                                        <div class="form-validation-group">
-                                                            <div class="form-group">
-                                                                <input class="form-control e-tooltip-f mxnamount" name="sec3valuebuilding" id="sec3valuebuilding" type="text" data-placeholder="Valor de la construcción" autocomplete="off" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-item">
-                                                        <div class="form-validation-group">
-                                                            <div class="form-group">
-                                                                <input class="form-control e-tooltip-f mxnamount" name="valuespecials" id="valuespecials" type="text" data-placeholder="Valor de intalaciones especiales" autocomplete="off" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>  
-                                                    <div class="grid-item">
-                                                        <div class="form-validation-group">
-                                                            <div class="form-group">
-                                                                <input class="form-control e-tooltip-f mxnamount" name="valueappraisal" id="valueappraisal" type="text" data-placeholder="Valor comercial avaluo" autocomplete="off" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>                                                    
                                                 </div>
-												
                                             </div>
-                                            <div class="grid-item"> <!--Lado derecho-->
-                                                <div class="grid-container-s">
-                                                    <div class="form-group-select whitwait required" id="subtypeproperty">
-                                                        <div class="option-select">
-                                                            <div class="select-title sl">
-                                                                <span class="option-text sl center">Subtipo de Inmueble</span>
-                                                                <span class="selected-option sl"></span>
-                                                                <i class="bbva-icon ui-simple-down sl"></i>
-                                                            </div>
-                                                            <div class="list-result"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="grid-item">
-                                                    <div class="form-validation-group">
-                                                        <div class="form-group">
-                                                            <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec3colony" name="sec3colony" id="sec3colony" type="text" data-placeholder="Colonia" required autocomplete="off" value="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="grid-item">
-                                                    <div class="form-validation-group">
-                                                        <div class="form-group">
-                                                            <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec3ltemz" name="sec3ltemz" id="sec3ltemz" type="text" data-placeholder="Lote, Manzana, Supermanzana" required autocomplete="off" value="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="grid-item">
-                                                    <div class="form-validation-group">
-                                                        <div class="form-group">
-                                                            <input class="form-control e-tooltip-f mxnamount" name="trans" id="trans" type="text" data-placeholder="Ejecutivo de ventas" autocomplete="off" required>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="grid-item">
-                                                    <div class="grid-container-s">
-                                                        <div class="grid-item">
-                                                            <div class="form-validation-group">
-                                                                <div class="form-group">
-                                                                <div class="placeholder-wrapper">
-                                                                    <input class="form-control decimals e-tooltip-f" name="sec3buildingsurface" id="sec3buildingsurface" type="text" data-placeholder="Superficie de construcción" required="" autocomplete="off" data-regex="PROM" data-required="true"><span class="placeholder-simulator" style="top: 5px; font-size: 12px;">Superficie de construcción</span></div><p class="i-message"><span class="text-message"><i class="bbva-icon ui-empty"></i>&nbsp;</span></p></div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="grid-item">
-                                                    <div class="form-group-select required" id="sec3Possesion">
-                                                        <div class="option-select">
-                                                            <div class="select-title sl">
-                                                                <span class="option-text sl center">Instalaciones especiales</span>
-                                                                <span class="selected-option sl"></span>
-                                                                <i class="bbva-icon ui-simple-down sl"></i>
-                                                            </div>
-                                                            <div class="list-result"></div>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                <div class="grid-item">
-                                                    <div class="form-validation-group">
-                                                        <div class="form-group">
-                                                            <input class="form-control e-tooltip-f mxnamount" name="sec3sumvalues" id="sec3sumvalues" type="text" data-placeholder="Suma de valores" autocomplete="off" required > 
-                                                        </div>
-                                                    </div>
-                                                </div>                                      
-                                            </div>
-											<div class="grid-item" style="display: none">
+                                            <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control numbers e-tooltip-f" name="ysclass" id="ysclass" type="text" data-placeholder="A&ntilde;o" required autocomplete="off" maxlength="4" data-regex="YEAR_MIN_80" data-tooltitle="Por ejemplo 2019">
+                                                        <input class="form-control uppercase letters lastnameb"
+                                                            data-reflecto="#m_sec3streetnumber" name="sec3streetnumber"
+                                                            id="sec3streetnumber" type="text"
+                                                            data-placeholder="Calle y número" required
+                                                            autocomplete="off" value="">
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
+
+                                            <div class="grid-item">
+                                                <div class="form-group-select whitwait states required"
+                                                    id="propertystate" data-reflecto="#m_state">
+                                                    <div class="option-select">
+                                                        <div class="select-title sl">
+                                                            <span class="option-text sl center">Estado</span>
+                                                            <span class="selected-option sl"></span>
+                                                            <i class="bbva-icon ui-simple-down sl"></i>
+                                                        </div>
+                                                        <div class="list-result"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="form-validation-group">
+                                                    <div class="form-group">
+                                                        <input class="form-control numbers" name="zipcode" id="zipcode"
+                                                            type="text" data-placeholder="C&oacute;digo postal" required
+                                                            autocomplete="off" maxlength="5" data-regex="ZIPCODE">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="form-group-select whitwait states required" id="state"
+                                                    data-reflecto="#m_state">
+                                                    <div class="option-select">
+                                                        <div class="select-title sl">
+                                                            <span class="option-text sl center">Posicion Física</span>
+                                                            <span class="selected-option sl"></span>
+                                                            <i class="bbva-icon ui-simple-down sl"></i>
+                                                        </div>
+                                                        <div class="list-result"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="grid-container-s">
+                                                    <div class="grid-item">
+                                                        <div class="form-validation-group">
+                                                            <div class="form-group">
+
+                                                                <div class="placeholder-wrapper">
+                                                                    <input class="form-control decimals e-tooltip-f"
+                                                                        name="sec3landsurface" id="sec3landsurface"
+                                                                        type="text"
+                                                                        data-placeholder="Superficie de terreno"
+                                                                        required="" autocomplete="off" data-regex="PROM"
+                                                                        data-required="true"><span
+                                                                        class="placeholder-simulator"
+                                                                        style="top: 5px; font-size: 12px;">Superficie de
+                                                                        terreno</span></div>
+                                                                <p class="i-message"><span class="text-message"><i
+                                                                            class="bbva-icon ui-empty"></i>&nbsp;</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="form-validation-group">
+                                                    <div class="form-group">
+                                                        <input class="form-control e-tooltip-f mxnamount"
+                                                            name="valueland" id="valueland" type="text"
+                                                            data-placeholder="Valor del terreno" autocomplete="off"
+                                                            required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="form-validation-group">
+                                                    <div class="form-group">
+                                                        <input class="form-control e-tooltip-f mxnamount"
+                                                            name="sec3valuebuilding" id="sec3valuebuilding" type="text"
+                                                            data-placeholder="Valor de la construcción"
+                                                            autocomplete="off" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="form-validation-group">
+                                                    <div class="form-group">
+                                                        <input class="form-control e-tooltip-f mxnamount"
+                                                            name="valuespecials" id="valuespecials" type="text"
+                                                            data-placeholder="Valor de intalaciones especiales"
+                                                            autocomplete="off" required>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="form-validation-group">
+                                                    <div class="form-group">
+                                                        <input class="form-control e-tooltip-f mxnamount"
+                                                            name="valueappraisal" id="valueappraisal" type="text"
+                                                            data-placeholder="Valor comercial avaluo" autocomplete="off"
+                                                            required>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="submtbtn">
-                                            <span title="Continuar" aria-label="Continuar" class="btn__basic btn__submit" id="btn_savegd">
-                                                <span aria-hidden="true">Finalizar</span>
-                                            </span>
+
+                                    </div>
+                                    <div class="grid-item">
+                                        <!--Lado derecho-->
+                                        <div class="grid-container-s">
+                                            <div class="form-group-select whitwait required" id="subtypeproperty">
+                                                <div class="option-select">
+                                                    <div class="select-title sl">
+                                                        <span class="option-text sl center">Subtipo de Inmueble</span>
+                                                        <span class="selected-option sl"></span>
+                                                        <i class="bbva-icon ui-simple-down sl"></i>
+                                                    </div>
+                                                    <div class="list-result"></div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </form>
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_sec3colony" name="sec3colony" id="sec3colony"
+                                                        type="text" data-placeholder="Colonia" required
+                                                        autocomplete="off" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control uppercase letters lastnameb"
+                                                        data-reflecto="#m_sec3ltemz" name="sec3ltemz" id="sec3ltemz"
+                                                        type="text" data-placeholder="Lote, Manzana, Supermanzana"
+                                                        required autocomplete="off" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control e-tooltip-f mxnamount" name="trans"
+                                                        id="trans" type="text" data-placeholder="Ejecutivo de ventas"
+                                                        autocomplete="off" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="grid-container-s">
+                                                <div class="grid-item">
+                                                    <div class="form-validation-group">
+                                                        <div class="form-group">
+                                                            <div class="placeholder-wrapper">
+                                                                <input class="form-control decimals e-tooltip-f"
+                                                                    name="sec3buildingsurface" id="sec3buildingsurface"
+                                                                    type="text"
+                                                                    data-placeholder="Superficie de construcción"
+                                                                    required="" autocomplete="off" data-regex="PROM"
+                                                                    data-required="true"><span
+                                                                    class="placeholder-simulator"
+                                                                    style="top: 5px; font-size: 12px;">Superficie de
+                                                                    construcción</span></div>
+                                                            <p class="i-message"><span class="text-message"><i
+                                                                        class="bbva-icon ui-empty"></i>&nbsp;</span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-group-select required" id="sec3Possesion">
+                                                <div class="option-select">
+                                                    <div class="select-title sl">
+                                                        <span class="option-text sl center">Instalaciones
+                                                            especiales</span>
+                                                        <span class="selected-option sl"></span>
+                                                        <i class="bbva-icon ui-simple-down sl"></i>
+                                                    </div>
+                                                    <div class="list-result"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <input class="form-control e-tooltip-f mxnamount"
+                                                        name="sec3sumvalues" id="sec3sumvalues" type="text"
+                                                        data-placeholder="Suma de valores" autocomplete="off" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-item" style="display: none">
+                                        <div class="form-validation-group">
+                                            <div class="form-group">
+                                                <input class="form-control numbers e-tooltip-f" name="ysclass"
+                                                    id="ysclass" type="text" data-placeholder="A&ntilde;o" required
+                                                    autocomplete="off" maxlength="4" data-regex="YEAR_MIN_80"
+                                                    data-tooltitle="Por ejemplo 2019">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="submtbtn">
+                                    <span title="Continuar" aria-label="Continuar" class="btn__basic btn__submit"
+                                        id="btn_savegd">
+                                        <span aria-hidden="true">Finalizar</span>
+                                    </span>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <div class="submtbtn actionsection send removeifNC" style="display: none">
@@ -712,39 +927,43 @@
                 </div>
             </div>
         </div>
-        </div>
-        <div class="subheader" style="display: none;">
-            <div class="container">
-                <i class="bbva-icon ui-gradution-cap"></i><span id="scholarshipProgram" ></span>
-            </div>
-        </div>
-     
-        <div class="footer">
-            <div class="container">
-                <div class="footer-logo">
-                    <img src="images/LogoBBVAOportunidades@2x.png">
-                </div>
-				<div class="footer__links" style="display: none;">
-                    <div class="footer__list">
-                        <div class="link">
-                            <a target="_blank" href="https://derechosarco.fundacionbbvabancomer.org/" class="link__content ">
-                                ARCO
-                            </a>
-                        </div>
-                        <div class="link">
-                            <a target="_blank" href="https://www.fundacionbbva.mx/aviso-de-privacidad/" class="link__content ">
-                                Avisos de privacidad
-                            </a>
-                        </div>
-                    </div>   
-                </div>
-                <p class="footer-copyright" style="display: none;">
-                    &copy; <span id="currentYear"></span> BBVA Bancomer, S. A., Instituci&oacute;n de Banca M&uacute;ltiple, Grupo Financiero BBVA Bancomer, Avenida Paseo de la Reforma 510, colonia Ju&aacute;rez, c&oacute;digo postal 06600, alcald&iacute;a Cuauht&eacute;moc, Ciudad de M&eacute;xico.
-                </p>
-            </div>
+    </div>
+    <div class="subheader" style="display: none;">
+        <div class="container">
+            <i class="bbva-icon ui-gradution-cap"></i><span id="scholarshipProgram"></span>
         </div>
     </div>
-    <div class="waitmodal"  id="waitmodal">
+
+    <div class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="images/LogoBBVAOportunidades@2x.png">
+            </div>
+            <div class="footer__links" style="display: none;">
+                <div class="footer__list">
+                    <div class="link">
+                        <a target="_blank" href="https://derechosarco.fundacionbbvabancomer.org/"
+                            class="link__content ">
+                            ARCO
+                        </a>
+                    </div>
+                    <div class="link">
+                        <a target="_blank" href="https://www.fundacionbbva.mx/aviso-de-privacidad/"
+                            class="link__content ">
+                            Avisos de privacidad
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <p class="footer-copyright" style="display: none;">
+                &copy; <span id="currentYear"></span> BBVA Bancomer, S. A., Instituci&oacute;n de Banca M&uacute;ltiple,
+                Grupo Financiero BBVA Bancomer, Avenida Paseo de la Reforma 510, colonia Ju&aacute;rez, c&oacute;digo
+                postal 06600, alcald&iacute;a Cuauht&eacute;moc, Ciudad de M&eacute;xico.
+            </p>
+        </div>
+    </div>
+    </div>
+    <div class="waitmodal" id="waitmodal">
         <figure style="width:136px;padding:0;margin: 0;">
             <svg xmlns="http://www.w3.org/2000/svg" id="Blue" viewBox="0 0 400 400" style="display:block">
                 <defs>
@@ -770,45 +989,71 @@
                             <feFuncB type="linear" slope="2"></feFuncB>
                         </feComponentTransfer>
                     </filter>
-                    <radialGradient id="Gradient-0" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043" gradientUnits="userSpaceOnUse">
+                    <radialGradient id="Gradient-0" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043"
+                        gradientUnits="userSpaceOnUse">
                         <stop offset="0.143991" stop-color="#2dcccd"></stop>
                         <stop offset="1" stop-color="#004481" stop-opacity="0"></stop>
                     </radialGradient>
-                    <radialGradient id="Gradient-1" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043" gradientUnits="userSpaceOnUse">
+                    <radialGradient id="Gradient-1" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043"
+                        gradientUnits="userSpaceOnUse">
                         <stop offset="0.133991" stop-color="#2dcccd"></stop>
                         <stop offset="1" stop-color="#004481" stop-opacity="0"></stop>
                     </radialGradient>
-                    <radialGradient id="Gradient-2" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043" gradientUnits="userSpaceOnUse">
+                    <radialGradient id="Gradient-2" cx="199" cy="92" r="271.854" fx="197.801" fy="-27.9043"
+                        gradientUnits="userSpaceOnUse">
                         <stop offset="0.153991" stop-color="#2dcccd"></stop>
                         <stop offset="1" stop-color="#004481" stop-opacity="0"></stop>
                     </radialGradient>
-                    <radialGradient id="Gradient-3" cx="196.5" cy="0" r="100" fx="196.5" fy="0" gradientUnits="userSpaceOnUse">
+                    <radialGradient id="Gradient-3" cx="196.5" cy="0" r="100" fx="196.5" fy="0"
+                        gradientUnits="userSpaceOnUse">
                         <stop offset="0" stop-color="#2dcccd"></stop>
                         <stop offset="1" stop-color="#2dcccd" stop-opacity="0"></stop>
                     </radialGradient>
                     <clipPath id="clip-path">
-                        <ellipse id="Mask" class="cls-1" rx="197.5" ry="197.5" fill="none" transform="translate(0,0) translate(200,200)"></ellipse>
+                        <ellipse id="Mask" class="cls-1" rx="197.5" ry="197.5" fill="none"
+                            transform="translate(0,0) translate(200,200)"></ellipse>
                     </clipPath>
                     <mask id="Mask-1" style="mask-type: luminance;">
-                        <path d="M-0.66667,0C-0.66667,0,50.5,85,167,85C281.5,85,334,0,334,0C334,0,281.5,93,167,93C50.5,93,-0.66667,0,-0.66667,0Z" fill="#4afcfd" stroke-linecap="square" stroke="none" filter="url(#Filter-2)" transform="translate(-166.5,104.5)" style="mix-blend-mode: normal; animation: 1.6s linear infinite both a1_d;"></path>
+                        <path
+                            d="M-0.66667,0C-0.66667,0,50.5,85,167,85C281.5,85,334,0,334,0C334,0,281.5,93,167,93C50.5,93,-0.66667,0,-0.66667,0Z"
+                            fill="#4afcfd" stroke-linecap="square" stroke="none" filter="url(#Filter-2)"
+                            transform="translate(-166.5,104.5)"
+                            style="mix-blend-mode: normal; animation: 1.6s linear infinite both a1_d;"></path>
                     </mask>
                     <pattern id="imageload" x="0" y="0" patternUnits="userSpaceOnUse" height="1" width="1">
                         <image x="0" y="0" xlink:href="images/loading_filter.png"></image>
                     </pattern>
                     <clipPath id="ClipPath-1">
-                        <path id="Mask_circle" class="st0" d="M400,0L0,0L0,400L400,400ZM45.9596,200C45.9596,115.061,115.061,45.9596,200,45.9596C284.939,45.9596,354.04,115.061,354.04,200C354.04,284.939,284.939,354.04,200,354.04C115.061,354.04,45.9596,284.939,45.9596,200Z" fill="#00ff16" fill-rule="evenodd"></path>
+                        <path id="Mask_circle" class="st0"
+                            d="M400,0L0,0L0,400L400,400ZM45.9596,200C45.9596,115.061,115.061,45.9596,200,45.9596C284.939,45.9596,354.04,115.061,354.04,200C354.04,284.939,284.939,354.04,200,354.04C115.061,354.04,45.9596,284.939,45.9596,200Z"
+                            fill="#00ff16" fill-rule="evenodd"></path>
                     </clipPath>
                 </defs>
-                <g id="All_Grouped" clip-path="url(#ClipPath-1)" transform="translate(200,200) translate(-200,-200)" style="animation: 1.6s linear infinite both All_Grouped_t;">
-                    <ellipse id="Fill" class="cls-2" rx="197.5" ry="197.5" fill="#004481" transform="translate(0,0) translate(200,200)"></ellipse>
-                    <path id="Outline" class="cls-1" d="M196.5,0C87.9723,0,0,87.9723,0,196.5C0,305.028,87.9723,393,196.5,393C305.028,393,393,305.028,393,196.5C393,87.9723,305.028,0,196.5,0Z" fill="none" opacity="0.16" stroke="#f2f2f2" stroke-width="2" transform="translate(3.5,3.5)"></path>
+                <g id="All_Grouped" clip-path="url(#ClipPath-1)" transform="translate(200,200) translate(-200,-200)"
+                    style="animation: 1.6s linear infinite both All_Grouped_t;">
+                    <ellipse id="Fill" class="cls-2" rx="197.5" ry="197.5" fill="#004481"
+                        transform="translate(0,0) translate(200,200)"></ellipse>
+                    <path id="Outline" class="cls-1"
+                        d="M196.5,0C87.9723,0,0,87.9723,0,196.5C0,305.028,87.9723,393,196.5,393C305.028,393,393,305.028,393,196.5C393,87.9723,305.028,0,196.5,0Z"
+                        fill="none" opacity="0.16" stroke="#f2f2f2" stroke-width="2" transform="translate(3.5,3.5)">
+                    </path>
                     <g class="cls-5" clip-path="url(#clip-path)">
                         <g id="Gradient" style="animation: 1.6s linear infinite both a0_t;">
-                            <path class="cls-6" d="M400,0L400,400L0,400L0,0Z" fill="url(#Gradient-0)" opacity="1" filter="url(#Filter-0)" fill-opacity="0.6" fill-rule="nonzero" stroke-opacity="1" transform="translate(0,0) scale(1,0.7)" style="animation: 1.6s linear infinite both Gradient_t, 1.6s linear infinite both Gradient_fo, 1.6s linear infinite both Gradient_f;"></path>
+                            <path class="cls-6" d="M400,0L400,400L0,400L0,0Z" fill="url(#Gradient-0)" opacity="1"
+                                filter="url(#Filter-0)" fill-opacity="0.6" fill-rule="nonzero" stroke-opacity="1"
+                                transform="translate(0,0) scale(1,0.7)"
+                                style="animation: 1.6s linear infinite both Gradient_t, 1.6s linear infinite both Gradient_fo, 1.6s linear infinite both Gradient_f;">
+                            </path>
                         </g>
                     </g>
-                    <ellipse rx="197.5" ry="197.5" fill="url(#imageload)" stroke="none" fill-rule="evenodd" filter="url(#Filter-1)" mask="url(#Mask-1)" transform="translate(199.5,199.5) rotate(180) translate(-0.5,-0.5)" style="mix-blend-mode: normal;"></ellipse>
-                    <path id="Shine" class="cls-1" d="M196.5,0C87.9723,0,0,87.9723,0,196.5C0,305.028,87.9723,393,196.5,393C305.028,393,393,305.028,393,196.5C393,87.9723,305.028,0,196.5,0Z" fill="none" opacity="0.8" stroke="url(#Gradient-3)" stroke-width="2" transform="translate(3.5,3.5)"></path>
+                    <ellipse rx="197.5" ry="197.5" fill="url(#imageload)" stroke="none" fill-rule="evenodd"
+                        filter="url(#Filter-1)" mask="url(#Mask-1)"
+                        transform="translate(199.5,199.5) rotate(180) translate(-0.5,-0.5)"
+                        style="mix-blend-mode: normal;"></ellipse>
+                    <path id="Shine" class="cls-1"
+                        d="M196.5,0C87.9723,0,0,87.9723,0,196.5C0,305.028,87.9723,393,196.5,393C305.028,393,393,305.028,393,196.5C393,87.9723,305.028,0,196.5,0Z"
+                        fill="none" opacity="0.8" stroke="url(#Gradient-3)" stroke-width="2"
+                        transform="translate(3.5,3.5)"></path>
                 </g>
             </svg>
         </figure>
@@ -840,7 +1085,8 @@
                                 <div class="grid-item">
                                     <div class="message-modal">
                                         <div id="cdSession"></div>
-                                        <div>Da clic en el bot&oacute;n de abajo para evitar que cierre tu sesi&oacute;n.</div>
+                                        <div>Da clic en el bot&oacute;n de abajo para evitar que cierre tu
+                                            sesi&oacute;n.</div>
                                     </div>
                                 </div>
                             </div>
@@ -880,81 +1126,81 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script>
-    $(function() {
-        $('.menuContainer').load('./menu.html');
-        $("#sec1creditgranting").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            changeMonth: true,
-            changeYear: true,
-            minDate: "+0M +0D", 
-            maxDate: "+2M +0D"
-        });
-
-        $("#sec1creditgranting").datepicker("option", "dateFormat", "dd/mm/yy" );
-        $("#sec1creditgranting").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
-
-        $("#sec3birthdate").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            changeMonth: true,
-            changeYear: true,
-            minDate: "+0M +0D", 
-            maxDate: "+2M +0D"
-        });
-
-        $("#sec3birthdate").datepicker("option", "dateFormat", "dd/mm/yy" );
-        $("#sec3birthdate").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
-
-        
-        $("#sec3datesentence").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            changeMonth: true,
-            changeYear: true,
-            minDate: "+0M +0D", 
-            maxDate: "+2M +0D"
-        });
-
-        $("#sec3datesentence").datepicker("option", "dateFormat", "dd/mm/yy" );
-        $("#sec3datesentence").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
-
-        $("#sec3datenotary").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            changeMonth: true,
-            changeYear: true,
-            minDate: "+0M +0D", 
-            maxDate: "+2M +0D"
-        });
-
-        $("#sec3datenotary").datepicker("option", "dateFormat", "dd/mm/yy" );
-        $("#sec3datenotary").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "22/10/2019"));
-
-        $(".calendar").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            changeMonth: true,
-            changeYear: true,
-            minDate: "+0M +0D", 
-            maxDate: "+2M +0D"
-        });
-
-        $(".calendar").datepicker("option", "dateFormat", "dd/mm/yy" );
-        $(".calendar").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "22/10/2019"));
-
-        $("#user-notify").click(function() {
-            templates.notify = {
-                path: "./views/modal/notifications.html",
-                onload: function () {
-                    fn_showModal();
-                }
-            };
-            loadTemplate($("#modal_generic .body"), templates.notify, {
+        $(function () {
+            $('.menuContainer').load('./menu.html');
+            $("#sec1creditgranting").datepicker({
+                showOtherMonths: true,
+                selectOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                minDate: "+0M +0D",
+                maxDate: "+2M +0D"
             });
-        });
 
-    });
+            $("#sec1creditgranting").datepicker("option", "dateFormat", "dd/mm/yy");
+            $("#sec1creditgranting").datepicker('setDate', $.datepicker.parseDate("dd/mm/yy", "20/10/2019"));
+
+            $("#sec3birthdate").datepicker({
+                showOtherMonths: true,
+                selectOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                minDate: "+0M +0D",
+                maxDate: "+2M +0D"
+            });
+
+            $("#sec3birthdate").datepicker("option", "dateFormat", "dd/mm/yy");
+            $("#sec3birthdate").datepicker('setDate', $.datepicker.parseDate("dd/mm/yy", "20/10/2019"));
+
+
+            $("#sec3datesentence").datepicker({
+                showOtherMonths: true,
+                selectOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                minDate: "+0M +0D",
+                maxDate: "+2M +0D"
+            });
+
+            $("#sec3datesentence").datepicker("option", "dateFormat", "dd/mm/yy");
+            $("#sec3datesentence").datepicker('setDate', $.datepicker.parseDate("dd/mm/yy", "20/10/2019"));
+
+            $("#sec3datenotary").datepicker({
+                showOtherMonths: true,
+                selectOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                minDate: "+0M +0D",
+                maxDate: "+2M +0D"
+            });
+
+            $("#sec3datenotary").datepicker("option", "dateFormat", "dd/mm/yy");
+            $("#sec3datenotary").datepicker('setDate', $.datepicker.parseDate("dd/mm/yy", "22/10/2019"));
+
+            $(".calendar").datepicker({
+                showOtherMonths: true,
+                selectOtherMonths: true,
+                changeMonth: true,
+                changeYear: true,
+                minDate: "+0M +0D",
+                maxDate: "+2M +0D"
+            });
+
+            $(".calendar").datepicker("option", "dateFormat", "dd/mm/yy");
+            $(".calendar").datepicker('setDate', $.datepicker.parseDate("dd/mm/yy", "22/10/2019"));
+
+            $("#user-notify").click(function () {
+                templates.notify = {
+                    path: "./views/modal/notifications.html",
+                    onload: function () {
+                        fn_showModal();
+                    }
+                };
+                loadTemplate($("#modal_generic .body"), templates.notify, {});
+            });
+
+        });
     </script>
 </body>
+
 </html>
