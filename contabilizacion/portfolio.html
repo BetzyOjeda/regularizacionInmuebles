@@ -677,6 +677,17 @@
             $('.menuContainer').load('./menu.html');
             setTimeout(function(){$(".cartera").addClass('option-selected');}, 500);
         });
+
+        $("#user-notify").click(function() {
+            templates.notify = {
+                path: "./views/modal/notifications.html",
+                onload: function () {
+                    fn_showModal();
+                }
+            };
+            loadTemplate($("#modal_generic .body"), templates.notify, {
+            });
+        });
     </script>
 </body>
 
