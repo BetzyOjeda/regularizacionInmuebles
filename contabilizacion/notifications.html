@@ -694,6 +694,15 @@
            location.href="index.html";
         });
 
+        $(".ui-email-open").click(function() {
+            $("span.checked").each(function (index) { 
+                $(this).removeClass('checked');
+                $(this).parent().siblings(':first').addClass("readNotification").removeClass("unreadNotification");
+            });
+            
+        });
+
+
         $("#user-notify").click(function() {
             templates.notify = {
                 path: "./views/modal/notifications.html",
