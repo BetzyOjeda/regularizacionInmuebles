@@ -135,7 +135,7 @@
         .card-filter {
             /*box-shadow: 5px 6px #6666;
             border: #6666 solid 1px; */
-            width: 100%;
+            width: 50%;
             display: inline-flex;
             padding: 1rem;
             background-color: white;
@@ -143,7 +143,7 @@
 
         .content {
             padding-top: 32px;
-            padding-bottom: 352px;
+            padding-bottom: 306px;
         }
 
         .title {
@@ -278,15 +278,12 @@
         <div class="content">
             <div class="container">
                 <div class="card-filter">
-                    <div id="filter_bar" class="select-title sl search">
-                        <i class="bbva-icon ui-filter sl"></i>
-                        <span class="option-text sl center">Búsqueda avanzada&nbsp;&nbsp;</span>
-                    </div>
+
                     <div class="form-validation-group" id="filter_fast">
                         <div class="form-g roup">
                             <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname"
                                 name="internallawyer" id="internallawyer" type="text"
-                                data-placeholder="Número de crédito - Nombre del asunto - Folio REGUS - Folio Guía"
+                                data-placeholder="Indica ID REGUSSJJ"
                                 required autocomplete="off" value="" style="width: 487px;" />
                         </div>
                         <div id="filter_search">
@@ -1022,6 +1019,7 @@
 
     <script>
         $('.menuContainer').load('./menu.html');
+        setTimeout(function(){$(".procedimientos").addClass('option-selected');}, 1000);
         $(document).ready(function () {
             let flag = false;
             $("#filter_bar").click(function () {

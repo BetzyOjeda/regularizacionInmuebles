@@ -64,7 +64,7 @@
     .name-app {
         line-height: 3;
         color: white; 
-        line-height: 21%; 
+        line-height: 254%;
         font-size: 17PX; 
         font-family: BentonSansBBVA-Medium, Helvetica, Arial, sans-serif;
     }
@@ -107,15 +107,14 @@
                         </figure>
                     </div>
                 </div>
-            </div>
-            <div class="menuContainer"></div>
-        
+            </div>        
         </div>
         <div class="subheader" style="display: none;">
             <div class="container">
                 <i class="bbva-icon ui-gradution-cap"></i><span id="scholarshipProgram" ></span>
             </div>
         </div>
+        <div class="menuContainer"></div> 
         <div class="content">
             <div class="container">
                 <h1 class="title ">Formulario Contabilización</h1>
@@ -1039,6 +1038,7 @@
     <script>
     $(function() {
         $('.menuContainer').load('./menu.html');
+        setTimeout(function(){$(".contabilizacion").addClass('option-selected');}, 1000);
         $("#sec1creditgranting").datepicker({
             showOtherMonths: true,
             selectOtherMonths: true,

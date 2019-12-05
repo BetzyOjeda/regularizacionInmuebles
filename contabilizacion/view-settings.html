@@ -54,7 +54,7 @@
             align-items: center;
             display: inline-flex;
             font-size: 24px;
-            padding-top: 1rem;
+            padding-top: 2rem;
         }
 
         .help-menu {
@@ -312,7 +312,7 @@
             <div class="container">
                 <h1 class="title">Configura tu consulta / Vista</h1>
                 <p class="i-message" style="padding: 0px 0px;" ><span class="text-message">Selecciona 6 campos en el orden que deseas configurar tu vista</span></p>
-                <div style="overflow: auto; width: 100%; margin-top: 1rem;">
+                <div style="overflow: auto; width: 100%; margin: 2rem 0;">
                     <table id="table_main" class="table striped ">
                         
                             <tr class="" id="7">
@@ -425,7 +425,9 @@
                     <p class="i-message"><span class="text-message">&nbsp;</span></p>
                     <div class="submtbtn">
                         <span title="Crear" aria-label="Crear" class="btn__basic btn__submit btn__disabled" id="btn_create">
-                            <span aria-hidden="true">Crear</span>
+                            <span aria-hidden="true">
+                                Crear
+                            </span>
                         </span>
                     </div>
                 </div>              
@@ -721,6 +723,9 @@ var jsonConfigura={
             setTimeout(function(){$(".cartera").addClass('option-selected');}, 400);
         });
 
+        $("#btn_create").on('click', function(){
+              location.href= "portfolio.html";
+        });
         $('.checkbox').on('click', function(){
             var check=$(this).hasClass("checked");// Si no tiene la clase significa que lo seleccionaron para agregar ese campo
             var checkedNum = document.getElementsByClassName("checked").length;
