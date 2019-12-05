@@ -402,7 +402,7 @@
                         </tr>
                         <tr class="" id="7">
                             <td>
-                                <span style="margin: 0 8px;" class="checkbox checked" data-targetdisable="#check1"
+                                <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1"
                                     data-targettoggle="#checklastname" id="check1"><i
                                         class="bbva-icon ui-checkmark"></i></span>
                             </td>
@@ -690,6 +690,10 @@
             $('.menuContainer').load('./menu.html');
         });
 
+        $(".ui-filled-diagonal").click(function() {
+           location.href="index.html";
+        });
+
         $("#user-notify").click(function() {
             templates.notify = {
                 path: "./views/modal/notifications.html",
@@ -699,6 +703,17 @@
             };
             loadTemplate($("#modal_generic .body"), templates.notify, {
             });
+        });
+
+
+        $('.checkbox').on('click', function(){
+            var check=$(this).hasClass("checked");// Si no tiene la clase significa que lo seleccionaron para agregar ese campo
+                     
+            if(check){//Quita el check
+                $(this).removeClass('checked');
+            }else{//Agrega check
+                $(this).addClass('checked');
+            }
         });
     </script>
 </body>
