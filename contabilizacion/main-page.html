@@ -1048,6 +1048,17 @@
             });
 
         });
+
+        $("#user-notify").click(function() {
+            templates.notify = {
+                path: "./views/modal/notifications.html",
+                onload: function () {
+                    fn_showModal();
+                }
+            };
+            loadTemplate($("#modal_generic .body"), templates.notify, {
+            });
+        });
     </script>
 </body>
 
