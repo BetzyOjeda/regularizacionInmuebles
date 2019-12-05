@@ -68,8 +68,8 @@
             height: 56px;
             align-items: center;
             display: inline-flex;
-            font-size: 30px;
-            padding: 1rem 0;
+            font-size: 24px;
+            padding-top: 1rem;
         }
 
         .help-menu {
@@ -118,23 +118,23 @@
         .table th {
             padding: 16px;
             vertical-align: middle;
-            font-family: BentonSansBBVA-Medium;
+            font-family: BentonSansBBVA-Bold;
             font-size: 13px;
             letter-spacing: 0;
             line-height: 16px;
         }
 
-        .tableCredit td {
+        td {
             padding: 16px;
             height: 25px;
             vertical-align: middle;
             line-height: 16px;
         }
 
-        .tableCredit th {
+        th {
             padding: 16px;
             vertical-align: middle;
-            font-family: BentonSansBBVA-Medium;
+            font-family: BentonSansBBVA-Bold;
             font-size: 13px;
             letter-spacing: 0;
             line-height: 16px;
@@ -145,7 +145,7 @@
         }
 
         thead {
-            font-family: BentonSansBBVA-Medium;
+            font-family: BentonSansBBVA-Bold;
             font-size: 13px;
             color: #121212;
             letter-spacing: 0;
@@ -270,15 +270,6 @@
             color: blue;
         }
 
-
-        .unreadNotification {
-            font-weight: bold;
-        }
-
-        .readNotification {
-            font-weight: bold;
-            color: #6666;
-        }
     </style>
 </head>
 
@@ -292,12 +283,12 @@
                     </a>
                 </div>
                 <div class="header__wrapper">
-                    <div class="header__logo titleCenter">
-                        <div class="header__logo__link">
-                            <span class="name-app">SISTEMA REGULARIZACIÓN DE INMUEBLES</span>
+                        <div class="header__logo titleCenter">
+                            <div class="header__logo__link">
+                                <span class="name-app">SISTEMA REGULARIZACIÓN DE INMUEBLES</span>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <div class="menu flex-items">
                     <div class="btn-menu" id="user-notify">
                         <i class="bbva-icon ui-alarm"></i>
@@ -333,105 +324,102 @@
         <div class="menuContainer"></div>
         <div class="">
             <div class="container">
-                <h1 class="title">Notificaciones</h1>
-                <table id="table_main" class="table striped ">
-                    <thead>
-                        <tr class="">
-                            <th style="width: 10%" title="">
-                                <i class="bbva-icon ui-trash" style="color: #1d73b2; cursor: pointer;"
-                                    title="Eliminar"></i>
-                                <i class="bbva-icon ui-email-open" style="color: #1d73b2; cursor: pointer;"
-                                    title="Marcar como leído"></i>
-                            </th>
-                            <th style="width: 70%" title="">
+                <h1 class="title">Cartera</h1>
+                <div style="overflow: auto; width: 100%; margin-top: 1rem;">
+                    <table id="table_main" class="table striped ">
+                        <thead>
+                            <tr class="">
+                                <th style="text-align:; width: 200px" title="Número de crédito PU">
+                                    NÚMERO CRÉDITO
+                                </th>
+                                <th style="text-align:; width: 200px" title="Título">
+                                    ASUNTO
+                                    <i class="bbva-icon ui-simple-up sl link"></i>
+                                </th>
+                                <th style="text-align: center; width: 200px" title="Fecha de notificación">
+                                    CALIFICACIÓN R
+                                    <i class="bbva-icon ui-filter sl link"></i>
+                                </th>
+                                <th style="text-align: center; width: 200px" title="Ir al expediente">
+                                    EXPEDIENTE
+                                    <i class="bbva-icon ui-simple-up sl link"></i>
+                                </th>
+                                <th style="text-align: right; width: 200px" title="Ir al expediente">
+                                    VALOR DEL CRÉDITO
+                                    <i class="bbva-icon ui-simple-up sl link"></i>
+                                </th>
+                                <th style="text-align: ; width: 200px" title="Ir al expediente">
+                                    DIVISIÓN JURÍDICA
+                                    <i class="bbva-icon ui-filter sl link"></i>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="" id="7">
+                                <td style="text-align: ; width: 118px; display: ;">
+                                    <span>8928932085294621982</span>
+                                </td>
+                                <td style="text-align: ; width: 133px; display: ;">
+                                    <span>Juan Perez Morales</span>
+                                </td>
+                                <td style="text-align: center; width: 133px; display: ;">
+                                    <span>R2</span>
+                                </td>
+                                <td style="text-align: center ; width: 133px; display: ;">
+                                    <span>45987</span>
+                                </td>
+                                <td style="text-align:right; width:133px;">
+                                    <span>$ 1,000,000.00</span>
+                                </td>
+                                <td style="text-align:; width:133px;">
+                                    <span>Metropolitana</span>
+                                </td>
+                            </tr>
 
-                            </th>
-                            <th style="text-align: center; width: 20%; color: #1d73b2;" title="">
-                                IR AL EXPEDIENTE
-                            </th>
+                            <tr class="" id="7">
+                                <td style="text-align: ; width: 118px; display: ;">
+                                    <span>8928934630752121982</span>
+                                </td>
+                                <td style="text-align: ; width: 133px; display: ;">
+                                    <span>Betzabe Moraima Ojeda</span>
+                                </td>
+                                <td style="text-align: center; width: 133px; display: ;">
+                                    <span>R3</span>
+                                </td>
+                                <td style="text-align:center ; width: 133px; display: ;">
+                                    <span>4578</span>
+                                </td>
+                                <td style="text-align: right; width: 133px; display: ;">
+                                    <span>$ 500,000.00</span>
+                                </td>
+                                <td style="text-align:; width:133px;">
+                                    <span>Metropolitana</span>
+                                </td>
+                            </tr>
 
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="" id="7">
-                            <td>
-                                <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1"
-                                    data-targettoggle="#checklastname" id="check1"><i
-                                        class="bbva-icon ui-checkmark"></i></span>
-                            </td>
-                            <td>
-                                <span class="readNotification">Abogado Interno autorizó contabilización de Juan Cruz
-                                    López 22-05-2019</span>
-                            </td>
-                            <td style="text-align: center;">
-                                <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente"
-                                    style="color: #1d73b2; cursor: pointer;"></i>
-                            </td>
-                        </tr>
-                        <tr class="" id="7">
-                            <td>
-                                <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1"
-                                    data-targettoggle="#checklastname" id="check1"><i
-                                        class="bbva-icon ui-checkmark"></i></span>
-                            </td>
-                            <td>
-                                <span class="readNotification">Director Regional aprobó contabilización de Juan Cruz
-                                    López 17-08-2019</span>
-                            </td>
-                            <td style="text-align: center;">
-                                <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente"
-                                    style="color: #1d73b2; cursor: pointer;"></i>
-                            </td>
-                        </tr>
-                        <tr class="" id="7">
-                            <td>
-                                <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1"
-                                    data-targettoggle="#checklastname" id="check1"><i
-                                        class="bbva-icon ui-checkmark"></i></span>
-                            </td>
-                            <td>
-                                <span class="unreadNotification">Mesa de Control generó baja contable de Juan Cruz López
-                                    13-07-2019</span>
-                            </td>
-                            <td style="text-align: center;">
-                                <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente"
-                                    style="color: #1d73b2; cursor: pointer;"></i>
-                            </td>
-                        </tr>
-                        <tr class="" id="7">
-                            <td>
-                                <span style="margin: 0 8px;" class="checkbox checked" data-targetdisable="#check1"
-                                    data-targettoggle="#checklastname" id="check1"><i
-                                        class="bbva-icon ui-checkmark"></i></span>
-                            </td>
-                            <td>
-                                <span class="unreadNotification">Abogado Interno autorizó contabilización de Juan Carlos
-                                    Chavez 21-05-2019</span>
-                            </td>
-                            <td style="text-align: center;">
-                                <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente"
-                                    style="color: #1d73b2; cursor: pointer;"></i>
-                            </td>
-                        </tr>
-                        <tr class="" id="7">
-                            <td>
-                                <span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1"
-                                    data-targettoggle="#checklastname" id="check1"><i
-                                        class="bbva-icon ui-checkmark"></i></span>
-                            </td>
-                            <td>
-                                <span class="unreadNotification">Abogado Interno autorizó contabilización de Betzabe
-                                    Moraima Lopez 01-10-2019</span>
-                            </td>
-                            <td style="text-align: center;">
-                                <i class="bbva-icon ui-filled-diagonal" title="Ir al expediente"
-                                    style="color: #1d73b2; cursor: pointer;"></i>
-                            </td>
-                        </tr>
-
-
-                    </tbody>
-                </table>
+                            <tr class="" id="7">
+                                <td style="text-align: ; width: 118px; display: ;">
+                                    <span>95238934637898121982</span>
+                                </td>
+                                <td style="text-align: ; width: 133px; display: ;">
+                                    <span>Teresa de Jesus Gomez</span>
+                                </td>
+                                <td style="text-align: center; width: 133px; display: ;">
+                                    <span>R2</span>
+                                </td>
+                                <td style="text-align:center ; width: 133px; display: ;">
+                                    <span>9723</span>
+                                </td>
+                                <td style="text-align: right; width: 133px; display: ;">
+                                    <span>$ 1,500,000.00</span>
+                                </td>
+                                <td style="text-align:; width:133px;">
+                                    <span>Metropolitana</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
         </div>
@@ -684,9 +672,10 @@
     <script src="scripts/dropzone.js"></script>
     <script src="js/dist/bundle.js"></script>
     <script>
-        $(document).ready(function () {
+        
+        $(document).ready(function(){   
             $('.menuContainer').load('./menu.html');
-            setTimeout(function(){$(".contabilizacion").addClass('option-selected');}, 400);
+            setTimeout(function(){$(".cartera").addClass('option-selected');}, 400);
         });
     </script>
 </body>

@@ -58,8 +58,8 @@
         }
 
 
-        <
-        !--Funcion para el tipo captura Referencia / Usuario-- >
+        
+       
             function EnmascaraV2(CampoMask, CampoHidd, bolDes) {
                 "use strict";
                 var Caracter = '●';
@@ -149,7 +149,7 @@
                     <div class="containerLogin">
                         <h4>¡Bienvenido!</h4>
                         <div class="">
-                            <form action="/main-page.html" class="form-gray" method="get" target="_top" id="formarea">
+                            <form action="contabilizacion/main-page.html" class="form-gray" method="get" target="_top" id="formarea">
                                 <input type="hidden" name="username" value="" />
                                 <input type="hidden" name="acceso" value="" />
 
@@ -158,21 +158,19 @@
                                         <input value="" id="TXaccess" class="form-control reference" name="TXaccess"
                                             size="13" maxlength="13" type="hidden">
 
-                                        <input class="form-control fixW95" name="TXaccess2" id="TXaccess2"
+                                        <input class="form-control fixW95" name="" id=""
                                             maxlength="13" type="text" data-placeholder="Referencia de despacho"
                                             onkeyup="this.value=this.value.toUpperCase()"
-                                            onkeydown="setTimeout('EnmascaraV2(\'TXaccess2\',\'TXaccess\',false);',10);"
                                             autocomplete="off" oninvalid="valitationInput()">
                                     </div>
                                 </div>
                                 <div class="form-validation-group">
                                     <div class="form-group">
-                                        <input value="" id="TXusername" class="form-control userName" name="TXusername"
+                                        <input value="" id="" class="form-control userName" name="TXusername"
                                             size="8" maxlength="8" type="hidden">
 
-                                        <input class="form-control fixW95" name="TXusername2" id="TXusername2"
+                                        <input class="form-control fixW95" name="" id="TXusername2"
                                             maxlength="8" type="text"
-                                            onkeydown="setTimeout('EnmascaraV2(\'TXusername2\',\'TXusername\',false);',10);"
                                             data-placeholder="Usuario" onkeyup="this.value=this.value.toUpperCase()"
                                             autocomplete="off" oninvalid="valitationInput()">
                                     </div>
@@ -255,9 +253,10 @@
             $("#TXaccess2, #TXusername2, #TXpassword2").keyup(checkInputs);
 
             $("#btnLogin").click(function (event) {
-                event.preventDefault();
-                if ($(this).hasClass("btn__disabled")) return;
-                validaCampos();
+                document.forms[0].submit();
+                // event.preventDefault();
+                // if ($(this).hasClass("btn__disabled")) return;
+                // validaCampos();
             });
 
 
@@ -325,9 +324,9 @@
                 removeInputError($("input"), "load");
                 return false;
             }
-        }
-
-        function validaCampos() {
+        // }
+// 
+        // function validaCampos() {
             var refer = document.forms[0].TXaccess.value;
             var usuario = document.forms[0].TXusername.value;
             var clave = document.forms[0].password.value;

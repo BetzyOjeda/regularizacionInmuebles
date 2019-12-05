@@ -718,12 +718,12 @@ var jsonConfigura={
         
         $(document).ready(function(){
             $('.menuContainer').load('./menu.html');
+            setTimeout(function(){$(".cartera").addClass('option-selected');}, 400);
         });
 
         $('.checkbox').on('click', function(){
             var check=$(this).hasClass("checked");// Si no tiene la clase significa que lo seleccionaron para agregar ese campo
             var checkedNum = document.getElementsByClassName("checked").length;
-            var check=$(this).hasClass("checked");
             var enableButton= $("#btn_create").hasClass("btn__disabled"); //
             var id = $(this).attr("id");
             
