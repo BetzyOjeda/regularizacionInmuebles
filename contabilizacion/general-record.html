@@ -197,7 +197,7 @@
                                                             <input class="form-control uppercase letters lastnameb"
                                                                 name="sec1numbercredit" id="sec1numbercredit"
                                                                 type="text" disabled="disabled"
-                                                                data-placeholder="Folio REGUS" required
+                                                                data-placeholder="Folio REGUS" data-tooltitle="Folio REGUS" required
                                                                 autocomplete="off" value="XXXXXXXXXXXXXXXXXXXX">
                                                         </div>
                                                     </div>
@@ -209,9 +209,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-
-
-
                                             <div class="grid-item">
                                                 <div class="grid-item">
                                                     <div class="form-validation-group">
@@ -663,12 +660,11 @@
                             </form>
                         </div>
                     </div>
-                    <div id="wf2" class="i-form accordion removeifNC" style="display: none;">
-                        <div class="step-header" data-target="inmueble-data" data-loaded="false"
-                            data-catalog="dataInmueble" style="display: none;">
+                    <div id="wf2" class="i-form accordion removeifNC">
+                        <div class="step-header" data-target="inmueble-data" data-loaded="false" data-catalog="dataInmueble">
                             <div class="step-name">
                                 <i class="bbva-icon ui-home"></i>
-                                3. Datos de Inmuebles y avalúos
+                                3. Datos de procedimiento
                             </div>
                             <div id="statussoci" class="step-status incomplete">
                                 <i class="bbva-icon ui-warning"></i>
@@ -687,15 +683,12 @@
                                         <!--Lado izquierdo-->
                                         <div class="grid-container-s">
                                             <div class="grid-item">
-                                                <div class="form-group-select whitwait required" id="typepropertie">
-                                                    <div class="option-select">
-                                                        <div class="select-title sl">
-                                                            <span class="option-text sl center">Regimen de
-                                                                propiedad</span>
-                                                            <span class="selected-option sl"></span>
-                                                            <i class="bbva-icon ui-simple-down sl"></i>
-                                                        </div>
-                                                        <div class="list-result"></div>
+                                                <div class="form-validation-group">
+                                                    <div class="form-group">
+                                                        <textarea class="form-control letnum uppercase e-tooltip-f"
+                                                            name="references" id="references" type="text"
+                                                            data-placeholder="Juzgado" required autocomplete="off"
+                                                            data-tooltitle="Nombre de juzgado"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
