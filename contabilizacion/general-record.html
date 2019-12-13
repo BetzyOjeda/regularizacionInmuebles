@@ -666,11 +666,11 @@
                                 <i class="bbva-icon ui-home"></i>
                                 3. Datos de procedimiento
                             </div>
-                            <div id="statussoci" class="step-status incomplete">
+                            <div id="statussoci" class="step-status incomplete" style="display: none;">
                                 <i class="bbva-icon ui-warning"></i>
                                 Incompleto
                             </div>
-                            <div class="step-arrow">
+                            <div class="step-arrow" style="display: none;">
                                 <i class="bbva-icon ui-"></i>
                             </div>
                         </div>
@@ -685,10 +685,13 @@
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <textarea class="form-control letnum uppercase e-tooltip-f"
-                                                            name="references" id="references" type="text"
-                                                            data-placeholder="Juzgado" required autocomplete="off"
-                                                            data-tooltitle="Nombre de juzgado"></textarea>
+                                                        <div class="form-group">
+                                                            <input class="form-control uppercase letters lastnameb"
+                                                                data-reflecto="#m_sec3streetnumber" name="sec3streetnumber"
+                                                                id="sec3streetnumber" type="text"
+                                                                data-placeholder="Nombre de juzgado" required
+                                                                autocomplete="off" value="">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

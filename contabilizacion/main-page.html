@@ -137,7 +137,7 @@
             border: #6666 solid 1px; */
             width: 100%;
             display: inline-flex;
-            padding: 1rem;
+            padding: 2rem;
             background-color: white;
         }
 
@@ -1024,11 +1024,11 @@
             let flag = false;
             $("#filter_bar").click(function () {
                 $("#filter_body").slideToggle();
-                flag = true;
+                flag = !flag;
                 if (flag) {
                     $("#filter_fast").css("display", "none");
                 } else {
-                    $("#filter_fast").css("display", "block");
+                    $("#filter_fast").css("display", "inline-flex");
                     flag = false;
                 }
             });
