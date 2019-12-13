@@ -69,7 +69,6 @@
             align-items: center;
             display: inline-flex;
             font-size: 24px;
-            padding-top: 1rem;
         }
 
         .help-menu {
@@ -328,9 +327,11 @@
         <div class="menuContainer"></div>
         <div class="">
             <div class="container">
-                <h1 class="title">Cartera</h1>
+                    <div style="margin: 48px 0 0;">
+                    <h1 class="title">Consulta detallada</h1>
+                <i class="bbva-icon ui-settings link" title="Configura tu vista" style="float: right;margin-top: 7px;"></i></div>
                 <div style="overflow: auto; width: 100%; margin-top: 1rem;">
-                    <table id="table_main" class="table striped ">
+                    <table id="table_main" class="table striped" style="margin-bottom: 16px;">
                         <thead>
                             <tr class="">
                                 <th style="text-align:; width: 200px" title="Número de crédito PU">
@@ -424,6 +425,7 @@
                         </tbody>
                     </table>
                 </div>
+                <p class="i-message" style="font-family: BentonSansBBVA-Medium; font-size: 13px; color: #1973B8; float: right;"><span class="text-message">Total de asuntos 30</span></p>
             </div>
 
         </div>
@@ -680,6 +682,11 @@
         $(document).ready(function(){   
             $('.menuContainer').load('./menu.html');
             setTimeout(function(){$(".cartera").addClass('option-selected');}, 500);
+        });
+
+        
+        $(".ui-settings").click(function() {
+           location.href="view-settings.html";
         });
 
         $("#user-notify").click(function() {
