@@ -704,6 +704,13 @@
             
         });
 
+        $(".ui-trash").click(function() {
+            $("span.checked").each(function (index) { 
+                $(this).parent().parent().remove();
+            });
+            
+        });
+
 
         $("#user-notify").click(function() {
             templates.notify = {
