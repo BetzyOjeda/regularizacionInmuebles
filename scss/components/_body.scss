@@ -236,7 +236,7 @@ a:visited {
 }
 
 .title {
-  margin: 2rem 0px;
+  margin: 5rem 0px 0px;
   font-family: "BentonSansBBVA-Medium", Helvetica, Arial, sans-serif;
   font-size: 24px;
 }
@@ -1204,6 +1204,18 @@ body.loading .waitmodal {
   }
 }
 
+.content .step-stages {
+  margin: 0 0.9375rem;
+  padding: 1.875rem 5px;
+  @include from(l){
+    padding: 1.875rem 66px;
+  }
+  &.main-container{
+    @include from(l){
+      padding: 1.875rem 341px;
+    }
+  }
+}
 .checkbox-area{
   margin-bottom: 32px;
 }

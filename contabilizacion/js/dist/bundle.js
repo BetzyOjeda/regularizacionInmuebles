@@ -5116,6 +5116,51 @@ $("#btn_savehd").data("complete", function(data) {
     });
 });
 
+$("#btn_savehd").data("complete", function(data) {
+    restExec({
+        service: 'UPDATE_HOMEINF',
+        data: {
+            "operation": {
+                "userCurrent": "ALUMNO"
+            },
+            "id": ivUser,
+            "homeInformation": {
+                "roomsNumber": data.roomsNumber.id,
+                "bedroomsNumber": data.bedroomsNumber.id,
+                "bathroomsNumber": data.bathroomsNumber.id,
+                "drainageType": data.drainageType,
+                "homeService": {
+                    "waterServicesType": data.waterServicesType,
+                    "lightServicesType": data.lightServicesType
+                },
+                "wallMaterialsType": data.wallMaterialsType,
+                "cookingFuelType": data.cookingFuelType,
+                "ceilingMaterialsType": data.ceilingMaterialsType,
+                "floorMaterialsType": data.floorMaterialsType,
+                "belongings": {
+                    "carsNumber": data.carsNumber.id,
+                    "hasInternet": (data.hasInternet.id == "SI"),
+                    "hasComputer": (data.hasComputer.id == "SI"),
+                    "hasMicrowave": (data.hasMicrowave.id == "SI"),
+                    "hasPayTV": (data.hasPayTV.id == "SI"),
+                    "hasWashingMachine": (data.hasWashingMachine.id == "SI"),
+                    "hasMotorcycle": (data.hasMotorcycle.id == "SI"),
+                }
+            }
+        },
+        hasUrlParam: true,
+        urlParam: {
+            scholarId: ivUser
+        },
+        showWait: true,
+        success: function() {
+            loadModule.home(function () {
+                changeStatusSel($("#stage-data"));
+            });
+        }
+    });
+});
+
 $("#btn_saveld").data("complete", function() {
     var _legalDisclaimers = [];
     $("#legal1, #legal2, #legal3").each(function () {
@@ -6242,6 +6287,24 @@ var loadModule = {
                     rest_fnGetHomeServices(moduleInitData.home);
                 }
                 toggleModule($('[data-target="inmueble-data"]'));
+            }
+        },
+        dataStages: {
+            list: function () {
+                return ["CAT_TYPEPROPERTY","CAT_SUBTYPEPROPERTY","CAT_STATE"];
+            },
+            callback: function () {
+                fnFillCatalogs("typepropertie", __.get(catalogs,"CAT_TYPEPROPERTY",[]));
+                fnFillCatalogs("subtypeproperty", __.get(catalogs,"CAT_SUBTYPEPROPERTY",[]));
+                fnFillCatalogs("propertystate", __.get(catalogs,"CAT_STATE",[]));
+                fnFillCatalogs("municipalities_d", __.get(catalogs,"CAT_STATE",[]));
+
+                
+                $('[data-target="stages-data"]').attr("data-loaded","true");
+                if (typeof moduleInitData.home != "undefined"){
+                    rest_fnGetHomeServices(moduleInitData.home);
+                }
+                toggleModule($('[data-target="stages-data"]'));
             }
         }
     },
