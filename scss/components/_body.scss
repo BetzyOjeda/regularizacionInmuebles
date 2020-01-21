@@ -1341,6 +1341,7 @@ body.loading .waitmodal {
       padding-top: 4px;
       position: relative;
       border-bottom: 1px solid $bbva-500;
+      cursor: pointer;
 
       .option-text {
         -webkit-transition: all 0.5s ease;
@@ -1405,7 +1406,7 @@ body.loading .waitmodal {
       opacity: 0.5;
       .select-title {
         .bbva-icon {
-          cursor: default;
+          cursor: pointer;
         }
       }
     }

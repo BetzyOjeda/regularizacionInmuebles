@@ -35,100 +35,98 @@
     <script src="./js/templates.js"></script>
     
     <style>
-    .date{
-        top: 6px;
-    }
-    .avatar {
-        vertical-align: middle;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;  
-    }
+        .date{
+            top: 6px;
+        }
+        
+        .avatar {
+            vertical-align: middle;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;  
+        }
+        
+        .requiereAdunto{
+            float: left;
+            width: 83%;
+        }
+        
+        .adjunto{
+            float: left;
+        }
+        
+        .title {
+            font-family: 'BentonSansBBVA-Medium', 'Helvetica', 'Arial', 'sans-serif';
+            align-items: center;
+            display: inline-flex;
+            font-size: 24px;
+        }
+        
+        .header .header_logo {
+            width: 25%;
+        }
+
+        .name-app {
+            line-height: 3;
+            color: white; 
+            line-height: 254%;
+            font-size: 17PX; 
+            font-family: BentonSansBBVA-Medium, Helvetica, Arial, sans-serif;
+        }
+
+        .switch{background:#1973B8;opacity:1;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:12px;transition:all .3s;-webkit-transition:all .3s;-moz-transition:all .3s;box-sizing:border-box;cursor:pointer;font-size:12px;height:25px;padding:1px;top:12px;width:74px;left:20px;}
+        .switch .price{color:#1973B8;float:right;margin-right:0px;font-size:15px;background:#FFF;border-radius:15px;height:23px;width:35px;text-align:center;}
+        .switch .percentage{color:#FFF;float:left;margin-left:11px;font-size:15px;}
+        .switch .slide{margin-left:0px;background:#1973B8;border-radius:15px;height:23px;width:35px;}
+        .switch.percentage .price{color:#FFF;float:right;margin-right:0px;font-size:15px;background:#1973B8;border-radius:15px;height:22px;width:35px;text-align:center; margin-top: 2px;}
+        .switch.percentage .percentage{color:#1973B8;float:left;margin-left:11px;font-size:15px;margin-top: 2px;}
+        .switch.percentage .slide{margin-left:0px;background:#FFF;border-radius:15px;height:23px;width:35px;}
+        /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+        .checkmark {-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+        input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0;}
+        :after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}  
+        input{font-family:inherit;font-size:inherit;line-height:inherit;}
+        .col-md-6,.col-md-8,.col-sm-8,.col-xs-12,.col-xs-6{position:relative;min-height:1px;padding-right:15px;padding-left:15px;}
+        .col-xs-12,.col-xs-6{float:left;}
+        .col-xs-12{width:100%;}
+        .col-xs-6{width:50%;}
+        @media (min-width:768px){   
+        .col-sm-8{float:left;}
+        .col-sm-8{width:66.66666667%;}
+        }
+        @media (min-width:992px){
+        .col-md-6,.col-md-8{float:left;}
+        .col-md-8{width:100%;}
+        .col-md-6{width:50%;}
+        }
+        label{display:inline-block;max-width:100%;margin-bottom:5px;font-weight:700;}
+        input[type=radio]{margin:4px 0 0;margin-top:1px\9;line-height:normal;}
+        input[type=radio]:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
+        
+        *{font-family:"FS Joey", "Arial", sans-serif;}
+        *:focus,*:hover,*:active{outline:none!important;}
     
-	.requiereAdunto{
-		float: left;
-		width: 83%;
-	}
-	.adjunto{
-		float: left;
-    }
-    .title {
-        font-family: 'BentonSansBBVA-Medium', 'Helvetica', 'Arial', 'sans-serif';
-        align-items: center;
-        display: inline-flex;
-        font-size: 24px;
-    }
-    .header .header_logo {
-        width: 25%;
-    }
-    .name-app {
-        line-height: 3;
-        color: white; 
-        line-height: 254%;
-        font-size: 17PX; 
-        font-family: BentonSansBBVA-Medium, Helvetica, Arial, sans-serif;
-    }
+        .containerRadioButtons{font-size:13px;margin-top: 0px !important;margin-bottom: 0px !important;}
+        .containerRadioButtons input{opacity:0;cursor:pointer;}
+        .checkmark{border:1px solid #ACADAD!important;position:absolute;top:0;left:0;height:16px;width:16px;border-radius:50%;background:#F6F4F3!important;}
+        .checkmark:after{content:"";position:absolute;display:none;}
+        .containerRadioButtons input:checked ~ .checkmark:after{background:#004481;display:block;}
+        .containerRadioButtons .checkmark:after{top:3px;left:3px;width:8px;height:8px;border-radius:50%;}
+        .espaciogenero{font-weight:normal;font-size:15px;color:#666;letter-spacing:0;line-height:24px;margin-left:5px;}
+        .bottom_to_inputs{margin-bottom:-25px;}
+        .space_betwen{padding-left:10px;}
+        .checkmark{border:1px solid #ACADAD!important;position:absolute;top:4px;left:0;height:16px;width:16px;border-radius:50%;background:#F6F4F3;}
+        .checkmark:after{content:"";position:absolute;display:none;} 
 
-    .switch{background:#1973B8;opacity:1;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:12px;transition:all .3s;-webkit-transition:all .3s;-moz-transition:all .3s;box-sizing:border-box;cursor:pointer;font-size:12px;height:25px;padding:1px;top:12px;width:74px;left:20px;}
-    .switch .price{color:#1973B8;float:right;margin-right:0px;font-size:15px;background:#FFF;border-radius:15px;height:23px;width:35px;text-align:center;}
-    .switch .percentage{color:#FFF;float:left;margin-left:11px;font-size:15px;}
-    .switch .slide{margin-left:0px;background:#1973B8;border-radius:15px;height:23px;width:35px;}
-    .switch.percentage .price{color:#FFF;float:right;margin-right:0px;font-size:15px;background:#1973B8;border-radius:15px;height:22px;width:35px;text-align:center; margin-top: 2px;}
-    .switch.percentage .percentage{color:#1973B8;float:left;margin-left:11px;font-size:15px;margin-top: 2px;}
-    .switch.percentage .slide{margin-left:0px;background:#FFF;border-radius:15px;height:23px;width:35px;}
-    /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-    .checkmark {-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
-     input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0;}
-    :after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}  
-    input{font-family:inherit;font-size:inherit;line-height:inherit;}
-    .col-md-6,.col-md-8,.col-sm-8,.col-xs-12,.col-xs-6{position:relative;min-height:1px;padding-right:15px;padding-left:15px;}
-    .col-xs-12,.col-xs-6{float:left;}
-    .col-xs-12{width:100%;}
-    .col-xs-6{width:50%;}
-    @media (min-width:768px){   
-    .col-sm-8{float:left;}
-    .col-sm-8{width:66.66666667%;}
-    }
-    @media (min-width:992px){
-    .col-md-6,.col-md-8{float:left;}
-    .col-md-8{width:100%;}
-    .col-md-6{width:50%;}
-    }
-    label{display:inline-block;max-width:100%;margin-bottom:5px;font-weight:700;}
-    input[type=radio]{margin:4px 0 0;margin-top:1px\9;line-height:normal;}
-    input[type=radio]:focus{outline:5px auto -webkit-focus-ring-color;outline-offset:-2px;}
-     
-    *{font-family:"FS Joey", "Arial", sans-serif;}
-    *:focus,*:hover,*:active{outline:none!important;}
-   
-    .containerRadioButtons{font-size:13px;margin-top: 0px !important;margin-bottom: 0px !important;}
-    .containerRadioButtons input{opacity:0;cursor:pointer;}
-    .checkmark{border:1px solid #ACADAD!important;position:absolute;top:0;left:0;height:16px;width:16px;border-radius:50%;background:#F6F4F3!important;}
-    .checkmark:after{content:"";position:absolute;display:none;}
-    .containerRadioButtons input:checked ~ .checkmark:after{background:#004481;display:block;}
-    .containerRadioButtons .checkmark:after{top:3px;left:3px;width:8px;height:8px;border-radius:50%;}
-    .espaciogenero{font-weight:normal;font-size:15px;color:#666;letter-spacing:0;line-height:24px;margin-left:5px;}
-    .bottom_to_inputs{margin-bottom:-25px;}
-    .space_betwen{padding-left:10px;}
-    .checkmark{border:1px solid #ACADAD!important;position:absolute;top:4px;left:0;height:16px;width:16px;border-radius:50%;background:#F6F4F3;}
-    .checkmark:after{content:"";position:absolute;display:none;} 
-
-    .subtitulogenero{
-        font-size:12px;
-        color: #666 !important;
-        letter-spacing:0;
-        line-height:16px;
-        float: left;
-        width: 100%;
-        margin-top:9px;
-        /* margin-bottom:25px; */
-
-    }
-
-
-    
-
-
+        .subtitulogenero{
+            font-size:12px;
+            color: #666 !important;
+            letter-spacing:0;
+            line-height:16px;
+            float: left;
+            width: 100%;
+            margin-top:9px;
+        }
     </style>
 </head>
 <body>
@@ -208,8 +206,7 @@
                             </div>
                         </div>
                         <div id="general-data" class="step-container" style="display: none">
-                                <form name="form" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formgendata" data-status="#statusgd">
-                                <!--<div class="subtitle-sec">Datos del tutor</div>-->
+                                <form name="form" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formcreditdata" data-status="#statusgd">
                                 <div class="grid-container">
                                     <div class="grid-item"> <!--Lado izquierdo-->
                                         <div class="grid-container-s">
@@ -217,7 +214,7 @@
                                                 <div class="grid-item">
                                                     <div class="form-validation-group">
                                                         <div class="form-group">
-                                                            <input class="form-control uppercase letters lastnameb" name="sec1numbercredit" id="sec1numbercredit" type="text" data-placeholder="Número de crédito Banco" required autocomplete="off" value="">
+                                                            <input class="form-control numbers e-tooltip" name="sec1numbercredit" id="sec1numbercredit" type="text" data-placeholder="Número de crédito Banco" data-tooltitle="Número de credito Banco" required autocomplete="off" value="67436767236767236732" disabled="disabled">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -225,21 +222,21 @@
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec1rfc" name="sec1rfc" id="sec1rfc" type="text" disabled="disabled" data-placeholder="RFC" required autocomplete="off" value="OEMB930524MDFJCT09">
+                                                        <input class="form-control uppercase alphanumeric" data-reflecto="#m_sec1rfc" name="sec1rfc" id="sec1rfc" type="text" disabled="disabled" data-placeholder="RFC" required autocomplete="off" value="OEMB930524MDFJCT09">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec1CR" name="sec1CR" id="sec1CR" type="text" data-placeholder="CR de Afectación" required autocomplete="off" value="6943" disabled="disabled">
+                                                        <input class="form-control numbers" data-reflecto="#m_sec1CR" name="sec1CR" id="sec1CR" type="text" data-placeholder="CR de Afectación" required autocomplete="off" value="6943" disabled="disabled">
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec1creditgranting" name="sec1creditgranting" id="sec1creditgranting" type="text" data-placeholder="Fecha de otorgamiento del crédito" required autocomplete="off" value="15/10/2019" disabled="disabled">
+                                                        <input class="form-control e-tooltip" data-reflecto="#m_sec1creditgranting" name="sec1creditgranting" id="sec1creditgranting" type="text" data-placeholder="Fecha de otorgamiento del crédito" data-tooltitle="Fecha de otorgamiento del crédito Banco" required autocomplete="off" value="15/10/2019" disabled="disabled">
                                                     </div>
                                                 </div>
                                             </div>
@@ -260,7 +257,7 @@
                                                 <div class="grid-item">
                                                     <div class="form-validation-group">
                                                         <div class="form-group">
-                                                            <input class="form-control uppercase letters lastnameb" name="sec1numbercredit" id="sec1numbercredit" type="text" data-placeholder="Número de crédito Infonavit" required autocomplete="off" value="">
+                                                            <input class="form-control numbers" name="sec1numbercreditinfonavit" id="sec1numbercreditinfonavit" type="text" data-placeholder="Número de crédito INFONAVIT" required autocomplete="off" value="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -290,7 +287,7 @@
                                              <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="tutorlastname" id="tutorlastname" type="text" data-placeholder="Nombre del deudor" required autocomplete="off" value="Luis Daniel Regules Jorge" disabled="disabled">
+                                                        <input class="form-control uppercase letters lastnameb" data-reflecto="#m_debtorname" name="debtorname" id="debtorname" type="text" data-placeholder="Nombre del deudor" required autocomplete="off" value="Luis Daniel Regules Jorge" disabled="disabled">
                                                     </div>
                                                 </div>
                                             </div>
@@ -365,7 +362,7 @@
                                         <div class="grid-item">
                                             <div class="form-validation-group">
                                                 <div class="form-group">
-                                                    <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec1infonavitdate" name="sec1infonavitdate" id="sec1infonavitdate" type="text" data-placeholder="Fecha de pago de crédito Infonavit" autocomplete="off" value="">
+                                                    <input class="form-control" data-reflecto="#m_sec1infonavitdate" name="sec1infonavitdate" id="sec1infonavitdate" type="text" data-placeholder="Fecha de pago de crédito Infonavit" autocomplete="off" value="">
                                                 </div>
                                             </div>
                                         </div>
@@ -420,7 +417,7 @@
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
-                                                                <input class="form-control numbers e-tooltip-f" name="ybirthdate" id="ybirthdate" type="text" data-placeholder="A&ntilde;o" required autocomplete="off" maxlength="4" data-regex="YEAR_80_ACT" data-tooltitle="Por ejemplo 2000">
+                                                                <input class="form-control numbers" name="ybirthdate" id="ybirthdate" type="text" data-placeholder="A&ntilde;o" required autocomplete="off" maxlength="4" data-regex="YEAR_80_ACT">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -536,7 +533,7 @@
 											<div class="grid-item">
 												<div class="form-validation-group">
 													<div class="form-group">
-														<input class="form-control uppercase letters lastnameb" data-reflecto="#m_firstname" name="externallawyer" id="externallawyer" type="text"  data-placeholder="Abogado externo" required autocomplete="off" value="Jose Alfredo Larrea Salazar" disabled="disabled">
+														<input class="form-control uppercase letters lastnameb e-tooltip" data-reflecto="#m_firstname" name="externallawyer" id="externallawyer" type="text" data-placeholder="Nombre abogado externo" data-tooltitle="Nombre del abogado externo que llevo el juicio de recuperación" required autocomplete="off" value="Jose Alfredo Larrea Salazar">
 													</div>
 												</div>
 											</div>
@@ -544,7 +541,7 @@
 												<div class="form-group-select whitwait states reflectable required" id="notarynumber" data-reflecto="#m_state_s">
 													<div class="option-select">
 														<div class="select-title sl">
-															<span class="option-text sl center">Numero notaría </span>
+															<span class="option-text sl center">Número notaría </span>
 															<span class="selected-option sl"></span>
 															<i class="bbva-icon ui-simple-down sl"></i>
 														</div>
@@ -594,7 +591,7 @@
 												<div class="form-validation-group">
 													<div class="form-group">
 														<div class="requiereAdunto">
-															<input class="form-control uppercase letters lastnameb date calendar" data-reflecto="#m_sec3birthdate" name="interlocutoryDate" id="interlocutoryDate" type="text" data-placeholder="Fecha interlocutoria" required autocomplete="off" value="18/10/2019">
+															<input class="form-control uppercase letters lastnameb date calendar" data-reflecto="#m_sec3birthdate" name="interlocutoryDate" id="interlocutoryDate" type="text" data-placeholder="Fecha de sentencia interlocutoria que aprueba el remate o auto que declara firme la adjudicación directa"  required autocomplete="off" value="18/10/2019">
 														</div>
 														<div  class="uploadfile empty adjunto" title="PDF, en blanco y negro, a 200dpis">
 															<div class="wrapper" style="padding: 0;">
@@ -720,7 +717,7 @@
                             </div>
                         </div>
                         <div id="inmueble-data" class="step-container" style="display: none">
-                                <form name="form" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formgendata" data-status="#statusgd">
+                                <form name="form" action="#" class="form-gray notify-on-error" method="post" target="_top" id="formpropertydata" data-status="#statusgd">
                                         <!--<div class="subtitle-sec">Datos del tutor</div>-->
                                         <div class="grid-container">
                                             <div class="grid-item"> <!--Lado izquierdo-->
