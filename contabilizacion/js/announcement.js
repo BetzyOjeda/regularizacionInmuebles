@@ -439,34 +439,6 @@ var loadNextModules = function (_cllback) {
 /**
  * Validates if the user is a FUN type, if so 'SCHOLAR_DETAIL' is executed to detect if the user is allready registered
 */
-if(expRegs.FOL.regEx.test(ivUser)){
-    /*if (ivUser.charAt(2) == "1") { //secundaria
-        $(".page-container").remove();
-        $(".help-menu").remove();
-        loadTemplate($("#modal_generic .body"), miniTemplates.error, {
-            title: "La convocatoria ha terminado",
-            message: "Lo sentimos, el registro finalizó el 5 de julio.",
-            onAccept: logout
-        });
-        callbackCloseModal = logout;
-    }else{*/
-        loadModule.scholarshipAnnouncement();
-    //}
-}else if(expRegs.FUN.regEx.test(ivUser)){
-    restExec({
-        service: 'SCHOLAR_DETAIL',
-        type: 'POST',
-        data: {
-            "userScholar": ivUser,
-            "registerType": "2"
-        },
-        showWait: true,
-        finallyError: function () {
-            $(".content").hide();
-        },
-        success: rest_fnGetGeneralDataFun
-    });
-}
 
 //pre-load templates
 Object.keys(templates).forEach(function(_template) {

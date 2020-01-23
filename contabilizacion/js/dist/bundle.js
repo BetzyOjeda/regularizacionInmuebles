@@ -639,27 +639,6 @@ var rest_fnGetMunicipalities = function (id, data) {
     municipalityTransactions[id] = arrayMun || [];
 };
 
-/**
- *Is executed when the get general data service (with FUN user) is successfully executed, save the response data in dataStudent.
- *
- * @param {Object} data service response data object
- */
-var rest_fnGetGeneralDataFun = function(_data) {
-    dataStudent = _data.student[0];
-    if(_data.moduleStatus == "NUEVO"){
-        loadTemplate($("#modal_generic .body"), templates.confirmemail, {
-            c_email: dataStudent.contactInf[0].email
-        });
-    }else if(_data.moduleStatus == "ERROR"){
-        loadTemplate($("#modal_generic .body"), miniTemplates.error, {
-            title: "Aún no puedes participar en la convocatoria",
-            message: "Podrás participar en la convocatoria cuando estés por finalizar el último grado",
-            redirectToLogin: true
-        });
-    }else{
-        //loadModule.scholarshipAnnouncement();
-    }
-};
 
 var validateGeneralStatus = function () {
     if(__.get(moduleInitData.general,'moduleStatus','') == "COMPLETO"){//si el módulo es completo
@@ -2856,34 +2835,6 @@ var loadNextModules = function (_cllback) {
 /**
  * Validates if the user is a FUN type, if so 'SCHOLAR_DETAIL' is executed to detect if the user is allready registered
 */
-if(expRegs.FOL.regEx.test(ivUser)){
-    /*if (ivUser.charAt(2) == "1") { //secundaria
-        $(".page-container").remove();
-        $(".help-menu").remove();
-        loadTemplate($("#modal_generic .body"), miniTemplates.error, {
-            title: "La convocatoria ha terminado",
-            message: "Lo sentimos, el registro finalizó el 5 de julio.",
-            onAccept: logout
-        });
-        callbackCloseModal = logout;
-    }else{*/
-        loadModule.scholarshipAnnouncement();
-    //}
-}else if(expRegs.FUN.regEx.test(ivUser)){
-    restExec({
-        service: 'SCHOLAR_DETAIL',
-        type: 'POST',
-        data: {
-            "userScholar": ivUser,
-            "registerType": "2"
-        },
-        showWait: true,
-        finallyError: function () {
-            $(".content").hide();
-        },
-        success: rest_fnGetGeneralDataFun
-    });
-}
 
 //pre-load templates
 Object.keys(templates).forEach(function(_template) {

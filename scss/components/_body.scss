@@ -1631,10 +1631,10 @@ $popper-bg: $bbva-white-medium-blue;
 
 .tooltip {
   //background: $popper-bg;
-  background-color: $bbva-white;
+  background-color: $bbva-medium-blue;
   padding: 10px;
   text-align: center;
-  color: $bbva-600;
+  color: $bbva-white;
   font-size: 0.91rem;
   z-index: 2;
   border-radius: 1px;
@@ -1647,10 +1647,10 @@ $popper-bg: $bbva-white-medium-blue;
     margin: 5px;
   }
   &[x-placement^="top"] {
-    margin-bottom: 5px;
+     margin-top: 5px;
     .tooltip-arrow {
       border-width: 5px 5px 0 5px;
-      border-color:  $bbva-white transparent transparent transparent;
+      border-color:  $bbva-medium-blue transparent transparent transparent;
       bottom: -5px;
       left: calc(50% - 5px);
       margin-top: 0;
@@ -1658,10 +1658,10 @@ $popper-bg: $bbva-white-medium-blue;
     }
   }
   &[x-placement^="bottom"] {
-    margin-top: 5px;
+    margin-top: -20px;
     .tooltip-arrow {
       border-width: 0 5px 5px 5px;
-      border-color: transparent transparent $bbva-white transparent;
+      border-color: transparent transparent $bbva-medium-blue transparent;
       top: -5px;
       left: calc(50% - 5px);
       margin-top: 0;
@@ -1672,7 +1672,7 @@ $popper-bg: $bbva-white-medium-blue;
     margin-left: 5px;
     .tooltip-arrow {
       border-width: 5px 5px 5px 0;
-      border-color: transparent $bbva-white transparent transparent;
+      border-color: transparent $bbva-medium-blue transparent transparent;
       left: -5px;
       top: calc(50% - 5px);
       margin-left: 0;
@@ -1683,7 +1683,7 @@ $popper-bg: $bbva-white-medium-blue;
     margin-right: 5px;
     .tooltip-arrow {
       border-width: 5px 0 5px 5px;
-      border-color: transparent transparent transparent $bbva-white;
+      border-color: transparent transparent transparent $bbva-medium-blue;
       right: -5px;
       top: calc(50% - 5px);
       margin-left: 0;
