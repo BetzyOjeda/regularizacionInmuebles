@@ -18,54 +18,9 @@ var expRegs = {
         regEx: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/,
         error: "Ingresa un email válido"
     },
-    CCT: {
-        regEx: /^(0[1-9]|1[0-9]|2[0-9]|3[0-2])[A-Z]{3}[0-9]{4}[A-Z]{1}$/,
-        error: "Por favor valida la clave de tu escuela"
-    },
-    PROM: {
-        regEx: /10$|^\d(\.\d\d?)?$/,
-        error: "Ingresa una calificación entre 0 y 10"
-    },
-    FB: {
-        regEx: /(http|https):\/\/(?:www\.)facebook\.com\/(\b(([\w\-\.])*\/{0,1})|\b(profile\.php\?id=\d.*))$/,
-        error: "Por favor ingresa una url válida"
-    },
     ZIPCODE: {
         regEx: /^\d{5}/,
         error: "Por favor ingresa un código postal válido"
-    },
-    YEAR_50_ACT: {
-        regEx: {
-            test: function(year) {
-                nyear = Number(year);
-                return (!isNaN(nyear) && (year >= 1950 && year <= new Date().getFullYear()));
-            }
-        },
-        error: "Ingresa un año de 1950-actual"
-    },
-    YEAR_80_ACT: {
-        regEx: {
-            test: function(year) {
-                nyear = Number(year);
-                return (!isNaN(nyear) && (year >= 1980 && year <= new Date().getFullYear()));
-            }
-        },
-        error: "Ingresa un año de 1980-actual"
-    },
-    YEAR_MIN_80: {
-        regEx: {
-            test: function(year) {
-                nyear = Number(year);
-                return (!isNaN(nyear) && year >= 1980);
-            }
-        },
-        error: "Ingresa un año desde 1980"
-    },
-	FOL:{
-        regEx: /^[0-9]{2}[127][0-9]{8}$/
-    },
-    FUN: {
-        regEx: /^FUN[0-9]{8}$/
     }
 };
 

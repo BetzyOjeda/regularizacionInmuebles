@@ -6,231 +6,54 @@
   * Contains the municipalities allready loaded, it helps to execute the municipalities service just once for every state.
   * @type {Object}
   */
-var municipalityTransactions= {};
-/**
- * Contains the states
- */
-var stateTransactions=[];
-/**
- * Contains the dommy schools and functions
- * @property {Array} cct List of dommy schools, it has an order: [0] Program 1 dommy school, [1] Program 2 dommy school, [2] Program 7 dommy school.
- * @property {function} isDommy Returns true if a CCT is a dommy school CCT.
- * @property {function} getDommyCCT Returns the dommy school CCT acording to the program.
- * @property {function} getDommyDescription Returns the dommy school description acording to the program.
- */
-var dommySchools = {
-    cct: ["11AAA1111A","11BBB1111B","11CCC1111C"],
-    isDommy: function (_cctVal) {
-        _isD = false;
-        for (var _icct = 0; _icct < dommySchools.cct.length; _icct++) {
-            if (_cctVal == dommySchools.cct[_icct]) {
-                _isD=true;
-                break;
-            }
-        }
-        return _isD;
-    },
-    getDommyCCT: function(){
-        _programID=moduleInitData.announcement.scholarshipProgram.id;
-        return _programID=="1"?dommySchools.cct[0]:_programID=="2"?dommySchools.cct[1]:_programID=="7"?dommySchools.cct[2]:"";
-    },
-    getDommyDescription: function(){
-        _descSt = "";
-        switch (moduleInitData.announcement.scholarshipProgram.id) {
-            case "1":
-                _descSt = "PENDIENTE SECUNDARIA";
-                break;
-            case "2":
-                _descSt = "PENDIENTE BACHILLERATO";
-                break;
-            case "7":
-                _descSt = "PENDIENTE UNIVERSIDAD";
-                break;
-            default:
-                break;
-        }
-        return _descSt;
-    }
-};
-/**
- * Contains the student information, it is use only if a student with a FUN user enter the first time.
- * @type {Object}
- */
-var dataStudent = {};
-/**
- * Indicates if the birthday date has no error
- * @type {boolean}
- */
-var fbdate=true;
-/**
- * Indicates if the start class date has no error
- */
-var fcdate=true;
-/**
- * Contains all families by type.
- * @property {Object} fromhome              - all fromhome family type.
- * @property {number} fromhome.total        - total fromhome family type selected.
- * @property {Object[]} fromhome.members    - all fromhome family type.
- * @property {function} fromhome.index      - gets the current index of fromhome family type.
- * @property {function} fromhome.getTotal   - gets the total fromhome family type members excluding the deleted members.
- * @property {function} fromhome.getMembers - gets all fromhome family type members excluding the deleted members.
- * @property {Object} awayfromhome              - all awayfromhome family type.
- * @property {number} awayfromhome.total        - total awayfromhome family type selected.
- * @property {Object[]} awayfromhome.members    - all awayfromhome family type.
- * @property {function} awayfromhome.index      - gets the current index of awayfromhome family type.
- * @property {function} awayfromhome.getTotal   - gets the total awayfromhome family type members excluding the deleted members.
- * @property {function} awayfromhome.getMembers - gets all awayfromhome family type members excluding the deleted members.
- * @property {Object} bbva.member               - contains the bbva family member.
- * @property {boolean} unregistered             - indicates if the families are unregistered.
- */
-var family = {
-    fromhome: {
-        total: 0,
-        members: [],
-        index: function() {
-            return family.fromhome.getTotal() + 1;
-        },
-        getTotal: function () {
-            _t = 0;
-            for (_p = 0; _p < family.fromhome.members.length; _p++) {
-                _fam0 = family.fromhome.members[_p];
-                if (_fam0.statusRelated != "Delete") {
-                    _t++;
-                }
-            }
-            return _t;
-        },
-        getMembers: function () {
-            _tMem = [];
-            for (_p = 0; _p < family.fromhome.members.length; _p++) {
-                _fam0 = family.fromhome.members[_p];
-                if (_fam0.statusRelated != "Delete") {
-                    _tMem.push(_fam0);
-                }
-            }
-            return _tMem;
-        }
-    },
-    awayfromhome: {
-        total: 0,
-        members: [],
-        index: function() {
-            return family.awayfromhome.getTotal() + 1;
-        },
-        getTotal: function () {
-            _t = 0;
-            for (_p = 0; _p < family.awayfromhome.members.length; _p++) {
-                _fam0 = family.awayfromhome.members[_p];
-                if (_fam0.statusRelated != "Delete") {
-                    _t++;
-                }
-            }
-            return _t;
-        },
-        getMembers: function () {
-            _tMem = [];
-            for (_p = 0; _p < family.awayfromhome.members.length; _p++) {
-                _fam0 = family.awayfromhome.members[_p];
-                if (_fam0.statusRelated != "Delete") {
-                    _tMem.push(_fam0);
-                }
-            }
-            return _tMem;
-        }
-    },
-    bbva: {
-        member: {}
-    },
-    unregistered: true
-};
-/**
- * Indicates if the module "datos generales" has a complete status
- * @type {boolean}
- */
-var firstModuleComplete = false;
-/**
- * Contains the email by state, it is used to report a new school
- * @type {Object}
- */
-var scholsEmail = {
-    "1": "becas_aguascalientes.mx@bbva.com",
-    "2": "becas_bc.mx@bbva.com",
-    "3": "becas_bcs.mx@bbva.com",
-    "4": "becas_campeche.mx@bbva.com",
-    "5": "becas_coahuila.mx@bbva.com",
-    "6": "becas_colima.mx@bbva.com",
-    "7": "becas_chiapas.mx@bbva.com",
-    "8": "becas_chihuahua.mx@bbva.com",
-    "9": "becas_cdmx.mx@bbva.com",
-    "10": "becas_durango.mx@bbva.com",
-    "11": "becas_guanajuato.mx@bbva.com",
-    "12": "becas_guerrero.mx@bbva.com",
-    "13": "becas_hidalgo.mx@bbva.com",
-    "14": "becas_jalisco.mx@bbva.com",
-    "15": "becas_edomex.mx@bbva.com",
-    "16": "becas_michoacan.mx@bbva.com",
-    "17": "becas_morelos.mx@bbva.com",
-    "18": "becas_nayarit.mx@bbva.com",
-    "19": "becas_nuevol.mx@bbva.com",
-    "20": "becas_oaxaca.mx@bbva.com",
-    "21": "becas_puebla.mx@bbva.com",
-    "22": "becas_queretaro.mx@bbva.com",
-    "23": "becas_quintanaroo.mx@bbva.com",
-    "24": "becas_slp.mx@bbva.com",
-    "25": "becas_sinaloa.mx@bbva.com",
-    "26": "becas_sonora.mx@bbva.com",
-    "27": "becas_tabasco.mx@bbva.com",
-    "28": "becas_tamaulipas.mx@bbva.com",
-    "29": "becas_tlaxcala.mx@bbva.com",
-    "30": "becas_veracruz.mx@bbva.com",
-    "31": "becas_yucatan.mx@bbva.com",
-    "32": "becas_zacatecas.mx@bbva.com"
-};
-/**
- * Contains the gender catalog
- * @type {Object[]}
- */
-var genders = [{
-        id: '0',
-        description: 'Hombre'
-    },
-    {
-        id: '1',
-        description: 'Mujer'
-    }
-];
-/**
- * Contains the school list
- * @type {Object[]}
- */
-var schools = [];
-/**
- * It contails all the catalogs allready loaded, when a new catalog is get this variable is updated
- * @type {Object}
- */
-var catalogs = {};
-/**
- * When a module informatios is get, the response is saved in this variable, it is used to fill the save all modal.
- * @type {Object}
- */
-var moduleInitData = {};
-
-/**
- * Support contact information
- * @namespace
- * @property {string} contact.phone support phone number
- * @property {string} contact.email support email
- */
-var contact = {
-    phone: "",
-    email: ""
-};
-
-/**
- * Save the help Tooltip to report a new school
- * @type {Tooltip}
- */
-var helpScoolTooltip;
+ var municipalityTransactions= {};
+ /**
+  * Contains the states
+  */
+ var stateTransactions=[];
+ 
+ 
+ /**
+  * Indicates if the birthday date has no error
+  * @type {boolean}
+  */
+ var fbdate=true;
+ /**
+  * Indicates if the start class date has no error
+  */
+ var fcdate=true;
+ 
+ /**
+  * Indicates if the module "datos generales" has a complete status
+  * @type {boolean}
+  */
+ var firstModuleComplete = false;
+ 
+ /**
+  * Contains the gender catalog
+  * @type {Object[]}
+  */
+ var genders = [{
+         id: '0',
+         description: 'Hombre'
+     },
+     {
+         id: '1',
+         description: 'Mujer'
+     }
+ ];
+ 
+ /**
+  * It contails all the catalogs allready loaded, when a new catalog is get this variable is updated
+  * @type {Object}
+  */
+ var catalogs = {};
+ /**
+  * When a module informatios is get, the response is saved in this variable, it is used to fill the save all modal.
+  * @type {Object}
+  */
+ var moduleInitData = {};
+ 
 /**
  * @file Contains the main operational functions for the web page
 */
@@ -481,74 +304,6 @@ var fn_verifyCatalogs= function(_cat, _callback){
     verifyCatalogs.loopCatalogs();
 };
 
-/**
- *Creates the sticky float buttons
- *
- */
-function fillHelpSticky() {
-    var helpStickyConfig = {
-        placement: 'left',
-        trigger: "click",
-        html: true,
-        closeOnClickOutside: true,
-        title: '',
-        tooltiptitle: {
-            contactPhone: contact.phonetext,
-            contactEmail: contact.email
-        }
-    };
-    if (isMobile.any()) {
-        $("body").addClass("mobile");
-        $(".fig-username").find(".username").remove();
-        $(".btn-menu").find(".action-exit").remove();
-        btn-exit
-        helpStickyConfig.placement = 'top';
-        helpStickyConfig.tooltiptitle.contactPhone = '<a href="tel:+52'+contact.phone+'">'+contact.phonetext+'</a>';
-        helpStickyConfig.tooltiptitle.contactEmail = '<a href="mailto:'+contact.email+'">'+contact.email+'</a>';
-    }
-    new Tooltip($("#call_h"),helpStickyConfig)
-        .updateTitleContent('<div class="tooltip_title">Ll\u00e1manos</div>' +
-        '<div class="tooltip_message">Será un placer atenderte por télefono,'+
-        '<b> de lunes a viernes </b>de <b>9 </b> a <b>18 h</b> en el:</div>'+
-        '<div class="tooltip_contact">'+helpStickyConfig.tooltiptitle.contactPhone+'</div>'+
-        '<div class="tooltip_message">Tiempo medio de espera:<br><b>5 minutos</b></div>');
-
-    new Tooltip($("#email_h"),helpStickyConfig)
-        .updateTitleContent('<div class="tooltip_title">Escríbenos</div>' +
-        '<div class="tooltip_message">Será un placer atenderte por correo</div>'+
-        '<div class="tooltip_contact">'+helpStickyConfig.tooltiptitle.contactEmail+'</div>'+
-        '<div class="tooltip_message">Tiempo medio de espera:<br><b>24 horas</b></div>');
-
-    helpScoolTooltip = new Tooltip($("#help_sh"),helpStickyConfig);
-    helpScoolTooltip.updateTitleContent('<div class="tooltip_title">¿Te podemos ayudar?</div>' +
-        '<div class="tooltip_message">Hemos detectado que no encuentras tu escuela</div>'+
-        '<div class="btn_ht"><span title="Sí" aria-label="Sí" class="btn__basic btn__small" id="st_btn_reportschool">'+
-            '<span aria-hidden="true">Sí</span>'+
-        '</span></div>'+
-        '<div class="btn_ht"><span title="No" aria-label="No" class="btn__basic btn__small" id="st_btn_cancel">'+
-            '<span aria-hidden="true">No</span>'+
-        '</span></div>');
-    helpSticky();
-}
-
-/**
- *Add the help sticky buttons an event listener
- *
- */
-function helpSticky() {
-    $(".btn_help").click(function(e){
-        e.preventDefault();
-        if($(this).hasClass("active")){$(this).removeClass("active")}else{$(".btn_help").not("id", $(this).attr("id")).removeClass("active");
-        $(this).addClass("active");}
-    });
-
-    $(".page-container").click(function() {
-        if ($(".btn_help").hasClass("active")){
-            $(".btn_help").removeClass("active");
-            helpScoolTooltip.hide();
-        }
-    });
-}
 
 /**
  * Concatenates spaces at the end of the string until it has the size indicated
@@ -664,7 +419,7 @@ window.onscroll = function() {
   * @property {function} LIST_SERVICES.verifyServices starts the service requests
   * @property {function} LIST_SERVICES.loopServices loop function to execute each service
   */
-var LIST_SERVICES = {
+ var LIST_SERVICES = {
     services: [],
     errors: [],
     callback: function () {  },
@@ -830,455 +585,6 @@ var rest_fnShowError = function(error) {
 };
 
 
-/**
- *Is executed when the get scholar information service is successfully executed, save the response data in moduleInitData.schoolData and show it in the module content.
- *
- * @param {Object} data service response data object
- */
-var rest_fnGetScholarInf = function(data) {
-    moduleInitData.schoolData = data;
-    if(__.get(data,'operation.moduleStatus','0') == "1"){//si el módulo es completo
-        changeModuleSatus($("#schoolar-data"), "complete");
-    }
-    if ($('[data-target="schoolar-data"]').attr("data-loaded")!="true") {
-        LIST_SERVICES.listRestExec({
-            showWait:true,
-            service: 'GET_MUNICIPALITY',
-            type: 'POST',
-            asyn: false,
-            data: {
-                state:__.get(moduleInitData.schoolData,'schooling.location.state.id',0)
-            },
-            finallySuccess: [function (data) {
-                rest_fnGetMunicipalities(__.get(moduleInitData.schoolData,'schooling.location.state.id',0), data);
-            }],
-            finallyError: [function (data) {
-                rest_fnGetMunicipalities(__.get(moduleInitData.schoolData,'schooling.location.state.id',0), data);
-            }]
-        });
-        return;
-    }
-    if (dommySchools.isDommy(__.get(data,'operation.keyWorkplace',''))) {
-        validateEmptyOption($("#state_s"));
-        validateEmptyOption($("#municipalities_s"));
-    }
-    if (__.get(data,'schooling.location.state.id',"") == 0 || __.get(data,'schooling.location.state.id',"") == "0") {
-        _prId = moduleInitData.announcement.scholarshipProgram.id;
-        municipalityTransactions["0"] = [{
-            id:0,
-            description: dommySchools.getDommyDescription()
-        }];
-    }
-
-    loadModule.getMunicipalities(__.get(data,'schooling.location.state.id',0),function(){
-        data = moduleInitData.schoolData;
-        $("#municipalities_s").comboSelect(municipalityTransactions[__.get(data,'schooling.location.state.id',"")]);
-
-        fillForm($("#formschdata"),{
-            promgen: __.get(data,'average',''),
-            state_s: __.get(data,'schooling.location.state.id',''),
-            municipalities_s: __.get(data,'schooling.location.municipality.id',''),
-            search_by: "CCT",
-            cct: __.get(data,'operation.keyWorkplace',''),
-            turn: __.get(data,'schooling.profession.scholarShift.id',''),
-            career_area: __.get(data,'schooling.profession.area.id',''),
-            career_subarea: __.get(data,'schooling.profession.subArea.id',''),
-            program_career: __.get(data,'schooling.profession.careerName',''),
-            type_s: __.get(data,'schooling.profession.type.id',''),
-            duration: __.get(data,'schooling.profession.duration.id',''),
-            trans: __.get(data,'expenses.transportationAmount','')!=""?formatMoney(__.get(data,'expenses.transportationAmount','')):"",
-            dsclass: __.get(data,'schooling.profession.classesStartDate','--').split("/")[0],
-            msclass: __.get(data,'schooling.profession.classesStartDate','--').split("/")[1],
-            ysclass: __.get(data,'schooling.profession.classesStartDate','--').split("/")[2],
-            change_h: __.get(data,'changeAddress','').toString()=="true"?"SI":__.get(data,'changeAddress','').toString()=="false"?"NO":"",
-        });
-        $("#modality").selectOptionDescription(__.get(data,'schooling.profession.modality.description',''));
-        if (__.get(data,'changeAddress','').toString()=="true") {
-            fillForm($("#formschdata"),{
-                state_m: __.get(data,'schooling.newLocation.state.id',''),
-                municipalities_m: __.get(data,'schooling.newLocation.municipality.id',''),
-                rent: __.get(data,'expenses.isPayRent','').toString()=="true"?"SI":__.get(data,'expenses.isPayRent','').toString()=="false"?"NO":""
-            });
-        }
-        if (__.get(data,'expenses.isPayRent','').toString()=="true") {
-            fillForm($("#formschdata"),{
-                payment_rent: __.get(data,'expenses.mounthlyRent','')!=""?formatMoney(__.get(data,'expenses.mounthlyRent','')):"",
-            });
-        }
-        if (__.get(data,'operation.keyWorkplace','') != "") {
-            $("#schoolslist").searchList({
-                filterid: "keyWorkplace",
-                filtertext: "schoolOficialName",
-                items: [{
-                    "keyWorkplace": __.get(data,'operation.keyWorkplace',''),
-                    "schoolOficialName": __.get(data,'schooling.schoolName','')
-                }]
-            });
-            $("#schoolslist").selectFromList(__.get(data,'operation.keyWorkplace',''));
-        }
-        if (dommySchools.isDommy(__.get(data,'operation.keyWorkplace',''))) {
-            $("#search_by .radio-buttons").addClass("disabled");
-            $("input#cct").prop("disabled", true);
-        }
-        if (seedFindSchool) {
-            clearTimeout(seedFindSchool);
-            seedFindSchool = undefined;
-        }
-    });
-};
-
-/**
- *Is executed when the get socioeconomic information service is successfully executed, save the response data in moduleInitData.sociodemographic and show it in the module content.
- *
- * @param {Object} data service response data object
- */
-var rest_fnGetSocialData = function(data) {
-    data.relatedPersons = __.get(data,"relatedPersons",[]);
-    //place the student in the fisrt array position
-    for (i = 0; i < data.relatedPersons.length; i++) {
-        if (data.relatedPersons[i].relationship.id == "1") {
-            _famAlumno = data.relatedPersons[i];
-            data.relatedPersons.splice(i, 1);
-            data.relatedPersons.splice(0, 0, _famAlumno);
-        }
-    }
-    moduleInitData.sociodemographic = data;
-    _famMembers = __.get(data,'relatedPersons',[]);
-    family.fromhome.members = [];
-    family.awayfromhome.members = [];
-    family.bbva.member = {};
-
-    for (i = 0; i < _famMembers.length; i++) {
-        var _fammember = _famMembers[i];
-        switch (__.get(_fammember,'personDetail.personType','')) {
-            case "PERSONS_LIVE_HOME":
-                family.fromhome.members.push({
-                    "alreadyExists":"true",
-                    "familyBoss": __.get(_fammember,'personDetail.isHeadOfHousehold','')===true?"Sí":"No",
-                    "statusRelated": __.get(_fammember,'statusRelatedPersonsInformation','OK'),
-                    "relatedid": __.get(_fammember,'id',''),
-                    "fam_name": __.get(_fammember,'name',''),
-                    "fam_appat": __.get(_fammember,'lastName',''),
-                    "fam_apmat": __.get(_fammember,'secondLastName',''),
-                    "fam_o_relationship": __.get(_fammember,'relationship.otherRelationshipDescription',''),
-                    "fam_age": __.get(_fammember,'personDetail.age','0'),
-                    "fam_omedic": __.get(_fammember,'personDetail.healthCareEntity.otherHealthCareEntity',''),
-                    "total_f": formatMoney(__.get(_fammember,'personDetail.incomes[0].amount',0),true),
-                    "sprogramname": __.get(_fammember,'personDetail.otherGovernmentScholarship.otherScholarshipProgramDescription',''),
-                    "total_sf": formatMoney(__.get(_fammember,'personDetail.otherGovernmentScholarship.incomes[0].amount',0),true),
-                    "fam_relationship": {
-                        "id": __.get(_fammember,'relationship.id',''),
-                        "description": __.get(_fammember,'relationship.description','')
-                    },
-                    "fam_relationship_des": __.get(_fammember,'relationship.id','')!="10"?__.get(_fammember,'relationship.description',''):__.get(_fammember,'relationship.otherRelationshipDescription',''),
-                    "fam_civil": {
-                        "id": __.get(_fammember,'personDetail.maritalStatus.id',''),
-                        "description": __.get(_fammember,'personDetail.maritalStatus.description','')
-                    },
-                    "fam_schoollevel": {
-                        "id": __.get(_fammember,'personDetail.education.id',''),
-                        "description": __.get(_fammember,'personDetail.education.description','')
-                    },
-                    "fam_medic": {
-                        "id": __.get(_fammember,'personDetail.healthCareEntity.id',''),
-                        "description": __.get(_fammember,'personDetail.healthCareEntity.description','')
-                    },
-                    "fam_ocupation": {
-                        "id": __.get(_fammember,'personDetail.economicActivity.id',''),
-                        "description": __.get(_fammember,'personDetail.economicActivity.description','')
-                    },
-                    "fam_kindschoolarship": {
-                        "id": __.get(_fammember,'personDetail.otherGovernmentScholarship.otherGovernmentScholarshipType.id',''),
-                        "description": __.get(_fammember,'personDetail.otherGovernmentScholarship.otherGovernmentScholarshipType.description','')
-                    },
-                    "fam_programschoolarship": {
-                        "id": __.get(_fammember,'personDetail.otherGovernmentScholarship.id',''),
-                        "description": __.get(_fammember,'personDetail.otherGovernmentScholarship.description','')
-                    },
-                    "fam_gender": {
-                        "id": __.get(_fammember,'personDetail.gender.id',''),
-                        "description": __.get(_fammember,'personDetail.gender.id','')
-                    },
-                    "fam_studing": {
-                        "id": __.get(_fammember,'personDetail.isStudent',''),
-                        "description": __.get(_fammember,'personDetail.isStudent','') == true?"Sí":"No"
-                    },
-                    "fam_worked": {
-                        "id": __.get(_fammember,'personDetail.hasWorkedLastMonth','').toString(),
-                        "description": __.get(_fammember,'personDetail.hasWorkedLastMonth','') === true?"Sí":"No"
-                    },
-                    "fam_otherschoolarship": {
-                        "id": __.get(_fammember,'personDetail.otherGovernmentScholarship.id','') == ""?"1": "0",
-                        "description": __.get(_fammember,'personDetail.otherGovernmentScholarship.id','') == ""?"No": "Sí"
-                    },
-                    "m_checkfirstname": __.get(_fammember,'lastName','') == "XXXXX"?true:false,
-                    "m_checklastname": __.get(_fammember,'secondLastName','') == "XXXXX"?true:false
-                });
-                c_fam = family.fromhome.members[family.fromhome.members.length-1];
-                if (c_fam.fam_otherschoolarship.id=="0") {
-                    c_fam.infoscolarship = '{"tipo":"' + __.get(_fammember,'personDetail.otherGovernmentScholarship.otherGovernmentScholarshipType.description','') + '","programa": "' + __.get(_fammember,'personDetail.otherGovernmentScholarship.description','') + '","monto": "' + formatMoney(__.get(_fammember,'personDetail.otherGovernmentScholarship.incomes[0].amount',0),true) + '"}';
-                }
-                break;
-            case "NOT_LIVE_HOME_ECONOMIC_SUPPORT":
-                family.awayfromhome.members.push({
-                    "alreadyExists":"true",
-                    "statusRelated": __.get(_fammember,'statusRelatedPersonsInformation','OK'),
-                    "relatedid": __.get(_fammember,'id',''),
-                    "fam_name": __.get(_fammember,'name',''),
-                    "fam_appat": __.get(_fammember,'lastName',''),
-                    "fam_apmat": __.get(_fammember,'secondLastName',''),
-                    "fam_o_relationship": __.get(_fammember,'relationship.otherRelationshipDescription',''),
-                    "total_f": formatMoney(__.get(_fammember,'personDetail.incomes[0].amount',0),true),
-                    "fam_relationship": {
-                        "id": __.get(_fammember,'relationship.id',''),
-                        "description": __.get(_fammember,'relationship.description','')
-                    },
-                    "fam_relationship_des": __.get(_fammember,'relationship.id','')!="10"?__.get(_fammember,'relationship.description',''):__.get(_fammember,'relationship.otherRelationshipDescription',''),
-                    "fam_lives": {
-                        "id": __.get(_fammember,'personDetail.residencePlace.id',''),
-                        "description": __.get(_fammember,'personDetail.residencePlace.description','')
-                    },
-                    "fam_ocupation": {
-                        "id": __.get(_fammember,'personDetail.economicActivity.id',''),
-                        "description": __.get(_fammember,'personDetail.economicActivity.description','')
-                    },
-                    "m_checkfirstname": __.get(_fammember,'lastName','') == "XXXXX"?true:false,
-                    "m_checklastname": __.get(_fammember,'secondLastName','') == "XXXXX"?true:false
-                });
-                break;
-            case "RELATIVE_WORKS_BBVA":
-                family.bbva.member={
-                    "alreadyExists":"true",
-                    "statusRelated": __.get(_fammember,'statusRelatedPersonsInformation','OK'),
-                    "relatedid": __.get(_fammember,'id',''),
-                    "name_fbbva": __.get(_fammember,'name',''),
-                    "lastname_fbbva": __.get(_fammember,'lastName',''),
-                    "slastname_fbbva": __.get(_fammember,'secondLastName',''),
-                    "relationship_b_o": __.get(_fammember,'relationship.otherRelationshipDescription',''),
-                    "workposition_fbbva": __.get(_fammember,'personDetail.professionPosition',''),
-                    "workstation_fbbva": __.get(_fammember,'personDetail.managementUnit',''),
-                    "relationship": {
-                        "id": __.get(_fammember,'relationship.id',''),
-                        "description": __.get(_fammember,'relationship.otherRelationshipDescription','')==""?__.get(_fammember,'relationship.description',''):__.get(_fammember,'relationship.otherRelationshipDescription','')
-                    },
-                    "relationship_b": {
-                        "id": __.get(_fammember,'relationship.id',''),
-                        "description": __.get(_fammember,'relationship.description','')
-                    },
-                    "checkfirstname_fbbva": __.get(_fammember,'lastName','') == "XXXXX"?true:false,
-                    "checklastname_fbbva": __.get(_fammember,'secondLastName','') == "XXXXX"?true:false
-                };
-                break;
-            default:
-                break;
-        }
-    }
-    family.unregistered = false;
-    family.fromhome.total = family.fromhome.members.length;
-    $('#n_family').selectOptionId(family.fromhome.members.length);
-    $("#nfamilylist").empty();
-    for (var _i in family.fromhome.members) {
-        family.fromhome.members[_i].memberid = _i;
-        if (family.fromhome.members[_i].statusRelated != "Delete"){
-            loadTemplate($("#nfamilylist"), miniTemplates.familymembercard, family.fromhome.members[_i], "append");
-        }
-    }
-
-    family.awayfromhome.total = family.awayfromhome.members.length;
-    $("#nextrafamilylist").empty();
-    for (var _k in family.awayfromhome.members) {
-        family.awayfromhome.members[_k].memberid = _k;
-        if (family.awayfromhome.members[_k].statusRelated != "Delete"){
-            loadTemplate($("#nextrafamilylist"), miniTemplates.efamilymembercard, family.awayfromhome.members[_k], "append");
-        }
-    }
-    $('#extrafamily').selectOptionId(family.awayfromhome.members.length);
-    $("#fam_bbvacard").empty();
-    if(Object.keys(family.bbva.member).length != 0){
-        $("#bbvafamily").selectRadioId('0');
-        loadTemplate($("#fam_bbvacard"), miniTemplates.familybbvacard, family.bbva.member);
-        if (family.bbva.member && $("#bbva_employee").prev(".notification.error").length) {
-            $("#bbva_employee").prev(".notification.error").slideUp("slow");
-        }
-    }else{
-        $("#bbvafamily").selectRadioId('1');
-    }
-    if(__.get(data,'auditInformation.moduleStatus','') == "COMPLETE"){//si el módulo es completo
-        changeModuleSatus($("#social-data"), "complete");
-    }
-};
-
-/**
- *Is executed when the get home information service is successfully executed, save the response data in moduleInitData.home and show it in the module content.
- *
- * @param {Object} data service response data object
- */
-var rest_fnGetHomeServices = function(data) {
-    moduleInitData.home = data;
-    if(__.get(data,'operation.moduleStatus','0') == "1"){//si el módulo es completo
-        changeModuleSatus($("#home-data"), "complete");
-    }
-    if ($('[data-target="home-data"]').attr("data-loaded")!="true") {
-        return;
-    }
-    _hasInt = __.get(data,'homeInformation.belongings.hasInternet','');
-    _hasCom = __.get(data,'homeInformation.belongings.hasComputer','');
-    _hasWas = __.get(data,'homeInformation.belongings.hasWashingMachine','');
-    _hasMic = __.get(data,'homeInformation.belongings.hasMicrowave','');
-    _hasPay = __.get(data,'homeInformation.belongings.hasPayTV','');
-    _hasMot = __.get(data,'homeInformation.belongings.hasMotorcycle','');
-    fillForm($("#formhdata"),{
-        roomsNumber: __.get(data,'homeInformation.roomsNumber',''),
-        bedroomsNumber: __.get(data,'homeInformation.bedroomsNumber',''),
-        bathroomsNumber: __.get(data,'homeInformation.bathroomsNumber',''),
-        waterServicesType: __.get(data,'homeInformation.homeService.waterServicesType.id',''),
-        drainageType: __.get(data,'homeInformation.drainageType.id',''),
-        lightServicesType: __.get(data,'homeInformation.homeService.lightServicesType.id',''),
-        cookingFuelType: __.get(data,'homeInformation.cookingFuelType.id',''),
-        wallMaterialsType: __.get(data,'homeInformation.wallMaterialsType.id',''),
-        ceilingMaterialsType: __.get(data,'homeInformation.ceilingMaterialsType.id',''),
-        floorMaterialsType: __.get(data,'homeInformation.floorMaterialsType.id',''),
-        carsNumber: __.get(data,'homeInformation.belongings.carsNumber',''),
-        hasInternet: _hasInt == true ? "SI" : _hasInt == false ? "NO":"",
-        hasComputer: _hasCom == true ? "SI" : _hasCom == false ? "NO":"",
-        hasWashingMachine: _hasWas == true ? "SI" : _hasWas == false ? "NO":"",
-        hasMicrowave:  _hasMic == true ? "SI" : _hasMic == false ? "NO":"",
-        hasPayTV:  _hasPay == true ? "SI" : _hasPay == false ? "NO":"",
-        hasMotorcycle:  _hasMot == true ? "SI" : _hasMot == false ? "NO":"",
-    });
-};
-
-/**
- *Is executed when the get legal disclaimers service is successfully executed, save the response data in moduleInitData.legalDisclaimer and show it in the module content.
- *
- * @param {Object} data service response data object
- */
-var rest_fnGetLegalDisclaimers = function(data) {
-    moduleInitData.legalDisclaimer = data;
-    var legalDisclaimers = __.get(data,'legalDisclaimers',[]);
-    var text="";
-    for (i = 0 ; i < legalDisclaimers.length ; i++) {
-        $("#legal"+(i+1)).attr("data-legal-id",legalDisclaimers[i].id);
-        $("#legal"+(i+1)).attr("data-legal-consecutive",legalDisclaimers[i].consecutive);
-        text=legalDisclaimers[i].description.split('|');
-        $("#legaltext"+(i+1)).text(text[0]);
-        $("#legallink"+(i+1)).text(text[1]);
-        $("#legallink"+(i+1)).attr("href",legalDisclaimers[i].link);
-        if (__.get(data,'legalDisclaimers['+i+'].isAccepted','N')=='Y') {
-            $("#legal"+(i+1)).doCheck();
-        }else {
-            $("#legal"+(i+1)).unCheck();
-        }
-    }
-    if(__.get(data,'validation.status','') == "COMPLETO"){//si el módulo es completo
-        changeModuleSatus($("#legal-data"), "complete");
-        $("#legal1, #legal2, #legal3").addClass("disabled");
-        $("#btn_saveld").addClass("btn__disabled");
-    }else{
-        changeModuleSatus($("#legal-data"), "incomplete");
-        $("#legal1, #legal2, #legal3").removeClass("disabled");
-        $("#btn_saveld").removeClass("btn__disabled");
-    }
-    if(legalDisclaimers.length>0){
-        $('#formldata').show();
-    }
-};
-
-/**
- *Is executed when the get scholarship announcement service is successfully executed, save the response data in moduleInitData.announcement and show it in the module content.
- *
- * @param {Object} data service response data object
- */
-var rest_fnGetScholarshipAnnouncement= function(data){
-    scholarshipAnnouncement=data;
-    moduleInitData.announcement=scholarshipAnnouncement;
-    $('#scholarshipProgram').text();
-    contact.phone=__.get(scholarshipAnnouncement,'phoneNumber','');
-    contact.phonetext = contact.phone;
-    if (contact.phone.length == 12) {
-        contact.phonetext = "(" + contact.phone.substr(0,2) +" " + contact.phone.substr(2,3) + ") " + contact.phone.substr(5,3) + " " + contact.phone.substr(8);
-    }
-    contact.email=__.get(scholarshipAnnouncement,'email','');
-    fillHelpSticky();
-    _progId = __.get(scholarshipAnnouncement,'scholarshipProgram.id','');
-    $('#scholarshipProgram').text(_progId=="1"?"Secundaria":_progId=="2"?"Preparatoria":_progId=="7"?"Universidad":"");
-    if(scholarshipAnnouncement.globalStatus=='1'){
-        $('.step-container').find(".btn__submit").addClass('btn__disabled');
-        $(".submtbtn.send").attr("style","display: none");
-    }
-    var tltText = "";
-    switch(moduleInitData.announcement.scholarshipProgram.id){
-        case "1":
-            $(".typeuni").remove();
-            $(".typeprep").remove();
-            $("#promgen").siblings(".placeholder-simulator").text("Promedio general de primaria");
-            $("#lastLevel").text("primaria");
-            $("#nextLevel").text("secundaria");
-            tltText = "<div>¿Cómo calcular el promedio? <br> 6to año de primaria (1er trimestre + 2do trimestre) <hr> El resultado divídelo entre 2</div>";
-            break;
-        case "2":
-            $(".typeuni").remove();
-            $("#promgen").siblings(".placeholder-simulator").text("Promedio general de secundaria");
-            $("#lastLevel").text("secundaria");
-            $("#nextLevel").text("preparatoria");
-            tltText = "<div>¿Cómo calcular el promedio? <ul style='text-align:left'><li> &nbsp; &nbsp; 1er año de secundaria</li><li>+ 2do año de secundaria</li><li>+ 3er año de secundaria (1er trimestre + 2do trimestre)</li></ul><hr> El resultado divídelo entre 3</div>";
-            break;
-        case "7":
-            $("#promgen").siblings(".placeholder-simulator").text("Promedio general de preparatoria");
-            $("#lastLevel").text("preparatoria");
-            $("#nextLevel").text("universidad");
-            tltText = "<div>¿Cómo calcular el promedio? <ul style='text-align:center'> <li> &nbsp; &nbsp; 1er semestre</li><li>+ 2do semestre</li><li>+ 3er semestre</li><li>+ 4to semestre</li><li>+ 5to semestre</li> </ul><hr> El resultado divídelo entre 5</div>";
-            break;
-        default: break;
-    }
-    loadMainModules();
-};
-
-/**
- *Is executed when the update scholarship announcement status service is successfully executed
- *
- * @param {Object} data service response data object
- */
-var  rest_fnUpdateScholarshipAnnouncementStatus = function(){
-    _dateArray = moduleInitData.general.currentDate.split("-");
-    var _date="";
-    month.find(function(index){
-        if(index.id == _dateArray[1]){
-            _date = _dateArray[0]+" DE "+index.monthcomplete+" DE "+_dateArray[2];
-            return;
-        }
-    });
-    //send the email notification
-    restExec({
-        "service": "SEND_NOTIFICATION",
-        "data": {
-            "eventCode" : "0000001844",
-            "senderId" : "0000000001",
-            "devices": [
-                {
-                    "id": "102",
-                    "serviceProvider": {
-                        "id": "@@@"
-                    },
-                    "receivers": [
-                        moduleInitData.general.student["0"].contactInf["0"].email
-                    ]
-                }
-            ],
-            "message" : {
-                "messageBody" : concatSpace(_date,25) + concatSpace(moduleInitData.general.student["0"].name,50) + concatSpace(moduleInitData.general.student["0"].firstName,50) + concatSpace(moduleInitData.general.student["0"].lastName,50)
-            }
-        },
-        "success": function () {
-            loadTemplate($("#modal_generic .body"), miniTemplates.success, {
-                title: "¡Gracias!",
-                message: "Has finalizado la primera parte del registro. Te enviaremos por correo electrónico los pasos que deberás seguir.",
-                onAccept: loadModule.scholarshipAnnouncement
-            });
-        },
-        "showWait": true
-    });
-};
 
 /**
  * function that receives the service data (LIST_CATALOGS)
@@ -1286,75 +592,23 @@ var  rest_fnUpdateScholarshipAnnouncementStatus = function(){
  * @param {object} data that contains the response service
  */
 var rest_fnGetSchoolCatalog = function (cat, data) {
-    if (cat.indexOf("CAT_PARENTESCO")!=-1) {
-        for (i = 0; i < data.data.length; i++) {
-            if (data.data[i].id == "0") {
-                data.data.splice(i, 1);
-                break;
-            }
-        }
-    }
-    if (cat=="CAT_PARENTESCO-Tutor") {
-        for (i = 0; i < data.data.length; i++) {
-            if (data.data[i].id == "25") {
-                _parOther = data.data[i];
-                data.data.splice(i, 1);
-                data.data.push(_parOther);
-                break;
-            }
-        }
-    }else if (cat=="CAT_PARENTESCO-Miembro") {
-        for (i = 0; i < data.data.length; i++) {
-            if (data.data[i].id == "10") {
-                _parOther = data.data[i];
-                data.data.splice(i, 1);
-                data.data.push(_parOther);
-                break;
-            }
-        }
-    }else if (cat=="CAT_PARENTESCO-Soporte") {
-        for (i = 0; i < data.data.length; i++) {
-            if (data.data[i].id == "19") {
-                _parOther = data.data[i];
-                data.data.splice(i, 1);
-                data.data.push(_parOther);
-                break;
-            }
-        }
-    }else if (cat.indexOf("CAT_TPO_ESCUELA-")==0) {
-        for (i = 0; i < data.data.length; i++) {
-            data.data[i].id = i;
-        }
-        data.data.sort(function compare(a, b) {
-            _descA = a.description.toUpperCase();
-            _descB = b.description.toUpperCase();
-            _comparison = 0;
-            if (_descA > _descB) {
-                comparison = 1;
-            } else if (_descA < _descB) {
-                comparison = -1;
-            }
-            return comparison;
-        });
-    }else if(cat.indexOf("CAT_OCUPACION")==0){
-        for (i = 0; i < data.data.length; i++) {
-            if (data.data[i].id == "10") {
-                data.data.splice(i, 1);
-                break;
-            }
-        }
-    }
+     console.log("rest_fnGetSchoolCatalog");
+	  console.log("cat:",cat);
+	 console.log("data:",data);
+	 
+	// if(cat.indexOf("CAT_OCUPACION")==0){
+        // for (i = 0; i < data.data.length; i++) {
+            // if (data.data[i].id == "10") {
+                // data.data.splice(i, 1);
+                // break;
+            // }
+        // }
+    // }
+    console.log(" data.data || []",  data.data || []);
     catalogs[cat] = data.data || [];
 };
 
-/**
- * function that receives the service data (GET_SCHOOLS)
- * @param {object} data that contains the response service
- */
-var rest_fnListSchools = function (data) {
-    data = data.school || [];
-    schools = schools.concat(data);
-};
+
 
 /**
  *Is executed when the get states service is successfully executed, save the response data in stateTransactions variable.
@@ -1406,6 +660,7 @@ var rest_fnGetGeneralDataFun = function(_data) {
         //loadModule.scholarshipAnnouncement();
     }
 };
+
 var validateGeneralStatus = function () {
     if(__.get(moduleInitData.general,'moduleStatus','') == "COMPLETO"){//si el módulo es completo
         $(".page-container .i-form.accordion").not("#wf0").show();
@@ -1425,108 +680,7 @@ var validateGeneralStatus = function () {
         $(".page-container .i-form.accordion").not("#wf0").hide();
     }
 };
-/**
- *Is executed when the get general data service (with any user) is successfully executed, save the response data in moduleInitData.general and show it in the module content.
- *
- * @param {Object} data service response data object
- */
-var rest_fnGetGeneralData = function(data) {
-    if (__.get(data,'student[0].scholarBirthdate','--') == "01-01-1900") {
-        data.student[0].scholarBirthdate = "--";
-    }
-    if (__.get(data,'student[0].domicile[0].codePostal','')=="00000") {
-        data.student[0].domicile[0].codePostal = "";
-    }
-    moduleInitData.general=data;
 
-    if ($('[data-target="general-data"]').attr("data-loaded")!="true") {
-        LIST_SERVICES.listRestExec({
-            showWait:true,
-            service: 'GET_MUNICIPALITY',
-            type: 'POST',
-            asyn: false,
-            data: {
-                state:__.get(moduleInitData.general,'student[0].domicile[0].cdState',0)
-            },
-            finallySuccess: [function (data) {
-                rest_fnGetMunicipalities(__.get(moduleInitData.general,'student[0].domicile[0].cdState',0), data);
-            }],
-            finallyError: [function (data) {
-                rest_fnGetMunicipalities(__.get(moduleInitData.general,'student[0].domicile[0].cdState',0), data);
-            }]
-        });
-        validateGeneralStatus();
-        return;
-    }
-    loadModule.getMunicipalities(__.get(data,'student[0].domicile[0].cdState',0),function(municipality){
-        $("#municipalities").comboSelect(municipality);
-        var _student =  __.get(moduleInitData.general,'student[0]',{});
-        var _tutor = __.get(moduleInitData.general,'student[0].tutorData[0]',{});
-        var _domicile = __.get(moduleInitData.general,'student[0].domicile[0]',{});
-        var _contact = __.get(moduleInitData.general,'student[0].contactInf[0]',{});
-        fillForm($("#formgendata"),{
-            tutorname: __.get(_tutor,'tutorName',''),
-            tutorlastname: __.get(_tutor,'firstNameTutor',''),
-            tutorslastname: __.get(_tutor,'lastaNameTutor',''),
-            username: __.get(_student,'name',''),
-            firstname: __.get(_student,'firstName',''),
-            lastname: __.get(_student,'lastName',''),
-            dbirthdate: __.get(_student,'scholarBirthdate','--').split("-")[0],
-            mbirthdate: __.get(_student,'scholarBirthdate','--').split("-")[1],
-            ybirthdate: __.get(_student,'scholarBirthdate','--').split("-")[2],
-            gender: __.get(_student,'gender',''),
-            curp: __.get(_student,'CURP',''),
-            street: __.get(_domicile,'street','')=="X"?"":__.get(_domicile,'street',''),
-            outdoornum: __.get(_domicile,'numExterior','')=="X"?"":__.get(_domicile,'numExterior',''),
-            interiornum: __.get(_domicile,'numInterior',''),
-            zipcode: __.get(_domicile,'codePostal',''),
-            neighborhood: __.get(_domicile,'colony','')=="X"?"":__.get(_domicile,'colony',''),
-            state: __.get(_domicile,'cdState',''),
-            municipalities: __.get(_domicile,'cdMunicipality',''),
-            references: __.get(_domicile,'particularReferences','')=="X"?"":__.get(_domicile,'particularReferences',''),
-            phone: __.get(_contact,'homePhone',''),
-            cellphone: __.get(_contact,'cellPhone',''),
-            errandsphone: __.get(_contact,'messagePhone',''),
-            email: __.get(_contact,'email',''),
-            emailconf: __.get(_contact,'email',''),
-            email2: __.get(_contact,'email1',''),
-            email2conf: __.get(_contact,'email1',''),
-            email3: __.get(_contact,'email2',''),
-            email3conf: __.get(_contact,'email2',''),
-        });
-        $('#relationship').selectOptionDescription(__.get(_tutor,'kinship',''));
-        $('#o_relationship').setValue(__.get(_tutor,'kinshipType',''));
-        if (__.get(_tutor,'firstNameTutor','')=='' || (__.get(_tutor,'firstNameTutor','')=='XXXXX'&&__.get(_tutor,'lastaNameTutor','')!='XXXXX')) {
-            $("#checktutofirstname").doCheck();
-            $("#checktutofirstname").removeClass("disabled");
-        }else{
-            $("#checktutofirstname").unCheck();
-            $("#checktutofirstname").addClass("disabled");
-        }
-        if (__.get(_tutor,'lastaNameTutor','')=='' || (__.get(_tutor,'lastaNameTutor','')=='XXXXX'&&__.get(_tutor,'firstNameTutor','')!='XXXXX')) {
-            $("#checktutolastname").doCheck();
-            $("#checktutolastname").removeClass("disabled");
-        }else{
-            $("#checktutolastname").unCheck();
-            $("#checktutolastname").addClass("disabled");
-        }
-        if (__.get(_student,'firstName','')=='' || (__.get(_student,'firstName','')=='XXXXX')&&__.get(_student,'lastName','')!='XXXXX') {
-            $("#checkfirstname").doCheck();
-            $("#checkfirstname").removeClass("disabled");
-        }else{
-            $("#checkfirstname").unCheck();
-            $("#checkfirstname").addClass("disabled");
-        }
-        if (__.get(_student,'lastName','')=='' || (__.get(_student,'lastName','')=='XXXXX'&&__.get(_student,'firstName','')!='XXXXX')) {
-            $("#checklastname").doCheck();
-            $("#checklastname").removeClass("disabled");
-        }else{
-            $("#checklastname").unCheck();
-            $("#checklastname").addClass("disabled");
-        }
-        validateGeneralStatus();
-    });
-};
 /**
  * Established all roots to consult any service and define default message's modals.
  * @returns {string} Root path
@@ -1534,23 +688,10 @@ var rest_fnGetGeneralData = function(data) {
 var SCONFIG = (function() {
     var SROOT_PATH = window.location.origin.indexOf("localhost:3000") !=-1? 'http://127.0.0.1:3004/':'/mgbf_mult_web_fundacionbancomerextranetwebfront_01/';
     var services = {
-        'CONSULT_PARAMETERS': 'consult/parameters',
-        'SCHOLAR_DETAIL': 'details/scholar',
-        'MODIF_UPLOADSCHOLAR': 'modif/uploadSchoolar',
         'GET_STATES': 'list/state',
         'GET_MUNICIPALITY': 'list/municipality',
         'TERMINATE_SESSION': 'terminate/session',
-        'LIST_CATALOGS': 'catalogs/{{catalog}}',
-        'UPDATE_HOMEINF': 'updateHomeInformation/{{scholarId}}',
-        'GET_SCHOLARINF': 'getScholarInformation/{{scholarId}}/?programScholarshipId={{programScholarshipId}}',
-        'UPDATE_SCHOLARINF': 'updateScholarInformation',
-        'UPDATE_LEGAL': 'updateStatusLegalDisclaimer',
-        'GET_LEGAL': 'listLegalDisclaimers/?scholarshipProgramId={{scholarshipProgramId}}&scholarId={{scholarId}}&moduleId={{moduleId}}',
-        'UPDATE_ANNOUNCEMENT': 'updateScholarshipAnnouncement',
-        'CREATE_SOCINF': 'createRelatedPersons/{{scholarId}}',
-        'UPDATE_SOCINF': 'updateRelatedPersons/{{scholarId}}',
-        'GET_SCHOOLS': 'listSchools',
-        "SEND_NOTIFICATION": 'sendNotification'
+        'LIST_CATALOGS': 'catalogs/{{catalog}}'
     };
     return {
         get: function(rest) {
@@ -1617,97 +758,6 @@ var fn_aceptModal = function (_tmp,data) {
     }
 };
 
-/**
- *Delete family template function
- *
- * @param {Object} _temp the template DOM element
- * @param {Object} data the JSON object sended to the template
- */
-var fn_deleteFam = function (_temp, data) {
-    fn_showModal();
-    _temp.find("#btn_delete").click(data.onAccept.bind(data));
-    _temp.find("#btn_decline").click(data.onDecline.bind(data));
-    if (data.origin == 'family') {
-        callbackCloseModal = function () {
-            if ($('#n_family').getOptionSelected().id != family.fromhome.members.length) {
-                $('#n_family').selectOptionId(family.fromhome.members.length);
-            }
-            callbackCloseModal = function () {};
-        };
-    } else {
-        callbackCloseModal = function () {
-            if ($('#extrafamily').getOptionSelected().id != family.awayfromhome.members.length) {
-                $('#extrafamily').selectOptionId(family.awayfromhome.members.length);
-            }
-            callbackCloseModal = function () {};
-        };
-    }
-
-};
-
-/**
- *Select boss template function
- *
- * @param {Object} _temp the template DOM element
- */
-var fn_selectboss = function (_temp) {
-    /**
-     *If the modal is closed, it is shown again
-     */
-    callbackCloseModal = function () {
-        loadTemplate($("#modal_generic .body"), templates.selectboss, {"members":family.fromhome.getMembers()});
-        fn_showModal();
-    };
-    var $checkBoss = _temp.find(".checkbox");
-    $checkBoss.ckeckCallback(function (thisCheckbox) {
-        $("#formselectboss").find(".checkbox").addClass("disabled");
-        thisCheckbox.removeClass("disabled");
-    }, function () {
-        $("#formselectboss").find(".checkbox").removeClass("disabled");
-    });
-    _temp.find("#btn_accept").click(function () {
-        var bossSelected = $("#formselectboss").find(".checkbox.checked");
-        function showBossError(_message) {
-            if ($("#formselectboss").prev(".notification.error").length) $("#formselectboss").prev(".notification.error").remove();
-            loadTemplate($("#formselectboss"), miniTemplates.notification, {
-                type: 'error',
-                title: 'Lo sentimos',
-                message: _message
-            }, 'before');
-        }
-        if (bossSelected.length == 0) {
-            showBossError('Debes seleccionar a un jefe de familia');
-        } else if (bossSelected.length == 1) {
-            var bossIndex = Number(bossSelected.attr("data-index"));
-            for (var i in family.fromhome.members) {
-                if (i == bossIndex) {
-                    family.fromhome.members[i].familyBoss = "Sí";
-                } else {
-                    family.fromhome.members[i].familyBoss = "No";
-                }
-            }
-            fn_hideModal();
-            callbackCloseModal = function () {};
-            $("html").animate({
-                scrollTop: $("#nfamilylist").offset().top - 200
-            }, 1000, "swing", function () {
-                $("#nfamilylist").empty();
-                for (var i in family.fromhome.members) {
-                    if (family.fromhome.members[i].fam_worked.id === undefined) {
-                        family.fromhome.members[i].fam_worked.id = "false";
-                        family.fromhome.members[i].fam_worked.description = "No";
-                    }
-                    if (family.fromhome.members[i].statusRelated != "Delete") {
-                        loadTemplate($("#nfamilylist"), miniTemplates.familymembercard, family.fromhome.members[i], "append");
-                    }
-                }
-            });
-        } else {
-            showBossError('Sólo puedes seleccionar a un jefe del hogar');
-        }
-    });
-    fn_showModal();
-};
 
 /**
  *Confirm modal template function
@@ -1721,6 +771,9 @@ var fn_confirmModal = function (_temp, data) {
     _temp.find(".btn_acept").click(data.onAccept.bind(data));
     _temp.find(".btn_decline").click(data.onDecline.bind(data));
 };
+
+
+
 
 /**
  *Notification card template function
@@ -1739,32 +792,6 @@ var fn_closeNotification = function (notif) {
     notif.slideDown("slow");
 };
 
-/**
- *Family member group error template
- *
- * @param {Object} notif DOM element
- */
-var fn_closeBtnNotification = function (notif) {
-    notif.find(".btn__addfam").click(function () {
-        var group = $(this).attr("data-group");
-        if (group == "bbva") {
-            fn_verifyCatalogs(["CAT_PARENTESCO-Soporte"], function () {
-                loadTemplate($("#modal_generic .body"), templates.fambbva, {
-                    title: "Agrega la información de tu familiar"
-                });
-            });
-        } else if (group == "fromhome") {
-            fn_verifyCatalogs(["CAT_INST_MEDICA", "CAT_EDO_CIVIL", "CAT_OCUPACION", "CAT_TPO_APOYO", "CAT_INST_APOYO", "CAT_PARENTESCO-Miembro", "CAT_MAX_NVL_ESTUDIO"], function () {
-                loadTemplate($("#modal_generic .body"), templates.family, family.fromhome);
-            });
-        } else if (group == "awayfromhome") {
-            fn_verifyCatalogs(["CAT_OCUPACION", "CAT_RESIDENCIA", "CAT_PARENTESCO-Miembro"], function () {
-                loadTemplate($("#modal_generic .body"), templates.efamily, family.awayfromhome);
-            });
-        }
-    });
-    notif.slideDown("slow");
-};
 
 var uploadFile = {
     index: 0,
@@ -2008,27 +1035,6 @@ var miniTemplates = {
                         '<div class="close-button">'+
                             '<i class="bbva-icon ui-x"></i>'+
                         '</div>'+
-                    '</div>'+
-                '</div>'
-    },
-    btnnotification: {
-        onload: fn_closeBtnNotification,
-        html: '<div class="notification {{type}}" style="display: none;">'+
-                    '<div class="wrapper">'+
-                        '<div class="icon">'+
-                            '<i class="bbva-icon"></i>'+
-                        '</div>'+
-                        '<div class="message">'+
-                            '<div class="message__heading">'+
-                                '{{title}}'+
-                            '</div>'+
-                            '<span class="message__body">'+
-                                '{{message}}'+
-                            '</span>'+
-                        '</div>'+
-                        '<div><span title="{{button}}" aria-label="{{button}}" class="btn__basic btn__addfam" data-group="{{section}}">'+
-                            '<span aria-hidden="true">{{button}}</span>'+
-                        '</span></div>'+
                     '</div>'+
                 '</div>'
     },
@@ -2849,54 +1855,9 @@ var expRegs = {
         regEx: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/,
         error: "Ingresa un email válido"
     },
-    CCT: {
-        regEx: /^(0[1-9]|1[0-9]|2[0-9]|3[0-2])[A-Z]{3}[0-9]{4}[A-Z]{1}$/,
-        error: "Por favor valida la clave de tu escuela"
-    },
-    PROM: {
-        regEx: /10$|^\d(\.\d\d?)?$/,
-        error: "Ingresa una calificación entre 0 y 10"
-    },
-    FB: {
-        regEx: /(http|https):\/\/(?:www\.)facebook\.com\/(\b(([\w\-\.])*\/{0,1})|\b(profile\.php\?id=\d.*))$/,
-        error: "Por favor ingresa una url válida"
-    },
     ZIPCODE: {
         regEx: /^\d{5}/,
         error: "Por favor ingresa un código postal válido"
-    },
-    YEAR_50_ACT: {
-        regEx: {
-            test: function(year) {
-                nyear = Number(year);
-                return (!isNaN(nyear) && (year >= 1950 && year <= new Date().getFullYear()));
-            }
-        },
-        error: "Ingresa un año de 1950-actual"
-    },
-    YEAR_80_ACT: {
-        regEx: {
-            test: function(year) {
-                nyear = Number(year);
-                return (!isNaN(nyear) && (year >= 1980 && year <= new Date().getFullYear()));
-            }
-        },
-        error: "Ingresa un año de 1980-actual"
-    },
-    YEAR_MIN_80: {
-        regEx: {
-            test: function(year) {
-                nyear = Number(year);
-                return (!isNaN(nyear) && year >= 1980);
-            }
-        },
-        error: "Ingresa un año desde 1980"
-    },
-	FOL:{
-        regEx: /^[0-9]{2}[127][0-9]{8}$/
-    },
-    FUN: {
-        regEx: /^FUN[0-9]{8}$/
     }
 };
 
@@ -3514,28 +2475,6 @@ $("#dbirthdate").comboSelect(day);
 
 $("#mbirthdate").comboSelect(month);
 
-/**
- *Show an error on a family group
- *
- * @param {Object} $form DOM element
- * @param {string} fam_group the family group
- */
-fn_showAddFam = function($form, fam_group) {
-    _scrollTo = hasAttr($form, 'data-notify') ? $form.attr('data-notify') : 'html';
-    $(_scrollTo).animate({
-        scrollTop: $form.prev().offset().top - 100
-    }, 1000, "swing", function() {
-        notifyElem = $form.prev();
-        if (notifyElem.length != 0 && notifyElem.hasClass("notification")) notifyElem.remove();
-        loadTemplate($form, miniTemplates.btnnotification, {
-            type: 'error',
-            title: 'Datos obligatorios incompletos',
-            message: 'Por favor ingresa la información de tu familiar',
-            button: 'Agregar familiar',
-            section: fam_group
-        }, 'before');
-    });
-};
 
 /**
  *Function that fills the combos of catalogs
@@ -3553,346 +2492,13 @@ $("#dsclass").comboSelect(day);
 
 $("#msclass").comboSelect(month);
 //buttons
-$("#btn_fb").click(function(e) {
-    e.preventDefault();
-    loadTemplate($("#modal_generic .body"), templates.fb, {
-        title: "Para vincular tu facebook, realiza los siguiente pasos"
-    });
+
+$("#btn_savegd").data("complete", function(_data) {
+    alert("llenar info");
 });
 
-$("#formschdata").data("validations", function(_data) {
-    if (_data.schoolname == "" && (_data.cct != "" || _data.localities != "" || _data.schoolT != null)) {
-        $('#snerror').show();
-        return false;
-    }
-    return true;
-});
-$("#btn_savesd").data("complete", function(_data) {
-    var dateto = "",
-    _uni = false;
-    if (moduleInitData.announcement.scholarshipProgram.id == "7") {
-        dateto = _data.msclass.id + '/' + _data.dsclass.description + '/' + _data.ysclass;
-        _uni = true;
-    }
-    if (_uni && !vali_date(dateto)) {
-        $('#dsclass').showComboError("Fecha inválida");
-        $('#msclass').showComboError("Fecha inválida");
-        $("html").animate({
-            scrollTop: $("#dsclass").offset().top - 200
-        }, 1000, "swing", 'before');
-        return;
-    }
-    restExec({
-        service: 'UPDATE_SCHOLARINF',
-        data: {
-                "id": ivUser,
-                "scholarshipProgram": [
-                    {
-                        "id": moduleInitData.announcement.scholarshipProgram.id
-                    }
-                ],
-                "average": _data.promgen,
-                "schooling": {
-                    "schoolName": _data.schoolname,
-                    "location": {
-                        "state": {
-                            "id": _data.state_s.id
-                        },
-                        "municipality": {
-                            "id": _data.municipalities_s.id
-                        }
-                    },
-                    "profession": {
-                        "area": _data.career_area,
-                        "subArea": _data.career_subarea,
-                        "careerName": _data.program_career,
-                        "modality": _data.modality,
-                        "type": _data.type_s,
-                        "scholarShift": _data.turn,
-                        "duration": _data.duration,
-                        "classesStartDate": _uni?_data.dsclass.description+"-"+_data.msclass.id+"-"+_data.ysclass:""
-                    },
-                    "newLocation": {
-                        "state": {
-                            "id": __.get(_data,'state_m.id',''),
-                            "name": __.get(_data,'state_m.description','')
-                        },
-                        "municipality": {
-                            "id": __.get(_data,'municipalities_m.id',''),
-                            "name": __.get(_data,'municipalities_m.description','')
-                        }
-                    }
-                },
-                "operation": {
-                    "searchType": "CCT",
-                    "searchDescription": _data.schoolslist.keyWorkplace,
-                    "userCurrent": "ALUMNO",
-                    "keyWorkplace": _data.schoolslist.keyWorkplace
-                },
-                "changeAddress": _uni?(_data.change_h.id == "SI" ? true : false):false,
-                "expenses": {
-                    "mounthlyRent": _uni?_data.payment_rent!=""?formatMoney(_data.payment_rent,true).replace(/,/g, '').replace(/\$/g, ''):"":"",
-                    "isPayRent": _uni?_data.rent.id=="SI"?true:false:false,
-                    "transportationAmount":_uni?_data.trans!=""?formatMoney(_data.trans,true).replace(/,/g, '').replace(/\$/g, ''):"":""
-                }
-        },
-        showWait: true,
-        success: function() {
-            loadModule.notarydata(function () {
-                changeStatusSel($("#schoolar-data"));
-                hideWait();
-            });
-        }
-    });
-});
-$("#btn_savesoc").data("complete", function(e) {
-    var _hasFamilyBoss = false;
-    var _tempFamFH = family.fromhome.getMembers();
-    if (moduleInitData.announcement.scholarshipProgram.id != "7" && family.fromhome.getTotal()<2) {
-        fn_showAddFam($("#fam_members"), "fromhome");
-        return;
-    }
 
-    for (var i in _tempFamFH) {
-        if (_tempFamFH[i].familyBoss == "Sí") {
-            _hasFamilyBoss = true;
-            break;
-        }
-    }
-    if (!_hasFamilyBoss && family.fromhome.getTotal() > 0) {
-        loadTemplate($("#modal_generic .body"), templates.selectboss, {"members":_tempFamFH});
-    } else {
-        var error = $("#social-data").find(".notification.error");
 
-        if (error.length === 0) {
-            allFamilies = [];
-            for (_i = 0; _i < family.fromhome.members.length; _i++) {
-                c_family = family.fromhome.members[_i];
-                if (c_family.statusRelated != "OK") {
-                    n_data = {
-                        "id": __.get(c_family,"relatedid","0")==""?"0":__.get(c_family,"relatedid","0"),
-                        "name": c_family.fam_name,
-                        "lastName": c_family.fam_appat,
-                        "secondLastName": c_family.fam_apmat,
-                        "statusRelatedPersonsInformation": family.unregistered?"Add":c_family.statusRelated,
-                        "relationship": {
-                            "id": c_family.fam_relationship.id,
-                            "otherRelationshipDescription": c_family.fam_o_relationship
-                        },
-                        "personDetail": {
-                            "personType": "PERSONS_LIVE_HOME",
-                            "isHeadOfHousehold": c_family.familyBoss == "Sí"?"true":"false",
-                            "gender": {
-                                "id": c_family.fam_gender.id
-                            },
-                            "age": c_family.fam_age,
-                            "maritalStatus": {
-                                "id": c_family.fam_civil.id
-                            },
-                            "education": {
-                                "id": c_family.fam_schoollevel.id
-                            },
-                            "isStudent": c_family.fam_studing.id,
-                            "economicActivity": {
-                                "id": c_family.fam_ocupation.id
-                            },
-                            "healthCareEntity": {
-                                "id": c_family.fam_medic.id,
-                                "otherHealthCareEntity": c_family.fam_omedic
-                            },
-                            "incomes": [
-                                {
-                                    "amount": (c_family.total_f).toString().replace(/,/g, '').replace(/\$/g, ''),
-                                    "currency": "MXN"
-                                }
-                            ],
-                            "hasWorkedLastMonth": c_family.fam_worked.id
-                        }
-                    };
-                    if (c_family.fam_otherschoolarship.id == "0") {
-                        n_data.personDetail.otherGovernmentScholarship = {
-                            "id": c_family.fam_programschoolarship.id,
-                            "otherScholarshipProgramDescription": c_family.fam_programschoolarship.id!="6"?c_family.fam_programschoolarship.description:c_family.sprogramname,
-                            "otherGovernmentScholarshipType": {
-                                "id": c_family.fam_kindschoolarship.id
-                            },
-                            "incomes": [
-                                {
-                                    "amount": (c_family.total_sf).toString().replace(/,/g, '').replace(/\$/g, ''),
-                                    "currency": "MXN"
-                                }
-                            ]
-                        };
-                    }
-                    allFamilies.push(n_data);
-                }
-            }
-            for (_i = 0; _i < family.awayfromhome.members.length; _i++) {
-                c_family = family.awayfromhome.members[_i];
-                if (c_family.statusRelated != "OK") {
-                    n_data = {
-                        "id": __.get(c_family,"relatedid","0") == ""?"0":__.get(c_family,"relatedid","0"),
-                        "name": c_family.fam_name,
-                        "lastName": c_family.fam_appat,
-                        "secondLastName": c_family.fam_apmat,
-                        "statusRelatedPersonsInformation": __.get(c_family,"statusRelated","Add"),
-                        "relationship": {
-                            "id": c_family.fam_relationship.id,
-                            "otherRelationshipDescription": c_family.fam_o_relationship
-                        },
-                        "personDetail": {
-                            "personType": "NOT_LIVE_HOME_ECONOMIC_SUPPORT",
-                            "residencePlace": {
-                                "id": c_family.fam_lives.id
-                            },
-                            "incomes": [
-                                {
-                                    "amount": (c_family.total_f).toString().replace(/,/g, '').replace(/\$/g, ''),
-                                    "currency": "MXN"
-                                }
-                            ],
-                            "economicActivity": {
-                                "id": c_family.fam_ocupation.id
-                            }
-                        }
-                    };
-                    allFamilies.push(n_data);
-                }
-            }
-            c_family = family.bbva.member;
-            if (Object.keys(family.bbva.member).length > 0 && c_family.statusRelated != "OK") {
-                n_data = {
-                    "id": __.get(c_family,"relatedid","0")==""?"0":__.get(c_family,"relatedid","0"),
-                    "name": c_family.name_fbbva,
-                    "lastName": c_family.lastname_fbbva,
-                    "secondLastName": c_family.slastname_fbbva,
-                    "statusRelatedPersonsInformation": c_family.statusRelated,
-                    "relationship": {
-                        "id": c_family.relationship.id,
-                        "otherRelationshipDescription": c_family.relationship_b_o
-                    },
-                    "personDetail": {
-                        "personType": "RELATIVE_WORKS_BBVA",
-                        "professionPosition": c_family.workposition_fbbva,
-                        "managementUnit": c_family.workstation_fbbva
-                    }
-                };
-                allFamilies.push(n_data);
-            }
-            if (allFamilies.length == 0) return;
-            var servToExec = family.unregistered?"CREATE_SOCINF":"UPDATE_SOCINF";
-
-            restExec({
-                service: servToExec,
-                data: {
-                    "relatedPersons": allFamilies
-                },
-                hasUrlParam: true,
-                urlParam: {
-                    scholarId: ivUser
-                },
-                showWait: true,
-                success: function() {
-                    loadModule.sociodemographic(function () {
-                        changeStatusSel($("#social-data"));
-                    });
-                },
-                error: function(_error) {
-                    if (__.get(_error,"status",0)==200) {
-                        loadModule.sociodemographic(function () {
-                            changeStatusSel($("#social-data"));
-                        });
-                    }else{
-                        rest_fnShowError(_error);
-                    }
-                }
-            });
-        } else {
-            $('html').animate({
-                scrollTop: error.offset().top - 100
-            }, 2000, "swing");
-        }
-    }
-
-});
-$("#btn_savehd").data("complete", function(data) {
-    restExec({
-        service: 'UPDATE_HOMEINF',
-        data: {
-            "operation": {
-                "userCurrent": "ALUMNO"
-            },
-            "id": ivUser,
-            "homeInformation": {
-                "roomsNumber": data.roomsNumber.id,
-                "bedroomsNumber": data.bedroomsNumber.id,
-                "bathroomsNumber": data.bathroomsNumber.id,
-                "drainageType": data.drainageType,
-                "homeService": {
-                    "waterServicesType": data.waterServicesType,
-                    "lightServicesType": data.lightServicesType
-                },
-                "wallMaterialsType": data.wallMaterialsType,
-                "cookingFuelType": data.cookingFuelType,
-                "ceilingMaterialsType": data.ceilingMaterialsType,
-                "floorMaterialsType": data.floorMaterialsType,
-                "belongings": {
-                    "carsNumber": data.carsNumber.id,
-                    "hasInternet": (data.hasInternet.id == "SI"),
-                    "hasComputer": (data.hasComputer.id == "SI"),
-                    "hasMicrowave": (data.hasMicrowave.id == "SI"),
-                    "hasPayTV": (data.hasPayTV.id == "SI"),
-                    "hasWashingMachine": (data.hasWashingMachine.id == "SI"),
-                    "hasMotorcycle": (data.hasMotorcycle.id == "SI"),
-                }
-            }
-        },
-        hasUrlParam: true,
-        urlParam: {
-            scholarId: ivUser
-        },
-        showWait: true,
-        success: function() {
-            loadModule.home(function () {
-                changeStatusSel($("#inmueble-data"));
-            });
-        }
-    });
-});
-
-$("#btn_saveld").data("complete", function() {
-    var _legalDisclaimers = [];
-    $("#legal1, #legal2, #legal3").each(function () {
-        if ($(this).isChecked()) {
-            _legalDisclaimers.push(
-                {
-                    "id": $(this).attr("data-legal-id"),
-                    "isAccepted": "Y",
-                    "consecutive": $(this).attr("data-legal-consecutive"),
-                    "moduleId": 31
-                }
-            );
-        }
-    });
-    restExec({
-        service: 'UPDATE_LEGAL',
-        data: {
-            "legalDisclaimers": _legalDisclaimers,
-            "scholar": {
-                "id": ivUser
-            },
-            "scholarshipProgram": {
-                "id": moduleInitData.announcement.scholarshipProgram.id
-            }
-        },
-        showWait: true,
-        success: function() {
-            loadModule.legalDisclaimer(function () {
-                changeStatusSel($("#legal-data"));
-            });
-        }
-    });
-});
 
 /**
  *This function is executed when the "Finalizar registro" button is pressed, it executes the service that confirm all student information
@@ -3957,509 +2563,10 @@ $(".modal .icon-close").click(function() {
     callbackCloseModal();
 });
 
-new Tooltip($("#ysclass").parent(".placeholder-wrapper"), {
-    placement: 'bottom', // or bottom, left, right, and variations
-    trigger: "focus",
-    html: true,
-    closeOnClickOutside: true,
-    title: "Por ejemplo: 2001"
-});
-
-var seedFindSchool;
-
-/**
- *Function that shows the Report school button
- *
- */
-function showReportNewSchool() {
-    $("#reportschool_sec").slideDown();
-    $("#help_sh").slideDown("slow", function() {
-        $("#help_sh").click();
-        helpScoolTooltip.show();
-        $("#st_btn_reportschool").click(function() {
-            state_id = $("#state_s").getOptionSelected().id;
-            mun_id = $("#municipalities_s").getOptionSelected().id;
-            loadModule.getCatalog("CAT_TPO_ESCUELA-"+state_id+"-"+mun_id+"-"+moduleInitData.announcement.scholarshipProgram.id, function () {
-                loadTemplate($("#modal_generic .body"), templates.school, {});
-            });
-            $("#help_sh").click();
-            helpScoolTooltip.hide();
-        });
-        $("#st_btn_cancel").click(function() {
-            $("#help_sh").click();
-            helpScoolTooltip.hide();
-        });
-    });
-}
-
-/**
- *Executes the showRerportNewSchool function after 120 seconds (2 minutes)
- *
- */
-function countCantFindSchool() {
-    if (seedFindSchool == undefined) {
-        seedFindSchool = setTimeout(showReportNewSchool, 120000);
-    }
-}
 
 
-$('#search_by').onChecked(function(rad) {
-    countCantFindSchool();
-    $(".school-list").hide();
-    $("#schoolT").removeClass("required");
-    $("#schoolslist").unselect();
-    $("#btn_locality, #btn_type, #btn_cct").addClass("btn__disabled");
-    $("#cct, #localities").removeAttr("required");
-    $('.school-list').find('.list-result').addClass('disabled');
-    $('#schoolname').prop("disabled", true);
-    $(".school-list").show();
-    switch (rad.id) {
-        case "CCT":
-            $("#cct").clearInput();
-            $("#cct").attr("required", "required");
-            break;
-        case "LOC":
-            $("#localities").attr("required", "true");
-            state_id = $("#state_s").getOptionSelected().id;
-            mun_id = $("#municipalities_s").getOptionSelected().id;
-            loadModule.getCatalog("CAT_LOCALIDADES-"+state_id+"-"+mun_id+"-"+moduleInitData.announcement.scholarshipProgram.id, function () {
-                $("#localitieslist").searchList({
-                    filterid: "description",
-                    filtertext: "description",
-                    items: catalogs["CAT_LOCALIDADES-"+$("#state_s").getOptionSelected().id+"-"+$("#municipalities_s").getOptionSelected().id+"-"+moduleInitData.announcement.scholarshipProgram.id]
-                }, function(element) {
-                    $("#btn_locality").removeClass("btn__disabled");
-                });
-            });
-            break;
-        case "TYP":
-            $("#schoolT").reset();
-            state_id = $("#state_s").getOptionSelected().id;
-            mun_id = $("#municipalities_s").getOptionSelected().id;
-            loadModule.getCatalog("CAT_TPO_ESCUELA-"+state_id+"-"+mun_id+"-"+moduleInitData.announcement.scholarshipProgram.id, function () {
-                fnFillCatalogs("schoolT", catalogs["CAT_TPO_ESCUELA-"+state_id+"-"+mun_id+"-"+moduleInitData.announcement.scholarshipProgram.id], function() {
-                    $("#btn_type").removeClass("btn__disabled");
-                });
-            });
-            break;
-        default:
-            break;
-    }
-    $('.search-filter .filter:not(.filter_' + rad.id.toLowerCase() + ')').hide('fast', function() {
-        $('.search-filter .filter_' + rad.id.toLowerCase()).show('fast');
-    });
-});
-$('.radio-section.search-by').onRadioReset(function() {
-    $(".school-list").hide();
-    $("#schoolT").removeClass("required");
-    $("#schoolslist").unselect();
-    $("#btn_locality, #btn_type, #btn_cct").addClass("btn__disabled");
-    $("#cct, #localities").removeAttr("required");
-    $('.search-filter .filter').hide('fast');
-});
 
-$("#cct").keyup(function(e) {
-    if (expRegs.CCT.regEx.test($(this).val().toUpperCase())) {
-        $("#btn_cct").removeClass("btn__disabled");
-    } else $("#btn_cct").addClass("btn__disabled");
-});
-$(".btn_reportschool").click(function() {
-    loadTemplate($("#modal_generic .body"), templates.school, {});
-});
-$("#btn_locality, #btn_type, #btn_cct").click(function() {
-    $('#snerror').hide();
-    if ($(this).hasClass("btn__disabled")) return;
-    searchType = "";
-    value = "";
-    switch (this.id) {
-        case "btn_locality":
-            searchType = "location";
-            value = $("#localities").val();
-            break;
-        case "btn_type":
-            searchType = "schoolAcronym";
-            value = $("#schoolT").getOptionSelected().description;
-            break;
-        case "btn_cct":
-            searchType = "keyWorkplace";
-            value = $("#cct").val();
-            break;
-        default:
-            break;
-    }
-    _dataListSchool = {
-        "region": "",
-        "state": $("#state_s").getOptionSelected().description,
-        "municipality": $("#municipalities_s").getOptionSelected().description,
-        "location": "",
-        "schoolType":"",
-        "programScholarshipId": moduleInitData.announcement.scholarshipProgram.id,
-        "keyWorkplace": "",
-        "schoolOficialName": "",
-        "schoolAcronym": "",
-        "completeInformation": 2,
-        "paginationIn": [
-            {
-                "paginationKey": "1",
-                "pageSize": "100"
-            }
-        ]
-    };
-     _dataListSchool[searchType] = value;
-     schools=[];
-    getSchoolsList();
 
-    $(".school-list").slideDown("slow", function() {
-        $('.school-list').find('.list-result').removeClass('disabled');
-        $('#schoolname').prop("disabled", false);
-        $("#schoolslist").onSelect(function() {
-            clearTimeout(seedFindSchool);
-            seedFindSchool = undefined;
-        });
-    });
-});
-/**
- *It execute the school pagination if the hasMoreData flag is equal to "1"
- *
- * @param {object} data the service object response
- */
-var paginationSchoolList = function (data) {
-    if (data.paginationOut[0].hasMoreData == "1") {
-        _dataListSchool.paginationIn[0].paginationKey = data.paginationOut[0].paginationKey;
-        getSchoolsList();
-    }
-    $("#schoolslist").searchList({
-        filterid: "keyWorkplace",
-        filtertext: "schoolOficialName",
-        items: schools
-    });
-};
-var _dataListSchool;
-/**
- *Executes the 'GET_SCHOOLS' service
- *
- */
-function getSchoolsList () {
-    restExec({
-        service: 'GET_SCHOOLS',
-        data: _dataListSchool,
-        showWait:true,
-        success: rest_fnListSchools,
-        finallySuccess: paginationSchoolList,
-        error: function (_err) {
-            if (__.get(_err,"responseJSON.code","")=="01229001") {
-                if (schools.length>0) {
-                    $("#schoolslist").searchList({
-                        filterid: "keyWorkplace",
-                        filtertext: "schoolOficialName",
-                        items: schools
-                    });
-                }else {
-                    $("#schoolslist").searchList({
-                        filterid: "keyWorkplace",
-                        filtertext: "schoolOficialName",
-                        items: schools
-                    });
-                    loadTemplate($("#modal_generic .body"), miniTemplates.error, {
-                        title: "No se encontraron escuelas",
-                        message: "No se encontraron resultados de escuelas con los filtros ingresados"
-                    });
-                }
-            }else{
-                rest_fnShowError(_err);
-            }
-        }
-    });
-}
-
-seedFindSchool = undefined;
-
-$("#n_family").onSelect(function(el) {
-    nfam = Number(el.id);
-    if (nfam != family.fromhome.getTotal()) {
-        family.fromhome.total = nfam;
-        family.fromhome.flags = {
-            type: 'add',
-            text: 'Continuar'
-        };
-        if (nfam < family.fromhome.getTotal()) {
-            var deletefromhome = family.fromhome.getMembers();
-            deletefromhome.splice(0, 1);
-
-            loadTemplate($("#modal_generic .body"), templates.deletefam, {
-                title: "¿Deseas eliminar algún familiar?",
-                message: "Selecciona el familiar que deseas eliminar(al eliminarlo ya no se podrá recuperar):",
-                members: deletefromhome,
-                origin: 'family',
-                onAccept: function() {
-                    nFam = family.fromhome.getTotal();
-                    newNfam = family.fromhome.total;
-                    dif = nFam - newNfam;
-                    cChecked = $("#list-member").find(".checkbox.checked").length;
-                    if (cChecked > dif) {
-                        if ($("#formdeletefam").prev(".notification.error").length) $("#formdeletefam").prev(".notification.error").remove();
-                        loadTemplate($("#formdeletefam"), miniTemplates.notification, {
-                            type: 'error',
-                            title: 'Lo sentimos',
-                            message: 'Sólo puedes eliminar ' + dif + ' familiar(es)'
-                        }, 'before');
-                    } else if (cChecked < dif) {
-                        if ($("#formdeletefam").prev(".notification.error").length) $("#formdeletefam").prev(".notification.error").remove();
-                        loadTemplate($("#formdeletefam"), miniTemplates.notification, {
-                            type: 'error',
-                            title: 'Lo sentimos',
-                            message: 'Debes seleccionar ' + dif + ' familiar(es) o cancelar'
-                        }, 'before');
-                    } else if (cChecked == dif) {
-                        indexR = $("#list-member").find(".checkbox.checked");
-                        bossFamilyDeleted = false;
-                        for (var i = indexR.length - 1; i >= 0; i--) {
-                            var mem_index = $(indexR[i]).attr("data-index");
-                            if (family.fromhome.members[Number(mem_index)].familyBoss == "Sí") {
-                                bossFamilyDeleted = true;
-                            }
-                            if (__.get(family.fromhome.members[Number(mem_index)],"alreadyExists","false") == "true") {
-                                family.fromhome.members[Number(mem_index)].statusRelated = "Delete";
-                            }else{
-                                family.fromhome.members.splice(Number(mem_index), 1);
-                            }
-                        }
-                        if (bossFamilyDeleted) {
-                            _famLst = {members: family.fromhome.getMembers()};
-                            if (_famLst.members.length == 1) {
-                                family.fromhome.members[0].familyBoss = "Sí";
-                                if (__.get(family.fromhome.members[0],"alreadyExists","false") == "true") {
-                                    family.fromhome.members[0].statusRelated = "Edit";
-                                }
-                            }else{
-                                loadTemplate($("#modal_generic .body"), templates.selectboss, _famLst);
-                            }
-                        } else {
-                            fn_hideModal();
-                            $("#nfamilylist").empty();
-                            for (var _i in family.fromhome.members) {
-                                family.fromhome.members[_i].memberid = _i;
-                                if (family.fromhome.members[_i].statusRelated != "Delete") {
-                                    loadTemplate($("#nfamilylist"), miniTemplates.familymembercard, family.fromhome.members[_i], "append");
-                                }
-                            }
-                        }
-                    }
-                },
-                onDecline: function() {
-                    $('#n_family').selectOptionId(family.fromhome.getTotal());
-                    fn_hideModal();
-                }
-            });
-        } else{
-            fn_verifyCatalogs(["CAT_INST_MEDICA","CAT_EDO_CIVIL","CAT_OCUPACION","CAT_TPO_APOYO","CAT_INST_APOYO","CAT_PARENTESCO-Miembro","CAT_MAX_NVL_ESTUDIO"],function(){
-                loadTemplate($("#modal_generic .body"), templates.family, family.fromhome);
-            });
-        }
-    }else {
-        if ($("#fam_members").prev().hasClass("error")) {
-            $("#fam_members").prev().remove();
-        }
-    }
-});
-
-//extrafamily
-
-$("#extrafamily").comboSelect((function() {
-    _arrFamily = [];
-    for (var i = 0; i < 10; i++) {
-        _arrFamily.push({
-            id: "" + i,
-            description: "" + i
-        });
-    }
-    _arrFamily.push({
-        id: "10",
-        description: "10 o más"
-    });
-    return _arrFamily;
-})(), function(el) {
-    nfam = Number(el.id);
-    if (nfam == 0 && family.awayfromhome.getTotal() == 0) {
-        if ($("#ext_family").prev().hasClass("error")) {
-            $("#ext_family").prev().remove();
-        }
-    }else if (nfam != family.awayfromhome.getTotal()) {
-        family.awayfromhome.total = nfam;
-        family.awayfromhome.flags = {
-            type: 'add',
-            text: 'Continuar'
-        };
-        if (nfam === 0) {
-            loadTemplate($("#modal_generic .body"), templates.conf, {
-                title: "¿Deseas eliminar todos los familiares?",
-                message: "Al eliminarlos ya no se podrán recuperar",
-                onAccept: function() {
-                    if ($("#ext_family").prev().hasClass("error")) {
-                        $("#ext_family").prev().remove();
-                    }
-                    fam_toDelete = [];
-                    for (i = 0; i < family.awayfromhome.members.length; i++) {
-                        e_fam = family.awayfromhome.members[i];
-                        if (__.get(e_fam,"alreadyExists","false")=="true") {
-                            family.awayfromhome.members[i].statusRelated = "Delete";
-                        }else{
-                            fam_toDelete.push(i);
-                        }
-                    }
-                    for (_ei = fam_toDelete.length-1; _ei >= 0; _ei--) {
-                        family.awayfromhome.members.splice(fam_toDelete[_ei], 1);
-                    }
-                    $("#nextrafamilylist").empty();
-                    fn_hideModal();
-                },
-                onDecline: function() {
-                    $('#extrafamily').selectOptionId(family.awayfromhome.getTotal());
-                    fn_hideModal();
-                }
-            });
-        } else if (nfam < family.awayfromhome.getTotal()) {
-            loadTemplate($("#modal_generic .body"), templates.deletefam, {
-                title: "¿Deseas eliminar algún familiar?",
-                message: "Selecciona el familiar que deseas eliminar(al eliminarlo ya no se podrá recuperar):",
-                members: family.awayfromhome.getMembers(),
-                origin: 'efamily',
-                onAccept: function() {
-                    nFam = family.awayfromhome.getTotal();
-                    newNfam = family.awayfromhome.total;
-                    dif = nFam - newNfam;
-                    cChecked = $("#list-member").find(".checkbox.checked").length;
-                    if (cChecked > dif) {
-                        if ($("#formdeletefam").prev(".notification.error").length) $("#formdeletefam").prev(".notification.error").remove();
-                        loadTemplate($("#formdeletefam"), miniTemplates.notification, {
-                            type: 'error',
-                            title: 'Lo sentimos',
-                            message: 'Sólo puedes eliminar ' + dif + ' familiar(es)'
-                        }, 'before');
-                    } else if (cChecked < dif) {
-                        if ($("#formdeletefam").prev(".notification.error").length) $("#formdeletefam").prev(".notification.error").remove();
-                        loadTemplate($("#formdeletefam"), miniTemplates.notification, {
-                            type: 'error',
-                            title: 'Lo sentimos',
-                            message: 'Debes seleccionar ' + dif + ' familiar(es) o cancelar'
-                        }, 'before');
-                    } else if (cChecked == dif) {
-                        indexR = $("#list-member").find(".checkbox.checked");
-                        for (var i = indexR.length - 1; i >= 0; i--) {
-                            var mem_index = $(indexR[i]).attr("data-index");
-                            if (__.get(family.awayfromhome.members[Number(mem_index)],"alreadyExists","false") == "true") {
-                                family.awayfromhome.members[Number(mem_index)].statusRelated = "Delete";
-                            }else{
-                                family.awayfromhome.members.splice(Number(mem_index), 1);
-                            }
-                        }
-                        fn_hideModal();
-                        $("#nextrafamilylist").empty();
-                        for (var _i in family.awayfromhome.members) {
-                            family.awayfromhome.members[_i].memberid = _i;
-                            if (family.awayfromhome.members[_i].statusRelated != "Delete") {
-                                loadTemplate($("#nextrafamilylist"), miniTemplates.efamilymembercard, family.awayfromhome.members[_i], "append");
-                            }
-                        }
-                    }
-                },
-                onDecline: function() {
-                    fn_hideModal();
-                    $('#extrafamily').selectOptionId(family.awayfromhome.getTotal());
-
-                }
-            });
-        } else if (nfam != family.awayfromhome.getTotal()) {
-            fn_verifyCatalogs(["CAT_OCUPACION","CAT_RESIDENCIA","CAT_PARENTESCO-Miembro"],function(){
-                loadTemplate($("#modal_generic .body"), templates.efamily, family.awayfromhome);
-            });
-
-        }
-    } else {
-        if (family.awayfromhome.getTotal() == nfam) {
-            if ($("#ext_family").prev().hasClass("error")) {
-                $("#ext_family").prev().remove();
-            }
-        }
-        $("#nextrafamilylist").empty();
-        for (var i in family.awayfromhome.members) {
-            if (family.awayfromhome.members[i].statusRelated != "Delete") {
-                loadTemplate($("#nextrafamilylist"), miniTemplates.efamilymembercard, family.awayfromhome.members[i], "append");
-            }
-        }
-    }
-});
-
-$('#bbvafamily').onChecked(function(rad) {
-    $("#fam_bbvacard").html("");
-    if (rad.id == "0") {
-        if (Object.keys(family.bbva.member).length==0) {
-            family.bbva.flag = "create";
-            fn_verifyCatalogs(["CAT_PARENTESCO-Soporte"],function(){
-                loadTemplate($("#modal_generic .body"), templates.fambbva, {
-                    title: "Modifica la información de tu familiar"
-                });
-            });
-        }else{
-            if (__.get(family.bbva.member,"alreadyExists","false") == "true") {
-                if (__.get(family.bbva.member,"statusRelated","") == "Delete") {
-                    family.bbva.member.statusRelated = "Edit";
-                }
-            }else{
-                family.bbva.member.statusRelated = "Add";
-            }
-            family.bbva.flag = "edit";
-            loadTemplate($("#fam_bbvacard"), miniTemplates.familybbvacard, family.bbva.member);
-            if (family.bbva.member && $("#bbva_employee").prev(".notification.error").length) {
-                $("#bbva_employee").prev(".notification.error").slideUp("slow");
-            }
-        }
-    } else {
-        if ($("#bbva_employee").prev(".notification.error").length) {
-            $("#bbva_employee").prev(".notification.error").remove();
-        }
-        if (__.get(family.bbva.member,"alreadyExists","false") == "true") {
-            family.bbva.member.statusRelated = "Delete";
-        }else{
-            family.bbva.member = {};
-            family.bbva.flag = "create";
-        }
-    }
-});
-
-/*FIN DE SOCIODEMOGRÁFICOS*/
-//endregion
-
-/*Home*/
-$("#roomsNumber").comboSelect((function() {
-    _arrNumRooms = [];
-    for (var i = 1; i < 20; i++) {
-        _arrNumRooms.push({
-            id: "" + i,
-            description: "" + i
-        });
-    }
-    _arrNumRooms.push({
-        id: "20",
-        description: "20 o más"
-    });
-    return _arrNumRooms;
-})());
-
-$("#bedroomsNumber").comboSelect((function() {
-    _arrNumRooms = [];
-    for (var i = 0; i < 4; i++) {
-        _arrNumRooms.push({
-            id: "" + i,
-            description: "" + i
-        });
-    }
-    _arrNumRooms.push({
-        id: "4",
-        description: "4 o más"
-    });
-    return _arrNumRooms;
-})());
 
 $(".o_two").comboSelect((function() {
     _arr_0_2 = [];
@@ -4478,49 +2585,8 @@ $(".o_two").comboSelect((function() {
 
 $('.r-options').onChecked();
 
-$(".query_curp").click(function() {
-    window.open("https://www.gob.mx/curp/", "_blank");
-});
-$(".query_privacy").click(function() {
-    window.open(" https://www.fundacionbbvabancomer.org/aviso-de-privacidad/", "_blank");
-});
 
-$("#fam_mig").onSelect(function(el) {
-    if (el.id == "0") {
-        $("#y_fam_mig").slideDown("slow");
-        $("#n_fam_mig").addClass("required");
-        //$("#n_fam_mig").reset();
-        //nfam = Number(el.id);
-    } else {
-        $("#y_fam_mig").slideUp("slow");
-        $("#n_fam_mig").removeClass("required");
-        $("#fam_mig_cards").empty();
-    }
-});
-$('#change_h').onChecked(function(rad) {
-    if (rad.id == "SI") {
-        $("#migrate_area").slideDown();
-        $("#migrate_area .form-group-select").addClass("required");
-        $("#migrate_area input#trans").attr("required", "");
-        $("#rent").addClass("required");
-    } else {
-        $("#migrate_area").slideUp();
-        $("#migrate_area .form-group-select").removeClass("required").removeComboError();
-        $("#migrate_area input#trans").removeAttr("required");
-        $("#migrate_area input#trans").clearInput();
-        $("#rent").selectRadioId("NO").clearRadio().removeClass("required");
-    }
-});
-$("#rent").onChecked(function(rad) {
-    if (rad.id == "SI") {
-        $("#pay_rent").slideDown("slow");
-        $("#payment_rent").attr("required", "required");
-    } else {
-        $("#pay_rent").slideUp("slow");
-        $("#payment_rent").removeAttr("required");
-        $("#payment_rent").clearInput();
-    }
-});
+
 
 /**
  *Returns true if the date is a valid date
@@ -4583,121 +2649,7 @@ $('#msclass').onSelect(function() {
 });
 
 $("#btn_save_all").click(function() {
-    _StateId = moduleInitData.notarydata.schooling.location.state.id;
-    _StateDesc="";
-    _MunicipalityDesc="";
-    if (_StateId!=0) {
-        for (_i = 0; _i < stateTransactions.length; _i++) {
-            if (stateTransactions[_i].id == _StateId) {
-                _StateDesc = stateTransactions[_i].description;
-                break;
-            }
-        }
-        for (_i = 0; _i < municipalityTransactions[_StateId].length; _i++) {
-            if (municipalityTransactions[_StateId][_i].id == moduleInitData.notarydata.schooling.location.municipality.id) {
-                _MunicipalityDesc = municipalityTransactions[_StateId][_i].description;
-                break;
-            }
-        }
-    }else{
-        _StateDesc = "PENDIENTE";
-        _MunicipalityDesc = "PENDIENTE";
-    }
-    var level = "";
-    var bbvaFamily = "No";
-    switch(moduleInitData.announcement.scholarshipProgram.id){
-        case "1": level="primaria"; break;
-        case "2": level="secundaria"; break;
-        case "7": level="preparatoria"; break;
-        default: level="Desconocido"; break;
-    }
-
-    if(Object.keys(family.bbva.member).length>0){
-        bbvaFamily = "Si";
-    }
-    loadTemplate($("#modal_generic .body"), templates.confirmAllData, {
-        tutorName: moduleInitData.general.student[0].tutorData[0].tutorName,
-        tutorLastName: moduleInitData.general.student[0].tutorData[0].firstNameTutor,
-        tutorSecondLastName: moduleInitData.general.student[0].tutorData[0].lastaNameTutor,
-        tutorRelationship: moduleInitData.general.student[0].tutorData[0].kinship,
-        name: moduleInitData.general.student[0].name,
-        lastName: moduleInitData.general.student[0].firstName,
-        secondLastName: moduleInitData.general.student[0].lastName,
-        birthdate: moduleInitData.general.student[0].scholarBirthdate,
-        gender: moduleInitData.general.student[0].gender,
-        curp: moduleInitData.general.student[0].CURP,
-        street: moduleInitData.general.student[0].domicile[0].street,
-        interiorNumber: moduleInitData.general.student[0].domicile[0].numInterior,
-        outdoorNumber: moduleInitData.general.student[0].domicile[0].numExterior,
-        zipcode: moduleInitData.general.student[0].domicile[0].codePostal,
-        colony: moduleInitData.general.student[0].domicile[0].colony,
-        municipality:moduleInitData.general.student[0].domicile[0].municipality,
-        state: moduleInitData.general.student[0].domicile[0].state,
-        references: moduleInitData.general.student[0].domicile[0].particularReferences,
-        homePhone: moduleInitData.general.student[0].contactInf[0].homePhone,
-        cellPhone: moduleInitData.general.student[0].contactInf[0].cellPhone,
-        errandsphone: moduleInitData.general.student[0].contactInf[0].messagePhone,
-        email: moduleInitData.general.student[0].contactInf[0].email,
-        email2: moduleInitData.general.student[0].contactInf[0].email1,
-        email3:moduleInitData.general.student[0].contactInf[0].email2,
-        levelDescription: level,
-        average: moduleInitData.notarydata.average,
-        municipalitySchool:_MunicipalityDesc,
-        stateSchool: _StateDesc,
-        schoolName: moduleInitData.notarydata.schooling.schoolName,
-        turn: moduleInitData.notarydata.schooling.profession.scholarShift.description,
-        flagCareer: level == "Universidad" ? "block" : "none",
-        area: moduleInitData.notarydata.schooling.profession.area.description,
-        subarea: moduleInitData.notarydata.schooling.profession.subArea.description,
-        career: moduleInitData.notarydata.schooling.profession.careerName,
-        modality: moduleInitData.notarydata.schooling.profession.modality.description,
-        careerType:moduleInitData.notarydata.schooling.profession.type.description,
-        duration: moduleInitData.notarydata.schooling.profession.duration.description,
-        spendingOnTransportation: formatMoney(moduleInitData.notarydata.expenses.transportationAmount),
-        startClassDate: moduleInitData.notarydata.schooling.profession.classesStartDate,
-        changeHome: moduleInitData.notarydata.changeAddress==true?"Sí":"No",
-        flagChangeHome: moduleInitData.notarydata.changeAddress == true ? "block" : "none",
-        municipalityChange: moduleInitData.notarydata.schooling.newLocation.municipality.name,
-        stateChange: moduleInitData.notarydata.schooling.newLocation.state.name,
-        rent: moduleInitData.notarydata.expenses.isPayRent?"Sí":"No",
-        flagIsRent: moduleInitData.notarydata.expenses.isPayRent? "block" : "none",
-        paymentRent: formatMoney(moduleInitData.notarydata.expenses.mounthlyRent),
-        bbvaFamily: bbvaFamily,
-        flagBbvaFam: bbvaFamily == "Si" ? "block" : "none",
-        numRooms: (moduleInitData.home.homeInformation.roomsNumber == "20")?moduleInitData.home.homeInformation.roomsNumber +" o más":moduleInitData.home.homeInformation.roomsNumber,
-        numRoomsSleep: (moduleInitData.home.homeInformation.bedroomsNumber == "4")?moduleInitData.home.homeInformation.bedroomsNumber+" o más":moduleInitData.home.homeInformation.bedroomsNumber,
-        numBath: (moduleInitData.home.homeInformation.bathroomsNumber == "2")?moduleInitData.home.homeInformation.bathroomsNumber+" o más":moduleInitData.home.homeInformation.bathroomsNumber,
-        water: moduleInitData.home.homeInformation.homeService.waterServicesType.description,
-        drain: moduleInitData.home.homeInformation.drainageType.description,
-        light: moduleInitData.home.homeInformation.homeService.lightServicesType.description,
-        fuel: moduleInitData.home.homeInformation.cookingFuelType.description,
-        wall: moduleInitData.home.homeInformation.wallMaterialsType.description,
-        roof: moduleInitData.home.homeInformation.ceilingMaterialsType.description,
-        floor: moduleInitData.home.homeInformation.floorMaterialsType.description,
-        cars: (moduleInitData.home.homeInformation.belongings.carsNumber == "2")?moduleInitData.home.homeInformation.belongings.carsNumber+" o más":moduleInitData.home.homeInformation.belongings.carsNumber,
-        internet: moduleInitData.home.homeInformation.belongings.hasInternet==true?"Sí":"No",
-        laptop: moduleInitData.home.homeInformation.belongings.hasComputer==true?"Sí":"No",
-        washingMachine: moduleInitData.home.homeInformation.belongings.hasWashingMachine==true?"Sí":"No",
-        microwave: moduleInitData.home.homeInformation.belongings.hasMicrowave==true?"Sí":"No",
-        tvService: moduleInitData.home.homeInformation.belongings.hasPayTV==true?"Sí":"No",
-        motorcyle: moduleInitData.home.homeInformation.belongings.hasMotorcycle==true?"Sí":"No",
-        urlLegal: moduleInitData.legalDisclaimer.legalDisclaimers[0].link,
-        textLegal:moduleInitData.legalDisclaimer.legalDisclaimers[0].description.split("|")[1],
-        legal1: moduleInitData.legalDisclaimer.legalDisclaimers[0].description.split("|")[0],
-        urlLegal2: moduleInitData.legalDisclaimer.legalDisclaimers[1].link,
-        textLegal2:moduleInitData.legalDisclaimer.legalDisclaimers[1].description.split("|")[1],
-        legal2: moduleInitData.legalDisclaimer.legalDisclaimers[1].description.split("|")[0],
-        urlLegal3: moduleInitData.legalDisclaimer.legalDisclaimers[2].link,
-        textLegal3:moduleInitData.legalDisclaimer.legalDisclaimers[2].description.split("|")[1],
-        legal3: moduleInitData.legalDisclaimer.legalDisclaimers[2].description.split("|")[0],
-        onAccept: function() {
-            fn_hideModal();
-            saveglobal();
-        },
-        onDecline: function() {
-            fn_hideModal();
-        }
-    });
+    alert("salvar todo");
 });
 
 /**
@@ -4705,7 +2657,8 @@ $("#btn_save_all").click(function() {
  * @type {Object}
  */
 var loadModule = {
-    /**
+	
+	/**
      *Executes the 'LIST_CATALOGS' service and saves the result on catalogs variable
      *
      * @param {string} cat the catalog to get
@@ -4734,100 +2687,8 @@ var loadModule = {
             finallySuccess(catalogs[cat]);
         }
     },
-    /**
-     *Returns the JSON object to call restExec function
-     *
-     * @param {string} cat catalog name
-     * @param {function} catCallBack callback function
-     * @returns {Object}
-     */
-    getJSONCatalog: function (cat,catCallBack) {
-        return {
-            service: 'LIST_CATALOGS',
-            type: 'GET',
-            async: false,
-            hasUrlParam: true,
-            urlParam: {
-                catalog: cat,
-            },
-            data: {},
-            finallySuccess: [function (data) {
-                rest_fnGetSchoolCatalog(cat, data);
-            },catCallBack || rest_fnNothig]
-        };
-    },
-    /**
-     *Gets the general data and shows it in "datos generales" module
-     *
-     * @param {function} finalSuccess optional callback function
-     */
-    general:function(finalSuccess){
-        restExec({
-            service: 'SCHOLAR_DETAIL',
-            type: 'POST',
-            data: {
-                "userScholar": ivUser,
-                "registerType": "2"
-            },
-            success: rest_fnGetGeneralData,
-            finallySuccess: [loadModule.ensureFun(finalSuccess),loadModule.checkStatus],
-            error: function (error) {
-                if (__.get(error,"responseJSON.code",'')!="01229001") {
-                    rest_fnShowError(error);
-                }else {
-                    resetForm($("#formgendata"));
-                }
-            }
-        });
-    },
-    /**
-     *Gets the school data and shows it in "datos escolares" module
-     *
-     * @param {function} finalSuccess optional callback function
-     */
-    notarydata:function (finalSuccess) {
-        restExec({
-            service: 'GET_SCHOLARINF',
-            type: 'GET',
-            hasUrlParam: true,
-            async: false,
-            urlParam: {
-                scholarId: ivUser,
-                programScholarshipId: moduleInitData.announcement.scholarshipProgram.id
-            },
-            data: {},
-            success: rest_fnGetScholarInf,
-            finallySuccess: [loadModule.ensureFun(finalSuccess),loadModule.checkStatus],
-            error: function (error) {
-                if (__.get(error,"responseJSON.code",'')!="01229001") {
-                    rest_fnShowError(error);
-                }else {
-                    resetForm($("#formschdata"));
-                }
-            }
-        });
-    },
-    /**
-     *Gets the legal announcements and shows it in "avisos legales" module
-     *
-     * @param {function} finalSuccess optional callback function
-     */
-    legalDisclaimer: function (finalSuccess) {
-        restExec({
-            service: 'GET_LEGAL',
-            type: 'GET',
-            hasUrlParam: true,
-            urlParam: {
-                scholarId: ivUser,
-                scholarshipProgramId: moduleInitData.announcement.scholarshipProgram.id,
-                moduleID: 31
-            },
-            data: {},
-            success: rest_fnGetLegalDisclaimers,
-            finallySuccess: [loadModule.ensureFun(finalSuccess),loadModule.checkStatus]
-        });
-    },
-    /**
+
+   /**
      *Has the catalog list by module, it execute those catalogs before the module is shown.
      *
      */
@@ -4966,79 +2827,7 @@ var loadModule = {
  *
  */
 var loadMainModules = function () {
-    $("#n_family").comboSelect((function() {
-        _arrFamily = [];
-        for (var i = moduleInitData.announcement.scholarshipProgram.id == "7"? 1:2; i < 20; i++) {
-            _arrFamily.push({
-                id: "" + i,
-                description: "" + i
-            });
-        }
-        _arrFamily.push({
-            id: "20",
-            description: "20 o más"
-        });
-        return _arrFamily;
-    })());
-    LIST_SERVICES.listRestExec({
-        showWait:true,
-        service: 'GET_STATES',
-        type: 'POST',
-        data: {},
-        asyn: false,
-        finallySuccess: [function (data) {
-            rest_fnGetStates(data);
-        },function () {
-            $("#state").comboSelect(stateTransactions, function(el) {
-                $("#municipalities").reset();
-                loadModule.getMunicipalities(el.id,function(){
-                    $("#municipalities").comboSelect(municipalityTransactions[el.id]);
-                });
-            });
-            $("#state_s").comboSelect(stateTransactions, function(el) {
-                $("#municipalities_s").reset();
-                $("#school_s").css("display", "none");
-                $('.radio-section.search-by').clearRadio().removeClass("required");
-                if (el.id == 0 || el.id == "0") {
-                    _prId = moduleInitData.announcement.scholarshipProgram.id;
-                    municipalityTransactions["0"] = [{
-                        id:0,
-                        description: dommySchools.getDommyDescription()
-                    }];
-                }
-                loadModule.getMunicipalities(el.id,function(){
-                    $("#municipalities_s").comboSelect(municipalityTransactions[el.id], function() {
-                        $("#search_by .radio-buttons").removeClass("disabled");
-                        $("input#cct").prop("disabled", false);
-                        $("#school_s").css("display", "block");
-                        $('.radio-section.search-by').clearRadio().addClass("required");
-                    });
-                });
-            });
-            $("#state_m").comboSelect(stateTransactions, function(el) {
-                $("#municipalities_m").reset();
-                loadModule.getMunicipalities(el.id,function(){
-                    $("#municipalities_m").comboSelect(municipalityTransactions[el.id]);
-                });
-
-            });
-        }]
-    });
-    LIST_SERVICES.listRestExec({
-        service: 'SCHOLAR_DETAIL',
-        type: 'POST',
-        data: {
-            "userScholar": ivUser,
-            "registerType": "2"
-        },
-        success: rest_fnGetGeneralData,
-        ignoreError: true,
-        error: function (error) {
-            if (__.get(error,"responseJSON.code",'')!="01229001") {
-                LIST_SERVICES.errors.push(error);
-            }
-        }
-    });
+alert("loadMainModules");
 };
 
 /**
@@ -5050,35 +2839,18 @@ var loadNextModules = function (_cllback) {
     if (typeof _cllback !== 'function') {
         _cllback = loadModule.checkStatus;
     }
-    LIST_SERVICES.listRestExec({
-        service: 'GET_SCHOLARINF',
-        type: 'GET',
-        hasUrlParam: true,
-        urlParam: {
-            scholarId: ivUser,
-            programScholarshipId: moduleInitData.announcement.scholarshipProgram.id
-        },
-        data: {},
-        success: rest_fnGetScholarInf,
-        ignoreError: true,
-        error: function (error) {
-            if (__.get(error,"responseJSON.code",'')!="01229001") {
-                LIST_SERVICES.errors.push(error);
-            }
-        }
-    });
-    LIST_SERVICES.listRestExec({
-        service: 'GET_LEGAL',
-        type: 'GET',
-        hasUrlParam: true,
-        urlParam: {
-            scholarId: ivUser,
-            scholarshipProgramId: moduleInitData.announcement.scholarshipProgram.id,
-            moduleID: 31
-        },
-        data: {},
-        success: rest_fnGetLegalDisclaimers,
-    },_cllback);
+    // LIST_SERVICES.listRestExec({
+        // service: 'GET_LEGAL',
+        // type: 'GET',
+        // hasUrlParam: true,
+        // urlParam: {
+            // scholarId: ivUser,
+            // scholarshipProgramId: moduleInitData.announcement.scholarshipProgram.id,
+            // moduleID: 31
+        // },
+        // data: {},
+        // success: rest_fnGetLegalDisclaimers,
+    // },_cllback);
 };
 
 /**
@@ -5095,7 +2867,7 @@ if(expRegs.FOL.regEx.test(ivUser)){
         });
         callbackCloseModal = logout;
     }else{*/
-       // loadModule.scholarshipAnnouncement();
+        loadModule.scholarshipAnnouncement();
     //}
 }else if(expRegs.FUN.regEx.test(ivUser)){
     restExec({
@@ -5119,6 +2891,10 @@ Object.keys(templates).forEach(function(_template) {
         templates[_template].html = templatetext;
     });
 });
+
+var fn_opennotification = function () {
+    fn_showModal();
+ };
 
 $("#currentYear").text(new Date().getFullYear());
 

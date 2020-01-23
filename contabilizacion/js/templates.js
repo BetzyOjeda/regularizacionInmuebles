@@ -131,27 +131,6 @@ var miniTemplates = {
                     '</div>'+
                 '</div>'
     },
-    btnnotification: {
-        onload: fn_closeBtnNotification,
-        html: '<div class="notification {{type}}" style="display: none;">'+
-                    '<div class="wrapper">'+
-                        '<div class="icon">'+
-                            '<i class="bbva-icon"></i>'+
-                        '</div>'+
-                        '<div class="message">'+
-                            '<div class="message__heading">'+
-                                '{{title}}'+
-                            '</div>'+
-                            '<span class="message__body">'+
-                                '{{message}}'+
-                            '</span>'+
-                        '</div>'+
-                        '<div><span title="{{button}}" aria-label="{{button}}" class="btn__basic btn__addfam" data-group="{{section}}">'+
-                            '<span aria-hidden="true">{{button}}</span>'+
-                        '</span></div>'+
-                    '</div>'+
-                '</div>'
-    },
     filepreview: {
         html: '<div class="uploadfile animated fadeInLeft">' +
             '<div class="wrapper">' +

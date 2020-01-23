@@ -54,97 +54,6 @@ var fn_aceptModal = function (_tmp,data) {
     }
 };
 
-/**
- *Delete family template function
- *
- * @param {Object} _temp the template DOM element
- * @param {Object} data the JSON object sended to the template
- */
-var fn_deleteFam = function (_temp, data) {
-    fn_showModal();
-    _temp.find("#btn_delete").click(data.onAccept.bind(data));
-    _temp.find("#btn_decline").click(data.onDecline.bind(data));
-    if (data.origin == 'family') {
-        callbackCloseModal = function () {
-            if ($('#n_family').getOptionSelected().id != family.fromhome.members.length) {
-                $('#n_family').selectOptionId(family.fromhome.members.length);
-            }
-            callbackCloseModal = function () {};
-        };
-    } else {
-        callbackCloseModal = function () {
-            if ($('#extrafamily').getOptionSelected().id != family.awayfromhome.members.length) {
-                $('#extrafamily').selectOptionId(family.awayfromhome.members.length);
-            }
-            callbackCloseModal = function () {};
-        };
-    }
-
-};
-
-/**
- *Select boss template function
- *
- * @param {Object} _temp the template DOM element
- */
-var fn_selectboss = function (_temp) {
-    /**
-     *If the modal is closed, it is shown again
-     */
-    callbackCloseModal = function () {
-        loadTemplate($("#modal_generic .body"), templates.selectboss, {"members":family.fromhome.getMembers()});
-        fn_showModal();
-    };
-    var $checkBoss = _temp.find(".checkbox");
-    $checkBoss.ckeckCallback(function (thisCheckbox) {
-        $("#formselectboss").find(".checkbox").addClass("disabled");
-        thisCheckbox.removeClass("disabled");
-    }, function () {
-        $("#formselectboss").find(".checkbox").removeClass("disabled");
-    });
-    _temp.find("#btn_accept").click(function () {
-        var bossSelected = $("#formselectboss").find(".checkbox.checked");
-        function showBossError(_message) {
-            if ($("#formselectboss").prev(".notification.error").length) $("#formselectboss").prev(".notification.error").remove();
-            loadTemplate($("#formselectboss"), miniTemplates.notification, {
-                type: 'error',
-                title: 'Lo sentimos',
-                message: _message
-            }, 'before');
-        }
-        if (bossSelected.length == 0) {
-            showBossError('Debes seleccionar a un jefe de familia');
-        } else if (bossSelected.length == 1) {
-            var bossIndex = Number(bossSelected.attr("data-index"));
-            for (var i in family.fromhome.members) {
-                if (i == bossIndex) {
-                    family.fromhome.members[i].familyBoss = "Sí";
-                } else {
-                    family.fromhome.members[i].familyBoss = "No";
-                }
-            }
-            fn_hideModal();
-            callbackCloseModal = function () {};
-            $("html").animate({
-                scrollTop: $("#nfamilylist").offset().top - 200
-            }, 1000, "swing", function () {
-                $("#nfamilylist").empty();
-                for (var i in family.fromhome.members) {
-                    if (family.fromhome.members[i].fam_worked.id === undefined) {
-                        family.fromhome.members[i].fam_worked.id = "false";
-                        family.fromhome.members[i].fam_worked.description = "No";
-                    }
-                    if (family.fromhome.members[i].statusRelated != "Delete") {
-                        loadTemplate($("#nfamilylist"), miniTemplates.familymembercard, family.fromhome.members[i], "append");
-                    }
-                }
-            });
-        } else {
-            showBossError('Sólo puedes seleccionar a un jefe del hogar');
-        }
-    });
-    fn_showModal();
-};
 
 /**
  *Confirm modal template function
@@ -158,6 +67,9 @@ var fn_confirmModal = function (_temp, data) {
     _temp.find(".btn_acept").click(data.onAccept.bind(data));
     _temp.find(".btn_decline").click(data.onDecline.bind(data));
 };
+
+
+
 
 /**
  *Notification card template function
@@ -176,32 +88,6 @@ var fn_closeNotification = function (notif) {
     notif.slideDown("slow");
 };
 
-/**
- *Family member group error template
- *
- * @param {Object} notif DOM element
- */
-var fn_closeBtnNotification = function (notif) {
-    notif.find(".btn__addfam").click(function () {
-        var group = $(this).attr("data-group");
-        if (group == "bbva") {
-            fn_verifyCatalogs(["CAT_PARENTESCO-Soporte"], function () {
-                loadTemplate($("#modal_generic .body"), templates.fambbva, {
-                    title: "Agrega la información de tu familiar"
-                });
-            });
-        } else if (group == "fromhome") {
-            fn_verifyCatalogs(["CAT_INST_MEDICA", "CAT_EDO_CIVIL", "CAT_OCUPACION", "CAT_TPO_APOYO", "CAT_INST_APOYO", "CAT_PARENTESCO-Miembro", "CAT_MAX_NVL_ESTUDIO"], function () {
-                loadTemplate($("#modal_generic .body"), templates.family, family.fromhome);
-            });
-        } else if (group == "awayfromhome") {
-            fn_verifyCatalogs(["CAT_OCUPACION", "CAT_RESIDENCIA", "CAT_PARENTESCO-Miembro"], function () {
-                loadTemplate($("#modal_generic .body"), templates.efamily, family.awayfromhome);
-            });
-        }
-    });
-    notif.slideDown("slow");
-};
 
 var uploadFile = {
     index: 0,
