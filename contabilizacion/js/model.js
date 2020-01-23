@@ -752,7 +752,7 @@ var rest_fnGetGeneralDataFun = function(_data) {
             redirectToLogin: true
         });
     }else{
-        loadModule.scholarshipAnnouncement();
+        //loadModule.scholarshipAnnouncement();
     }
 };
 var validateGeneralStatus = function () {

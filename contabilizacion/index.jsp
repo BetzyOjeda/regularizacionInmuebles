@@ -489,7 +489,7 @@
                         </div>
                     </div>
                     <div id="wf1" class="i-form accordion removeifNC">
-                        <div class="step-header" data-target="schoolar-data" data-loaded="false" data-catalog="schoolData">
+                        <div class="step-header" data-target="schoolar-data" data-loaded="false" data-catalog="notarydata">
                             <div class="step-name">
                                 <i class="bbva-icon ui-gradution-cap"></i>
                                 2. Datos escolares

@@ -13,14 +13,11 @@ var SCONFIG = (function() {
         'TERMINATE_SESSION': 'terminate/session',
         'LIST_CATALOGS': 'catalogs/{{catalog}}',
         'UPDATE_HOMEINF': 'updateHomeInformation/{{scholarId}}',
-        'GET_HOMEINF': 'getHomeInformation/{{scholarId}}/?programScholarshipId={{programScholarshipId}}',
         'GET_SCHOLARINF': 'getScholarInformation/{{scholarId}}/?programScholarshipId={{programScholarshipId}}',
         'UPDATE_SCHOLARINF': 'updateScholarInformation',
         'UPDATE_LEGAL': 'updateStatusLegalDisclaimer',
         'GET_LEGAL': 'listLegalDisclaimers/?scholarshipProgramId={{scholarshipProgramId}}&scholarId={{scholarId}}&moduleId={{moduleId}}',
-        'GET_ANNOUNCEMENT': 'getScholarshipAnnouncement/?registerType={{registerType}}&scholarId={{scholarId}}',
         'UPDATE_ANNOUNCEMENT': 'updateScholarshipAnnouncement',
-        'GET_SOCINF': 'getSocioeconomicSummary/{{scholarId}}/?programScholarshipId={{scholarshipProgramId}}',
         'CREATE_SOCINF': 'createRelatedPersons/{{scholarId}}',
         'UPDATE_SOCINF': 'updateRelatedPersons/{{scholarId}}',
         'GET_SCHOOLS': 'listSchools',
@@ -33,3 +30,4 @@ var SCONFIG = (function() {
         }
     };
 })();
+

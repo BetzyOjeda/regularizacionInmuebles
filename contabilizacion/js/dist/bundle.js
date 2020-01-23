@@ -1403,7 +1403,7 @@ var rest_fnGetGeneralDataFun = function(_data) {
             redirectToLogin: true
         });
     }else{
-        loadModule.scholarshipAnnouncement();
+        //loadModule.scholarshipAnnouncement();
     }
 };
 var validateGeneralStatus = function () {
@@ -1542,14 +1542,11 @@ var SCONFIG = (function() {
         'TERMINATE_SESSION': 'terminate/session',
         'LIST_CATALOGS': 'catalogs/{{catalog}}',
         'UPDATE_HOMEINF': 'updateHomeInformation/{{scholarId}}',
-        'GET_HOMEINF': 'getHomeInformation/{{scholarId}}/?programScholarshipId={{programScholarshipId}}',
         'GET_SCHOLARINF': 'getScholarInformation/{{scholarId}}/?programScholarshipId={{programScholarshipId}}',
         'UPDATE_SCHOLARINF': 'updateScholarInformation',
         'UPDATE_LEGAL': 'updateStatusLegalDisclaimer',
         'GET_LEGAL': 'listLegalDisclaimers/?scholarshipProgramId={{scholarshipProgramId}}&scholarId={{scholarId}}&moduleId={{moduleId}}',
-        'GET_ANNOUNCEMENT': 'getScholarshipAnnouncement/?registerType={{registerType}}&scholarId={{scholarId}}',
         'UPDATE_ANNOUNCEMENT': 'updateScholarshipAnnouncement',
-        'GET_SOCINF': 'getSocioeconomicSummary/{{scholarId}}/?programScholarshipId={{scholarshipProgramId}}',
         'CREATE_SOCINF': 'createRelatedPersons/{{scholarId}}',
         'UPDATE_SOCINF': 'updateRelatedPersons/{{scholarId}}',
         'GET_SCHOOLS': 'listSchools',
@@ -1562,6 +1559,8 @@ var SCONFIG = (function() {
         }
     };
 })();
+
+
 /**
  * @file Contains the functions that is executed when the templates are loaded into the web page, for each template exists a function to execute, those functions has two params, the first one is the DOM template and the second one is the JSON object sended to the template
  */
@@ -3560,130 +3559,7 @@ $("#btn_fb").click(function(e) {
         title: "Para vincular tu facebook, realiza los siguiente pasos"
     });
 });
-$("#btn_savegd").data("complete", function(_data) {
-    var dateto = $('#mbirthdate').getOptionSelected().id + '/' + $('#dbirthdate').getOptionSelected().description + '/' + $('#ybirthdate').val();
-    if (vali_date(dateto)) {
-        restExec({
-            service: 'MODIF_UPLOADSCHOLAR',
-            data: {
-                "userCurrent": "ALUMNO",
-                "registerType": "2",
-                "student": [
-                    {
-                        "studentId": "",
-                        "scholarUser": ivUser,
-                        "programType": moduleInitData.announcement.scholarshipProgram.id,
-                        "statusDispersion": "",
-                        "originRegion": "",
-                        "schoolCycle": "",
-                        "cdAssignedCR": "",
-                        "assignedCR": "",
-                        "scholarNumber": "",
-                        "accountNumber": "",
-                        "folioPhoto": "",
-                        "name": _data.username,
-                        "firstName": _data.firstname,
-                        "lastName": _data.lastname,
-                        "CURP": _data.curp,
-                        "scholarBirthdate":  _data.dbirthdate.description+"-"+_data.mbirthdate.id+"-"+_data.ybirthdate,
-                        "gender": _data.gender.id,
-                        "schoolData": [
-                            {
-                        "duration": "",
-                                "turn": "",
-                                "typeCareer": "",
-                                "nameCareer": "",
-                                "area": "",
-                                "school": [
-                                    {
-                                        "cdState": "",
-                                        "state": "",
-                                        "cdMunicipality": "",
-                                        "municipality": "",
-                                        "CCT": "",
-                                        "control": "",
-                                        "initials": "",
-                                        "type": "",
-                                        "name": "",
-                                        "domicile": ""
-                                    }
-                                ]
-                            }
-                        ],
-                        "domicile": [
-                            {
-                                "street": _data.street,
-                                "locality": "",
-                                "numExterior": _data.outdoornum,
-                                "numInterior": _data.interiornum,
-                                "codePostal": _data.zipcode,
-                                "cdMunicipality": _data.municipalities.id,
-                                "municipality": _data.municipalities.description,
-                                "colony": _data.neighborhood,
-                                "cdState": _data.state.id,
-                                "state": _data.state.description,
-                                "betweenStreet": "",
-                                "typeOfRoad1": "",
-                                "andTheStreet": "",
-                                "typeOfRoad2": "",
-                                "behindStreet": "",
-                                "typeOfRoad3": "",
-                                "particularReferences": _data.references
-                            }
-                        ],
-                        "contactInf": [
-                            {
-                                "homePhone": _data.phone,
-                                "cellPhone": _data.cellphone,
-                                "messagePhone": _data.errandsphone,
-                                "email":_data.email,
-                                "email1": _data.email2,
-                                "email2": _data.email3,
-                                "facebook": ""
-                            }
-                        ],
-                        "tutorData": [
-                            {
-                                "tutorName": _data.tutorname,
-                                "firstNameTutor": _data.tutorlastname,
-                                "lastNameTutor": _data.tutorslastname,
-                                "kinship": _data.relationship.description,
-                                "kinshipType": _data.o_relationship
-                            }
-                        ],
-                        "program": [
-                            {
-                                "status": "",
-                                "modalityParticipation": "",
-                                "generation": "",
-                                "originResources": "",
-                                "projectSEPNumber": "",
-                                "numberNMDP": "",
-                                "schoolGrade": "",
-                                "resultImpactEvaluation": ""
-                            }
-                        ]
-                    }
-                ]
-            },
-            showWait: true,
-            success: function () {
-                loadModule.general(
-                    function () {
-                        changeStatusSel($("#general-data"));
-                    }
-                );
-            }
-        });
-    } else {
-        fbdate = false;
-        $('#dbirthdate').showComboError("Fecha inválida");
-        $('#mbirthdate').showComboError("Fecha inválida");
-        $("html").animate({
-            scrollTop: $("#dbirthdate").offset().top - 200
-        }, 1000, "swing", 'before');
-    }
-});
+
 $("#formschdata").data("validations", function(_data) {
     if (_data.schoolname == "" && (_data.cct != "" || _data.localities != "" || _data.schoolT != null)) {
         $('#snerror').show();
@@ -3762,7 +3638,7 @@ $("#btn_savesd").data("complete", function(_data) {
         },
         showWait: true,
         success: function() {
-            loadModule.schoolData(function () {
+            loadModule.notarydata(function () {
                 changeStatusSel($("#schoolar-data"));
                 hideWait();
             });
@@ -4079,14 +3955,6 @@ function changeModuleSatus($idContent, status) {
 $(".modal .icon-close").click(function() {
     $(this).parents(".modal").removeAttr("open");
     callbackCloseModal();
-});
-
-new Tooltip($("#ybirthdate").parent(".placeholder-wrapper"), {
-    placement: 'bottom', // or bottom, left, right, and variations
-    trigger: "focus",
-    html: true,
-    closeOnClickOutside: true,
-    title: "Por ejemplo: 2001"
 });
 
 new Tooltip($("#ysclass").parent(".placeholder-wrapper"), {
@@ -4715,7 +4583,7 @@ $('#msclass').onSelect(function() {
 });
 
 $("#btn_save_all").click(function() {
-    _StateId = moduleInitData.schoolData.schooling.location.state.id;
+    _StateId = moduleInitData.notarydata.schooling.location.state.id;
     _StateDesc="";
     _MunicipalityDesc="";
     if (_StateId!=0) {
@@ -4726,7 +4594,7 @@ $("#btn_save_all").click(function() {
             }
         }
         for (_i = 0; _i < municipalityTransactions[_StateId].length; _i++) {
-            if (municipalityTransactions[_StateId][_i].id == moduleInitData.schoolData.schooling.location.municipality.id) {
+            if (municipalityTransactions[_StateId][_i].id == moduleInitData.notarydata.schooling.location.municipality.id) {
                 _MunicipalityDesc = municipalityTransactions[_StateId][_i].description;
                 break;
             }
@@ -4773,27 +4641,27 @@ $("#btn_save_all").click(function() {
         email2: moduleInitData.general.student[0].contactInf[0].email1,
         email3:moduleInitData.general.student[0].contactInf[0].email2,
         levelDescription: level,
-        average: moduleInitData.schoolData.average,
+        average: moduleInitData.notarydata.average,
         municipalitySchool:_MunicipalityDesc,
         stateSchool: _StateDesc,
-        schoolName: moduleInitData.schoolData.schooling.schoolName,
-        turn: moduleInitData.schoolData.schooling.profession.scholarShift.description,
+        schoolName: moduleInitData.notarydata.schooling.schoolName,
+        turn: moduleInitData.notarydata.schooling.profession.scholarShift.description,
         flagCareer: level == "Universidad" ? "block" : "none",
-        area: moduleInitData.schoolData.schooling.profession.area.description,
-        subarea: moduleInitData.schoolData.schooling.profession.subArea.description,
-        career: moduleInitData.schoolData.schooling.profession.careerName,
-        modality: moduleInitData.schoolData.schooling.profession.modality.description,
-        careerType:moduleInitData.schoolData.schooling.profession.type.description,
-        duration: moduleInitData.schoolData.schooling.profession.duration.description,
-        spendingOnTransportation: formatMoney(moduleInitData.schoolData.expenses.transportationAmount),
-        startClassDate: moduleInitData.schoolData.schooling.profession.classesStartDate,
-        changeHome: moduleInitData.schoolData.changeAddress==true?"Sí":"No",
-        flagChangeHome: moduleInitData.schoolData.changeAddress == true ? "block" : "none",
-        municipalityChange: moduleInitData.schoolData.schooling.newLocation.municipality.name,
-        stateChange: moduleInitData.schoolData.schooling.newLocation.state.name,
-        rent: moduleInitData.schoolData.expenses.isPayRent?"Sí":"No",
-        flagIsRent: moduleInitData.schoolData.expenses.isPayRent? "block" : "none",
-        paymentRent: formatMoney(moduleInitData.schoolData.expenses.mounthlyRent),
+        area: moduleInitData.notarydata.schooling.profession.area.description,
+        subarea: moduleInitData.notarydata.schooling.profession.subArea.description,
+        career: moduleInitData.notarydata.schooling.profession.careerName,
+        modality: moduleInitData.notarydata.schooling.profession.modality.description,
+        careerType:moduleInitData.notarydata.schooling.profession.type.description,
+        duration: moduleInitData.notarydata.schooling.profession.duration.description,
+        spendingOnTransportation: formatMoney(moduleInitData.notarydata.expenses.transportationAmount),
+        startClassDate: moduleInitData.notarydata.schooling.profession.classesStartDate,
+        changeHome: moduleInitData.notarydata.changeAddress==true?"Sí":"No",
+        flagChangeHome: moduleInitData.notarydata.changeAddress == true ? "block" : "none",
+        municipalityChange: moduleInitData.notarydata.schooling.newLocation.municipality.name,
+        stateChange: moduleInitData.notarydata.schooling.newLocation.state.name,
+        rent: moduleInitData.notarydata.expenses.isPayRent?"Sí":"No",
+        flagIsRent: moduleInitData.notarydata.expenses.isPayRent? "block" : "none",
+        paymentRent: formatMoney(moduleInitData.notarydata.expenses.mounthlyRent),
         bbvaFamily: bbvaFamily,
         flagBbvaFam: bbvaFamily == "Si" ? "block" : "none",
         numRooms: (moduleInitData.home.homeInformation.roomsNumber == "20")?moduleInitData.home.homeInformation.roomsNumber +" o más":moduleInitData.home.homeInformation.roomsNumber,
@@ -4917,7 +4785,7 @@ var loadModule = {
      *
      * @param {function} finalSuccess optional callback function
      */
-    schoolData:function (finalSuccess) {
+    notarydata:function (finalSuccess) {
         restExec({
             service: 'GET_SCHOLARINF',
             type: 'GET',
@@ -4935,64 +4803,6 @@ var loadModule = {
                     rest_fnShowError(error);
                 }else {
                     resetForm($("#formschdata"));
-                }
-            }
-        });
-    },
-    /**
-     *Gets the sociodemographic data and shows it in "datos sociodemográficos" module
-     *
-     * @param {function} finalSuccess optional callback function
-     */
-    sociodemographic: function(finalSuccess) {
-        restExec({
-            service: 'GET_SOCINF',
-            type: 'GET',
-            hasUrlParam: true,
-            urlParam: {
-                scholarId: ivUser,
-                scholarshipProgramId: moduleInitData.announcement.scholarshipProgram.id
-            },
-            data: {},
-            success: rest_fnGetSocialData,
-            finallySuccess: [loadModule.ensureFun(finalSuccess),loadModule.checkStatus],
-            error: function (error) {
-                if (__.get(error,"responseJSON.code",'')!="01229001") {
-                    rest_fnShowError(error);
-                }else {
-                    resetForm($("#formsocdata"));
-                    family.fromhome.members = [];
-                    family.awayfromhome.members = [];
-                    family.bbva.member = {};
-                    $("#nfamilylist").empty();
-                    $("#nextrafamilylist").empty();
-                    $("#fam_bbvacard").empty();
-                }
-            }
-        });
-    },
-    /**
-     *Gets the home information and shows it in "características del hogar" module
-     *
-     * @param {function} finalSuccess optional callback function
-     */
-    home: function(finalSuccess) {
-        restExec({
-            service: 'GET_HOMEINF',
-            type: 'GET',
-            hasUrlParam: true,
-            urlParam: {
-                scholarId: ivUser,
-                programScholarshipId: moduleInitData.announcement.scholarshipProgram.id
-            },
-            data: {},
-            success: rest_fnGetHomeServices,
-            finallySuccess: [loadModule.ensureFun(finalSuccess),loadModule.checkStatus],
-            error: function (error) {
-                if (__.get(error,"responseJSON.code",'')!="01229001"&&__.get(error,"responseJSON.code",'')!="01229008") {
-                    rest_fnShowError(error);
-                }else {
-                    resetForm($("#formhdata"));
                 }
             }
         });
@@ -5018,61 +4828,19 @@ var loadModule = {
         });
     },
     /**
-     *Gets the announcement status
-     *
-     * @param {function} finalSuccess optional callback function
-     */
-    scholarshipAnnouncement: function(finalSuccess){
-        restExec({
-            service: 'GET_ANNOUNCEMENT',
-            type: 'GET',
-            hasUrlParam: true,
-            showWait: true,
-            urlParam: {
-                registerType: "CO",
-                scholarId: ivUser
-            },
-            data: {},
-            success: rest_fnGetScholarshipAnnouncement,
-            finallySuccess: [loadModule.ensureFun(finalSuccess),loadModule.checkStatus],
-            finallyError: function () {
-                $(".content").hide();
-            }
-        });
-    },
-    /**
      *Has the catalog list by module, it execute those catalogs before the module is shown.
      *
      */
     moduleCatalog: {
         general:{
             list: function () {
-                return ["CAT_Tipo_Alta", "CAT_BANK", "CAT_CREDITMORTGAGE", "CAT_CREDITCOMMERCIAL", "CAT_COFINAVIT", "CAT_GRAVAMEN"];
+                return ["CAT_BANK", "CAT_CREDITMORTGAGE", "CAT_CREDITCOMMERCIAL", "CAT_GRAVAMEN"];
             },
             callback: function () {
-                fnFillCatalogs("relationship", __.get(catalogs,"CAT_Tipo_Alta",[]), function(el) {
-                    if (el.id == "25") {
-                        $("#o_relationship").clearInput();
-                        $("#o_relationship").attr("required", "required");
-                        $("#other_relationship").slideDown();
-                    } else {
-                        $("#o_relationship").removeAttr("required");
-                        $("#other_relationship").slideUp();
-                        $("#o_relationship").clearInput();
-                    }
-                });
-                fnFillCatalogs("generatingbank", __.get(catalogs,"CAT_BANK",[]), function(el) {
-                });
-                fnFillCatalogs("mortgagecredittype", __.get(catalogs,"CAT_CREDITMORTGAGE",[]), function(el) {
-                });
-                fnFillCatalogs("commercialcredit", __.get(catalogs,"CAT_CREDITCOMMERCIAL",[]), function(el) {
-                });
-                fnFillCatalogs("cofinavit", __.get(catalogs,"CAT_COFINAVIT",[]), function(el) {
-                });
-                fnFillCatalogs("barzon", __.get(catalogs,"CAT_COFINAVIT",[]), function(el) {
-                });
-                fnFillCatalogs("gravamen", __.get(catalogs,"CAT_GRAVAMEN",[]), function(el) {
-                });
+                fnFillCatalogs("sec1generatingbank", __.get(catalogs,"CAT_BANK",[]), function(el) {});
+                fnFillCatalogs("sec1mortgagecredittype", __.get(catalogs,"CAT_CREDITMORTGAGE",[]), function(el) {});
+                fnFillCatalogs("sec1commercialcredit", __.get(catalogs,"CAT_CREDITCOMMERCIAL",[]), function(el) {});
+                fnFillCatalogs("sec1gravamen", __.get(catalogs,"CAT_GRAVAMEN",[]), function(el) {});
                 $('[data-target="general-data"]').attr("data-loaded","true");
                 if (typeof moduleInitData.general != "undefined") {
                     rest_fnGetGeneralData(moduleInitData.general);
@@ -5080,17 +4848,21 @@ var loadModule = {
                 toggleModule($('[data-target="general-data"]'));
             }
         },
-        schoolData: {
+        notarydata: {
             list: function () {
-                return ["CAT_TYPEPROPERTY"];
+                return ["CAT_TYPEPROPERTY", "CAT_NOTARY", "NOTARY_DATA", "CAT_STATE"];
             },
             callback: function () {
-                fnFillCatalogs("typepropertie", __.get(catalogs,"CAT_TYPEPROPERTY",[]));
-                
+                fnFillCatalogs("sec2typepropertie", __.get(catalogs,"CAT_TYPEPROPERTY",[]));
+                fnFillCatalogs("sec2notarysquare", __.get(catalogs,"CAT_NOTARY",[]), function(el) {});
+                fnFillCatalogs("sec2notarynumber", __.get(catalogs,"NOTARY_DATA",[]), function(el) {});
+                fnFillCatalogs("sec2state", __.get(catalogs,"CAT_STATE",[]));
+                fnFillCatalogs("sec2municipality", __.get(catalogs,"CAT_STATE",[]));
                 $('[data-target="schoolar-data"]').attr("data-loaded","true");
-                if (typeof moduleInitData.schoolData != "undefined"){
-                    rest_fnGetScholarInf(moduleInitData.schoolData);
+                if (typeof moduleInitData.notarydata != "undefined"){
+                    rest_fnGetScholarInf(moduleInitData.notarydata);
                 }
+                                
                 toggleModule($('[data-target="schoolar-data"]'));
             }
         },
@@ -5099,10 +4871,10 @@ var loadModule = {
                 return ["CAT_TYPEPROPERTY","CAT_SUBTYPEPROPERTY","CAT_STATE"];
             },
             callback: function () {
-                fnFillCatalogs("typepropertie", __.get(catalogs,"CAT_TYPEPROPERTY",[]));
+                fnFillCatalogs("sec2typepropertie", __.get(catalogs,"CAT_TYPEPROPERTY",[]));
                 fnFillCatalogs("subtypeproperty", __.get(catalogs,"CAT_SUBTYPEPROPERTY",[]));
                 fnFillCatalogs("propertystate", __.get(catalogs,"CAT_STATE",[]));
-                fnFillCatalogs("municipalities_d", __.get(catalogs,"CAT_STATE",[]));
+                fnFillCatalogs("sec3state", __.get(catalogs,"CAT_STATE",[]));
 
                 
                 $('[data-target="inmueble-data"]').attr("data-loaded","true");
@@ -5110,24 +4882,6 @@ var loadModule = {
                     rest_fnGetHomeServices(moduleInitData.home);
                 }
                 toggleModule($('[data-target="inmueble-data"]'));
-            }
-        },
-        dataStages: {
-            list: function () {
-                return ["CAT_TYPEPROPERTY","CAT_SUBTYPEPROPERTY","CAT_STATE"];
-            },
-            callback: function () {
-                fnFillCatalogs("typepropertie", __.get(catalogs,"CAT_TYPEPROPERTY",[]));
-                fnFillCatalogs("subtypeproperty", __.get(catalogs,"CAT_SUBTYPEPROPERTY",[]));
-                fnFillCatalogs("propertystate", __.get(catalogs,"CAT_STATE",[]));
-                fnFillCatalogs("municipalities_d", __.get(catalogs,"CAT_STATE",[]));
-
-                
-                $('[data-target="stages-data"]').attr("data-loaded","true");
-                if (typeof moduleInitData.home != "undefined"){
-                    rest_fnGetHomeServices(moduleInitData.home);
-                }
-                toggleModule($('[data-target="stages-data"]'));
             }
         }
     },
@@ -5314,40 +5068,6 @@ var loadNextModules = function (_cllback) {
         }
     });
     LIST_SERVICES.listRestExec({
-        service: 'GET_SOCINF',
-        type: 'GET',
-        hasUrlParam: true,
-        urlParam: {
-            scholarId: ivUser,
-            scholarshipProgramId: moduleInitData.announcement.scholarshipProgram.id
-        },
-        data: {},
-        success: rest_fnGetSocialData,
-        ignoreError: true,
-        error: function (error) {
-            if (__.get(error,"responseJSON.code",'')!="01229001") {
-                LIST_SERVICES.errors.push(error);
-            }
-        }
-    });
-    LIST_SERVICES.listRestExec({
-        service: 'GET_HOMEINF',
-        type: 'GET',
-        hasUrlParam: true,
-        urlParam: {
-            scholarId: ivUser,
-            programScholarshipId: moduleInitData.announcement.scholarshipProgram.id
-        },
-        data: {},
-        success: rest_fnGetHomeServices,
-        ignoreError: true,
-        error: function (error) {
-            if (__.get(error,"responseJSON.code",'')!="01229001"&&__.get(error,"responseJSON.code",'')!="01229008") {
-                LIST_SERVICES.errors.push(error);
-            }
-        }
-    });
-    LIST_SERVICES.listRestExec({
         service: 'GET_LEGAL',
         type: 'GET',
         hasUrlParam: true,
@@ -5375,7 +5095,7 @@ if(expRegs.FOL.regEx.test(ivUser)){
         });
         callbackCloseModal = logout;
     }else{*/
-        loadModule.scholarshipAnnouncement();
+       // loadModule.scholarshipAnnouncement();
     //}
 }else if(expRegs.FUN.regEx.test(ivUser)){
     restExec({
@@ -5401,6 +5121,7 @@ Object.keys(templates).forEach(function(_template) {
 });
 
 $("#currentYear").text(new Date().getFullYear());
+
 var fn_opennotification = function () {
     fn_showModal();
 };
