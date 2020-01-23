@@ -2858,3 +2858,6 @@ var fn_opennotification = function () {
  };
 
 $("#currentYear").text(new Date().getFullYear());
+var fn_opennotification = function () {
+    fn_showModal();
+};
