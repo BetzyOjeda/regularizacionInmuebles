@@ -135,6 +135,7 @@
             width: 100%;
             margin-top:9px;
         }
+        .divCheck {margin-bottom: 5px; min-width: 150px; float: inline-end; }
     </style>
 </head>
 <body>
@@ -259,9 +260,9 @@
                                             
                                             <div class="grid-item">
                                                 <div class="grid-item">
-                                                    <div class="form-validation-group">
+                                                    <div class="form-validation-group" id="divnumbercreditinfonavit" style="display: none;">
                                                         <div class="form-group">
-                                                            <input class="form-control numbers" name="sec1numbercreditinfonavit" id="sec1numbercreditinfonavit" type="text" data-placeholder="Número de crédito INFONAVIT" required autocomplete="off" value="">
+                                                            <input class="form-control numbers" name="sec1numbercreditinfonavit" id="sec1numbercreditinfonavit" type="text" data-placeholder="Número de crédito INFONAVIT" autocomplete="off" value="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -271,7 +272,7 @@
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
                                                         <span class="form-control toggle">Barzón
-                                                            <div class="switch percentage" style="float: right;">
+                                                            <div class="switch slide" style="float: right;">
                                                                 <span class="percentage">Si</span>
                                                                 <span class="price">No</span>        
                                                                 <div class="slide"></div>
@@ -320,20 +321,18 @@
                                             </div>
                                         </div>
                                         <div class="grid-item">
-                                            <div class="grid-item">
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <span class="form-control toggle">Cofinavit
-                                                            <div class="switch percentage" style="float: right;">
-                                                                <span class="percentage">Si</span>
-                                                                <span class="price">No</span>        
-                                                                <div class="slide"></div>
-                                                            </div>
-                                                        </span>                                                        
-                                                        <p class="i-message"><span class="text-message">&nbsp;</span></p>
-                                                    </div>                                                    
-                                                </div>
-                                            </div>
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <span class="form-control toggle">Cofinavit
+                                                        <div class="switch slide" id="cofinavit" style="float: right;">
+                                                            <span class="percentage">Si</span>
+                                                            <span class="price">No</span>        
+                                                            <div class="slide"></div>
+                                                        </div>
+                                                    </span>                                                        
+                                                    <p class="i-message"><span class="text-message">&nbsp;</span></p>
+                                                </div>                                                    
+                                            </div>                                            
                                         </div> 
                                         <div class="grid-item">
                                             <div class="form-group-select required" id="sec1generatingbank">
@@ -362,21 +361,20 @@
                                         </div>
                                        
                                         <div class="grid-item">
-                                            <div class="form-validation-group">
+                                            <div class="form-validation-group" id="divinfonavitdate" style="display: none;">
                                                 <div class="form-group">
-                                                    <input class="form-control" data-reflecto="#m_sec1infonavitdate" name="sec1infonavitdate" id="sec1infonavitdate" type="text" data-placeholder="Fecha de pago de crédito Infonavit" autocomplete="off" value="">
+                                                    <input class="form-control" data-reflecto="#m_sec1infonavitdate" name="sec1infonavitdate" id="sec1infonavitdate" type="text" data-placeholder="Fecha de pago de crédito Infonavit" autocomplete="off" value="30/01/2020" disabled="disabled">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="grid-item">
-                                            <div class="form-group-select required" id="sec1gravamen">
-                                                <div class="option-select">
-                                                    <div class="select-title sl">
-                                                        <span class="option-text sl center">Gravamen</span>
-                                                        <span class="selected-option sl"></span>
-                                                        <i class="bbva-icon ui-simple-down sl"></i>
-                                                    </div>
-                                                    <div class="list-result"></div>
+                                            <div class="form-group-select" id="sec1gravamen" style="margin-top: 15px;">
+                                                <div><span>Gravamen</span></div>
+                                                <div>                                                   
+                                                    <div class="divCheck espaciogenero"><span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check1"><i class="bbva-icon ui-checkmark"></i></span><span>Infonavit</span></div>
+                                                    <div class="divCheck espaciogenero"><span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check2"><i class="bbva-icon ui-checkmark"></i></span><span>Propio</span></div>
+                                                    <div class="divCheck espaciogenero"><span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check3"><i class="bbva-icon ui-checkmark"></i></span><span>Embargo de 3ro</span></div>
+                                                    <div class="divCheck espaciogenero"><span style="margin: 0 8px;" class="checkbox" data-targetdisable="#check1" data-targettoggle="#checklastname" id="check4"><i class="bbva-icon ui-checkmark"></i></span><span>SHF</span></div>
                                                 </div>
                                             </div>
                                         </div>                                            
@@ -384,7 +382,7 @@
                                     </div>
                                     
                                 </div>
-                                <div class="submtbtn">
+                                <div class="submtbtn actionsection">
                                     <span title="Continuar" aria-label="Continuar" class="btn__basic btn__submit" id="btn_savegd">
                                         <span aria-hidden="true">Guardar</span>
                                     </span>
@@ -419,10 +417,10 @@
 												</div>
 											</div>
 											<div class="grid-item">
-												<div class="form-group-select whitwait states reflectable required e-tooltip" id="sec2notarynumber" data-reflecto="#m_sec2notarynumber" data-tooltitle="Número de notaría + Notario que expide escritura">
+												<div class="form-group-select whitwait states reflectable required e-tooltip" id="sec2notarynumber" data-reflecto="#m_sec2notarynumber" data-tooltitle="Número de notaría y notario que expide la escritura">
 													<div class="option-select">
 														<div class="select-title sl">
-															<span class="option-text sl center">No. de notaría + Notario que expide escritura</span>
+															<span class="option-text sl center">No. de notaría y notario</span>
 															<span class="selected-option sl"></span>
 															<i class="bbva-icon ui-simple-down sl"></i>
 														</div>
@@ -460,7 +458,7 @@
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
                                                         <span class="form-control toggle">Juicio en Rebeldía
-                                                            <div class="switch percentage" style="float: right;">
+                                                            <div class="switch slide" style="float: right;">
                                                                 <span class="percentage">Si</span>
                                                                 <span class="price">No</span>        
                                                                 <div class="slide"></div>
@@ -474,7 +472,7 @@
 												<div class="form-validation-group">
 													<div class="form-group">
 														<div class="requiereAdunto">
-															<input class="form-control uppercase letters lastnameb date calendar" data-reflecto="#m_sec2interlocutoryDate" name="sec2interlocutoryDate" id="sec2interlocutoryDate" type="text" data-placeholder="Fecha de sentencia interlocutoria que aprueba el remate o auto que declara firme la adjudicación directa"  required autocomplete="off" value="18/10/2019">
+															<input class="form-control uppercase letters lastnameb date calendar e-tooltip" data-reflecto="#m_sec2interlocutoryDate" name="sec2interlocutoryDate" id="sec2interlocutoryDate" type="text" data-placeholder="Fecha de sentencia interlocutoria"  data-tooltitle="Fecha de sentencia interlocutoria que aprueba el remate o auto que declara firme la adjudicación directa" required autocomplete="off" value="18/10/2019">
 														</div>
 														<div  class="uploadfile empty adjunto" title="PDF, en blanco y negro, a 200dpis">
 															<div class="wrapper" style="padding: 0;">
@@ -662,7 +660,7 @@
                                                         <div class="form-validation-group">
                                                             <div class="form-group" style="display: flex;">
                                                                 <div class="requiereAdunto">
-                                                                    <input class="form-control uppercase letters lastnameb date calendar" data-reflecto="#m_sec3clgdate" name="sec3clgdate" id="sec3clgdate" type="text" data-placeholder="Fecha de CLG" required autocomplete="off" value="18/10/2019">
+                                                                    <input class="form-control uppercase letters lastnameb date calendar bbva-icon__3_004_calendar" data-reflecto="#m_sec3clgdate" name="sec3clgdate" id="sec3clgdate" type="text" data-placeholder="Fecha de CLG" required autocomplete="off" value="18/10/2019">
                                                                 </div>
                                                                 <div  class="uploadfile empty adjunto" title="PDF, en blanco y negro, a 200dpis">
                                                                     <div class="wrapper" style="padding: 0;">
@@ -681,7 +679,7 @@
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
-                                                                <input class="form-control e-tooltip-f mxnamount" name="trans" id="trans" type="text" data-placeholder="Importe de adjudicación o dación del immueble" autocomplete="off" required>
+                                                                <input class="form-control e-tooltip-f mxnamount" name="trans" id="trans" type="text" data-placeholder="Importe de adjudicación" autocomplete="off" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -703,7 +701,7 @@
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
-                                                                <input class="form-control e-tooltip-f mxnamount" name="valuespecials" id="valuespecials" type="text" data-placeholder="Valor de intalaciones especiales" autocomplete="off" required>
+                                                                <input class="form-control e-tooltip-f mxnamount" name="valuespecials" id="valuespecials" type="text" data-placeholder="Valor de instalaciones especiales" autocomplete="off" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -775,7 +773,7 @@
                                                     <div class="form-validation-group">
                                                         <div class="form-group">
                                                             <span class="form-control toggle">Posesión física
-                                                                <div class="switch percentage" style="float: right;">
+                                                                <div class="switch slide" style="float: right;">
                                                                     <span class="percentage">Si</span>
                                                                     <span class="price">No</span>        
                                                                     <div class="slide"></div>
@@ -819,7 +817,7 @@
                                                     <div class="form-validation-group">
                                                         <div class="form-group">
                                                             <span class="form-control toggle">Instalaciones especiales
-                                                                <div class="switch percentage" style="float: right;">
+                                                                <div class="switch slide" style="float: right;">
                                                                     <span class="percentage">Si</span>
                                                                     <span class="price">No</span>        
                                                                     <div class="slide"></div>
@@ -1140,6 +1138,16 @@
                 }else{
                     $(this).removeClass('slide').addClass('percentage');
                 }
+        });
+
+        $("#cofinavit").click(function() {
+            var checkCofinavit=$(this).hasClass("percentage");
+            if(checkCofinavit){
+                $("#divinfonavitdate, #divnumbercreditinfonavit").css("display", "");
+            }else{
+                $("#divinfonavitdate, #divnumbercreditinfonavit").css("display", "none");
+            }
+            
         });
 
     });
