@@ -8,16 +8,11 @@
     padding-left: 4px;
 }
 
-.sticky .header__mainNavigation {
-    margin-left: 113px;
-    transition: all .44444s;
-}
-
 .header__mainNavigation {
     width: auto !important;
     float: left;
-    margin-left: 172px;
-    margin-right: -100%;
+    margin-left: 130px;
+    /* margin-right: -100%; */
     display: block;
 }
 
@@ -39,7 +34,7 @@
 
 .loginsec {
     width: 450px;
-    margin-top: 15px;
+    margin-top: 40px;
     margin-bottom: 15px;
     margin-left: auto;
     margin-right: auto;
@@ -50,7 +45,7 @@
 .loginsec h4,
 .loginsec h5 {
     font-family: BentonSansBBVA-Book, Helvetica, Arial, sans-serif;
-    color: #121212;
+    color: #fff;
     text-align: center;
 }
 
@@ -75,14 +70,14 @@
 .form-control {
     border: transparent;
     font-family: inherit;
-    height: 33px;
+    height: 27px;
     
 }
 
 .form-control {
     display: block;
     width: 100%;
-    padding: 18px 11px 0;
+    padding: 22px 11px 0;
     font-size: 15px;
     line-height: 1.25;
     border-style: none none solid;
@@ -108,15 +103,22 @@
 }
 
 .actionsection {
-    height: 56px;
-    margin-top: 9px;
+    height: 50px;
+	width: 85%;
+    margin-top: 0px;
+}
+
+.actionsectionout {
+    height: 50px;
+	width: 65%;
+    margin-top: 0px;
 }
 
 .fpass {
     font-family: "BentonSansBBVA-Bold", Helvetica, Arial, sans-serif;
     width: 225px;
     float: left;
-    line-height: 56px;
+    line-height: 50px;
 }
 
 .submtbtn {
@@ -153,15 +155,12 @@
 }
 
 .form-group-meter .isec {
+    width: 6%;
     display: inline-block;
     vertical-align: top;
     padding: 2px;
 }
-.sticky .header__image {
-    max-height: 30px;
-    min-height: 30px;
-    max-width: 100%;
-}
+
 .bbva-icon.blue1 {
     color: #5BBEFF;
 }
@@ -175,7 +174,7 @@
 }
 
 .form-group-info .itextsec {
-    width: 90%;
+    width: 78%;
     display: inline-block;
     text-align: justify;
     font-size: 12px;
@@ -234,14 +233,8 @@
 
 /*ERROR INPUT*/
 
-input:invalid {
-  border-style: none none solid;
-  border-bottom: 1px solid #D44B50;
-  background: #FCDFDF;
-}
-
 .form-validation-group.haserror .form-control {
-    background: #FCDFDF;
+	background: #FCDFDF;
     border-bottom: 1px solid #D44B50;
 }
 
@@ -864,6 +857,11 @@ figure {
     width: 95% !important;
 }
 
+.fixW80 {
+    width: 80% !important;
+}
+
+
 .panel-bbva {
     margin-bottom: 20px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
@@ -1265,3 +1263,14 @@ tr th:nth-child(4){
 .pb-5 {
     padding-bottom: 5px;
 }
+
+.bgLogin {  
+	 background-image: url(../images/logo/bg_login.jpg);
+	 background-repeat: no-repeat;
+	 -webkit-background-size: cover;
+	 -moz-background-size: cover;
+	 -o-background-size: cover;
+	 -ms-background-size: cover; 
+	 background-size: cover;
+	 height: 750px;   
+ }

@@ -32,6 +32,7 @@
     <script src="scripts/mustache.js"></script>
     <script src="scripts/popper.min.js"></script>
     <script src="scripts/tooltip.min.js"></script>
+    <script src="./js/templates.js"></script>
 
     <style>
         .casos-paginacion>ul {
@@ -286,49 +287,52 @@
 <body>
     <div class="page-container">
         <div class="header">
-            <div class="header_container container flex-items">
-                <div class="header_logo" style="width: 29%">
-                    <a href="#" class="header__logo__link">
-                        <img src="./images/LogoBBVA@2x.png" class="header_image" alt="">
-                    </a>
-                </div>
-                <div class="header__wrapper">
-                    <div class="header__logo titleCenter">
-                        <div class="header__logo__link">
-                            <span class="name-app">SISTEMA REGULARIZACIÓN DE INMUEBLES</span>
+            <form>
+                <div class="header_container container flex-items">
+                    <div class="header_logo" style="width: 29%">
+                        <a href="#" class="header__logo__link">
+                            <img src="./images/LogoBBVA@2x.png" class="header_image" alt="">
+                        </a>
+                    </div>
+                    <div class="header__wrapper">
+                        <div class="header__logo titleCenter">
+                            <div class="header__logo__link">
+                                <span class="name-app">SISTEMA REGULARIZACIÓN DE INMUEBLES</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu flex-items" id="notitarea">
+                        <div class="btn-menu e-tooltip" id="user-notify" data-tooltitle="Notificaciones">
+                            <i class="bbva-icon ui-alarm"></i>
+                            <span class="notify">4</span>
+                        </div>
+                        <div class="btn-menu e-tooltip" id="user-tasks" data-tooltitle="Tareas pendientes">
+                            <a href="viewer-task.html"style="color: white">
+                                <i class="bbva-icon ui-address-book"></i>
+                            </a>
+                        </div>
+                        <div class="btn-menu" id="user-name">
+                            <figure class="fig-username">
+                                <img src="./images/icons/user-image.png" alt="" class="avatar">
+                                <figcaption class="username">
+                                    Margarita Flores
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="btn-menu" id="btn-exit">
+                            <a href="/">    
+                                <figure style="color: #F8CD51">
+                                    <img src="./images/icons/get-out-icon.svg" alt="" class="bbva-icon-rotate-180">
+                                    <figcaption class="action-exit">
+                                        Salir
+                                    </figcaption>
+                                </figure>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="menu flex-items">
-                    <div class="btn-menu" id="user-notify">
-                        <i class="bbva-icon ui-alarm"></i>
-                        <span class="notify">4</span>
-                    </div>
-                    <div class="btn-menu" id="user-tasks">
-                        <a href="viewer-task.html" style="color: white">
-                            <i class="bbva-icon ui-address-book"></i>
-                        </a>
-                    </div>
-                    <div class="btn-menu" id="user-name">
-                        <figure class="fig-username">
-                            <img src="./images/icons/user-image.png" alt="" class="avatar">
-                            <figcaption class="username">
-                                Margarita Flores
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="btn-menu" id="btn-exit">
-                        <a href="/">    
-                            <figure style="color: #F8CD51">
-                                <img src="./images/icons/get-out-icon.svg" alt="" class="bbva-icon-rotate-180">
-                                <figcaption class="action-exit">
-                                    Salir
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-            </div>
+
+            </form>            
         </div>
         <div class="subheader" style="display: none;">
             <div class="container">
@@ -343,30 +347,29 @@
                     <table id="table_main" class="table striped ">
                         <thead>
                             <tr class="">
-                                <th style="text-align: left;" title="Número de crédito PU">
+                                <th style="text-align: left;">
                                     NO. DE CRÉDITO
                                 </th>
-                                <th style="text-align: left;" title="Asunto">
+                                <th style="text-align: left;">
                                     ASUNTO
                                 </th>
-                                <th style="text-align: left;" title="Estatus">
+                                <th style="text-align: left;">
                                     ESTATUS
-                                    <i class="bbva-icon ui-simple-up sl link" title="Ordenar"></i>
-                                    <i class="bbva-icon ui-filter sl link" title="Filtrar"></i>
+                                    <i class="bbva-icon ui-simple-up sl link"></i>
+                                    <i class="bbva-icon ui-filter sl link"></i>
                                 </th>
-                                <th style="text-align: left;" title="Responsable">
+                                <th style="text-align: left;">
                                     RESPONSABLE
-                                    <i class="bbva-icon ui-simple-up sl link" title="Ordenar"></i>
-                                    <i class="bbva-icon ui-filter sl link" title="Filtrar"></i>
+                                    <i class="bbva-icon ui-simple-up sl link"></i>
                                 </th>
-                                <th style="text-align: center;" title="Importe saldo contable">
+                                <th style="text-align: center;">
                                     COFINAVIT
+                                </th>   
+                                <th style="text-align: center;">
+                                    DÍAS <P>TRANSCURRIDOS</P>
                                 </th>
-                                <th style="text-align: center;" title="Días transcurridos">
-                                    DÍAS
-                                </th>
-                                <th style="text-align: center; width: 5%;" title="Ir al expediente">
-                                    EXPEDIENTE
+                                <th style="text-align: center; width: 5%;">
+                                    IR AL<P>EXPEDIENTE</P>
                                 </th>
                             </tr>
                         </thead>
@@ -388,14 +391,161 @@
                                     <span>Si</span>
                                 </td>
                                 <td style="text-align: center;">
-                                    <span style="font-family: BentonSansBBVA-Bold; color: red">21</span>
+                                    <div style="border-radius: 9px; background-color: red;font-family: BentonSansBBVA-Bold;color: #fff;">31</div>
                                 </td>
                                 <td style="text-align: center;">
                                     <i class="bbva-icon ui-filled-diagonal
-                                        sl" style="cursor: pointer;color: #1973B8;" title="Ir al expediente"></i>
+                                        sl" style="cursor: pointer;color: #1973B8;"></i>
                                 </td>
                             </tr>
-
+                            <tr class="" id="7">
+                                <td style="text-align: left;">
+                                    <span>81291289123276121982</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Ramiro Acosta Ruiz</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Incompleto</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Felipe Contreras Sánchez</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <span>Si</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <div style="border-radius: 9px; background-color: red;font-family: BentonSansBBVA-Bold;color: #fff;">30</div>
+                                </td>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal
+                                        sl" style="cursor: pointer;color: #1973B8;"></i>
+                                </td>
+                            </tr>
+                            <tr class="" id="7">
+                                <td style="text-align: left;">
+                                    <span>81291289123276121982</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Betzabe Moraima Ojeda</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Incompleto</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Felipe Contreras Sánchez</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <span>Si</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <div style="border-radius: 9px; background-color: red;font-family: BentonSansBBVA-Bold;color: #fff;">28</div>
+                                    <!-- <span style="font-family: BentonSansBBVA-Bold; color: red">21</span> -->
+                                </td>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal
+                                        sl" style="cursor: pointer;color: #1973B8;"></i>
+                                </td>
+                            </tr>
+                            <tr class="" id="7">
+                                <td style="text-align: left;">
+                                    <span>81291289123276121982</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Teresa Gomez Ramirez</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Incompleto</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Felipe Contreras Sánchez</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <span>Si</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <div style="border-radius: 9px; background-color: red;font-family: BentonSansBBVA-Bold;color: #fff;">28</div>
+                                </td>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal
+                                        sl" style="cursor: pointer;color: #1973B8;"></i>
+                                </td>
+                            </tr>
+                            <tr class="" id="7">
+                                <td style="text-align: left;">
+                                    <span>81291289123276121982</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Yaneli Rojas Vazquez</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Incompleto</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Felipe Contreras Sánchez</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <span>Si</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <div style="border-radius: 9px; background-color: red;font-family: BentonSansBBVA-Bold;color: #fff;">27</div>
+                                </td>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal
+                                        sl" style="cursor: pointer;color: #1973B8;"></i>
+                                </td>
+                            </tr>
+                            <tr class="" id="7">
+                                <td style="text-align: left;">
+                                    <span>81291289123276121982</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Antonio Lopez Marron</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Incompleto</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Felipe Contreras Sánchez</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <span>Si</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <div style="border-radius: 9px; background-color: red;font-family: BentonSansBBVA-Bold;color: #fff;">25</div>
+                                </td>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal
+                                        sl" style="cursor: pointer;color: #1973B8;"></i>
+                                </td>
+                            </tr>
+                            
+                            <tr class="" id="7">
+                                <td style="text-align: left;">
+                                    <span>76982937337236651112</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Luis Gutiérrez Orozco</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>En proceso</span>
+                                </td>
+                                <td style="text-align: left;">
+                                    <span>Oscar Martínez Ojeda</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <span>No</span>
+                                </td>
+                                <td style="text-align: center;">
+                                    <!-- <span style="background-color: #f8cd51;font-family: BentonSansBBVA-Bold;color: #fff;">&nbsp;&nbsp;</span> -->
+                                    <!-- <span style="font-family: BentonSansBBVA-Bold; color: #f8cd51">10</span> -->
+                                    <div style="border-radius: 9px; background-color:#f8cd51;font-family: BentonSansBBVA-Bold;color: #fff;">10</div>
+                                </td>
+                                <td style="text-align: center;">
+                                    <i class="bbva-icon ui-filled-diagonal
+                                     sl" style="cursor: pointer;color: #1973B8;"></i>
+                                </td>
+                            </tr>
                             <tr class="" id="7">
                                 <td style="text-align: left;">
                                     <span>76982937337236651112</span>
@@ -413,7 +563,9 @@
                                     <span>No</span>
                                 </td>
                                 <td style="text-align: center;">
-                                    <span style="font-family: BentonSansBBVA-Bold; color: #f8cd51">10</span>
+                                    <!-- <span style="background-color: #f8cd51;font-family: BentonSansBBVA-Bold;color: #fff;">&nbsp;&nbsp;</span> -->
+                                    <!-- <span style="font-family: BentonSansBBVA-Bold; color: #f8cd51">10</span> -->
+                                    <div style="border-radius: 9px; background-color:#f8cd51;font-family: BentonSansBBVA-Bold;color: #fff;">9</div>
                                 </td>
                                 <td style="text-align: center;">
                                     <i class="bbva-icon ui-filled-diagonal
@@ -437,7 +589,8 @@
                                     <span>Si</span>
                                 </td>
                                 <td style="text-align: center;">
-                                        <span style="font-family: BentonSansBBVA-Bold; color: green">2</span>
+                                        <!-- <span style="font-family: BentonSansBBVA-Bold; color: green">2</span> -->
+                                        <div style="border-radius: 9px; background-color:green;font-family: BentonSansBBVA-Bold;color: #fff;">2</div>
                                     </td>
                                 <td style="text-align: center;">
                                     <i class="bbva-icon ui-filled-diagonal
@@ -462,7 +615,8 @@
                                     <span>Si</span>
                                 </td>
                                 <td style="text-align: center;">
-                                    <span style="font-family: BentonSansBBVA-Bold; color: green">1</span>
+                                    <!-- <span style="font-family: BentonSansBBVA-Bold; color: green">1</span> -->
+                                    <div style="border-radius: 9px; background-color:green;font-family: BentonSansBBVA-Bold;color: #fff;">1</div>
                                 </td>
                                 <td style="text-align: center;">
                                     <i class="bbva-icon ui-filled-diagonal
@@ -723,6 +877,8 @@
     <script src="scripts/mask.js"></script>
     <script src="scripts/dropzone.js"></script>
     <script src="js/dist/bundle.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
 
 <script>        
@@ -733,6 +889,12 @@
 
         $(".ui-filled-diagonal").click(function() {
            location.href="index.html";
+        });
+
+        $("#notitarea").mouseover(function(){
+            console.log("hhhhhhhhhhhhhhhhhhhhh");
+            $(this).find(".tooltip").css({"top":"25px","background-color":"white", "color":"#237ABA"});
+            $(this).find(".tooltip-arrow").css({"border-color":"transparent transparent #fff transparent"});        
         });
 
         $("#user-notify").click(function() {

@@ -786,8 +786,8 @@ var fn_uploadfilemodal = function () {
         dictInvalidFileType: "S\u00F3lo se permiten archivos JPG, PNG y PDF",
         autoProcessQueue: false,
         dictDefaultMessage: '',
-        maxFiles: 2,
-        maxFilesize: 12,
+        maxFiles: 1,
+        maxFilesize: 10,
         previewTemplate: miniTemplates.filepreview.html,
         previewsContainer: "#file-preview-wrapper",
         url: "/",
@@ -2179,7 +2179,7 @@ function hasAttr(element, attrib) {
                 autoUnmask: true,
                 allowPlus: false,
                 allowMinus: false,
-                integerDigits:"6",
+                integerDigits:"13",
             });
         }).blur(function() {
             if ($(this).inputmask && $(this).inputmask('unmaskedvalue').length == 0) {
@@ -2714,12 +2714,15 @@ var loadModule = {
                 fnFillCatalogs("sec2typepropertie", __.get(catalogs,"CAT_TYPEPROPERTY",[]));
                 fnFillCatalogs("subtypeproperty", __.get(catalogs,"CAT_SUBTYPEPROPERTY",[]));
                 fnFillCatalogs("propertystate", __.get(catalogs,"CAT_STATE",[]));
-                fnFillCatalogs("sec3state", __.get(catalogs,"CAT_STATE",[]));
+                fnFillCatalogs("sec3state", __.get(catalogs,"CAT_STATE",[]),function(ele) {
+                    var otraClaseElems = $("#municipalities").find(".disabled").removeClass('disabled');
+                    console.log("otraClaseElems",otraClaseElems);
+                });
 
                 
                 $('[data-target="inmueble-data"]').attr("data-loaded","true");
-                if (typeof moduleInitData.home != "undefined"){
-                    rest_fnGetHomeServices(moduleInitData.home);
+                if (typeof moduleInitData.dataInmueble != "undefined"){
+                    rest_fnGetHomeServices(moduleInitData.dataInmueble);
                 }
                 toggleModule($('[data-target="inmueble-data"]'));
             }

@@ -318,12 +318,15 @@ var loadModule = {
                 fnFillCatalogs("sec2typepropertie", __.get(catalogs,"CAT_TYPEPROPERTY",[]));
                 fnFillCatalogs("subtypeproperty", __.get(catalogs,"CAT_SUBTYPEPROPERTY",[]));
                 fnFillCatalogs("propertystate", __.get(catalogs,"CAT_STATE",[]));
-                fnFillCatalogs("sec3state", __.get(catalogs,"CAT_STATE",[]));
+                fnFillCatalogs("sec3state", __.get(catalogs,"CAT_STATE",[]),function(ele) {
+                    var otraClaseElems = $("#municipalities").find(".disabled").removeClass('disabled');
+                    console.log("otraClaseElems",otraClaseElems);
+                });
 
                 
                 $('[data-target="inmueble-data"]').attr("data-loaded","true");
-                if (typeof moduleInitData.home != "undefined"){
-                    rest_fnGetHomeServices(moduleInitData.home);
+                if (typeof moduleInitData.dataInmueble != "undefined"){
+                    rest_fnGetHomeServices(moduleInitData.dataInmueble);
                 }
                 toggleModule($('[data-target="inmueble-data"]'));
             }

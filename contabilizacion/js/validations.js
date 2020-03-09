@@ -363,7 +363,7 @@ function hasAttr(element, attrib) {
                 autoUnmask: true,
                 allowPlus: false,
                 allowMinus: false,
-                integerDigits:"6",
+                integerDigits:"13",
             });
         }).blur(function() {
             if ($(this).inputmask && $(this).inputmask('unmaskedvalue').length == 0) {

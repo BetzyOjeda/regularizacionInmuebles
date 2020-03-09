@@ -140,47 +140,52 @@
     </style>
 </head>
 <body>
+    
+
+    
     <div class="page-container">
         <div class="header">
-            <div class="header_container container flex-items">
-                <div class="header_logo">
-                    <a href="#" class="header__logo__link">
-                        <img src="./images/LogoBBVA@2x.png" class="header_image" alt="">
-                    </a>
-                </div>
-                <div class="name-app">
-                    <span>SISTEMA REGULARIZACIÓN DE INMUEBLES</span>        
-                </div>
-                <div class="menu flex-items">
-                    <div class="btn-menu" id="user-notify">
-                        <i class="bbva-icon ui-alarm"></i>
-                        <span class="notify">4</span>
-                    </div>
-                    <div class="btn-menu" id="user-tasks">
-                        <a href="viewer-task.html"style="color: white">
-                            <i class="bbva-icon ui-address-book"></i>
+            <form>
+                <div class="header_container container flex-items">
+                    <div class="header_logo">
+                        <a href="#" class="header__logo__link">
+                            <img src="./images/LogoBBVA@2x.png" class="header_image" alt="">
                         </a>
                     </div>
-                    <div class="btn-menu" id="user-name">
-                        <figure class="fig-username">
-                            <img src="./images/icons/user-image.png" alt="" class="avatar">
-                            <figcaption class="username">
-                                Margarita Flores
-                            </figcaption>
-                        </figure>
+                    <div class="name-app">
+                        <span>SISTEMA REGULARIZACIÓN DE INMUEBLES</span>        
                     </div>
-                    <div class="btn-menu" id="btn-exit">
-                        <a href="/">    
-                            <figure style="color: #F8CD51">
-                                <img src="./images/icons/get-out-icon.svg" alt="" class="bbva-icon-rotate-180">
-                                <figcaption class="action-exit">
-                                    Salir
+                    <div class="menu flex-items" id="notitarea">
+                        <div class="btn-menu e-tooltip" id="user-notify" data-tooltitle="Notificaciones">
+                            <i class="bbva-icon ui-alarm"></i>
+                            <span class="notify">4</span>
+                        </div>
+                        <div class="btn-menu e-tooltip" id="user-tasks" data-tooltitle="Tareas pendientes">
+                            <a href="viewer-task.html"style="color: white">
+                                <i class="bbva-icon ui-address-book"></i>
+                            </a>
+                        </div>
+                        <div class="btn-menu" id="user-name">
+                            <figure class="fig-username">
+                                <img src="./images/icons/user-image.png" alt="" class="avatar">
+                                <figcaption class="username">
+                                    Margarita Flores
                                 </figcaption>
                             </figure>
-                        </a>
+                        </div>
+                        <div class="btn-menu" id="btn-exit">
+                            <a href="/">    
+                                <figure style="color: #F8CD51">
+                                    <img src="./images/icons/get-out-icon.svg" alt="" class="bbva-icon-rotate-180">
+                                    <figcaption class="action-exit">
+                                        Salir
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
                     </div>
-                </div>
-            </div>        
+                </div>    
+            </form>    
         </div>
         
         <div class="menuContainer"></div> 
@@ -203,9 +208,9 @@
                                 <i class="bbva-icon ui-gavel"></i>
                                 1. Datos de crédito y deudor
                             </div>
-                            <div id="statusgd" class="step-status incomplete">
-                                <i class="bbva-icon ui-warning"></i>
-                                Incompleto
+                            <div id="statusgd" class="step-status complete">
+                                <i class="bbva-icon ui-checkmark-filled"></i>
+                                Completo
                             </div>
                             <div class="step-arrow">
                                 <i class="bbva-icon ui-"></i>
@@ -242,11 +247,23 @@
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <input class="form-control e-tooltip" data-reflecto="#m_sec1creditgrantdate" name="sec1creditgrantdate" id="sec1creditgrantdate" type="text" data-placeholder="Fecha de otorgamiento del crédito Banco" data-tooltitle="Fecha de otorgamiento del crédito Banco" required autocomplete="off" value="15/10/2019" disabled="disabled">
+                                                        <div class="requiereAdunto">
+                                                            <input class="form-control e-tooltip calendar" data-reflecto="#m_sec1creditgrantdate" name="sec1creditgrantdate" id="sec1creditgrantdate" type="text" data-placeholder="Fecha de otorgamiento del crédito Banco" required autocomplete="off" value="15/10/2019" disabled="disabled">
+                                                        </div>
+                                                        <div  class="uploadfile empty adjunto e-tooltip" data-tooltitle="Adjuntar PDF, contrato de apertura de crédito">
+                                                            <div class="wrapper" style="padding: 0;">
+                                                                <div class="message message_cards const">
+                                                                    <span class="cntr">
+                                                                        <span class="openuploadfile">
+                                                                            <i class="bbva-icon ui-filled-up"></i></span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
+                                                </div>                                                
                                             </div>
-                                            <div class="grid-item">
+                                            <div class="grid-item" style="display: inline-flex;">
                                                 <div class="form-group-select required" id="sec1mortgagecredittype">
                                                     <div class="option-select">
                                                         <div class="select-title sl">
@@ -413,7 +430,7 @@
 											<div class="grid-item">
 												<div class="form-validation-group">
 													<div class="form-group e-tooltip" data-tooltitle="Nombre del abogado externo que llevo el juicio de recuperación">
-														<input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec2externallawyer" name="sec2externallawyer" id="sec2externallawyer" type="text" data-placeholder="Nombre del abogado externo" required autocomplete="off" value="Jose Alfredo Larrea Salazar">
+														<input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec2externallawyer" name="sec2externallawyer" id="sec2externallawyer" type="text" data-placeholder="Nombre del abogado externo" required autocomplete="off" value="Jose Alfredo Larrea Salazar" disabled="disabled">
 													</div>
 												</div>
 											</div>
@@ -475,7 +492,7 @@
 														<div class="requiereAdunto">
 															<input class="form-control uppercase letters lastnameb date calendar e-tooltip" data-reflecto="#m_sec2interlocutoryDate" name="sec2interlocutoryDate" id="sec2interlocutoryDate" type="text" data-placeholder="Fecha de sentencia interlocutoria"  data-tooltitle="Fecha de sentencia interlocutoria que aprueba el remate o auto que declara firme la adjudicación directa" required autocomplete="off" value="18/10/2019">
 														</div>
-														<div  class="uploadfile empty adjunto" title="PDF, en blanco y negro, a 200dpis">
+														<div  class="uploadfile empty adjunto e-tooltip" data-tooltitle="Adjuntar PDF, auto o sentencia interlocutoria que declare firme adjudicación directa / remate ">
 															<div class="wrapper" style="padding: 0;">
 																<div class="message message_cards const">
 																	<span class="cntr">
@@ -494,7 +511,7 @@
 											<div class="form-group-select whitwait states reflectable required" id="sec2notarysquare" data-reflecto="#m_state_s">
 												<div class="option-select">
 													<div class="select-title sl">
-														<span class="option-text sl center">Plaza Notaría</span>
+														<span class="option-text sl center">Plaza Notario</span>
 														<span class="selected-option sl"></span>
 														<i class="bbva-icon ui-simple-down sl"></i>
 													</div>
@@ -540,9 +557,9 @@
 											<div class="form-validation-group">
 												<div class="form-group">
 													<div class="requiereAdunto">
-														<input class="form-control uppercase letters lastnameb date calendar" data-reflecto="#m_sec2auctionaudience" name="sec2auctionaudience" id="sec2auctionaudience" type="text" data-placeholder="Audiencia de remate o adjudicación directa" required autocomplete="off" value="18/10/2019">
+														<input class="form-control uppercase letters lastnameb date calendar" data-reflecto="#m_sec2auctionaudience" name="sec2auctionaudience" id="sec2auctionaudience" type="text" data-placeholder="Fecha de audiencia de remate o adjudicación directa" required autocomplete="off" value="18/10/2019">
 													</div>
-													<div  class="uploadfile empty adjunto" title="PDF, en blanco y negro, a 200dpis">
+													<div  class="uploadfile empty adjunto e-tooltip" data-tooltitle="Adjuntar PDF, audiencia de remate o solicitud adjudicación directa">
 														<div class="wrapper" style="padding: 0;">
 															<div class="message message_cards const">
 																<span class="cntr">
@@ -561,7 +578,7 @@
 													<div class="requiereAdunto">
 														<input class="form-control uppercase letters lastnameb date calendar" data-reflecto="#m_sec2notarydesignation" name="sec2notarydesignation" id="sec2notarydesignation" type="text" data-placeholder="Designación de notaría" required autocomplete="off" value="18/10/2019">
 													</div>
-													<div  class="uploadfile empty adjunto" title="PDF, en blanco y negro, a 200dpis">
+													<div  class="uploadfile empty adjunto e-tooltip" data-tooltitle="Adjuntar PDF, auto de designación de notaría">
 														<div class="wrapper" style="padding: 0;">
 															<div class="message message_cards const">
 																<span class="cntr">
@@ -627,7 +644,7 @@
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
-                                                                <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec3colony" name="sec3colony" id="sec3colony" type="text" data-placeholder="Colonia" required autocomplete="off" value="">
+                                                                <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec3colony" name="sec3colony" id="sec3colony" type="text" data-placeholder="Colonia/Fraccionamiento" required autocomplete="off" value="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -649,7 +666,7 @@
                                                         <div class="form-group-select required" id="municipalities" data-reflecto="#m_municipalities">
                                                             <div class="option-select disabled">
                                                                 <div class="select-title sl"> <!--Estado donde se encuentra radicado el juzgado-->
-                                                                    <span class="option-text sl center">Municipio o alcaldía</span>
+                                                                    <span class="option-text sl center">Municipio o alcaldía del estado</span>
                                                                     <span class="selected-option sl"></span>
                                                                     <i class="bbva-icon ui-simple-down sl"></i>
                                                                 </div>
@@ -663,7 +680,7 @@
                                                                 <div class="requiereAdunto">
                                                                     <input class="form-control uppercase letters lastnameb date calendar bbva-icon__3_004_calendar" data-reflecto="#m_sec3clgdate" name="sec3clgdate" id="sec3clgdate" type="text" data-placeholder="Fecha de CLG" required autocomplete="off" value="18/10/2019">
                                                                 </div>
-                                                                <div  class="uploadfile empty adjunto" title="PDF, en blanco y negro, a 200dpis">
+                                                                <div  class="uploadfile empty adjunto e-tooltip" data-tooltitle="PDF, en blanco y negro, a 200dpis">
                                                                     <div class="wrapper" style="padding: 0;">
                                                                         <div class="message message_cards const">
                                                                             <span class="cntr">
@@ -688,7 +705,7 @@
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
-                                                                <input class="form-control e-tooltip-f mxnamount" name="valueland" id="valueland" type="text" data-placeholder="Valor del terreno" autocomplete="off" required>
+                                                                <input class="form-control e-tooltip-f mxnamount" name="valueland" id="valueland" type="text" data-placeholder="Valor del terreno" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -702,17 +719,10 @@
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
-                                                                <input class="form-control e-tooltip-f mxnamount" name="valuespecials" id="valuespecials" type="text" data-placeholder="Valor de instalaciones especiales" autocomplete="off" required>
+                                                                <input class="form-control e-tooltip-f mxnamount" name="valuespecials" id="valuespecials" type="text" data-placeholder="Valor de instalaciones especiales" autocomplete="off" disabled=disabled>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="grid-item">
-                                                        <div class="form-validation-group">
-                                                            <div class="form-group">
-                                                                <input class="form-control e-tooltip-f mxnamount" name="valueappraisal" id="valueappraisal" type="text" data-placeholder="Valor comercial avaluo" autocomplete="off" required>
-                                                            </div>
-                                                        </div>
-                                                    </div>     
                                                 </div>
 												
                                             </div>
@@ -739,13 +749,6 @@
                                                 <div class="grid-item">
                                                     <div class="form-validation-group">
                                                         <div class="form-group">
-                                                            <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec3division" name="sec3division" id="sec3division" type="text" data-placeholder="Fraccionamiento" autocomplete="off" value="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="grid-item">
-                                                    <div class="form-validation-group">
-                                                        <div class="form-group">
                                                             <input class="form-control uppercase" data-reflecto="#m_sec3apple" name="sec3apple" id="sec3apple" type="text" data-placeholder="Manzana" required autocomplete="off" value="">
                                                         </div>
                                                     </div>
@@ -755,7 +758,7 @@
                                                     <div class="form-group-select whitwait states required" id="sec3state" data-reflecto="#m_state">
                                                         <div class="option-select">
                                                             <div class="select-title sl">
-                                                                <span class="option-text sl center">Estado</span>
+                                                                <span class="option-text sl center">Estado del juzgado</span>
                                                                 <span class="selected-option sl"></span>
                                                                 <i class="bbva-icon ui-simple-down sl"></i>
                                                             </div>
@@ -790,7 +793,7 @@
                                                             <div class="requiereAdunto">
                                                                 <input class="form-control uppercase letters lastnameb date calendar" data-reflecto="#m_sec3appraisalDate" name="sec3appraisalDate" id="sec3appraisalDate" type="text" data-placeholder="Fecha de avalúo" required autocomplete="off" value="18/10/2019">
                                                             </div>
-                                                            <div  class="uploadfile empty adjunto" title="PDF, en blanco y negro, a 200dpis">
+                                                            <div  class="uploadfile empty adjunto e-tooltip" data-tooltitle="PDF, en blanco y negro, a 200dpis">
                                                                 <div class="wrapper" style="padding: 0;">
                                                                     <div class="message message_cards const">
                                                                         <span class="cntr">
@@ -818,7 +821,7 @@
                                                     <div class="form-validation-group">
                                                         <div class="form-group">
                                                             <span class="form-control toggle">Instalaciones especiales
-                                                                <div class="switch slide" style="float: right;">
+                                                                <div class="switch slide" id="specialFacilitiest" style="float: right;">
                                                                     <span class="percentage">Si</span>
                                                                     <span class="price">No</span>        
                                                                     <div class="slide"></div>
@@ -831,10 +834,17 @@
                                                 <div class="grid-item">
                                                     <div class="form-validation-group">
                                                         <div class="form-group">
-                                                            <input class="form-control e-tooltip-f mxnamount" name="sumvalues" id="sumvalues" type="text" data-placeholder="Suma de valores" autocomplete="off" required>
+                                                            <input class="form-control e-tooltip-f mxnamount" name="sumvalues" id="sumvalues" type="text" data-placeholder="Suma de valores" autocomplete="off" value="$ 0.00"required>
                                                         </div>
                                                     </div>
-                                                </div>  
+                                                </div> 
+                                                <div class="grid-item">
+                                                    <div class="form-validation-group">
+                                                        <div class="form-group">
+                                                            <input class="form-control e-tooltip-f mxnamount" name="valueappraisal" id="valueappraisal" type="text" data-placeholder="Valor comercial avaluo" autocomplete="off" required>
+                                                        </div>
+                                                    </div>
+                                                </div> 
                                             </div>
 											<div class="grid-item" style="display: none">
                                                 <div class="form-validation-group">
@@ -1025,31 +1035,8 @@
     $(function() {
         $('.menuContainer').load('./menu.html');
         setTimeout(function(){$(".contabilizacion").addClass('option-selected');}, 1000);
-        $("#sec1creditgranting").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            changeMonth: true,
-            changeYear: true,
-            minDate: "+0M +0D", 
-            maxDate: "+2M +0D"
-        });
-
-        $("#sec1creditgranting").datepicker("option", "dateFormat", "dd/mm/yy" );
-        $("#sec1creditgranting").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
-
-        $("#sec1infonavitdate").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            changeMonth: true,
-            changeYear: true,
-            minDate: "+0M +0D", 
-            maxDate: "+2M +0D"
-        });
-
-        $("#sec1infonavitdate").datepicker("option", "dateFormat", "dd/mm/yy" );
-        $("#sec1infonavitdate").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
         
-        $("#sec2auctionaudience").datepicker({
+        $(".calendar").datepicker({
             showOtherMonths: true,
             selectOtherMonths: true,
             changeMonth: true,
@@ -1058,68 +1045,8 @@
             maxDate: "+2M +0D"
         });
 
-        $("#sec2auctionaudience").datepicker("option", "dateFormat", "dd/mm/yy" );
-        $("#sec2auctionaudience").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
-        
-        $("#sec2interlocutoryDate").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            changeMonth: true,
-            changeYear: true,
-            minDate: "+0M +0D", 
-            maxDate: "+2M +0D"
-        });
-
-        $("#sec2interlocutoryDate").datepicker("option", "dateFormat", "dd/mm/yy" );
-        $("#sec2interlocutoryDate").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
-        
-        $("#sec2notarydesignation").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            changeMonth: true,
-            changeYear: true,
-            minDate: "+0M +0D", 
-            maxDate: "+2M +0D"
-        });
-
-        $("#sec2notarydesignation").datepicker("option", "dateFormat", "dd/mm/yy" );
-        $("#sec2notarydesignation").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
-
-        $("#sec3interlocutoryDate").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            changeMonth: true,
-            changeYear: true,
-            minDate: "+0M +0D", 
-            maxDate: "+2M +0D"
-        });
-
-        $("#sec3interlocutoryDate").datepicker("option", "dateFormat", "dd/mm/yy" );
-        $("#sec3interlocutoryDate").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
-
-        $("#sec3clgdate").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            changeMonth: true,
-            changeYear: true,
-            minDate: "+0M +0D", 
-            maxDate: "+2M +0D"
-        });
-
-        $("#sec3clgdate").datepicker("option", "dateFormat", "dd/mm/yy" );
-        $("#sec3clgdate").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "22/10/2019"));
-
-        $("#sec3appraisalDate").datepicker({
-            showOtherMonths: true,
-            selectOtherMonths: true,
-            changeMonth: true,
-            changeYear: true,
-            minDate: "+0M +0D", 
-            maxDate: "+2M +0D"
-        });
-
-        $("#sec3appraisalDate").datepicker("option", "dateFormat", "dd/mm/yy" );
-        $("#sec3appraisalDate").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "22/10/2019"));
+        $(".calendar").datepicker("option", "dateFormat", "dd/mm/yy" );
+        $(".calendar").datepicker('setDate', $.datepicker.parseDate( "dd/mm/yy", "20/10/2019"));
 
         $("#user-notify").click(function() {
             templates.notify = {
@@ -1151,7 +1078,38 @@
             
         });
 
-    });
+
+        $("#valueland, #sec3valuebuilding, #valuespecials").keyup(function() {
+            sumaValores();
+        });
+
+        function sumaValores (){
+            var valorTerreno = ($("#valueland").val()!="")?parseFloat ($("#valueland").val()):$("#valueland").val();
+            var valorConstruccion = ($("#sec3valuebuilding").val()!="")?parseFloat ($("#sec3valuebuilding").val()):$("#sec3valuebuilding").val();
+            var valorInstalaciones = ($("#valuespecials").val()!="")?parseFloat ($("#valuespecials").val()):$("#valuespecials").val();
+            const amount = valorTerreno+valorConstruccion+valorInstalaciones
+            const options = { style: 'currency', currency: 'USD' };
+            const numberFormat = new Intl.NumberFormat('en-US', options);;
+            $("#sumvalues").val(numberFormat.format(amount)); 
+        }
+
+
+        $("#notitarea").mouseover(function(){
+            $(this).find(".tooltip").css({"top":"25px","background-color":"white", "color":"#237ABA"});
+            $(this).find(".tooltip-arrow").css({"border-color":"transparent transparent #fff transparent"});        
+        });
+
+        $("#specialFacilitiest").click(function() {
+            var checkSpecialFacilitiest=$(this).hasClass("percentage");
+            if(checkSpecialFacilitiest){
+                $("#valuespecials").removeAttr("disabled");
+            }else{
+                $("#valuespecials").attr("disabled","disabled");
+                $("#valuespecials").val(0.00);
+                sumaValores();
+            }
+        });
+     });
     </script>
 </body>
 </html>

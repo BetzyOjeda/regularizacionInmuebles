@@ -189,7 +189,7 @@ body {
 }
 
 .bbva--footer.wrapper{
-    margin-top: 2rem;
+    margin-top: 0px;
 }
 
 footer,
@@ -204,16 +204,7 @@ body {
     color: #121212;
     text-align: left;
     letter-spacing: 0;
-    line-height: 20px;
-    overflow-y:hidden;
-}
-
-section {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
+    line-height: 20px
 }
 
 @media(min-width:992px) {
@@ -242,7 +233,7 @@ input::-ms-clear {
 
 img {
     max-width: 100%;
-    width: 100%;
+    width: 150%;
     display: block;
     max-height: 100vh
 }
@@ -399,13 +390,6 @@ body .text--center {
 
 body .text--left {
     text-align: left
-}
-
-img {
-    max-width: 100%;
-    width: 100%;
-    display: block;
-    max-height: 100%
 }
 
 iframe {
@@ -2618,7 +2602,7 @@ a:hover .image__overlay {
 
 @media(min-width:992px) {
     .mainNavigation__link {
-        line-height: 96px;
+        line-height: 84px;
         -webkit-transition: line-height .16667s;
         transition: line-height .16667s
     }
@@ -3088,7 +3072,7 @@ a:hover .image__overlay {
 
 @media(min-width:992px) {
     .btn__basic {
-        padding: 16px 32px;
+        padding: 11px 23px;
         line-height: 24px
     }
 }
@@ -3125,12 +3109,7 @@ a:hover .image__overlay {
     -webkit-transition: background-position .66667s cubic-bezier(0.24, 0.22, 0.31, 1.07);
     transition: background-position .66667s cubic-bezier(0.24, 0.22, 0.31, 1.07);
     background-color: #1d73b2;
-    background-image: linear-gradient(100deg, #1464a5 50%, #1d73b2 50%);
-    cursor: pointer;
-    -webkit-user-select: none;  /* Chrome all / Safari all */
-    -moz-user-select: none;     /* Firefox all */
-    -ms-user-select: none;      /* IE 10+ */
-    user-select: none;          /* Likely future */      
+    background-image: linear-gradient(100deg, #1464a5 50%, #1d73b2 50%)
 }
 
 .btn__core-blue,
@@ -3157,7 +3136,6 @@ a:hover .image__overlay {
     color: #bdbdbd;
     background-color: #e9e9e9;
     background-image: none;
-    cursor: not-allowed;
 }
 
 .btn--hover,
@@ -3497,13 +3475,13 @@ a:hover .image__overlay {
 
 .header__main,
 .header__campain {
-    min-height: 96px;
+    min-height: 84px;
     overflow: hidden;
 }
 
 @media(min-width:992px) {
     .sticky .header__logo {
-        width: 106px
+        width: 176px
     }
 }
 
@@ -3569,7 +3547,7 @@ a:hover .image__overlay {
 
 @media(min-width:1200px) {
     .header__logo {
-        width: 292px;
+        width: 300px;
         float: left;
         margin-left: 0px;
         margin-right: -100%
@@ -3580,18 +3558,6 @@ a:hover .image__overlay {
     .header__campain .header__logo {
         float: none
     }
-}
-
-.header__image {
-    width: auto;
-    display: inline
-}
-
-
-.sticky .header__image {
-    max-height: 30px;
-    min-height: 30px;
-    max-width: 100%;
 }
 
 @media(min-width:0) and (max-width:991px) {
@@ -8238,7 +8204,7 @@ a:hover .image__overlay {
     display: block;
 }
 
-.footer::before,
+.footer::before,	
 .footer::after {
     content: '.';
     display: block;
@@ -8262,6 +8228,24 @@ a:hover .image__overlay {
 @media(min-width:0) and (max-width:992px) {
     .footer__container {
         text-align: center
+    }
+}
+
+@media(min-width:992px) and (max-width:1200px) {
+    .footer__container {
+        width: 528px;
+        float: left;
+        margin-left: 16px;
+        margin-right: 16px
+    }
+}
+
+@media(min-width:1200px) {
+    .footer__container {
+        width: 654px;
+        float: left;
+        /*margin-left: 16px;
+        margin-right: 16px*/
     }
 }
 
@@ -8420,7 +8404,7 @@ a:hover .image__overlay {
     text-align: left;
     letter-spacing: 0;
     line-height: 16px;
-    margin-top: 5px;
+    margin-top: 16px;
     color: #bdbdbd;
     white-space: nowrap
 }
@@ -8459,11 +8443,6 @@ a:hover .image__overlay {
 
 .header ul {
     list-style: none
-}
-
-.header__container {
-    align-items: baseline; 
-    display: flex;
 }
 
 @media(min-width:0) and (max-width:991px) {
@@ -8527,7 +8506,7 @@ a:hover .image__overlay {
 
 .header__logo {
     padding: 0;
-    height: 96px;
+    height: 84px;
     overflow: hidden;
     display: table;
     max-width: 100%;
@@ -8539,6 +8518,12 @@ a:hover .image__overlay {
     height: 48px;
     max-height: 48px;
     min-height: 48px
+}
+
+@media(min-width:992px) {
+    .sticky .header__logo {
+        width: 15%;
+    }
 }
 
 @media(min-width:600px) and (max-width:991px) {
@@ -8581,7 +8566,7 @@ a:hover .image__overlay {
 
 @media(min-width:992px) and (max-width:1199px) {
     .header__logo {
-        width: 208px;
+        width: 14%;
         float: left;
         margin-left: 16px;
         margin-right: -100%
@@ -8597,7 +8582,7 @@ a:hover .image__overlay {
 .header__image {
     width: auto;
     display: inline;
-    max-width: 98%;
+    max-width: 250px;
 }
 
 @media(min-width:0) and (max-width:991px) {
@@ -10348,6 +10333,8 @@ a:hover .image__overlay {
     .footer__container {
         width: 654px;
         float: left;
+        /* margin-left: 16px; */
+        margin-right: 16px
     }
 }
 
@@ -10387,7 +10374,7 @@ a:hover .image__overlay {
 
 .footer__logo__link {
     width: 100%;
-    height: 45px;
+    height: 32px;
     display: block
 }
 
@@ -10506,7 +10493,7 @@ a:hover .image__overlay {
     text-align: left;
     letter-spacing: 0;
     line-height: 16px;
-    margin-top: 9px;
+    margin-top: 16px;
     color: #bdbdbd;
     white-space: nowrap
 }
