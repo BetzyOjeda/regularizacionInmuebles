@@ -32,7 +32,7 @@
     <script src="scripts/mustache.js"></script>
     <script src="scripts/popper.min.js"></script>
     <script src="scripts/tooltip.min.js"></script>
-    <script src="./js/templates.js"></script>
+    <!-- <script src="./js/templates.js"></script> -->
     
     <style>
         .toggle {
@@ -637,14 +637,14 @@
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
-                                                                <input class="form-control uppercase letters" data-reflecto="#m_sec3street" name="sec3street" id="sec3street" type="text"  data-placeholder="Calle" required autocomplete="off" value="">
+                                                                <input class="form-control uppercase alphanumeric" data-reflecto="#m_sec3street" name="sec3street" id="sec3street" type="text"  data-placeholder="Calle" required autocomplete="off" value="">
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
-                                                                <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec3colony" name="sec3colony" id="sec3colony" type="text" data-placeholder="Colonia/Fraccionamiento" required autocomplete="off" value="">
+                                                                <input class="form-control uppercase alphanumeric lastnameb" data-reflecto="#m_sec3colony" name="sec3colony" id="sec3colony" type="text" data-placeholder="Colonia/Fraccionamiento" required autocomplete="off" value="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -742,7 +742,7 @@
                                                 <div class="grid-item">
                                                     <div class="form-validation-group">
                                                         <div class="form-group">
-                                                            <input class="form-control uppercase letters" data-reflecto="#m_sec3number" name="sec3number" id="sec3number" type="text"  data-placeholder="Número" required autocomplete="off" value="">
+                                                            <input class="form-control uppercase alphanumeric" data-reflecto="#m_sec3number" name="sec3number" id="sec3number" type="text"  data-placeholder="Número" required autocomplete="off" value="">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -812,7 +812,7 @@
                                                             <div class="form-validation-group">
                                                                 <div class="form-group">
                                                                 <div class="placeholder-wrapper">
-                                                                    <input class="form-control decimals e-tooltip-f" name="sec3landsurface" id="sec3landsurface" type="text" data-placeholder="Superficie de construcción" required="" autocomplete="off" data-regex="PROM" data-required="true"><span class="placeholder-simulator" style="top: 5px; font-size: 12px;">Superficie de terreno</span></div><p class="i-message"><span class="text-message"><i class="bbva-icon ui-empty"></i>&nbsp;</span></p></div>
+                                                                    <input class="form-control alphanumeric e-tooltip-f" name="sec3landsurface" id="sec3landsurface" type="text" data-placeholder="Superficie de construcción" required="" autocomplete="off" data-regex="PROM" data-required="true"><span class="placeholder-simulator" style="top: 5px; font-size: 12px;">Superficie de terreno</span></div><p class="i-message"><span class="text-message"><i class="bbva-icon ui-empty"></i>&nbsp;</span></p></div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -846,17 +846,9 @@
                                                     </div>
                                                 </div> 
                                             </div>
-											<div class="grid-item" style="display: none">
-                                                <div class="form-validation-group">
-                                                    <div class="form-group">
-                                                        <input class="form-control numbers e-tooltip-f" name="ysclass" id="ysclass" type="text" data-placeholder="A&ntilde;o" required autocomplete="off" maxlength="4" data-regex="YEAR_MIN_80" data-tooltitle="Por ejemplo 2019">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
+										</div>
                                         <div class="submtbtn">
-                                            <span title="Continuar" aria-label="Continuar" class="btn__basic btn__submit" id="btn_savegd">
+                                            <span title="Continuar" aria-label="Continuar" class="btn__basic btn__submit" id="btn_savefin">
                                                 <span aria-hidden="true">Finalizar</span>
                                             </span>
                                         </div>
@@ -871,6 +863,7 @@
                 </div>
             </div>
         </div>
+        <div id="ejemplo" style="position:absolute; top: 500px"></div>
         <div class="footer">
             <div class="container">
                 <div class="footer-logo">

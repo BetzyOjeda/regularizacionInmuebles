@@ -21,7 +21,11 @@ var templates = {
     "notify": {
         path: "./views/modal/notifications.html",
         onload: fn_opennotification
-    }
+    }// ,
+    // "ejemplo": {
+    //     path: "./views/modal/ejemplo.html",
+    //     onload: fn_onEjemplo
+    // }
 };
 
 /**

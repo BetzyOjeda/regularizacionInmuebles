@@ -906,6 +906,19 @@
             loadTemplate($("#modal_generic .body"), templates.notify, {
             });
         });
+
+        function createTable(idCheck){
+            var idHead= "idHead"+idCheck.substring(5);
+            var idTd= "idTd"+idCheck.substring(5);
+            
+            var DatosJson = JSON.parse(JSON.stringify(jsonConfigura));
+            for (i = 0; i < DatosJson.data.length; i++){
+                if (DatosJson.data[i].id ==idCheck) {
+                    $("#trhead").append('<th id="'+idHead+'" style="text-align: center;">' + DatosJson.data[i].name + '</th>');
+                    $("#trbody").append('<td id="'+idTd+'" style="text-align: center;">' + DatosJson.data[i].value + '</td>');
+                }
+            }
+        } 
     </script>
 
 </html>

@@ -5,6 +5,12 @@ $("#btn-exit").click(function () {
     logout();
 });
 
+// Ejemplo de como agregar una plantilla sin recargar una pagina completa
+// loadTemplate($("#ejemplo"), templates.ejemplo, {
+//     data: {
+//         message: "Hola Mundo! "
+//     }
+// })
 var toggleModule = function ($head) {
     if (!$head.hasClass("animated")) {
         $content = $("#" + $head.attr("data-target"));
@@ -77,8 +83,34 @@ $("#msclass").comboSelect(month);
 //buttons
 
 $("#btn_savegd").data("complete", function(_data) {
-    alert("llenar info");
+    //Todos los campos del formulario con su valor
+    console.log('_data', _data);
+    loadTemplate($("#modal_generic .body"), miniTemplates.success, {
+        title: "¡Gracias!",
+        message: "Tus datos se gurdaron correctamente ."
+      });
 });
+
+
+$("#btn_savesd").data("complete", function(_data) {
+    //Todos los campos del formulario con su valor
+    console.log('_data', _data);
+    loadTemplate($("#modal_generic .body"), miniTemplates.error, {
+        title: "¡Error!",
+        message: "Ocurrió un error al guardar tus datos."
+      });
+});
+
+$("#btn_savefin").data("complete", function(_data) {
+    //Todos los campos del formulario con su valor
+    console.log('_data', _data);
+    console.log('_data', _data);
+    loadTemplate($("#modal_generic .body"), miniTemplates.success, {
+        title: "¡Gracias!",
+        message: "Tus datos se guardaron correctamente."
+      });
+});
+
 
 
 
@@ -320,6 +352,8 @@ var loadModule = {
                 fnFillCatalogs("propertystate", __.get(catalogs,"CAT_STATE",[]));
                 fnFillCatalogs("sec3state", __.get(catalogs,"CAT_STATE",[]),function(ele) {
                     var otraClaseElems = $("#municipalities").find(".disabled").removeClass('disabled');
+                    fnFillCatalogs("municipalities", __.get(catalogs,"CAT_STATE",[]));
+                    
                     console.log("otraClaseElems",otraClaseElems);
                 });
 

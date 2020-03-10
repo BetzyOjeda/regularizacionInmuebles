@@ -201,3 +201,8 @@ var fn_uploadfilemodal = function () {
     });
     fn_showModal();
 };
+
+// Ejemplo de como agregar una plantilla sin recargar una pagina completa
+// var fn_onEjemplo = function () {
+//     alert('Se insertar ejemplo.html en el index principal');
+// }
