@@ -21,7 +21,27 @@ var templates = {
     "notify": {
         path: "./views/modal/notifications.html",
         onload: fn_opennotification
-    }// ,
+    },
+    "sortTableAsc":{
+        path: "./views/modal/ascendente.html",
+        onload: fn_sortTableAsc
+    },
+    "sortTableDesc":{
+        path: "./views/modal/descendente.html",
+        onload: fn_sortTableDesc
+        },
+    "sortRespAsc":{
+        path: "./views/modal/responsableAscendente.html",
+        onload: fn_sortRespAsc
+    },
+    "sortRespDesc":{
+        path: "./views/modal/responsableDescendente.html",
+        onload: fn_sortRespDesc
+    }
+    
+    
+    
+    // ,
     // "ejemplo": {
     //     path: "./views/modal/ejemplo.html",
     //     onload: fn_onEjemplo

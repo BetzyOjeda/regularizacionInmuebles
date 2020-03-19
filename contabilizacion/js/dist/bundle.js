@@ -1204,11 +1204,15 @@ var fn_uploadfilemodal = function () {
         }
     });
     $("#btn_sbtmfiles").data("complete", function(formdata) {
-        console.log(formdata);
+        console.log("formdata:",formdata);
         fn_hideModal();
         uploadFile.onFinish = function() {};
         uploadFile.index = 0;
         _fileDetails = myDropzone.getAcceptedFiles();
+        console.log("_fileDetails:",_fileDetails[0].name);
+        nameDocAdj=_fileDetails[0].name;
+        console.log("nameDocAdj:",nameDocAdj);
+        $("#add"+idDocAdj+"").html(nameDocAdj);
         function readIndexFile(iFile) {
             if (iFile == _fileDetails.length) {
                 return;
@@ -1256,7 +1260,28 @@ var fn_uploadfilemodal = function () {
     fn_showModal();
 };
 
+
+//Funcion que se ejecuta despues de ordenar de forma ascendento o descendente la tabla de contabilización 
+var fn_sortTableAsc = function () {
+        console.log('Aqui pueden implementar alguna validacion');
+    }
+
+var fn_sortTableDesc = function(){
+    console.log('Aqui pueden implementar alguna validacionm descendente');
+}
+
+var fn_sortRespAsc = function(){
+    console.log('Aqui pueden implementar alguna validacionm Asccendente');
+}
+
+var fn_sortRespDesc = function(){
+    console.log('Aqui pueden implementar alguna validacionm descendente');
+}
+
+
+
 // Ejemplo de como agregar una plantilla sin recargar una pagina completa
+//esta fucion se ejecuta al finalizar la carga
 // var fn_onEjemplo = function () {
 //     alert('Se insertar ejemplo.html en el index principal');
 // }
@@ -1283,7 +1308,27 @@ var templates = {
     "notify": {
         path: "./views/modal/notifications.html",
         onload: fn_opennotification
-    }// ,
+    },
+    "sortTableAsc":{
+        path: "./views/modal/ascendente.html",
+        onload: fn_sortTableAsc
+    },
+    "sortTableDesc":{
+        path: "./views/modal/descendente.html",
+        onload: fn_sortTableDesc
+        },
+    "sortRespAsc":{
+        path: "./views/modal/responsableAscendente.html",
+        onload: fn_sortRespAsc
+    },
+    "sortRespDesc":{
+        path: "./views/modal/responsableDescendente.html",
+        onload: fn_sortRespDesc
+    }
+    
+    
+    
+    // ,
     // "ejemplo": {
     //     path: "./views/modal/ejemplo.html",
     //     onload: fn_onEjemplo
@@ -2358,8 +2403,9 @@ function hasAttr(element, attrib) {
      */
     win.validateControl = function($el) {
         $el.find(".openuploadfile").click(function() {
-            loadTemplate($("#modal_generic .body"), templates.ufile, {
-            });
+            idDocAdj = $(this).attr("id");
+            console.log("hola:",idDocAdj);
+            loadTemplate($("#modal_generic .body"), templates.ufile, {});
         });
         $el.find("input[type='text']").inputable();
         $el.find("textarea").inputable();
@@ -2787,6 +2833,7 @@ $("#btn-exit").click(function () {
 //         message: "Hola Mundo! "
 //     }
 // })
+
 var toggleModule = function ($head) {
     if (!$head.hasClass("animated")) {
         $content = $("#" + $head.attr("data-target"));
@@ -2862,8 +2909,8 @@ $("#btn_savegd").data("complete", function(_data) {
     //Todos los campos del formulario con su valor
     console.log('_data', _data);
     loadTemplate($("#modal_generic .body"), miniTemplates.success, {
-        title: "¡Gracias!",
-        message: "Tus datos se gurdaron correctamente ."
+        title: "¡Información Guardada!",
+        message: "Tus datos se guardaron correctamente ."
       });
 });
 
@@ -2883,7 +2930,17 @@ $("#btn_savefin").data("complete", function(_data) {
     console.log('_data', _data);
     loadTemplate($("#modal_generic .body"), miniTemplates.success, {
         title: "¡Gracias!",
-        message: "Tus datos se guardaron correctamente."
+        message: "Tus datos se guardaron correctamente.",
+        onAccept: function () {
+            showWait();
+            setTimeout(function () {
+                hideWait();
+                location.href="accounting-page.html";
+            },450);
+
+
+           
+        }
       });
 });
 
@@ -3037,10 +3094,6 @@ $('#msclass').onSelect(function() {
             $(this).showComboError("Fecha inválida");
         }
     }
-});
-
-$("#btn_save_all").click(function() {
-    alert("salvar todo");
 });
 
 /**

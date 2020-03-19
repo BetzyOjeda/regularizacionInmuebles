@@ -162,8 +162,9 @@ function hasAttr(element, attrib) {
      */
     win.validateControl = function($el) {
         $el.find(".openuploadfile").click(function() {
-            loadTemplate($("#modal_generic .body"), templates.ufile, {
-            });
+            idDocAdj = $(this).attr("id");
+            console.log("hola:",idDocAdj);
+            loadTemplate($("#modal_generic .body"), templates.ufile, {});
         });
         $el.find("input[type='text']").inputable();
         $el.find("textarea").inputable();

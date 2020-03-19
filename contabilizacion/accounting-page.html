@@ -32,8 +32,6 @@
     <script src="scripts/mustache.js"></script>
     <script src="scripts/popper.min.js"></script>
     <script src="scripts/tooltip.min.js"></script>
-    <script src="./js/templates.js"></script>
-
     <style>
         .casos-paginacion>ul {
             display: inline-flex;
@@ -355,12 +353,12 @@
                                 </th>
                                 <th style="text-align: left;">
                                     ESTATUS
-                                    <i class="bbva-icon ui-simple-up sl link"></i>
+                                    <i class="bbva-icon ui-simple-up sl link" id="orderStatus"></i>
                                     <i class="bbva-icon ui-filter sl link"></i>
                                 </th>
                                 <th style="text-align: left;">
                                     RESPONSABLE
-                                    <i class="bbva-icon ui-simple-up sl link"></i>
+                                    <i class="bbva-icon ui-simple-up sl link" id="orderResp"></i>
                                 </th>
                                 <th style="text-align: center;">
                                     COFINAVIT
@@ -373,7 +371,7 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="datosContabilizacion">
                             <tr class="" id="7">
                                 <td style="text-align: left;">
                                     <span>81291289123276121982</span>
@@ -881,10 +879,11 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
 
-<script>        
+<script>      
         $(document).ready(function(){   
             $('.menuContainer').load('./menu.html');
             setTimeout(function(){$(".contabilizacion").addClass('option-selected');}, 600);
+            
         });
 
         $(".ui-filled-diagonal").click(function() {
@@ -919,6 +918,28 @@
                 }
             }
         } 
+
+        
+        $("#orderStatus").click(function() {
+           if ($(this).hasClass("ui-simple-up")) {
+                loadTemplate($("#datosContabilizacion"), templates.sortTableAsc, {}); 
+                $(this).removeClass("ui-simple-up").addClass("ui-simple-down")
+            }else{
+                loadTemplate($("#datosContabilizacion"), templates.sortTableDesc, {});
+                $(this).removeClass("ui-simple-down").addClass("ui-simple-up")
+            }          
+        });
+        
+        $("#orderResp").click(function() {
+           if ($(this).hasClass("ui-simple-up")) {
+                loadTemplate($("#datosContabilizacion"), templates.sortRespAsc, {}); 
+                $(this).removeClass("ui-simple-up").addClass("ui-simple-down")
+            }else{
+                loadTemplate($("#datosContabilizacion"), templates.sortRespDesc, {});
+                $(this).removeClass("ui-simple-down").addClass("ui-simple-up")
+            }          
+        });
+
     </script>
 
 </html>

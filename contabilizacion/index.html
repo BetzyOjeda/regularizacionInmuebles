@@ -137,6 +137,13 @@
         }
         .divCheck {margin-bottom: 5px; min-width: 150px; float: right; }
 
+        .puntSusp{
+            width: 300px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
     </style>
 </head>
 <body>
@@ -247,19 +254,7 @@
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
-                                                        <div class="requiereAdunto">
-                                                            <input class="form-control e-tooltip calendar" data-reflecto="#m_sec1creditgrantdate" name="sec1creditgrantdate" id="sec1creditgrantdate" type="text" data-placeholder="Fecha de otorgamiento del crédito Banco" required autocomplete="off" value="15/10/2019" disabled="disabled">
-                                                        </div>
-                                                        <div  class="uploadfile empty adjunto e-tooltip" data-tooltitle="Adjuntar PDF, contrato de apertura de crédito">
-                                                            <div class="wrapper" style="padding: 0;">
-                                                                <div class="message message_cards const">
-                                                                    <span class="cntr">
-                                                                        <span class="openuploadfile">
-                                                                            <i class="bbva-icon ui-filled-up"></i></span>
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        <input class="form-control e-tooltip calendar" data-reflecto="#m_sec1creditgrantdate" name="sec1creditgrantdate" id="sec1creditgrantdate" type="text" data-placeholder="Fecha de otorgamiento del crédito Banco" required autocomplete="off" value="15/10/2019" disabled="disabled">
                                                     </div>
                                                 </div>                                                
                                             </div>
@@ -349,6 +344,25 @@
                                                         </div>
                                                     </span>                                                        
                                                     <p class="i-message"><span class="text-message">&nbsp;</span></p>
+                                                </div>                                                    
+                                            </div>                                            
+                                        </div> 
+                                        
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <span class="form-control toggle" ><p class="puntSusp" id="addcontractCredit">Adjuntar PDF, contrato de apertura de crédito</p>
+                                                        <div  class="uploadfile empty adjunto e-tooltip" style="margin-top: -28px;float: inline-end;height: 56px;" data-tooltitle="Adjuntar PDF, contrato de apertura de crédito">
+                                                            <div class="wrapper" style="padding: 0;">
+                                                                <div class="message message_cards const">
+                                                                    <span class="cntr">
+                                                                        <span class="openuploadfile" id="contractCredit"><i class="bbva-icon ui-filled-up"></i></span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </span>                                                        
+                                                    <p class="i-message" id=msjContractCredit><span class="text-message">&nbsp;</span></p>
                                                 </div>                                                    
                                             </div>                                            
                                         </div> 
@@ -471,7 +485,28 @@
 														<div class="list-result"></div>
 													</div>
 												</div>
-											</div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="form-validation-group">
+                                                    <div class="form-group">
+                                                        <input class="form-control uppercase letters lastnameb date calendar" data-reflecto="#m_sec2auctionaudience" name="sec2auctionaudience" id="sec2auctionaudience" type="text" data-placeholder="Fecha de audiencia de remate o adjudicación directa" required autocomplete="off" value="18/10/2019">                                                  
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item">
+                                                <div class="form-validation-group">
+                                                    <div class="form-group">
+                                                        <input class="form-control uppercase letters lastnameb date calendar" data-reflecto="#m_sec2notarydesignation" name="sec2notarydesignation" id="sec2notarydesignation" type="text" data-placeholder="Designación de notaría" required autocomplete="off" value="18/10/2019">
+                                                    </div>
+                                                </div>
+                                            </div>
+											<div class="grid-item">
+												<div class="form-validation-group">
+													<div class="form-group">
+														<input class="form-control uppercase letters lastnameb date calendar e-tooltip" data-reflecto="#m_sec2interlocutoryDate" name="sec2interlocutoryDate" id="sec2interlocutoryDate" type="text" data-placeholder="Fecha de sentencia interlocutoria"  data-tooltitle="Fecha de sentencia interlocutoria que aprueba el remate o auto que declara firme la adjudicación directa" required autocomplete="off" value="18/10/2019">
+                                                    </div>
+												</div>
+                                            </div>
                                             <div class="grid-item">
                                                 <div class="form-validation-group">
                                                     <div class="form-group">
@@ -485,26 +520,7 @@
                                                         <p class="i-message"><span class="text-message">&nbsp;</span></p>
                                                     </div>                                                    
                                                 </div>
-                                            </div>  
-											<div class="grid-item">
-												<div class="form-validation-group">
-													<div class="form-group">
-														<div class="requiereAdunto">
-															<input class="form-control uppercase letters lastnameb date calendar e-tooltip" data-reflecto="#m_sec2interlocutoryDate" name="sec2interlocutoryDate" id="sec2interlocutoryDate" type="text" data-placeholder="Fecha de sentencia interlocutoria"  data-tooltitle="Fecha de sentencia interlocutoria que aprueba el remate o auto que declara firme la adjudicación directa" required autocomplete="off" value="18/10/2019">
-														</div>
-														<div  class="uploadfile empty adjunto e-tooltip" data-tooltitle="Adjuntar PDF, auto o sentencia interlocutoria que declare firme adjudicación directa / remate ">
-															<div class="wrapper" style="padding: 0;">
-																<div class="message message_cards const">
-																	<span class="cntr">
-																		<span class="openuploadfile">
-																			<i class="bbva-icon ui-filled-up"></i></span>
-																	</span>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>											
+                                            </div>											
 									</div>		<!--Termina lado izquierdo-->
 									<div class="grid-item"><!--Lado derecho-->	
 										<div class="grid-item">	
@@ -552,46 +568,62 @@
 													<input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec2filenumber" name="sec2filenumber" id="sec2filenumber" type="text"  data-placeholder="No. Expediente" required autocomplete="off" value="1234567890" disabled="disabled">
 												</div>
 											</div>
-										</div>
-										<div class="grid-item">
-											<div class="form-validation-group">
-												<div class="form-group">
-													<div class="requiereAdunto">
-														<input class="form-control uppercase letters lastnameb date calendar" data-reflecto="#m_sec2auctionaudience" name="sec2auctionaudience" id="sec2auctionaudience" type="text" data-placeholder="Fecha de audiencia de remate o adjudicación directa" required autocomplete="off" value="18/10/2019">
-													</div>
-													<div  class="uploadfile empty adjunto e-tooltip" data-tooltitle="Adjuntar PDF, audiencia de remate o solicitud adjudicación directa">
-														<div class="wrapper" style="padding: 0;">
-															<div class="message message_cards const">
-																<span class="cntr">
-																	<span class="openuploadfile">
-																		<i class="bbva-icon ui-filled-up"></i></span>
-																</span>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>	
-										<div class="grid-item">
-											<div class="form-validation-group">
-												<div class="form-group">
-													<div class="requiereAdunto">
-														<input class="form-control uppercase letters lastnameb date calendar" data-reflecto="#m_sec2notarydesignation" name="sec2notarydesignation" id="sec2notarydesignation" type="text" data-placeholder="Designación de notaría" required autocomplete="off" value="18/10/2019">
-													</div>
-													<div  class="uploadfile empty adjunto e-tooltip" data-tooltitle="Adjuntar PDF, auto de designación de notaría">
-														<div class="wrapper" style="padding: 0;">
-															<div class="message message_cards const">
-																<span class="cntr">
-																	<span class="openuploadfile">
-																		<i class="bbva-icon ui-filled-up"></i></span>
-																</span>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>	
-										
+                                        </div>  
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <span class="form-control toggle" ><p class="puntSusp" id="addaudRemSol">Adjuntar PDF, audiencia de remate o solicitud adjudicación directa</p>
+                                                        <div  class="uploadfile empty adjunto e-tooltip" style="margin-top: -28px;float: inline-end; height: 56px;" data-tooltitle="Adjuntar PDF, audiencia de remate o solicitud adjudicación directa"">
+                                                            <div class="wrapper" style="padding: 0;">
+                                                                <div class="message message_cards const">
+                                                                    <span class="cntr">
+                                                                        <span class="openuploadfile" id="audRemSol"><i class="bbva-icon ui-filled-up"></i></span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </span>                                                        
+                                                    <p class="i-message" id=msjContractCredit><span class="text-message">&nbsp;</span></p>
+                                                </div>                                                    
+                                            </div>                                            
+                                        </div>
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <span class="form-control toggle" ><p class="puntSusp" id="addaudNot">Adjuntar PDF, auto de designación de notaría</p>
+                                                        <div  class="uploadfile empty adjunto e-tooltip" style="margin-top: -28px;float: inline-end; height: 56px;" data-tooltitle="Adjuntar PDF, auto de designación de notaría">
+                                                            <div class="wrapper" style="padding: 0;">
+                                                                <div class="message message_cards const">
+                                                                    <span class="cntr">
+                                                                        <span class="openuploadfile" id="audNot"><i class="bbva-icon ui-filled-up"></i></span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </span>                                                        
+                                                    <p class="i-message" id=msjContractCredit><span class="text-message">&nbsp;</span></p>
+                                                </div>                                                    
+                                            </div>                                            
+                                        </div>       
+                                        <div class="grid-item">
+                                            <div class="form-validation-group">
+                                                <div class="form-group">
+                                                    <span class="form-control toggle" ><p class="puntSusp" id="addautSetInt">Adjuntar PDF, auto o sentencia interlocutoria que declare firme adjudicación directa / remate</p>
+                                                        <div  class="uploadfile empty adjunto e-tooltip" style="margin-top: -28px;float: inline-end; height: 56px;" data-tooltitle="Adjuntar PDF, auto o sentencia interlocutoria que declare firme adjudicación directa / remate">
+                                                            <div class="wrapper" style="padding: 0;">
+                                                                <div class="message message_cards const">
+                                                                    <span class="cntr">
+                                                                        <span class="openuploadfile" id="autSetInt"><i class="bbva-icon ui-filled-up"></i></span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </span>                                                        
+                                                    <p class="i-message" id=msjContractCredit><span class="text-message">&nbsp;</span></p>
+                                                </div>                                                    
+                                            </div>                                            
+                                        </div>
+                                        
 									</div><!--Termina Lado derecho-->
 								</div>
 								    <div class="submtbtn actionsection">
@@ -651,7 +683,7 @@
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
-                                                                <input class="form-control uppercase letters lastnameb" data-reflecto="#m_sec3lot" name="sec3lot" id="sec3lot" type="text" data-placeholder="Lote" required autocomplete="off" value="">
+                                                                <input class="form-control uppercase alphanumeric lastnameb" data-reflecto="#m_sec3lot" name="sec3lot" id="sec3lot" type="text" data-placeholder="Lote" required autocomplete="off" value="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -676,24 +708,18 @@
                                                     </div>
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
-                                                            <div class="form-group" style="display: flex;">
-                                                                <div class="requiereAdunto">
-                                                                    <input class="form-control uppercase letters lastnameb date calendar bbva-icon__3_004_calendar" data-reflecto="#m_sec3clgdate" name="sec3clgdate" id="sec3clgdate" type="text" data-placeholder="Fecha de CLG" required autocomplete="off" value="18/10/2019">
-                                                                </div>
-                                                                <div  class="uploadfile empty adjunto e-tooltip" data-tooltitle="PDF, en blanco y negro, a 200dpis">
-                                                                    <div class="wrapper" style="padding: 0;">
-                                                                        <div class="message message_cards const">
-                                                                            <span class="cntr">
-                                                                                <span class="openuploadfile">
-                                                                                    <i class="bbva-icon ui-filled-up"></i></span>
-                                                                            </span>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                            <div class="form-group">
+                                                                <input class="form-control uppercase letters lastnameb date calendar bbva-icon__3_004_calendar" data-reflecto="#m_sec3clgdate" name="sec3clgdate" id="sec3clgdate" type="text" data-placeholder="Fecha de CLG" required autocomplete="off" value="18/10/2019">
+                                                            </div>                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="grid-item">
+                                                        <div class="form-validation-group">
+                                                            <div class="form-group">
+                                                                <input class="form-control uppercase letters lastnameb date calendar" data-reflecto="#m_sec3appraisalDate" name="sec3appraisalDate" id="sec3appraisalDate" type="text" data-placeholder="Fecha de avalúo" required autocomplete="off" value="18/10/2019">
                                                             </div>
                                                         </div>
-                                                    </div>	
-
+                                                    </div>
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
@@ -705,7 +731,7 @@
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
-                                                                <input class="form-control e-tooltip-f mxnamount" name="valueland" id="valueland" type="text" data-placeholder="Valor del terreno" required>
+                                                                <input class="form-control e-tooltip-f mxnamount" name="valueland" id="valueland" type="text" data-placeholder="Valor del terreno" autocomplete="off" required>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -786,33 +812,50 @@
                                                             <p class="i-message"><span class="text-message">&nbsp;</span></p>
                                                         </div>                                                    
                                                     </div>
-                                                </div>  
+                                                </div>   
                                                 <div class="grid-item">
                                                     <div class="form-validation-group">
-                                                        <div class="form-group" style="display: flex;">
-                                                            <div class="requiereAdunto">
-                                                                <input class="form-control uppercase letters lastnameb date calendar" data-reflecto="#m_sec3appraisalDate" name="sec3appraisalDate" id="sec3appraisalDate" type="text" data-placeholder="Fecha de avalúo" required autocomplete="off" value="18/10/2019">
-                                                            </div>
-                                                            <div  class="uploadfile empty adjunto e-tooltip" data-tooltitle="PDF, en blanco y negro, a 200dpis">
-                                                                <div class="wrapper" style="padding: 0;">
-                                                                    <div class="message message_cards const">
-                                                                        <span class="cntr">
-                                                                            <span class="openuploadfile">
-                                                                                <i class="bbva-icon ui-filled-up"></i></span>
-                                                                        </span>
+                                                        <div class="form-group">
+                                                            <span class="form-control toggle" ><p class="puntSusp" id="addfechClg">Adjuntar PDF, fecha de CLG</p>
+                                                                <div  class="uploadfile empty adjunto e-tooltip" style="margin-top: -28px;float: inline-end; height: 56px;" data-tooltitle="Adjuntar PDF, fecha de CLG">
+                                                                    <div class="wrapper" style="padding: 0;">
+                                                                        <div class="message message_cards const">
+                                                                            <span class="cntr">
+                                                                                <span class="openuploadfile" id="fechClg"><i class="bbva-icon ui-filled-up"></i></span>
+                                                                            </span>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                            </span>                                                        
+                                                            <p class="i-message" id=msjContractCredit><span class="text-message">&nbsp;</span></p>
+                                                        </div>                                                    
+                                                    </div>                                            
+                                                </div> 
+                                                <div class="grid-item">
+                                                    <div class="form-validation-group">
+                                                        <div class="form-group">
+                                                            <span class="form-control toggle" ><p class="puntSusp" id="addfechAva">Adjuntar PDF, fecha de avalúo</p>
+                                                                <div  class="uploadfile empty adjunto e-tooltip" style="margin-top: -28px;float: inline-end; height: 56px;" data-tooltitle="Adjuntar PDF, fecha de avalúo">
+                                                                    <div class="wrapper" style="padding: 0;">
+                                                                        <div class="message message_cards const">
+                                                                            <span class="cntr">
+                                                                                <span class="openuploadfile" id="fechAva"><i class="bbva-icon ui-filled-up"></i></span>
+                                                                            </span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </span>                                                        
+                                                            <p class="i-message" id=msjContractCredit><span class="text-message">&nbsp;</span></p>
+                                                        </div>                                                    
+                                                    </div>                                            
+                                                </div>                                              
                                                 <div class="grid-item">
                                                     <div class="grid-container-s">
                                                         <div class="grid-item">
                                                             <div class="form-validation-group">
                                                                 <div class="form-group">
-                                                                <div class="placeholder-wrapper">
-                                                                    <input class="form-control alphanumeric e-tooltip-f" name="sec3landsurface" id="sec3landsurface" type="text" data-placeholder="Superficie de construcción" required="" autocomplete="off" data-regex="PROM" data-required="true"><span class="placeholder-simulator" style="top: 5px; font-size: 12px;">Superficie de terreno</span></div><p class="i-message"><span class="text-message"><i class="bbva-icon ui-empty"></i>&nbsp;</span></p></div>
+                                                                    <input class="form-control alphanumeric e-tooltip-f" name="sec3landsurface" id="sec3landsurface" type="text" data-placeholder="Superficie de construcción" required="" autocomplete="off" data-required="true">
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -1017,6 +1060,10 @@
             <div class="helpname">Ayuda</div>
         </div>
     </div>
+    <script>
+        var idDocAdj="";
+        var nameDocAdj="";
+    </script>
     <script src="scripts/browser_detect.js"></script>
     <script src="scripts/mask.js"></script>
     <script src="scripts/dropzone.js"></script>
@@ -1098,10 +1145,13 @@
                 $("#valuespecials").removeAttr("disabled");
             }else{
                 $("#valuespecials").attr("disabled","disabled");
-                $("#valuespecials").val(0.00);
+                 if ($("#valuespecials").val()!="" ) {
+                    $("#valuespecials").val(0.00);
+                }     
                 sumaValores();
             }
         });
+        
      });
     </script>
 </body>

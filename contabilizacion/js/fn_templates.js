@@ -150,11 +150,15 @@ var fn_uploadfilemodal = function () {
         }
     });
     $("#btn_sbtmfiles").data("complete", function(formdata) {
-        console.log(formdata);
+        console.log("formdata:",formdata);
         fn_hideModal();
         uploadFile.onFinish = function() {};
         uploadFile.index = 0;
         _fileDetails = myDropzone.getAcceptedFiles();
+        console.log("_fileDetails:",_fileDetails[0].name);
+        nameDocAdj=_fileDetails[0].name;
+        console.log("nameDocAdj:",nameDocAdj);
+        $("#add"+idDocAdj+"").html(nameDocAdj);
         function readIndexFile(iFile) {
             if (iFile == _fileDetails.length) {
                 return;
@@ -202,7 +206,28 @@ var fn_uploadfilemodal = function () {
     fn_showModal();
 };
 
+
+//Funcion que se ejecuta despues de ordenar de forma ascendento o descendente la tabla de contabilización 
+var fn_sortTableAsc = function () {
+        console.log('Aqui pueden implementar alguna validacion');
+    }
+
+var fn_sortTableDesc = function(){
+    console.log('Aqui pueden implementar alguna validacionm descendente');
+}
+
+var fn_sortRespAsc = function(){
+    console.log('Aqui pueden implementar alguna validacionm Asccendente');
+}
+
+var fn_sortRespDesc = function(){
+    console.log('Aqui pueden implementar alguna validacionm descendente');
+}
+
+
+
 // Ejemplo de como agregar una plantilla sin recargar una pagina completa
+//esta fucion se ejecuta al finalizar la carga
 // var fn_onEjemplo = function () {
 //     alert('Se insertar ejemplo.html en el index principal');
 // }

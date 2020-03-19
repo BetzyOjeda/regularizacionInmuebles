@@ -11,6 +11,7 @@ $("#btn-exit").click(function () {
 //         message: "Hola Mundo! "
 //     }
 // })
+
 var toggleModule = function ($head) {
     if (!$head.hasClass("animated")) {
         $content = $("#" + $head.attr("data-target"));
@@ -86,8 +87,8 @@ $("#btn_savegd").data("complete", function(_data) {
     //Todos los campos del formulario con su valor
     console.log('_data', _data);
     loadTemplate($("#modal_generic .body"), miniTemplates.success, {
-        title: "¡Gracias!",
-        message: "Tus datos se gurdaron correctamente ."
+        title: "¡Información Guardada!",
+        message: "Tus datos se guardaron correctamente ."
       });
 });
 
@@ -107,7 +108,17 @@ $("#btn_savefin").data("complete", function(_data) {
     console.log('_data', _data);
     loadTemplate($("#modal_generic .body"), miniTemplates.success, {
         title: "¡Gracias!",
-        message: "Tus datos se guardaron correctamente."
+        message: "Tus datos se guardaron correctamente.",
+        onAccept: function () {
+            showWait();
+            setTimeout(function () {
+                hideWait();
+                location.href="accounting-page.html";
+            },450);
+
+
+           
+        }
       });
 });
 
@@ -261,10 +272,6 @@ $('#msclass').onSelect(function() {
             $(this).showComboError("Fecha inválida");
         }
     }
-});
-
-$("#btn_save_all").click(function() {
-    alert("salvar todo");
 });
 
 /**
