@@ -144,6 +144,21 @@
             white-space: nowrap;
         }
 
+        /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+        /*   AJUSTES DATEPICKER   */
+        .ui-widget-header {
+            background: #1973b8 !important;
+        }
+
+        .ui-datepicker table > thead > tr {
+            background: #1973b8 !important;
+        }
+
+        .ui-datepicker .ui-datepicker-header {
+            border: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
     </style>
 </head>
 <body>
@@ -478,7 +493,7 @@
 												<div class="form-group-select whitwait states required" id="sec2municipality" data-reflecto="#m_sec2municipality">
 													<div class="option-select">
 														<div class="select-title sl">
-															<span class="option-text sl center">Municipio o alcaldía</span>
+															<span class="option-text sl center">Municipio o alcaldía del estado</span>
 															<span class="selected-option sl"></span>
 															<i class="bbva-icon ui-simple-down sl"></i>
 														</div>
@@ -553,7 +568,7 @@
                                             <div class="form-group-select required" id="sec2state" data-reflecto="#m_sec2state">
                                                 <div class="option-select">
                                                     <div class="select-title sl">
-                                                        <span class="option-text sl center">Estado</span>
+                                                        <span class="option-text sl center">Estado del juzgado</span>
                                                         <span class="selected-option sl"></span>
                                                         <i class="bbva-icon ui-simple-down sl"></i>
                                                     </div>
@@ -673,13 +688,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
-                                                                <input class="form-control uppercase alphanumeric lastnameb" data-reflecto="#m_sec3colony" name="sec3colony" id="sec3colony" type="text" data-placeholder="Colonia/Fraccionamiento" required autocomplete="off" value="">
+                                                                <input class="form-control uppercase" data-reflecto="#m_sec3superapple" name="sec3superapple" id="sec3superapple" type="text" data-placeholder="Supermanzana" autocomplete="off" value="">
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
@@ -687,18 +704,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    
                                                     <div class="grid-item">
-                                                        <div class="form-validation-group">
-                                                            <div class="form-group">
-                                                                <input class="form-control uppercase" data-reflecto="#m_sec3superapple" name="sec3superapple" id="sec3superapple" type="text" data-placeholder="Supermanzana" required autocomplete="off" value="">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="grid-item">
-                                                        <div class="form-group-select required" id="municipalities" data-reflecto="#m_municipalities">
-                                                            <div class="option-select disabled">
-                                                                <div class="select-title sl"> <!--Estado donde se encuentra radicado el juzgado-->
-                                                                    <span class="option-text sl center">Municipio o alcaldía del estado</span>
+                                                        <div class="form-group-select whitwait states required" id="sec3state" data-reflecto="#m_state">
+                                                            <div class="option-select">
+                                                                <div class="select-title sl">
+                                                                    <span class="option-text sl center">Estado donde se ubica el inmueble</span>
                                                                     <span class="selected-option sl"></span>
                                                                     <i class="bbva-icon ui-simple-down sl"></i>
                                                                 </div>
@@ -706,6 +717,15 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    <div class="grid-item">
+                                                        <div class="form-validation-group">
+                                                            <div class="form-group">
+                                                                <input class="form-control numbers" name="zipcode" id="zipcode" type="text" data-placeholder="C&oacute;digo postal" required autocomplete="off" maxlength="5" data-regex="ZIPCODE">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
                                                     <div class="grid-item">
                                                         <div class="form-validation-group">
                                                             <div class="form-group">
@@ -779,12 +799,21 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                            
+
                                                 <div class="grid-item">
-                                                    <div class="form-group-select whitwait states required" id="sec3state" data-reflecto="#m_state">
-                                                        <div class="option-select">
-                                                            <div class="select-title sl">
-                                                                <span class="option-text sl center">Estado del juzgado</span>
+                                                    <div class="form-validation-group">
+                                                        <div class="form-group">
+                                                            <input class="form-control uppercase alphanumeric lastnameb" data-reflecto="#m_sec3colony" name="sec3colony" id="sec3colony" type="text" data-placeholder="Colonia/Fraccionamiento" required autocomplete="off" value="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                
+                                                <div class="grid-item">
+                                                    <div class="form-group-select required" id="municipalities" data-reflecto="#m_municipalities">
+                                                        <div class="option-select disabled">
+                                                            <div class="select-title sl"> <!--Estado donde se encuentra radicado el juzgado-->
+                                                                <span class="option-text sl center">Municipio o alcaldía del estado</span>
                                                                 <span class="selected-option sl"></span>
                                                                 <i class="bbva-icon ui-simple-down sl"></i>
                                                             </div>
@@ -792,13 +821,8 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="grid-item">
-                                                    <div class="form-validation-group">
-                                                        <div class="form-group">
-                                                            <input class="form-control numbers" name="zipcode" id="zipcode" type="text" data-placeholder="C&oacute;digo postal" required autocomplete="off" maxlength="5" data-regex="ZIPCODE">
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                
+                                                
                                                 <div class="grid-item">
                                                     <div class="form-validation-group">
                                                         <div class="form-group">
@@ -854,7 +878,7 @@
                                                         <div class="grid-item">
                                                             <div class="form-validation-group">
                                                                 <div class="form-group">
-                                                                    <input class="form-control alphanumeric e-tooltip-f" name="sec3landsurface" id="sec3landsurface" type="text" data-placeholder="Superficie de construcción" required="" autocomplete="off" data-required="true">
+                                                                    <input class="form-control alphanumeric e-tooltip-f" name="sec3landsurface" id="sec3landsurface" type="text" data-placeholder="Superficie de construcción M2" required="" autocomplete="off" data-required="true">
                                                                 </div>
                                                             </div>
                                                         </div>
