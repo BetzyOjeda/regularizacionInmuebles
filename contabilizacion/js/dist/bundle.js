@@ -73,99 +73,99 @@
     "CAT_BANK": [
         {
             "id": "1",
-            "description": "Arrendadora"
+            "description": "ARRENDADORA"
         },
         {
             "id": "2",
-            "description": "Centro Especializado de Recuperación "
+            "description": "CENTRO ESPECIALIZADO DE RECUPERACIÓN "
         },
         {
             "id": "3",
-            "description": "Comercial"
+            "description": "COMERCIAL"
         },
         {
             "id": "4",
-            "description": "Corporativa"
+            "description": "CORPORATIVA"
         },
         {
             "id": "5",
-            "description": "Danf"
+            "description": "DANF"
         },
         {
             "id": "6",
-            "description": "Fideicomiso"
+            "description": "FIDEICOMISO"
         },
         {
             "id": "7",
-            "description": "Del Consumidor"
+            "description": "DEL CONSUMIDOR"
         },
         {
             "id": "8",
-            "description": "Factoraje"
+            "description": "FACTORAJE"
         }
     ],
     "CAT_CREDITMORTGAGE":[
         {
             "id": "1",
-            "description": "Créd. a la vivienda"
+            "description": "CRÉD. A LA VIVIENDA"
         },
         {
             "id": "2",
-            "description": "Créd. Hipotecario"
+            "description": "CRÉD. HIPOTECARIO"
         },
         {
             "id": "3",
-            "description": "Hipot. Preferencial"
+            "description": "HIPOT. PREFERENCIAL"
         }
     ],
     "CAT_CREDITCOMMERCIAL":[
         {
             "id": "1",
-            "description": "Arrendamiento"
+            "description": "ARRENDAMIENTO"
         },
         {
             "id": "2",
-            "description": "Administración"
+            "description": "ADMINISTRACIÓN"
         },
         {
             "id": "3",
-            "description": "Cartera Tradicional"
+            "description": "CARTERA TRADICIONAL"
         },
         {
             "id": "4",
-            "description": "Créditos Comerciales"
+            "description": "CRÉDITOS COMERCIALES"
         },
         {
             "id": "5",
-            "description": "Créd. Hipotecario"
+            "description": "CRÉD. HIPOTECARIO"
         },
         {
             "id": "6",
-            "description": "Créd. a la vivienda"
+            "description": "CRÉD. A LA VIVIENDA"
         },
         {
             "id": "7",
-            "description": "Desafectos"
+            "description": "DESAFECTOS"
         },
         {
             "id": "8",
-            "description": "Hipot. Preferencial"
+            "description": "HIPOT. PREFERENCIAL"
         },
         {
             "id": "9",
-            "description": "Menudeo ABC Person."
+            "description": "MENUDEO ABC PERSON."
         },
         {
             "id": "10",
-            "description": "Planes de Crédito"
+            "description": "PLANES DE CRÉDITO"
         },
         {
             "id": "11",
-            "description": "Renta Hipotecaria"
+            "description": "RENTA HIPOTECARIA"
         },
         {
             "id": "12",
-            "description": "Tarjeta de Crédito"
+            "description": "TARJETA DE CRÉDITO"
         }
     ],
     "CAT_GRAVAMEN":[
@@ -371,7 +371,7 @@
         },
         {
             "id": "5",
-            "description": "Nave Industrial"
+            "description": "Nave industrial"
         },
         {
             "id": "6",
@@ -2918,10 +2918,19 @@ $("#btn_savegd").data("complete", function(_data) {
 $("#btn_savesd").data("complete", function(_data) {
     //Todos los campos del formulario con su valor
     console.log('_data', _data);
+
+    loadTemplate($("#modal_generic .body"), miniTemplates.success, {
+        title: "¡Información Guardada!",
+        message: "Tus datos se guardaron correctamente ."
+      });
+
+    /*
+    //Estaba predefinido para mostrar un Error
     loadTemplate($("#modal_generic .body"), miniTemplates.error, {
         title: "¡Error!",
         message: "Ocurrió un error al guardar tus datos."
-      });
+    });
+    */
 });
 
 $("#btn_savefin").data("complete", function(_data) {
@@ -2936,10 +2945,7 @@ $("#btn_savefin").data("complete", function(_data) {
             setTimeout(function () {
                 hideWait();
                 location.href="accounting-page.html";
-            },450);
-
-
-           
+            },450);           
         }
       });
 });

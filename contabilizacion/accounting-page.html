@@ -276,9 +276,36 @@
         }
         .link{
             cursor: pointer; 
-            color: #1973B8
+            color: #1973B8;
             font-family: BentonSansBBVA-Bold;
         }
+
+        /*++++++++++++++++++++++ CSS FILTRO ESTATUS +++++++++++++++++++++++++*/
+        .messagepop {
+		  background-color:#FFFFFF;
+		  border:1px solid #999999;
+		  cursor:default;
+		  display:none;
+		  margin-top: 15px;
+		  position:absolute;
+		  text-align:left;
+		  width: 17%;
+		  z-index:50;
+		  padding: 5px 10px 5px;
+		  border-radius: 3%;
+		}
+		
+		.selectStatus {
+			width: 100%;
+			padding: 5px 12px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+            font-family: "BentonSansBBVA-Book", Helvetica, Arial, sans-serif;
+            font-size: 15px;
+		}
     </style>
 </head>
 
@@ -354,7 +381,21 @@
                                 <th style="text-align: left;">
                                     ESTATUS
                                     <i class="bbva-icon ui-simple-up sl link" id="orderStatus"></i>
-                                    <i class="bbva-icon ui-filter sl link"></i>
+
+                                    <div class="messagepop pop">
+                                        <select class="selectStatus close" multiple="multiple">
+                                          <option value="Todos">Todos</option>
+                                          <option value="Incompleto">Incompleto</option>
+                                          <option value="En Proceso">En Proceso</option>
+                                          <option value="Suspendido">Suspendido</option>
+                                          <option value="Contabilizado">Contabilizado</option>
+                                          <option value="Rechazado">Rechazado</option>
+                                          <option value="Pendiente de Validar">Pendiente de Validar</option>
+                                          <option value="No Contabilizable">No Contabilizable</option>
+                                        </select>
+                                    </div>
+
+                                    <i class="bbva-icon ui-filter sl link filter-status"></i>
                                 </th>
                                 <th style="text-align: left;">
                                     RESPONSABLE
@@ -940,6 +981,54 @@
             }          
         });
 
+        /*++++++++++++++++++++++ OPERACIONES FILTRO ESTATUS +++++++++++++++++++++++++*/
+
+        function deselect(e) {
+            $('.pop').slideFadeToggle(function() {
+            e.removeClass('selected');
+            });    
+        }
+
+        $(function() {
+            $('.filter-status').on('click', function() {
+                if($(this).hasClass('selected')) {
+                    deselect($(this));               
+                } else {
+                    $(this).addClass('selected');
+                    $('.pop').slideFadeToggle();
+                }
+                return false;
+            });
+
+            $('.close').on('click', function() {
+                deselect($('.filter-status'));
+                return false;
+            });
+        });
+
+        $.fn.slideFadeToggle = function(easing, callback) {
+            return this.animate({ opacity: 'toggle', height: 'toggle' }, 'fast', easing, callback);
+        };
+
+        /*++++++++++++++++++++++ OPERACIONES FILTRO ESTATUS SELECT +++++++++++++++++++++++++*/
+        $(".selectStatus").on("change", function() {
+            filter = String($(this).val()).toUpperCase();
+            if(filter == "TODOS") {
+                filter = "";
+            }
+            tr = $("#table_main tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[2];
+                if (td) {
+                statusValue = td.textContent || td.innerText;
+                if (statusValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+                }       
+            }
+        });
     </script>
 
 </html>
